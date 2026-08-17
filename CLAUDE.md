@@ -97,8 +97,9 @@ Bunlar bu projede kesinlikle kullanılmayacak — önerme bile:
 - Renk paleti `kaynak/` içindeki kurumsal renk kodlarından türetilir.
   Uydurma renk kullanma. (bkz. "Renk kararı")
 - **Tek font ailesi** kullanılır (bkz. "Tipografi kararı"), `font-display: swap`
-- Tüm renk, spacing, tipografi değerleri `tailwind.config.ts`'te **token**
-  olarak tanımlanır. Component içinde ham hex, ham px **yazma**.
+- Tüm renk, spacing, tipografi değerleri `globals.css` içinde `@theme`
+  bloğunda **CSS değişkeni** olarak tanımlanır. Component içinde ham hex,
+  ham px **yazma**.
 - Spacing ölçeği 4px tabanlı, tutarlı kullanılır
 
 ### Renk kararı
