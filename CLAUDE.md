@@ -94,13 +94,61 @@ Bunlar bu projede kesinlikle kullanılmayacak — önerme bile:
 
 ### Tasarım sistemi kuralları
 
-- Renk paleti `_kaynak/` içindeki kurumsal renk kodlarından türetilir.
-  Uydurma renk kullanma.
-- Toplam renk sayısı: 1 ana kurumsal renk + 1 vurgu tonu + nötr gri skalası
-- Font sayısı en fazla 2, `font-display: swap`
+- Renk paleti `kaynak/` içindeki kurumsal renk kodlarından türetilir.
+  Uydurma renk kullanma. (bkz. "Renk kararı")
+- **Tek font ailesi** kullanılır (bkz. "Tipografi kararı"), `font-display: swap`
 - Tüm renk, spacing, tipografi değerleri `tailwind.config.ts`'te **token**
   olarak tanımlanır. Component içinde ham hex, ham px **yazma**.
 - Spacing ölçeği 4px tabanlı, tutarlı kullanılır
+
+### Renk kararı
+
+Kimlik **tek renk** üzerine kuruludur. Kaynak dosyalardan doğrulanmıştır.
+
+- **Ana renk:** `#1F2A44` (Sodalite Blue) — 8 SVG ve 5 PDF'te teyitli
+- **Zemin:** `#F7F8FA` — aynı kaynaklarda teyitli
+- **Gri skalası** broşürlerden çıkan navy-tonlu grilerden türetilir:
+  `#30353D`, `#566078`, `#737B88`, `#9298A1`, `#D4D6D9`. Ara basamaklar
+  bunlardan interpolasyonla üretilir, `docs/design-system.md`'de
+  "türetilmiş" olarak işaretlidir.
+- **Ayrı vurgu rengi YOKTUR.** Vurgu şu dört araçla kurulur:
+  ton farkı, font ağırlığı, boşluk, navy zeminli bloklar.
+  Yeni bir vurgu rengi ekleme — sorman gereken bir durumsa sor.
+
+#### Kontrast kuralları (ihlal edilemez)
+
+- ⛔ `#D4D6D9` **açık zeminde kullanılmaz** — `#F7F8FA` üzerinde 1.37:1.
+  Metin, ikon, kenarlık, ayraç, focus ring: hiçbiri. **Yalnızca navy
+  zeminde** kullanılır (orada 9.79:1).
+- ⛔ `#737B88` **gövde metni değildir** — `#F7F8FA` üzerinde 4.02:1.
+  Yalnızca **≥24px başlık**, ikon ve kenarlık olarak kullanılır.
+  Yardımcı metin, dipnot, form helper text, placeholder olarak **yasak**.
+- ⛔ `#9298A1` **metin ve UI sınırı olarak kullanılmaz** — 2.73:1.
+  Açık zeminde yalnızca anlam taşımayan dekorasyon.
+
+Tam token tablosu, her tokenin kontrast oranı ve izinli/yasaklı kullanımı:
+`docs/design-system.md` — UI kararlarında tek referans budur.
+
+### Layout kararları
+
+- **Hero:** ofis/şehir fotoğrafı, üstünde başlık. Fotoğraf üzerindeki
+  metin için `#1F2A44` overlay **zorunludur** — opaklık ve gerekçesi
+  `docs/design-system.md` "Hero overlay kuralı" bölümünde.
+- **Ekip:** fotoğraflı 3'lü grid. Kart içeriği CLAUDE.md'nin "İzin
+  verilen içerik" listesiyle sınırlıdır.
+- **Navigasyon:** yatay üst nav, sağda dil değiştirici, mobilde
+  hamburger. Nav'da CTA butonu **yok** (TBB yasağı).
+- **Dil:** Türkçe varsayılan + İngilizce.
+
+### Tipografi kararı
+
+- **Tek font ailesi: EB Garamond** — hem başlık hem gövde. İkinci aile
+  eklenmez.
+- Gövde: **17px** taban, `line-height` **1.6**, satır uzunluğu
+  **65–70 karakter**
+- Ağırlıklar: başlık **500/600**, gövde **400**
+- `next/font` ile **self-host**; subset olarak **`latin` ve `latin-ext`**
+  yüklenir (Türkçe ğĞşŞıİ için `latin-ext` zorunludur)
 
 ---
 
@@ -108,7 +156,15 @@ Bunlar bu projede kesinlikle kullanılmayacak — önerme bile:
 
 ### ui-ux-pro-max
 
-Yol: `.claude/skills/ui-ux-pro-max/scripts/search.py`
+Skill proje kökünde değil, **kullanıcı seviyesinde** kurulu:
+`~/.claude/skills/ui-ux-pro-max/`. Göreli `.claude/skills/...` yolu bu
+projede **çalışmaz** — proje kökünde `.claude/` dizini yoktur.
+
+**Öncelikli çağırma yöntemi:** Skill aracıyla doğrudan `ui-ux-pro-max`
+adıyla çağır.
+
+CLI gerekirse mutlak yol kullanılır:
+`C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py`
 
 Tasarım kararı vermeden önce bu skill'e danış. Ancak **çıktısını filtrele** —
 skill'in veritabanı trend efektlere (glassmorphism, gradient, animasyon)
@@ -117,19 +173,24 @@ ağırlık verir; yukarıdaki yasak listesine takılan hiçbir öneriyi uygulama
 Kullanılacak arama yönü:
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py \
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
   "law firm corporate minimal editorial serif restrained" \
   --design-system -f markdown -p "Hukuk Burosu"
 
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py \
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
   "typography serif pairing professional" 
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py \
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
   "whitespace spacing scale editorial"
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py \
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
   "accessibility contrast focus keyboard" --domain ux
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py \
-  "layout responsive" --stack nextjs-tailwind
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
+  "layout responsive" --stack nextjs
+python3 "C:/Users/vbari/.claude/skills/ui-ux-pro-max/scripts/search.py" \
+  "layout responsive" --stack html-tailwind
 ```
+
+`nextjs-tailwind` diye bir stack **yoktur** — skill hata verir. Next.js ve
+Tailwind kuralları iki ayrı sorgu ile alınır.
 
 Sentezlenen sonuç `docs/design-system.md` dosyasına yazılır ve sonraki tüm
 UI kararlarında tek referans budur.
@@ -138,6 +199,17 @@ UI kararlarında tek referans budur.
 
 Bir görev için uygun skill varsa kullan. Kullandığın skill'i ve neden
 seçtiğini kısaca belirt.
+
+### Skill önceliği
+
+1. **ui-ux-pro-max** — tasarım sistemi, palet, tipografi, UX kuralları
+2. **frontend-design** — component implementasyonu, styling kararları
+3. **design-system** — token yapısı ve tutarlılık denetimi
+
+**Kullanılmayacaklar:** banner-design, slides, brand
+
+Bir skill'in önerisi CLAUDE.md'deki "Görsel olarak YASAK" listesiyle
+çelişirse **CLAUDE.md kazanır.**
 
 ---
 
