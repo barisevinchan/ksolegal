@@ -37,7 +37,7 @@ export default async function TeamPage({
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader title={t("title")} />
 
       <Container>
         <ul className="grid gap-12 pb-16 sm:grid-cols-2 md:pb-24 lg:grid-cols-3">

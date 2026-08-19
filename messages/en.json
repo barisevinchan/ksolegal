@@ -62,7 +62,6 @@
   "Team": {
     "title": "Team",
     "metaDescription": "Attorneys practising at the office.",
-    "lead": "The office is run by three partner attorneys. Each attorney's education, fields of work and registration details are set out on their own page.",
     "sections": {
       "education": "Education",
       "practiceAreas": "Practice Areas",
