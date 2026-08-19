@@ -36,7 +36,12 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    title: t("title"),
+    // `template` alt sayfaların kendi <title>'ını marka adıyla tamamlar;
+    // `default` yalnızca kendi title'ı olmayan sayfalarda kullanılır.
+    title: {
+      default: t("title"),
+      template: t("titleTemplate"),
+    },
     description: t("description"),
   };
 }

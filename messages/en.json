@@ -1,6 +1,7 @@
 {
   "Metadata": {
     "title": "Law Office",
+    "titleTemplate": "%s — Law Office",
     "description": "Practice areas and contact details of the law office."
   },
   "Brand": {
@@ -36,7 +37,79 @@
     "cookiePolicy": "Cookie Policy",
     "copyright": "All rights reserved."
   },
-  "Placeholder": {
-    "shellNotice": "Design shell. Page content has not been added yet."
+  "Common": {
+    "placeholderValue": "—",
+    "sectionTitle": "Section Heading {index}",
+    "backToList": "Back to the list"
+  },
+  "Lorem": {
+    "sentence": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "paragraphAlt": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+  },
+  "Home": {
+    "heroTitle": "Lorem ipsum dolor sit amet, consectetur",
+    "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.",
+    "linksHeading": "Pages"
+  },
+  "About": {
+    "title": "About",
+    "metaDescription": "General information about the office.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+  },
+  "Team": {
+    "title": "Team",
+    "metaDescription": "Lawyers practising at the office.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam.",
+    "memberName": "Lawyer Name Surname {index}",
+    "fields": {
+      "academicTitle": "Academic title",
+      "tbbNo": "TBB registration no",
+      "baroNo": "Bar registration no",
+      "admission": "Admitted to the bar",
+      "university": "University",
+      "languages": "Foreign languages",
+      "email": "E-mail",
+      "phone": "Phone"
+    }
+  },
+  "PracticeAreas": {
+    "title": "Practice Areas",
+    "metaDescription": "Areas of law in which the office practises.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation ullamco.",
+    "areaTitle": "Practice Area {index}"
+  },
+  "Contact": {
+    "title": "Contact",
+    "metaDescription": "Address, telephone, e-mail and KEP details of the office.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "infoHeading": "Contact details",
+    "formHeading": "Contact form",
+    "mapHeading": "Location",
+    "mapNotice": "Map area — placeholder.",
+    "form": {
+      "name": "Full name",
+      "email": "E-mail",
+      "phone": "Phone",
+      "subject": "Subject",
+      "optional": "(optional)",
+      "submit": "Send",
+      "disabledNotice": "The form is at skeleton stage; submission is not active yet.",
+      "consentLabel": "I give my explicit consent to the processing of my personal data under the Personal Data Protection Notice.",
+      "consentLink": "Read the Personal Data Protection Notice"
+    }
+  },
+  "Privacy": {
+    "title": "Personal Data Protection Notice",
+    "metaDescription": "Notice on the processing of personal data.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "pendingNotice": "The final text is being prepared."
+  },
+  "CookiePolicy": {
+    "title": "Cookie Policy",
+    "metaDescription": "Information on the cookies used on this site.",
+    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "pendingNotice": "The final text is being prepared."
   }
 }

@@ -1,6 +1,7 @@
 {
   "Metadata": {
     "title": "Hukuk Bürosu",
+    "titleTemplate": "%s — Hukuk Bürosu",
     "description": "Hukuk bürosunun faaliyet alanları ve iletişim bilgileri."
   },
   "Brand": {
@@ -36,7 +37,79 @@
     "cookiePolicy": "Çerez Politikası",
     "copyright": "Tüm hakları saklıdır."
   },
-  "Placeholder": {
-    "shellNotice": "Tasarım kabuğu. Sayfa içeriği henüz eklenmedi."
+  "Common": {
+    "placeholderValue": "—",
+    "sectionTitle": "Bölüm Başlığı {index}",
+    "backToList": "Listeye dön"
+  },
+  "Lorem": {
+    "sentence": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; şehrin ışığı değişirken gölgeler uzar.",
+    "paragraph": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Öğleden sonra çınarların gölgesi ağır ağır uzar ve sokak sessizleşir.",
+    "paragraphAlt": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Şehrin üstüne çöken sessizlik uzun sürmez; ışık yeniden değişir.",
+    "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
+  },
+  "Home": {
+    "heroTitle": "Lorem ipsum dolör sit amet, çonsectetur",
+    "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua; ışık değiştikçe gölgeler uzar.",
+    "linksHeading": "Sayfalar"
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "metaDescription": "Büro hakkında genel bilgi.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; sed do eiusmod tempor incididunt."
+  },
+  "Team": {
+    "title": "Ekip",
+    "metaDescription": "Büroda görev yapan avukatlar.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; ut enim ad minim veniam.",
+    "memberName": "Avukat Adı Soyadı {index}",
+    "fields": {
+      "academicTitle": "Akademik unvan",
+      "tbbNo": "TBB sicil no",
+      "baroNo": "Baro sicil no",
+      "admission": "Mesleğe başlama",
+      "university": "Mezun olduğu üniversite",
+      "languages": "Yabancı diller",
+      "email": "E-posta",
+      "phone": "Telefon"
+    }
+  },
+  "PracticeAreas": {
+    "title": "Faaliyet Alanları",
+    "metaDescription": "Büronun faaliyet gösterdiği hukuk alanları.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; quis nostrud exercitation ullamco.",
+    "areaTitle": "Faaliyet Alanı {index}"
+  },
+  "Contact": {
+    "title": "İletişim",
+    "metaDescription": "Büronun adres, telefon, e-posta ve KEP bilgileri.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
+    "infoHeading": "İletişim bilgileri",
+    "formHeading": "İletişim formu",
+    "mapHeading": "Konum",
+    "mapNotice": "Harita alanı — yer tutucu.",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "subject": "Konu",
+      "optional": "(isteğe bağlı)",
+      "submit": "Gönder",
+      "disabledNotice": "Form iskelet aşamasındadır; gönderim henüz etkin değildir.",
+      "consentLabel": "Kişisel verilerimin KVKK Aydınlatma Metni kapsamında işlenmesine açık rıza veriyorum.",
+      "consentLink": "KVKK Aydınlatma Metni'ni okuyun"
+    }
+  },
+  "Privacy": {
+    "title": "KVKK Aydınlatma Metni",
+    "metaDescription": "Kişisel verilerin işlenmesine ilişkin aydınlatma metni.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
+    "pendingNotice": "Metnin nihai hâli hazırlanmaktadır."
+  },
+  "CookiePolicy": {
+    "title": "Çerez Politikası",
+    "metaDescription": "Sitede kullanılan çerezlere ilişkin bilgilendirme.",
+    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
+    "pendingNotice": "Metnin nihai hâli hazırlanmaktadır."
   }
 }

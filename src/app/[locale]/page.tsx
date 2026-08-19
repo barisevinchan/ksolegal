@@ -1,10 +1,14 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/components/Container";
+import { Link } from "@/i18n/navigation";
+import type { StaticPathname } from "@/i18n/navigation";
 
 /**
- * Kabuk aşaması yer tutucusu. Sayfa içeriği tasarım onaylandıktan sonra
- * yazılır (CLAUDE.md Çalışma Kuralı 1).
+ * Ana sayfa: tek hero + üç yönlendirme. Sayaç, rozet, referans, CTA
+ * butonu yoktur (CLAUDE.md yasak listesi + docs/design-system.md §5.1).
+ *
+ * Metinler yer tutucudur; gerçek içerik tasarım onayından sonra girilir.
  */
 export default async function HomePage({
   params,
@@ -14,15 +18,63 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("Placeholder");
+  const t = await getTranslations("Home");
+  const tNav = await getTranslations("Nav");
+  const tLorem = await getTranslations("Lorem");
+
+  const links: { href: StaticPathname; label: string }[] = [
+    { href: "/hakkimizda", label: tNav("about") },
+    { href: "/ekip", label: tNav("team") },
+    { href: "/faaliyet-alanlari", label: tNav("practiceAreas") },
+  ];
 
   return (
-    <Container>
-      <div className="py-24">
-        <p className="max-w-prose text-body text-grey-600">
-          {t("shellNotice")}
-        </p>
-      </div>
-    </Container>
+    <>
+      {/*
+        Hero üç katmandır: fotoğraf → navy overlay → metin.
+        Overlay opaklığı `--hero-overlay-opacity` (0.70) tokenından gelir
+        ve 0.66'nın altına indirilemez — hesap en kötü durum (bembeyaz
+        fotoğraf pikseli) varsayımıyla yapılmıştır, docs/design-system.md §2.
+        Fotoğraf henüz yok; yerinde gri kutu duruyor.
+      */}
+      <section className="relative isolate">
+        <div aria-hidden="true" className="absolute inset-0 bg-grey-100" />
+        <div aria-hidden="true" className="hero-overlay absolute inset-0" />
+
+        <Container className="relative">
+          <div className="max-w-prose py-24">
+            {/* Overlay üstünde yalnızca #FFFFFF ve #F7F8FA kullanılır;
+                grey-200 ve altı yasak (docs/design-system.md §2.3). */}
+            <h1 className="text-h2 text-white md:text-h1">{t("heroTitle")}</h1>
+            <p className="mt-6 text-body-lg text-grey-50">{t("heroLead")}</p>
+          </div>
+        </Container>
+      </section>
+
+      <Container>
+        <section aria-labelledby="home-links" className="py-16 md:py-24">
+          <h2 id="home-links" className="sr-only">
+            {t("linksHeading")}
+          </h2>
+
+          <ul className="grid gap-8 md:grid-cols-3">
+            {links.map((link) => (
+              <li key={link.href}>
+                {/* Kart hover'da büyümez, gölge almaz, 3D dönmez —
+                    tek hareket başlığın altını çizmesidir. */}
+                <Link href={link.href} className="group block border-t border-grey-500 pt-6">
+                  <h3 className="text-h3 text-primary underline-offset-4 group-hover:underline">
+                    {link.label}
+                  </h3>
+                  <p className="mt-3 text-body text-grey-600">
+                    {tLorem("sentence")}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </Container>
+    </>
   );
 }
