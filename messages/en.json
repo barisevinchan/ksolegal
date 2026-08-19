@@ -1,0 +1,42 @@
+{
+  "Metadata": {
+    "title": "Law Office",
+    "description": "Practice areas and contact details of the law office."
+  },
+  "Brand": {
+    "name": "Koçak · Sayım · Örnek"
+  },
+  "Nav": {
+    "ariaLabel": "Main navigation",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "about": "About",
+    "team": "Team",
+    "practiceAreas": "Practice Areas",
+    "contact": "Contact"
+  },
+  "LocaleSwitcher": {
+    "ariaLabel": "Language selection",
+    "tr": "Türkçe",
+    "en": "English",
+    "trShort": "TR",
+    "enShort": "EN"
+  },
+  "Footer": {
+    "contactHeading": "Contact",
+    "legalHeading": "Legal",
+    "address": "Address",
+    "phone": "Phone",
+    "fax": "Fax",
+    "email": "E-mail",
+    "kep": "KEP",
+    "placeholder": "—",
+    "privacy": "Personal Data Protection Notice",
+    "cookiePolicy": "Cookie Policy",
+    "copyright": "All rights reserved."
+  },
+  "Placeholder": {
+    "shellNotice": "Design shell. Page content has not been added yet."
+  }
+}

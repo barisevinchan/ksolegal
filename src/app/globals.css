@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   Tasarım tokenları — tek referans: docs/design-system.md
+   Component içinde ham hex veya ham px YAZILMAZ; her değer buradan gelir.
+   ========================================================================== */
+
+@theme {
+  /* ---- Renk ---------------------------------------------------------------
+     Tailwind'in varsayılan paleti kapatılır. Kurumsal kimlik tek renk
+     üzerine kuruludur ve ayrı vurgu rengi yoktur; varsayılan paletin açık
+     kalması "uydurma renk kullanma" kuralını sessizce delmeye izin verirdi.
+     -------------------------------------------------------------------- */
+  --color-*: initial;
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+
+  /* Ana renk — Sodalite Blue. kaynak/: 8 SVG + 5 PDF'te doğrulandı. */
+  --color-primary: #1f2a44;
+  --color-on-primary: #ffffff;
+
+  /* Sayfa zemini. grey-50 ile aynı değer, semantik olarak ayrı tutulur. */
+  --color-surface: #f7f8fa;
+
+  /* Navy tonlu gri skalası. docs/design-system.md §1.3.
+     Kontrast: Z = #F7F8FA zemin, N = #1F2A44 zemin. */
+  --color-grey-50: #f7f8fa; /* kaynak   | Z  1.00:1 | N 13.42:1 */
+  --color-grey-100: #e6e7ea; /* TÜRETİLMİŞ | Z  1.16:1 | N 11.53:1 */
+  --color-grey-200: #d4d6d9; /* kaynak   | Z  1.37:1 | N  9.79:1 — açık zeminde YASAK */
+  --color-grey-300: #b3b7bd; /* TÜRETİLMİŞ | Z  1.90:1 | N  7.08:1 */
+  --color-grey-400: #9298a1; /* kaynak   | Z  2.73:1 | N  4.91:1 — açık zeminde metin/sınır YASAK */
+  --color-grey-500: #737b88; /* kaynak   | Z  4.02:1 | N  3.34:1 — gövde metni DEĞİL, yalnızca ≥24px başlık/ikon/kenarlık */
+  --color-grey-600: #566078; /* kaynak   | Z  5.92:1 | N  2.27:1 */
+  --color-grey-700: #434a5a; /* TÜRETİLMİŞ | Z  8.35:1 | N  1.61:1 */
+  --color-grey-800: #30353d; /* kaynak   | Z 11.61:1 | N  1.16:1 */
+  --color-grey-900: #1a1d22; /* TÜRETİLMİŞ | Z 15.90:1 | N  1.19:1 */
+
+  /* ---- Tipografi ----------------------------------------------------------
+     Tek aile: EB Garamond. next/font ile self-host, latin + latin-ext.
+     Ölçek ~1.25 oranlı. rem kullanılır — kullanıcının tarayıcı font
+     ayarına saygı duyar. px karşılıkları yorumda.
+     -------------------------------------------------------------------- */
+  --font-serif: var(--font-eb-garamond), Georgia, "Times New Roman", serif;
+
+  --text-h1: 2.4375rem; /* 39px */
+  --text-h1--line-height: 1.15;
+  --text-h1--font-weight: 600;
+
+  --text-h2: 1.9375rem; /* 31px */
+  --text-h2--line-height: 1.25;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 1.5625rem; /* 25px */
+  --text-h3--line-height: 1.35;
+  --text-h3--font-weight: 500;
+
+  --text-h4: 1.3125rem; /* 21px */
+  --text-h4--line-height: 1.4;
+  --text-h4--font-weight: 500;
+
+  --text-body-lg: 1.1875rem; /* 19px */
+  --text-body-lg--line-height: 1.55;
+  --text-body-lg--font-weight: 400;
+
+  --text-body: 1.0625rem; /* 17px — varsayılan gövde */
+  --text-body--line-height: 1.6;
+  --text-body--font-weight: 400;
+
+  --text-body-sm: 0.9375rem; /* 15px */
+  --text-body-sm--line-height: 1.6;
+  --text-body-sm--font-weight: 400;
+
+  /* ---- Genişlik -------------------------------------------------------- */
+  --container-page: 72rem; /* 1152px — sayfa kabuğu */
+  --container-prose: 65ch; /* gövde metni satır uzunluğu, 65–70 karakter */
+
+  /* ---- Hero overlay -------------------------------------------------------
+     Fotoğraf üzerindeki beyaz metin için zorunlu. En kötü durum (bembeyaz
+     foto pikseli) hesabıyla minimum 0.66; marj için 0.70 seçildi.
+     0.70'te en kötü durum: #FFFFFF 5.42:1, #F7F8FA 5.10:1.
+     ALT SINIR 0.66 — fotoğraf koyu diye düşürülmez.
+     -------------------------------------------------------------------- */
+  --hero-overlay-opacity: 0.7;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Spacing ölçeği ayrıca tanımlanmaz: Tailwind'in varsayılanı zaten
+   --spacing: 0.25rem (4px) ve çarpımsal ölçek docs/design-system.md §4 ile
+   birebir örtüşür. Onaylı basamaklar:
+     p-1=4  p-2=8  p-3=12  p-4=16  p-6=24  p-8=32  p-12=48  p-16=64  p-24=96
+   Bunların dışındaki basamaklar kullanılmaz. */
+
+/* ==========================================================================
+   Özel utility'ler
+   ========================================================================== */
+
+/* Hero fotoğrafının üzerine gelen düz renk katmanı.
+   Ayrı bir katman olarak konumlandırılır — filter/backdrop-filter ve
+   gradient kullanılmaz. */
+@utility hero-overlay {
+  background-color: var(--color-primary);
+  opacity: var(--hero-overlay-opacity);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Navy zeminli bloklarda focus ring. Açık zemin ring'i (primary) navy
+   üzerinde 1:1 kalır, bu yüzden beyaza çevrilir — 14.26:1. */
+@utility focus-ring-inverse {
+  &:focus-visible,
+  & :focus-visible {
+    outline-color: var(--color-white);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Link/buton hover geçişi — YALNIZCA metin rengi.
+   Tailwind'in `transition-colors` utility'si v4'te `outline-color`'ı da
+   kapsar; bu, focus ring'in 200ms boyunca soluklaşarak belirmesine yol
+   açar. Focus göstergesi anında görünmelidir, bu yüzden geçiş `color`
+   ile sınırlandırılır. Süre CLAUDE.md'nin 150–200ms aralığında. */
+@utility transition-text {
+  transition-property: color;
+  transition-timing-function: var(--default-transition-timing-function);
+  transition-duration: 200ms;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-grey-800);
+    font-family: var(--font-serif);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-weight: var(--text-body--font-weight);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* WCAG 2.1 AA: 2px kalınlık, 3:1 kontrast. Açık zeminde 13.42:1.
+     outline hiçbir koşulda kaldırılmaz. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Hareket her zaman opsiyoneldir. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "Metadata": {
+    "title": "Hukuk Bürosu",
+    "description": "Hukuk bürosunun faaliyet alanları ve iletişim bilgileri."
+  },
+  "Brand": {
+    "name": "Koçak · Sayım · Örnek"
+  },
+  "Nav": {
+    "ariaLabel": "Ana navigasyon",
+    "skipToContent": "İçeriğe geç",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "about": "Hakkımızda",
+    "team": "Ekip",
+    "practiceAreas": "Faaliyet Alanları",
+    "contact": "İletişim"
+  },
+  "LocaleSwitcher": {
+    "ariaLabel": "Dil seçimi",
+    "tr": "Türkçe",
+    "en": "English",
+    "trShort": "TR",
+    "enShort": "EN"
+  },
+  "Footer": {
+    "contactHeading": "İletişim",
+    "legalHeading": "Yasal",
+    "address": "Adres",
+    "phone": "Telefon",
+    "fax": "Faks",
+    "email": "E-posta",
+    "kep": "KEP",
+    "placeholder": "—",
+    "privacy": "KVKK Aydınlatma Metni",
+    "cookiePolicy": "Çerez Politikası",
+    "copyright": "Tüm hakları saklıdır."
+  },
+  "Placeholder": {
+    "shellNotice": "Tasarım kabuğu. Sayfa içeriği henüz eklenmedi."
+  }
+}
