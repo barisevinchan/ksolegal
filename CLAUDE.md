@@ -114,6 +114,12 @@ Bunlar bu projede kesinlikle kullanılmayacak — önerme bile:
 - Neon/canlı renkler, koyu tema varyantı
 - Hover'da büyüyen kartlar, 3D transform, tilt efekti
 
+**İSTİSNA:** Hero üst kenarında, navy header ile fotoğrafı kaynaştırmak
+amacıyla tek renkli (primary → transparent) dikey gradient maske
+kullanılabilir. Bu dekoratif değil, iki bloğu birleştiren yapısal bir
+maskedir. Renkli/çok duraklı gradient, gradient metin ve diğer dekoratif
+gradient kullanımları YASAK olmaya devam eder.
+
 ### ✅ İzin verilen hareket
 
 - 150–200ms opacity/transform geçişleri (link, buton hover)

@@ -98,7 +98,9 @@ beyaz metin için mümkün olan en düşük kontrast. Hesap bu varsayımla yapı
 
 ### 2.3 Uygulama kuralları
 
-- Overlay **düz renktir** — gradient overlay yasak (CLAUDE.md görsel yasak listesi).
+- Overlay **düz renktir** — gradient overlay yasak (CLAUDE.md görsel yasak
+  listesi). Tek istisna §2.4'teki üst kenar maskesidir; o overlay'in
+  yerine geçmez, üstüne biner.
 - `α` **0.66'nın altına indirilemez.** Fotoğraf koyu diye düşürme; kural
   en kötü duruma göre yazılmıştır ve fotoğraf değiştirilebilir.
 - Hero metni `#FFFFFF` veya `#F7F8FA` olur. `grey-200` ve altı **kullanılmaz**.
@@ -106,6 +108,55 @@ beyaz metin için mümkün olan en düşük kontrast. Hesap bu varsayımla yapı
   α sabit olduğu sürece en kötü durum zaten karşılanmıştır.
 - Overlay `<img>`'in üstünde ayrı bir katmandır; `filter`/`backdrop-filter`
   kullanılmaz.
+
+### 2.4 Üst kenar maskesi
+
+Navy header ile hero fotoğrafı arasında keskin bir yatay dikiş oluşuyordu:
+hero'nun ilk piksel satırı `#253050`, header `#1F2A44` — aradaki fark
+görünür bir çizgi bırakıyordu.
+
+Çözüm, hero'nun üst kenarına **primary → transparent dikey gradient maske**
+koymaktır. CLAUDE.md'nin gradient yasağının dar istisnasıdır ve orada
+yazılıdır: tek renkli, iki duraklı, yapısal. Dekoratif gradient, gradient
+metin ve çok duraklı/renkli gradient yasak olmaya devam eder.
+
+```
+@utility hero-top-fade {
+  background-image: linear-gradient(to bottom, var(--color-primary), transparent);
+}
+```
+
+- Yükseklik hero'nun **%25**'i (`h-1/4`) — yüzde olduğu için ham px yok ve
+  hero boyu değişse de oran korunur.
+- `hero-overlay`'in **üstünde**, metnin **altında** durur. Overlay'in yerine
+  geçmez; α = 0.70 kuralı aynen geçerlidir.
+- Katman sırası: `<img>` → `hero-overlay` → `hero-top-fade` → içerik.
+
+#### Dikiş ölçümü (785px genişlik)
+
+| y | gradient α | öncesi | sonrası |
+|---:|---:|---|---|
+| 0 | 1.00 | `#253050` (header'dan 15 fark) | `#1F2A44` (**fark 0**) |
+| 15 | 0.84 | `#242F50` (14) | `#202B46` (2) |
+| 45 | 0.51 | `#252F4E` (13) | `#222C49` (6) |
+| 91 | 0.00 | `#242C48` (7) | `#242C48` (7) |
+
+Hero'nun ilk satırı artık header ile **birebir aynı renktedir**, dikiş
+görünmez.
+
+#### Kontrast etkisi
+
+Maske navy üzerine navy eklediği için kompozit **yalnızca koyulaşır**;
+kontrast düşemez. Ölçüldü:
+
+| Bölge | Maskesiz | Maskeli |
+|---|---:|---:|
+| Tüm hero (en kötü) | 5.43:1 | 5.43:1 |
+| Fade bandı içi (en kötü) | 5.43:1 | **5.70:1** |
+| `h1` kutusu (en kötü) | 5.43:1 | 5.43:1 |
+
+Alt sınır hâlâ overlay'in tek başına verdiği **5.43:1**'dir — en kötü piksel
+maskenin bittiği bölgenin altında kalıyor. Yani §2.1'deki hesap bozulmaz.
 
 ---
 

@@ -56,6 +56,23 @@ export default async function HomePage({
         />
         <div aria-hidden="true" className="hero-overlay absolute inset-0" />
 
+        {/*
+          Üst kenar maskesi: navy header ile fotoğraf arasındaki keskin
+          geçişi kaldırır. Yüksekliği hero'nun %25'i (`h-1/4`) — yüzde
+          olduğu için ham px yok ve hero boyu değişse de oran korunur.
+
+          `hero-overlay`'in ÜSTÜNDE, metnin ALTINDA. Navy üzerine navy
+          eklediği için kontrastı yalnızca artırır; alt sınır hâlâ
+          overlay'in tek başına verdiği 5.43:1'dir.
+
+          CLAUDE.md gradient yasağının dar istisnası — bkz. globals.css
+          `hero-top-fade`.
+        */}
+        <div
+          aria-hidden="true"
+          className="hero-top-fade absolute inset-x-0 top-0 h-1/4"
+        />
+
         <Container className="relative">
           <div className="max-w-prose py-24">
             {/* Overlay üstünde yalnızca #FFFFFF ve #F7F8FA kullanılır;

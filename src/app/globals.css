@@ -103,6 +103,26 @@
   opacity: var(--hero-overlay-opacity);
 }
 
+/* Hero'nun ÜST kenarında navy header ile fotoğrafı kaynaştıran maske.
+   CLAUDE.md "Görsel olarak YASAK" listesindeki gradient yasağının dar
+   istisnası: tek renkli (primary → transparent), dikey, iki duraklı.
+   Dekoratif değil — header bloğu ile hero bloğu arasındaki keskin
+   kenarı kaldıran yapısal bir katman.
+
+   `hero-overlay`'in ÜSTÜNDE ayrı bir katman olarak durur, onun yerine
+   geçmez. Navy üzerine navy eklediği için metin kontrastını yalnızca
+   ARTIRIR (ölçüm: docs/design-system.md §2.4).
+
+   Renkli/çok duraklı gradient, gradient metin ve dekoratif gradient
+   kullanımları yasak olmaya devam eder. */
+@utility hero-top-fade {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    transparent
+  );
+}
+
 /* Navy zeminli bloklarda focus ring. Açık zemin ring'i (primary) navy
    üzerinde 1:1 kalır, bu yüzden beyaza çevrilir — 14.26:1. */
 @utility focus-ring-inverse {
