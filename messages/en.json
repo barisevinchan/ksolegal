@@ -49,8 +49,9 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
-    "heroTitle": "Lorem ipsum dolor sit amet, consectetur",
+    "heroTitle": "Welcome to Koçak | Sayım | Örnek Law Office",
     "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.",
+    "heroImageAlt": "The Bosphorus and the İstanbul skyline at night",
     "linksHeading": "Pages"
   },
   "About": {
@@ -60,25 +61,32 @@
   },
   "Team": {
     "title": "Team",
-    "metaDescription": "Lawyers practising at the office.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam.",
-    "memberName": "Lawyer Name Surname {index}",
+    "metaDescription": "Attorneys practising at the office.",
+    "lead": "The office is run by three partner attorneys. Each attorney's education, fields of work and registration details are set out on their own page.",
+    "sections": {
+      "education": "Education",
+      "practiceAreas": "Practice Areas",
+      "languages": "Languages",
+      "registry": "Registration Details",
+      "contact": "Contact"
+    },
     "fields": {
-      "academicTitle": "Academic title",
       "tbbNo": "TBB registration no",
       "baroNo": "Bar registration no",
+      "bar": "Bar association",
       "admission": "Admitted to the bar",
-      "university": "University",
-      "languages": "Foreign languages",
+      "mediator": "Expert Mediator",
       "email": "E-mail",
-      "phone": "Phone"
-    }
+      "phone": "Phone",
+      "kep": "KEP"
+    },
+    "mediatorValue": "Registry no: {no} · since {year}"
   },
   "PracticeAreas": {
     "title": "Practice Areas",
-    "metaDescription": "Areas of law in which the office practises.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation ullamco.",
-    "areaTitle": "Practice Area {index}"
+    "metaDescription": "Fields of law in which the office works.",
+    "lead": "The fields of law in which the office works are set out below. Each field page explains the matters on which legal advice is given and the proceedings that are conducted in that field.",
+    "lawyersHeading": "Attorneys working in this field"
   },
   "Contact": {
     "title": "Contact",

@@ -1,0 +1,321 @@
+{
+  "_note": "Faaliyet alanları. Dil bilgilendiricidir, pazarlama dili değildir: üstünlük iddiası, deneyim süresi, dava/müvekkil örneği ve rakam KULLANILMAZ (TBB Reklam Yasağı Yönetmeliği). Alanlar 'uzmanlık anlamına gelmemek kaydıyla' verilebilir (Madde 7/d). Slug'lar nötrdür, anahtar kelime içermez (Madde 7/e). 'id' avukatlar.json'daki practiceAreas alanının anahtarıdır ve Türkçe slug ile aynıdır. Alanda çalışan avukatlar avukatlar.json'dan TÜRETİLİR, burada tekrarlanmaz.",
+  "areas": [
+    {
+      "id": "is-hukuku",
+      "slug": { "tr": "is-hukuku", "en": "employment-law" },
+      "title": { "tr": "İş Hukuku", "en": "Employment Law" },
+      "lead": {
+        "tr": "Bireysel ve toplu iş ilişkilerinin kurulmasından sona ermesine kadar geçen süreçte tarafların hukuki konumunu düzenleyen alandır. Büro bu alanda hem sözleşme ve yapılandırma çalışmaları hem de uyuşmazlık süreçleri yürütmektedir.",
+        "en": "This field governs the legal position of the parties throughout the life of individual and collective employment relationships, from formation to termination. The office carries out both contractual and structuring work and dispute proceedings in this field."
+      },
+      "topics": [
+        {
+          "title": { "tr": "Bireysel iş ilişkileri", "en": "Individual employment relationships" },
+          "items": [
+            { "tr": "İş sözleşmesinin kurulması ve sözleşme türlerinin seçimi", "en": "Formation of the employment contract and selection of contract type" },
+            { "tr": "İşyeri yapılanması, çalışma düzeni ve iç yönetmelikler", "en": "Workplace structuring, working arrangements and internal regulations" },
+            { "tr": "Ücret, fazla çalışma ve yıllık izin uygulamaları", "en": "Wages, overtime and annual leave practices" },
+            { "tr": "Fesih usulü ve iş güvencesi hükümlerinin uygulanması", "en": "Termination procedure and the application of job security provisions" },
+            { "tr": "Rekabet yasağı ve gizlilik taahhütleri", "en": "Non-competition undertakings and confidentiality commitments" }
+          ]
+        },
+        {
+          "title": { "tr": "Toplu iş ilişkileri ve sendika hukuku", "en": "Collective employment relations and trade union law" },
+          "items": [
+            { "tr": "Sendika yetki tespiti ve yetkiye itiraz süreçleri", "en": "Trade union authority determination and objection proceedings" },
+            { "tr": "Toplu iş sözleşmesi görüşmelerinin yürütülmesi", "en": "Conduct of collective bargaining negotiations" },
+            { "tr": "Toplu iş sözleşmesinin uygulanması ve yorum uyuşmazlıkları", "en": "Application of collective labour agreements and interpretation disputes" },
+            { "tr": "İşçi ve işveren sendikalarıyla yürütülen ilişkiler", "en": "Relations conducted with employee and employer trade unions" }
+          ]
+        },
+        {
+          "title": { "tr": "Sınır ötesi istihdam", "en": "Cross-border employment" },
+          "items": [
+            { "tr": "Yabancıların Türkiye'de çalışma izni süreçleri", "en": "Work permit processes for foreign nationals in Türkiye" },
+            { "tr": "Türk çalışanların yurt dışında görevlendirilmesi", "en": "Assignment of Turkish employees abroad" },
+            { "tr": "Birden fazla ülkede çalışma hâlinde uygulanacak hukuk ve sosyal güvenlik", "en": "Applicable law and social security where work is performed in more than one country" }
+          ]
+        },
+        {
+          "title": { "tr": "Uyuşmazlık süreçleri", "en": "Dispute proceedings" },
+          "items": [
+            { "tr": "Dava öncesi hukuki değerlendirme", "en": "Pre-litigation legal assessment" },
+            { "tr": "Zorunlu ve ihtiyari arabuluculuk", "en": "Mandatory and voluntary mediation" },
+            { "tr": "İş mahkemeleri önündeki yargılama", "en": "Proceedings before the labour courts" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gayrimenkul-ve-insaat-hukuku",
+      "slug": {
+        "tr": "gayrimenkul-ve-insaat-hukuku",
+        "en": "real-estate-and-construction-law"
+      },
+      "title": {
+        "tr": "Gayrimenkul ve İnşaat Hukuku",
+        "en": "Real Estate and Construction Law"
+      },
+      "lead": {
+        "tr": "Taşınmaz mülkiyetinin devri, yapılaşma süreçleri ve bunlara bağlı sözleşme ilişkilerini kapsayan alandır. Sözleşmelerin kurulması kadar, uygulamada doğan uyuşmazlıkların yürütülmesini de içerir.",
+        "en": "This field covers the transfer of immovable property, construction processes and the contractual relationships connected with them. It includes both the drawing up of contracts and the conduct of disputes arising in practice."
+      },
+      "topics": [
+        {
+          "title": { "tr": "İnşaat sözleşmeleri", "en": "Construction contracts" },
+          "items": [
+            { "tr": "Kat karşılığı inşaat sözleşmeleri", "en": "Construction contracts in return for land share" },
+            { "tr": "Anahtar teslim yapım sözleşmeleri", "en": "Turnkey works contracts" },
+            { "tr": "İş sahibi ve yüklenici yükümlülüklerinin düzenlenmesi", "en": "Structuring of employer and contractor obligations" },
+            { "tr": "Teslim, ayıp ve gecikmeye bağlı sonuçlar", "en": "Consequences of delivery, defects and delay" }
+          ]
+        },
+        {
+          "title": { "tr": "Taşınmaz devri ve tapu işlemleri", "en": "Property transfer and land registry matters" },
+          "items": [
+            { "tr": "Taşınmaz satış vaadi sözleşmeleri", "en": "Preliminary contracts for the sale of immovable property" },
+            { "tr": "Tapu iptali ve tescil davaları", "en": "Title deed cancellation and registration proceedings" },
+            { "tr": "Şerh, ipotek ve diğer sınırlı ayni haklar", "en": "Annotations, mortgages and other limited rights in rem" }
+          ]
+        },
+        {
+          "title": { "tr": "Kira ilişkileri", "en": "Lease relationships" },
+          "items": [
+            { "tr": "Ticari kira sözleşmelerinin kurulması ve uyarlanması", "en": "Formation and adaptation of commercial lease agreements" },
+            { "tr": "Kira bedelinin tespiti", "en": "Determination of rent" },
+            { "tr": "Tahliye süreçleri", "en": "Eviction proceedings" }
+          ]
+        },
+        {
+          "title": { "tr": "İmar ve arazi düzenlemesi", "en": "Zoning and land management" },
+          "items": [
+            { "tr": "İmar planlarına karşı başvurular", "en": "Applications against zoning plans" },
+            { "tr": "İfraz, tevhit ve şüyulandırma işlemleri", "en": "Subdivision, consolidation and co-ownership procedures" },
+            { "tr": "İmar durumu ve yapı ruhsatı süreçleri", "en": "Zoning status and building permit processes" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kamu-hukuku-ve-insan-haklari",
+      "slug": {
+        "tr": "kamu-hukuku-ve-insan-haklari",
+        "en": "public-law-and-human-rights"
+      },
+      "title": {
+        "tr": "Kamu Hukuku ve İnsan Hakları",
+        "en": "Public Law and Human Rights"
+      },
+      "lead": {
+        "tr": "İdarenin işlem ve eylemlerine karşı başvuru yolları ile temel hak ve özgürlüklerin yargısal korunmasını kapsayan alandır. Başvuru yollarının sırası, süreler ve usul kuralları bu alanda belirleyicidir.",
+        "en": "This field covers the remedies available against administrative acts and actions, together with the judicial protection of fundamental rights and freedoms. The order of remedies, time limits and procedural rules are decisive in this field."
+      },
+      "topics": [
+        {
+          "title": {
+            "tr": "Anayasa Mahkemesi'ne bireysel başvuru",
+            "en": "Individual application to the Constitutional Court"
+          },
+          "items": [
+            { "tr": "Kabul edilebilirlik koşullarının değerlendirilmesi", "en": "Assessment of admissibility conditions" },
+            { "tr": "Olağan başvuru yollarının tüketilmesi", "en": "Exhaustion of ordinary remedies" },
+            { "tr": "Başvuru dilekçesinin hazırlanması ve takibi", "en": "Preparation and follow-up of the application" },
+            { "tr": "İhlal kararı sonrası yeniden yargılama süreçleri", "en": "Retrial proceedings following a violation judgment" }
+          ]
+        },
+        {
+          "title": {
+            "tr": "Avrupa İnsan Hakları Mahkemesi başvuruları",
+            "en": "Applications to the European Court of Human Rights"
+          },
+          "items": [
+            { "tr": "Başvuru koşulları ve sürelerin değerlendirilmesi", "en": "Assessment of application conditions and time limits" },
+            { "tr": "Başvurunun hazırlanması ve yürütülmesi", "en": "Preparation and conduct of the application" },
+            { "tr": "Dostane çözüm süreçleri", "en": "Friendly settlement procedures" }
+          ]
+        },
+        {
+          "title": { "tr": "İdari yargı", "en": "Administrative litigation" },
+          "items": [
+            { "tr": "İptal ve tam yargı davaları", "en": "Annulment actions and full remedy actions" },
+            { "tr": "Yürütmenin durdurulması talepleri", "en": "Requests for stay of execution" },
+            { "tr": "İdari başvuru yolları ve süre hesabı", "en": "Administrative remedies and calculation of time limits" }
+          ]
+        },
+        {
+          "title": {
+            "tr": "Kamu ve özel sektör ihaleleri",
+            "en": "Public and private sector tenders"
+          },
+          "items": [
+            { "tr": "İhale dokümanına ve ihale işlemlerine itiraz", "en": "Objections to tender documents and tender procedures" },
+            { "tr": "Kamu İhale Kurumu'na yapılan başvurular", "en": "Applications to the Public Procurement Authority" },
+            { "tr": "Sözleşmenin uygulanmasından doğan uyuşmazlıklar", "en": "Disputes arising from performance of the contract" }
+          ]
+        },
+        {
+          "title": { "tr": "Sağlık mevzuatına uyum", "en": "Healthcare regulatory compliance" },
+          "items": [
+            { "tr": "Sağlık hizmeti sunucularının ruhsat ve faaliyet izni süreçleri", "en": "Licensing and operating permit processes for healthcare providers" },
+            { "tr": "Hizmet sunumuna ilişkin düzenlemelere uyum", "en": "Compliance with regulations on service delivery" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cevre-ve-karbon-hukuku",
+      "slug": {
+        "tr": "cevre-ve-karbon-hukuku",
+        "en": "environmental-and-carbon-law"
+      },
+      "title": {
+        "tr": "Çevre ve Karbon Hukuku",
+        "en": "Environmental and Carbon Law"
+      },
+      "lead": {
+        "tr": "İklim değişikliğiyle mücadeleye ilişkin ulusal ve uluslararası düzenlemelerin işletmeler üzerinde doğurduğu yükümlülükleri kapsayan alandır. Yükümlülüklerin ticari sözleşmelere ve yönetişim süreçlerine yansıtılmasını da içerir.",
+        "en": "This field covers the obligations that national and international climate regulations create for businesses. It also includes reflecting those obligations in commercial contracts and governance processes."
+      },
+      "topics": [
+        {
+          "title": { "tr": "Emisyon Ticaret Sistemi", "en": "Emissions Trading System" },
+          "items": [
+            { "tr": "Tahsisat ve izleme yükümlülükleri", "en": "Allocation and monitoring obligations" },
+            { "tr": "Raporlama ve doğrulama süreçleri", "en": "Reporting and verification processes" },
+            { "tr": "Sistem kapsamına giren tesislerin uyum çalışmaları", "en": "Compliance work for installations within the scope of the system" }
+          ]
+        },
+        {
+          "title": { "tr": "Karbon ayak izi ve raporlama", "en": "Carbon footprint and reporting" },
+          "items": [
+            { "tr": "Kurumsal karbon ayak izi hesaplama süreçlerine hukuki destek", "en": "Legal support for corporate carbon footprint calculation processes" },
+            { "tr": "ISO 14071 çerçevesiyle uyumlu çalışmalar", "en": "Work aligned with the ISO 14071 framework" }
+          ]
+        },
+        {
+          "title": { "tr": "Yeşil dönüşüm projeleri", "en": "Green transformation projects" },
+          "items": [
+            { "tr": "Sürdürülebilirlik yükümlülüklerinin ticari sözleşmelere yansıtılması", "en": "Reflecting sustainability obligations in commercial contracts" },
+            { "tr": "Yönetişim süreçlerine entegrasyon", "en": "Integration into governance processes" },
+            { "tr": "Geçiş riskine karşı yol haritalarının hukuki çerçevesi", "en": "Legal framework of roadmaps addressing transition risk" }
+          ]
+        },
+        {
+          "title": { "tr": "Çevre mevzuatına uyum", "en": "Environmental regulatory compliance" },
+          "items": [
+            { "tr": "İzin ve lisans süreçleri", "en": "Permit and licence processes" },
+            { "tr": "Denetim ve idari yaptırım süreçleri", "en": "Inspection and administrative sanction proceedings" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bankacilik-ve-finans-hukuku",
+      "slug": {
+        "tr": "bankacilik-ve-finans-hukuku",
+        "en": "banking-and-finance-law"
+      },
+      "title": {
+        "tr": "Bankacılık ve Finans Hukuku",
+        "en": "Banking and Finance Law"
+      },
+      "lead": {
+        "tr": "Kredi, türev ve finansman işlemlerinin sözleşmesel yapısını ve bunlara bağlı teminat ilişkilerini kapsayan alandır. İşlemlerin sınır ötesi niteliği hâlinde uygulanacak hukuk ve icra edilebilirlik de bu alanın konusudur.",
+        "en": "This field covers the contractual structure of lending, derivatives and financing transactions and the security relationships connected with them. Where transactions are cross-border, applicable law and enforceability also fall within this field."
+      },
+      "topics": [
+        {
+          "title": { "tr": "Kredi işlemleri", "en": "Lending transactions" },
+          "items": [
+            { "tr": "İkili ve sendikasyon kredi sözleşmeleri", "en": "Bilateral and syndicated loan agreements" },
+            { "tr": "LMA esaslı dokümantasyon", "en": "LMA-based documentation" },
+            { "tr": "Sınır ötesi kredi yapıları", "en": "Cross-border lending structures" },
+            { "tr": "Sözleşme şartlarının müzakeresi ve kapanış süreçleri", "en": "Negotiation of contract terms and closing processes" }
+          ]
+        },
+        {
+          "title": { "tr": "Türev işlemler", "en": "Derivatives transactions" },
+          "items": [
+            { "tr": "ISDA çerçeve sözleşmeleri ve ekleri", "en": "ISDA master agreements and schedules" },
+            { "tr": "Teminatlandırma düzenlemeleri", "en": "Credit support arrangements" },
+            { "tr": "Netleştirme ve temerrüt hükümleri", "en": "Netting and event of default provisions" }
+          ]
+        },
+        {
+          "title": { "tr": "Ticaret ve alacak finansmanı", "en": "Trade and receivables finance" },
+          "items": [
+            { "tr": "Akreditif ve teminat mektubu işlemleri", "en": "Letters of credit and guarantee transactions" },
+            { "tr": "Faktoring ve alacak devri yapıları", "en": "Factoring and receivables assignment structures" },
+            { "tr": "Emtia finansmanı düzenlemeleri", "en": "Commodity finance arrangements" }
+          ]
+        },
+        {
+          "title": { "tr": "Teminat ve nakit yönetimi", "en": "Security and cash management" },
+          "items": [
+            { "tr": "Rehin, ipotek ve alacak temliki dokümantasyonu", "en": "Pledge, mortgage and receivables assignment documentation" },
+            { "tr": "Nakit yönetimi ve hesap yapıları", "en": "Cash management and account structures" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bilisim-ve-kisisel-verilerin-korunmasi",
+      "slug": {
+        "tr": "bilisim-ve-kisisel-verilerin-korunmasi",
+        "en": "technology-and-data-protection"
+      },
+      "title": {
+        "tr": "Bilişim ve Kişisel Verilerin Korunması",
+        "en": "Technology and Data Protection"
+      },
+      "lead": {
+        "tr": "Teknoloji hizmetlerinin sözleşmesel çerçevesi ile kişisel verilerin işlenmesine ilişkin yükümlülükleri kapsayan alandır. Sözleşme metinleri kadar, işletme içi süreçlerin mevzuata uygun kurgulanmasını da içerir.",
+        "en": "This field covers the contractual framework of technology services together with obligations relating to the processing of personal data. It includes not only contract drafting but also structuring internal processes in line with legislation."
+      },
+      "topics": [
+        {
+          "title": {
+            "tr": "Teknoloji ve hizmet sözleşmeleri",
+            "en": "Technology and services agreements"
+          },
+          "items": [
+            { "tr": "Yazılım lisans ve geliştirme sözleşmeleri", "en": "Software licence and development agreements" },
+            { "tr": "Bilgi işlem hizmet sözleşmeleri ve iş tanımları", "en": "IT services agreements and statements of work" },
+            { "tr": "Hizmet seviyesi taahhütleri", "en": "Service level commitments" },
+            { "tr": "İş ortaklığı ve dağıtım düzenlemeleri", "en": "Partnership and distribution arrangements" }
+          ]
+        },
+        {
+          "title": { "tr": "Ödeme sistemleri ve e-ticaret", "en": "Payment systems and e-commerce" },
+          "items": [
+            { "tr": "Ödeme hizmeti sağlayıcılarıyla kurulan ilişkiler", "en": "Relationships established with payment service providers" },
+            { "tr": "Mesafeli satış ve platform düzenlemeleri", "en": "Distance selling and platform arrangements" },
+            { "tr": "Tüketici mevzuatına uyum", "en": "Compliance with consumer legislation" }
+          ]
+        },
+        {
+          "title": {
+            "tr": "Kişisel verilerin korunması",
+            "en": "Protection of personal data"
+          },
+          "items": [
+            { "tr": "Veri envanteri ve mevcut durum analizi", "en": "Data inventory and gap analysis" },
+            { "tr": "Aydınlatma ve açık rıza süreçlerinin kurulması", "en": "Establishing information notice and explicit consent processes" },
+            { "tr": "Veri işleyen sözleşmeleri", "en": "Data processor agreements" },
+            { "tr": "Yurt dışına veri aktarımı", "en": "Transfer of data abroad" },
+            { "tr": "Veri ihlali bildirimi süreçleri", "en": "Data breach notification procedures" }
+          ]
+        },
+        {
+          "title": { "tr": "Kurumsal yapılar ve yatırım", "en": "Corporate structures and investment" },
+          "items": [
+            { "tr": "Pay devri ve ortaklık sözleşmeleri", "en": "Share transfer and shareholders' agreements" },
+            { "tr": "Çalışan hisse planları ve hak ediş modelleri", "en": "Employee share plans and vesting models" },
+            { "tr": "Fikri mülkiyet ve gizlilik düzenlemeleri", "en": "Intellectual property and confidentiality arrangements" }
+          ]
+        }
+      ]
+    }
+  ]
+}

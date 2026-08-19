@@ -1,0 +1,137 @@
+{
+  "_note": "Veri kaynağı: kaynak/Ortaklar Broşür/*.pdf. İçerik CLAUDE.md 'İzin verilen içerik' (TBB Reklam Yasağı Yönetmeliği Madde 7/d) listesiyle SINIRLIDIR. Yeni alan eklemeden önce o listeye bakılmalıdır. Boş string = broşürde bulunamayan veri; uydurulmadı, ilgili bölüm render edilmez.",
+  "lawyers": [
+    {
+      "slug": "berkay-kocak",
+      "name": "Berkay Koçak",
+      "photo": "/ekip/berkay-kocak.jpg",
+      "academicTitle": "LL.M.",
+      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
+      "intro": [
+        {
+          "tr": "İş hukuku, sendika hukuku ve toplu iş sözleşmesi süreçleri ile uyuşmazlık çözümü alanlarında çalışmaktadır. Bireysel ve toplu iş ilişkilerinin kurulması, işyeri yapılanması ve fesih süreçleri; sendika yetki tespiti ve buna karşı yapılan itirazlar; toplu iş sözleşmesi görüşmelerinin yürütülmesi konularında hukuki danışmanlık vermektedir.",
+          "en": "He works in the fields of employment law, trade union law and collective bargaining, together with dispute resolution. He advises on the formation of individual and collective employment relationships, workplace structuring and termination processes; trade union authority determinations and objections raised against them; and the conduct of collective bargaining negotiations."
+        },
+        {
+          "tr": "Yabancıların Türkiye'de çalışmasına ve Türk çalışanların yurt dışında görevlendirilmesine ilişkin istihdam yapıları da çalışma konuları arasındadır. Uyuşmazlıklarda dava öncesi değerlendirme, arabuluculuk ve yargılama aşamalarında çalışmaktadır.",
+          "en": "Employment arrangements concerning foreign nationals working in Türkiye and Turkish employees assigned abroad are also among his areas of work. In disputes, he works at the pre-litigation assessment, mediation and judicial stages."
+        }
+      ],
+      "education": [
+        {
+          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
+          "degree": { "tr": "Özel Hukuk Yüksek Lisansı (LL.M.)", "en": "LL.M. in Private Law" },
+          "year": "2020",
+          "note": {
+            "tr": "Tez: Basın İş Kanunu Uyarınca İşverenin Ücret Ödeme Borcu",
+            "en": "Thesis: The Employer's Obligation to Pay Wages Pursuant to the Press Labour Law"
+          }
+        },
+        {
+          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
+          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "year": "2015",
+          "note": null
+        }
+      ],
+      "practiceAreas": ["is-hukuku", "gayrimenkul-ve-insaat-hukuku"],
+      "languages": [],
+      "registry": {
+        "tbbNo": "",
+        "baroNo": "",
+        "bar": { "tr": "", "en": "" },
+        "admission": "",
+        "mediator": { "registryNo": "29720", "since": "2022" }
+      },
+      "contact": { "email": "", "phone": "", "kep": "" }
+    },
+    {
+      "slug": "berhudan-huseyin-sayim",
+      "name": "Berhudan Hüseyin Sayım",
+      "photo": "/ekip/berhudan-huseyin-sayim.jpg",
+      "academicTitle": "",
+      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
+      "intro": [
+        {
+          "tr": "Bankacılık ve finans işlemleri, teknoloji sözleşmeleri ve kişisel verilerin korunması alanlarında çalışmaktadır. Sınır ötesi kredi işlemleri ve piyasa dokümantasyonu, türev işlemlere ilişkin ISDA çerçeve sözleşmeleri, ticaret ve alacak finansmanı ile nakit yönetimi ve teminat yapıları konularında hukuki danışmanlık vermektedir.",
+          "en": "He works in the fields of banking and finance transactions, technology contracts and the protection of personal data. He advises on cross-border lending transactions and markets documentation, ISDA framework agreements for derivatives, trade and receivables finance, and cash management and security structures."
+        },
+        {
+          "tr": "Teknoloji ve bilgi işlem hizmet sözleşmeleri, ödeme sistemleri ve e-ticaret düzenlemeleri; kurucu ve yatırımcı ilişkileri ile pay devri ve çalışan hisse planlarına ilişkin kurumsal dokümantasyon da çalışma konuları arasındadır. Kişisel verilerin korunması mevzuatına uyum programlarının kurulması ve yürütülmesi konusunda çalışmaktadır.",
+          "en": "Technology and IT services agreements, payment systems and e-commerce arrangements, together with corporate documentation on founder and investor relations, share transfers and employee share plans, are also among his areas of work. He works on establishing and running compliance programmes under personal data protection legislation."
+        }
+      ],
+      "education": [
+        {
+          "institution": { "tr": "Galatasaray Üniversitesi", "en": "Galatasaray University" },
+          "degree": { "tr": "Finansal İktisat Yüksek Lisansı", "en": "M.A. in Financial Economics" },
+          "year": "2021",
+          "note": {
+            "tr": "Tez: Anonim Şirketlerin Hesap Tablolarında Manipülasyonlar",
+            "en": "Thesis: Manipulations in Statement of Accounts of Incorporated Companies"
+          }
+        },
+        {
+          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
+          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "year": "2017",
+          "note": null
+        }
+      ],
+      "practiceAreas": [
+        "bankacilik-ve-finans-hukuku",
+        "bilisim-ve-kisisel-verilerin-korunmasi"
+      ],
+      "languages": [],
+      "registry": {
+        "tbbNo": "",
+        "baroNo": "",
+        "bar": { "tr": "", "en": "" },
+        "admission": "",
+        "mediator": null
+      },
+      "contact": { "email": "", "phone": "", "kep": "" }
+    },
+    {
+      "slug": "alper-ornek",
+      "name": "Alper Örnek",
+      "photo": "/ekip/alper-ornek.jpg",
+      "academicTitle": "LL.M.",
+      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
+      "intro": [
+        {
+          "tr": "Kamu hukuku uyuşmazlıkları, ticari altyapı işlemleri ve çevresel sürdürülebilirlik alanlarında çalışmaktadır. Anayasa Mahkemesi'ne bireysel başvuru ve Avrupa İnsan Hakları Mahkemesi başvurularının hazırlanması ve yürütülmesi, idari yargı süreçleri ile sağlık hizmeti sunucularının tabi olduğu mevzuata uyum konularında hukuki danışmanlık vermektedir.",
+          "en": "He works in the fields of public law disputes, commercial infrastructure transactions and environmental sustainability. He advises on the preparation and conduct of individual applications to the Constitutional Court and applications to the European Court of Human Rights, on administrative litigation, and on regulatory compliance for healthcare providers."
+        },
+        {
+          "tr": "Ticari ve anahtar teslim yapım sözleşmeleri, kamu ve özel sektör ihaleleri ile imar, ifraz ve tevhit süreçleri de çalışma konuları arasındadır. Ayrıca karbon hukuku, Emisyon Ticaret Sistemi uygulamaları ve yeşil dönüşüm projelerine ilişkin uyum çalışmaları yürütmektedir.",
+          "en": "Commercial and turnkey construction contracts, public and private sector tenders, and zoning, subdivision and consolidation processes are also among his areas of work. He additionally carries out compliance work relating to carbon law, Emissions Trading System implementation and green transformation projects."
+        }
+      ],
+      "education": [
+        {
+          "institution": { "tr": "Galatasaray Üniversitesi", "en": "Galatasaray University" },
+          "degree": { "tr": "İnsan Hakları Hukuku Yüksek Lisansı (LL.M.)", "en": "LL.M. in Human Rights Law" },
+          "year": "2020",
+          "note": null
+        },
+        {
+          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
+          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "year": "2016",
+          "note": null
+        }
+      ],
+      "practiceAreas": ["kamu-hukuku-ve-insan-haklari", "cevre-ve-karbon-hukuku"],
+      "languages": [],
+      "registry": {
+        "tbbNo": "",
+        "baroNo": "",
+        "bar": { "tr": "", "en": "" },
+        "admission": "",
+        "mediator": { "registryNo": "31075", "since": "2023" }
+      },
+      "contact": { "email": "", "phone": "", "kep": "" }
+    }
+  ]
+}

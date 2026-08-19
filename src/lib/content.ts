@@ -1,0 +1,144 @@
+import avukatlar from "../../content/avukatlar.json";
+import faaliyetAlanlari from "../../content/faaliyet-alanlari.json";
+
+/**
+ * Site içeriğinin tek kaynağı. Alan adları koda baktığı için İngilizce;
+ * metin değerleri `{ tr, en }` biçiminde iki dilli tutulur ki müşteri iki
+ * dili yan yana görüp tek dosyadan düzeltebilsin.
+ *
+ * ⚠️ Avukat içeriği CLAUDE.md "İzin verilen içerik" listesiyle (TBB Reklam
+ * Yasağı Yönetmeliği Madde 7/d) SINIRLIDIR. Yeni alan eklemeden önce o
+ * listeye bakılmalıdır.
+ *
+ * Boş string / null = broşürde bulunamayan veri. Uydurulmadı; ilgili
+ * bölüm render edilmez (bkz. `hasText`).
+ */
+export type L10n = { tr: string; en: string };
+
+/** İki dilli değerden aktif dilin metnini alır. Bilinmeyen dil → Türkçe. */
+export function pick(value: L10n, locale: string): string {
+  return locale === "en" ? value.en : value.tr;
+}
+
+/**
+ * Veri girilmiş mi? Boş bölümlerin render edilmemesi için kullanılır —
+ * ziyaretçiye bir sürü tire göstermek yerine bölüm hiç çıkmaz.
+ */
+export function hasText(value: string | L10n | null | undefined): boolean {
+  if (!value) return false;
+  if (typeof value === "string") return value.trim().length > 0;
+  return value.tr.trim().length > 0 || value.en.trim().length > 0;
+}
+
+/* ==========================================================================
+   Avukatlar
+   ========================================================================== */
+
+export type Education = {
+  institution: L10n;
+  degree: L10n;
+  year: string;
+  note: L10n | null;
+};
+
+export type Registry = {
+  tbbNo: string;
+  baroNo: string;
+  bar: L10n;
+  admission: string;
+  /** Avukatlık sicilinden ayrı bir meslek sicili. */
+  mediator: { registryNo: string; since: string } | null;
+};
+
+export type Contact = { email: string; phone: string; kep: string };
+
+export type Lawyer = {
+  slug: string;
+  name: string;
+  photo: string;
+  /** Yalnızca hukuk alanındaki unvan. Yoksa boş string. */
+  academicTitle: string;
+  role: L10n;
+  intro: L10n[];
+  education: Education[];
+  /** `faaliyet-alanlari.json` içindeki alanların `id` değerleri. */
+  practiceAreas: string[];
+  languages: L10n[];
+  registry: Registry;
+  contact: Contact;
+};
+
+export const lawyers = avukatlar.lawyers as readonly Lawyer[];
+
+export const lawyerSlugs: readonly string[] = lawyers.map((l) => l.slug);
+
+export function getLawyer(slug: string): Lawyer | undefined {
+  return lawyers.find((l) => l.slug === slug);
+}
+
+/** "LL.M. · Avukat · Ortak" — akademik unvan yoksa atlanır. */
+export function titleLine(lawyer: Lawyer, locale: string): string {
+  return [lawyer.academicTitle, pick(lawyer.role, locale)]
+    .filter((part) => part.length > 0)
+    .join(" · ");
+}
+
+/* ==========================================================================
+   Faaliyet alanları
+   ========================================================================== */
+
+export type Topic = { title: L10n; items: L10n[] };
+
+export type PracticeArea = {
+  id: string;
+  /** Slug dile göre değişir: /faaliyet-alanlari/is-hukuku ↔ /en/practice-areas/employment-law */
+  slug: L10n;
+  title: L10n;
+  lead: L10n;
+  topics: Topic[];
+};
+
+export const practiceAreas = faaliyetAlanlari.areas as readonly PracticeArea[];
+
+export function getAreaBySlug(
+  slug: string,
+  locale: string,
+): PracticeArea | undefined {
+  return practiceAreas.find((area) => pick(area.slug, locale) === slug);
+}
+
+export function getAreaById(id: string): PracticeArea | undefined {
+  return practiceAreas.find((area) => area.id === id);
+}
+
+/**
+ * Alan → avukat ilişkisi TÜRETİLİR; alan dosyasında avukat listesi
+ * tutulmaz. Böylece ilişki tek yerde (avukatlar.json) tanımlı kalır ve
+ * iki liste birbirinden kayamaz.
+ */
+export function getLawyersForArea(areaId: string): readonly Lawyer[] {
+  return lawyers.filter((l) => l.practiceAreas.includes(areaId));
+}
+
+export function getAreasForLawyer(lawyer: Lawyer): PracticeArea[] {
+  return lawyer.practiceAreas
+    .map(getAreaById)
+    .filter((area): area is PracticeArea => area !== undefined);
+}
+
+/**
+ * Dil değiştirici için slug sözlüğü: her slug (iki dilde de) kendi
+ * `{ tr, en }` çiftine bakar. Eşlemede olmayan slug — avukat adları —
+ * olduğu gibi geçer, çünkü kişi adları çevrilmez.
+ *
+ * `Header` bunu hesaplayıp `LocaleSwitcher`'a prop olarak verir; böylece
+ * içerik dosyasının tamamı client bundle'a girmez.
+ */
+export function buildSlugMap(): Record<string, L10n> {
+  const map: Record<string, L10n> = {};
+  for (const area of practiceAreas) {
+    map[area.slug.tr] = area.slug;
+    map[area.slug.en] = area.slug;
+  }
+  return map;
+}

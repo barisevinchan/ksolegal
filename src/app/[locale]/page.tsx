@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 
 import Container from "@/components/Container";
 import { Link } from "@/i18n/navigation";
@@ -35,10 +36,24 @@ export default async function HomePage({
         Overlay opaklığı `--hero-overlay-opacity` (0.70) tokenından gelir
         ve 0.66'nın altına indirilemez — hesap en kötü durum (bembeyaz
         fotoğraf pikseli) varsayımıyla yapılmıştır, docs/design-system.md §2.
-        Fotoğraf henüz yok; yerinde gri kutu duruyor.
+
+        Bu fotoğraf için ölçüm yapıldı: 2560×1440'lık dosyanın 3.686.400
+        pikselinin tamamında beyaz metin kontrastı AA'yı geçiyor. En kötü
+        piksel saf beyaz bir şehir ışığı (kompozit rgb(98,106,124) → 5.43:1),
+        görsel ortalaması 14.54:1. Fotoğraf değişirse ölçüm tekrarlanmalı.
+
+        Overlay `<Image>`'in ÜSTÜNDE ayrı bir katman — filter/backdrop-filter
+        kullanılmaz.
       */}
       <section className="relative isolate">
-        <div aria-hidden="true" className="absolute inset-0 bg-grey-100" />
+        <Image
+          src="/hero/istanbul.jpg"
+          alt={t("heroImageAlt")}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div aria-hidden="true" className="hero-overlay absolute inset-0" />
 
         <Container className="relative">

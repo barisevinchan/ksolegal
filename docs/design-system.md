@@ -177,6 +177,19 @@ bölümler arası 48–96px.
 Ofis/şehir fotoğrafı, üstünde başlık. Overlay kuralı bölüm 2'de.
 Tek ekran, tek başlık, altında üç yönlendirme. Sayaç, rozet, CTA butonu yok.
 
+**Kullanılan fotoğraf ölçüldü.** `public/hero/istanbul.jpg` (2560×1440, gece
+çekimi). α = 0.70 overlay altında, dosyanın 3.686.400 pikselinin **tamamında**
+beyaz metin kontrastı AA'yı geçiyor:
+
+| Ölçüm | Sonuç |
+|---|---|
+| En kötü piksel (`#FFFFFF` şehir ışığı) → kompozit `rgb(98,106,124)` | 5.43:1 |
+| Aynı piksel, `#F7F8FA` metin | 5.11:1 |
+| Görsel ortalaması | 14.54:1 |
+| 4.5:1 altında kalan piksel | **0** |
+
+Fotoğraf değiştirilirse bu ölçüm tekrarlanmalıdır.
+
 ### 5.2 Ekip
 Fotoğraflı **3'lü grid**. Masaüstünde 3 kolon, tablette 2, mobilde 1.
 Kart içeriği CLAUDE.md'nin "İzin verilen içerik" listesiyle **sınırlıdır** —
@@ -185,6 +198,38 @@ ad-soyad, akademik unvan, fotoğraf, sicil no, mesleğe başlama tarihi,
 
 Kartlarda hover'da büyüme, gölge artışı, 3D transform **yok**.
 İzinli hareket: 150–200ms opacity/transform geçişi.
+
+#### Portre biçimi: **daire**
+
+Önceki karar `aspect-[3/4]` dikey dikdörtgendi; kaynak fotoğraflar geldiğinde
+**daireye çevrildi.** Gerekçe kaynakların kendisidir:
+
+| Kaynak | Durum |
+|---|---|
+| `Berkay Koçak.jpeg` | 1254×1254, daire kenarlara değiyor, köşeler beyaz |
+| `Berhudan Hüseyin Sayım.PNG` | 864×1184, daire y:161–1007 aralığında, çevresi beyaz |
+| `Alper Örnek.png` | 1233×1276, tam dikdörtgen stüdyo fotoğrafı |
+
+İkisinde daire dışındaki görüntü verisi **yok** (beyaz). 3:4 dikdörtgen
+istenirse dikdörtgeni dairenin içine sığdırmak gerekir — Koçak'ta 752×1003'lük
+çok sıkı bir kadraj kalır ve omuzlar kesilir. Ayrıca ortakların broşürlerinde
+de portreler daire olarak kullanılmıştır.
+
+Uygulama:
+
+- Üç kaynak da dairenin sıkı kare kutusuna kırpılıp **800×800 JPEG** (q82)
+  olarak `public/ekip/<slug>.jpg` yazılır.
+- Render `rounded-full overflow-hidden` sarmalayıcı + `object-cover` ile
+  yapılır; beyaz köşeler CSS maskesiyle tamamen kırpıldığı için zemin
+  uyuşmazlığı oluşmaz.
+- Daire içi arka plan grileri birbirine yakın (132 / 119–138 / 119–123),
+  bu yüzden üçlü set uyumlu görünür.
+- Kadraj daraltılırken **eş merkezlilik korunur**: çıktı dairesinin merkezi
+  kaynak dairenin merkezinden `d` kadar kayıyorsa `d + r_çıktı ≤ r_kaynak`
+  olmalıdır. Aksi hâlde çıktının kenarında beyaz hilal belirir.
+  (Sayım için uygulanan: `40 + 320 ≤ 432`.)
+- Boyutlar `Portrait` bileşeninde: `card` 160/192px, `detail` 192/256px,
+  `compact` 64px.
 
 ### 5.3 Navigasyon
 Yatay üst nav. Sağda dil değiştirici (TR/EN). Mobilde hamburger.

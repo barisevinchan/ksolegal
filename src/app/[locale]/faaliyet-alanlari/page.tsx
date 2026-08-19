@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import { Link } from "@/i18n/navigation";
-import { practiceAreaSlugs } from "@/lib/placeholder";
+import { practiceAreas, pick } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -18,10 +18,15 @@ export async function generateMetadata({
 }
 
 /**
- * Faaliyet alanı listesi. Dil nötr ve bilgilendiricidir — "uzman",
- * "lider", "en iyi" gibi ifadeler ve başarı/sonuç iddiası içermez
- * (CLAUDE.md yasak listesi). Alanlar, uzmanlık anlamına gelmemek
- * kaydıyla verilebilir (Madde 7/d).
+ * Faaliyet alanı listesi.
+ *
+ * ⚠️ Dil bilgilendiricidir, pazarlama dili değildir: "uzman", "deneyimli",
+ * "başarılı" gibi sıfatlar, üstünlük iddiası, rakam, dava veya müvekkil
+ * örneği KULLANILMAZ. Alanlar "uzmanlık anlamına gelmemek kaydıyla"
+ * verilebilir (TBB Reklam Yasağı Yönetmeliği Madde 7/d).
+ *
+ * Slug'lar dile göre değişir ama ikisi de nötrdür; anahtar kelime içermez
+ * (Madde 7/e).
  */
 export default async function PracticeAreasPage({
   params,
@@ -32,28 +37,27 @@ export default async function PracticeAreasPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("PracticeAreas");
-  const tLorem = await getTranslations("Lorem");
 
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
 
       <Container>
-        <ul className="grid gap-8 pb-16 sm:grid-cols-2 md:gap-12 md:pb-24">
-          {practiceAreaSlugs.map((slug, index) => (
-            <li key={slug}>
+        <ul className="grid gap-12 pb-16 sm:grid-cols-2 md:pb-24">
+          {practiceAreas.map((area) => (
+            <li key={area.id}>
               <Link
                 href={{
                   pathname: "/faaliyet-alanlari/[slug]",
-                  params: { slug },
+                  params: { slug: pick(area.slug, locale) },
                 }}
                 className="group block border-t border-grey-500 pt-6"
               >
                 <h2 className="text-h3 text-primary underline-offset-4 group-hover:underline">
-                  {t("areaTitle", { index: index + 1 })}
+                  {pick(area.title, locale)}
                 </h2>
                 <p className="mt-3 max-w-prose text-body text-grey-600">
-                  {tLorem("sentence")}
+                  {pick(area.lead, locale)}
                 </p>
               </Link>
             </li>

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
+import { buildSlugMap } from "@/lib/content";
 
 import Container from "./Container";
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -73,7 +74,7 @@ export default async function Header() {
               </ul>
             </nav>
 
-            <LocaleSwitcher />
+            <LocaleSwitcher slugMap={buildSlugMap()} />
 
             <MobileNav
               items={items}

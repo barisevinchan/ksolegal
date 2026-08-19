@@ -24,6 +24,7 @@ soruşturması açılmasına yol açar.
 - ❌ Müvekkil yorumu, testimonial, yıldız/puanlama, Google review embed
 - ❌ Kazanılmış dava sayacı, başarı oranı, "X milyon TL tazminat kazandık"
 - ❌ "Uzman", "uzmanlık", "specialist", "expert" kelimeleri (hiçbir dilde)
+      — **tek istisna aşağıda, "Onaylanmış istisna" bölümünde.**
 - ❌ "Türkiye'nin en iyi", "lider", "öncü", "#1", "güvenilir marka" gibi üstünlük iddiaları
 - ❌ Emekli hâkim/savcı/noter, bilirkişi, milletvekili, marka-patent vekili gibi sıfatlar
 - ❌ Geçmiş veya mevcut kamu görevi / siyasi parti görevi bilgisi
@@ -49,6 +50,33 @@ bildiği yabancı diller, büro adresi, telefon, faks, e-posta, KEP adresi.
 
 Ek olarak: **uzmanlık anlamına gelmemek kaydıyla** büronun faaliyet gösterdiği
 alanlar hakkında nötr bilgi verilebilir.
+
+### ⚠️ Onaylanmış istisna: "Uzman Arabulucu"
+
+Müvekkil, uyarıldıktan sonra **19 Ağustos 2026 tarihinde** arabuluculuk sicil
+satırında "Uzman Arabulucu" (EN: "Expert Mediator") ifadesinin kullanılmasını
+ve yukarıdaki "uzman" yasağının bu tek nokta için geçersiz kılınmasını yazılı
+olarak onayladı.
+
+**İstisnanın sınırı kesindir.** Kelime yalnızca `/ekip/[slug]` sayfalarındaki
+"Sicil Bilgileri" bölümünde, arabuluculuk siciline ait satırın etiketi olarak
+geçer:
+
+```
+Uzman Arabulucu    Sicil no: 29720 · 2022 yılından bu yana
+```
+
+Bunun dışında **hiçbir yerde** kullanılmaz: faaliyet alanı açıklamalarında,
+tanıtım paragraflarında, sayfa başlıklarında, meta açıklamalarda, alt
+metinlerde değil. Hangi hukuk alanlarında uzman arabulucu olunduğu bilgisi de
+alınmadı — yalnızca sicil numarası ve yıl verilir.
+
+Bu istisna müvekkilin kararıdır; baro görüşü alınması önerilir. Geri
+alınırsa `content/avukatlar.json` içindeki veri korunur, yalnızca
+`messages/*.json` içindeki `Team.fields.mediator` etiketi "Arabulucu" /
+"Mediator" olarak değiştirilir.
+
+---
 
 ### Blog / makale bölümü
 

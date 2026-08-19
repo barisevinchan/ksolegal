@@ -49,8 +49,9 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
   },
   "Home": {
-    "heroTitle": "Lorem ipsum dolör sit amet, çonsectetur",
+    "heroTitle": "Koçak | Sayım | Örnek Avukatlık Bürosu'na hoş geldiniz",
     "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua; ışık değiştikçe gölgeler uzar.",
+    "heroImageAlt": "İstanbul Boğazı ve şehir silueti, gece",
     "linksHeading": "Sayfalar"
   },
   "About": {
@@ -61,24 +62,31 @@
   "Team": {
     "title": "Ekip",
     "metaDescription": "Büroda görev yapan avukatlar.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; ut enim ad minim veniam.",
-    "memberName": "Avukat Adı Soyadı {index}",
+    "lead": "Büro, üç ortak avukat tarafından yürütülmektedir. Her avukatın eğitim bilgileri, çalıştığı hukuk alanları ve sicil bilgileri kendi sayfasında yer almaktadır.",
+    "sections": {
+      "education": "Eğitim",
+      "practiceAreas": "Faaliyet Alanları",
+      "languages": "Diller",
+      "registry": "Sicil Bilgileri",
+      "contact": "İletişim"
+    },
     "fields": {
-      "academicTitle": "Akademik unvan",
       "tbbNo": "TBB sicil no",
       "baroNo": "Baro sicil no",
-      "admission": "Mesleğe başlama",
-      "university": "Mezun olduğu üniversite",
-      "languages": "Yabancı diller",
+      "bar": "Bağlı olduğu baro",
+      "admission": "Mesleğe başlama tarihi",
+      "mediator": "Uzman Arabulucu",
       "email": "E-posta",
-      "phone": "Telefon"
-    }
+      "phone": "Telefon",
+      "kep": "KEP"
+    },
+    "mediatorValue": "Sicil no: {no} · {year} yılından bu yana"
   },
   "PracticeAreas": {
     "title": "Faaliyet Alanları",
     "metaDescription": "Büronun faaliyet gösterdiği hukuk alanları.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; quis nostrud exercitation ullamco.",
-    "areaTitle": "Faaliyet Alanı {index}"
+    "lead": "Büronun çalıştığı hukuk alanları aşağıda yer almaktadır. Her alan sayfasında, o alanda hangi konularda hukuki danışmanlık verildiği ve hangi süreçlerin yürütüldüğü açıklanmıştır.",
+    "lawyersHeading": "Bu alanda çalışan avukatlar"
   },
   "Contact": {
     "title": "İletişim",

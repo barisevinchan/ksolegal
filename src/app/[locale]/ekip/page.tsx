@@ -3,9 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
-import PlaceholderBox from "@/components/PlaceholderBox";
+import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
-import { teamSlugs } from "@/lib/placeholder";
+import { getAreasForLawyer, lawyers, pick, titleLine } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -19,12 +19,11 @@ export async function generateMetadata({
 }
 
 /**
- * Fotoğraflı 3'lü grid (docs/design-system.md §5.2): masaüstünde 3,
- * tablette 2, mobilde 1 kolon.
+ * Fotoğraflı 3'lü grid: masaüstünde 3, tablette 2, mobilde 1 kolon.
  *
  * ⚠️ Kart içeriği CLAUDE.md "İzin verilen içerik" listesiyle SINIRLIDIR.
- * Bu listede olmayan hiçbir alan (görülen dava, ilgi alanı, kısa özgeçmiş,
- * unvan dışı sıfat) karta eklenmez.
+ * Etiket olarak yalnızca büronun faaliyet alanı adları yazılır — bunlar
+ * uzmanlık iddiası değildir ve "uzmanı", "sorumlusu" gibi sıfat eklenmez.
  */
 export default async function TeamPage({
   params,
@@ -35,38 +34,57 @@ export default async function TeamPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("Team");
-  const tCommon = await getTranslations("Common");
 
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
 
       <Container>
-        <ul className="grid gap-8 pb-16 sm:grid-cols-2 md:gap-12 md:pb-24 lg:grid-cols-3">
-          {teamSlugs.map((slug, index) => (
-            <li key={slug}>
-              <article>
-                <Link
-                  href={{ pathname: "/ekip/[slug]", params: { slug } }}
-                  className="group block"
-                >
-                  {/* Portre fotoğrafı yer tutucusu — 3:4 dikey oran */}
-                  <PlaceholderBox aspect="portrait" />
+        <ul className="grid gap-12 pb-16 sm:grid-cols-2 md:pb-24 lg:grid-cols-3">
+          {lawyers.map((lawyer) => {
+            const areas = getAreasForLawyer(lawyer);
 
-                  <h2 className="mt-6 text-h4 text-primary underline-offset-4 group-hover:underline">
-                    {t("memberName", { index: index + 1 })}
-                  </h2>
-                </Link>
+            return (
+              <li key={lawyer.slug}>
+                <article>
+                  <Link
+                    href={{
+                      pathname: "/ekip/[slug]",
+                      params: { slug: lawyer.slug },
+                    }}
+                    className="group block"
+                  >
+                    <Portrait
+                      src={lawyer.photo}
+                      alt={lawyer.name}
+                      size="card"
+                    />
 
-                {/* İzin verilen alanlardan yalnızca akademik unvan kartta
-                    gösterilir; kalanı detay sayfasında. Değer yer tutucu. */}
-                <dl className="mt-3 text-body-sm text-grey-600">
-                  <dt className="sr-only">{t("fields.academicTitle")}</dt>
-                  <dd>{tCommon("placeholderValue")}</dd>
-                </dl>
-              </article>
-            </li>
-          ))}
+                    <h2 className="mt-6 text-h4 text-primary underline-offset-4 group-hover:underline">
+                      {lawyer.name}
+                    </h2>
+                  </Link>
+
+                  <p className="mt-2 text-body-sm text-grey-600">
+                    {titleLine(lawyer, locale)}
+                  </p>
+
+                  {areas.length > 0 && (
+                    <ul className="mt-3 space-y-1">
+                      {areas.map((area) => (
+                        <li
+                          key={area.id}
+                          className="text-body-sm text-grey-600"
+                        >
+                          {pick(area.title, locale)}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </article>
+              </li>
+            );
+          })}
         </ul>
       </Container>
     </>
