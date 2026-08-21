@@ -59,6 +59,7 @@
     "metaDescription": "Attorneys practising at the office.",
     "sections": {
       "education": "Education",
+      "keyFocus": "Key Focus",
       "practiceAreas": "Practice Areas",
       "languages": "Languages",
       "registry": "Registration Details",

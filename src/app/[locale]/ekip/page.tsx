@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
-import { getAreasForLawyer, lawyers, pick, titleLine } from "@/lib/content";
+import { lawyers, pick, titleLine } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -21,9 +21,11 @@ export async function generateMetadata({
 /**
  * Fotoğraflı 3'lü grid: masaüstünde 3, tablette 2, mobilde 1 kolon.
  *
- * ⚠️ Kart içeriği CLAUDE.md "İzin verilen içerik" listesiyle SINIRLIDIR.
- * Etiket olarak yalnızca büronun faaliyet alanı adları yazılır — bunlar
- * uzmanlık iddiası değildir ve "uzmanı", "sorumlusu" gibi sıfat eklenmez.
+ * Etiketler müşteri PDF'indeki ("OUR PEOPLE" / ilk kısım) tanıtım
+ * satırından gelir ve DÜZ METİNDİR — link üretilmez. "Mediation",
+ * "Regulatory" gibi başlıkların sitede karşılık gelen faaliyet alanı
+ * sayfası yok; link kurmak kırık ya da yanlış eşleşme üretirdi. Gerçek
+ * çapraz linkler detay sayfasındaki "Faaliyet Alanları" bölümündedir.
  */
 export default async function TeamPage({
   params,
@@ -42,8 +44,6 @@ export default async function TeamPage({
       <Container>
         <ul className="grid gap-12 pb-16 sm:grid-cols-2 md:pb-24 lg:grid-cols-3">
           {lawyers.map((lawyer) => {
-            const areas = getAreasForLawyer(lawyer);
-
             return (
               <li key={lawyer.slug}>
                 <article>
@@ -69,14 +69,14 @@ export default async function TeamPage({
                     {titleLine(lawyer, locale)}
                   </p>
 
-                  {areas.length > 0 && (
+                  {lawyer.practiceLabels.length > 0 && (
                     <ul className="mt-3 space-y-1">
-                      {areas.map((area) => (
+                      {lawyer.practiceLabels.map((label) => (
                         <li
-                          key={area.id}
+                          key={label.en}
                           className="text-body-sm text-grey-600"
                         >
-                          {pick(area.title, locale)}
+                          {pick(label, locale)}
                         </li>
                       ))}
                     </ul>

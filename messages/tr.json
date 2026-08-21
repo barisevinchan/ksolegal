@@ -59,6 +59,7 @@
     "metaDescription": "Büroda görev yapan avukatlar.",
     "sections": {
       "education": "Eğitim",
+      "keyFocus": "Başlıca Çalışma Konuları",
       "practiceAreas": "Faaliyet Alanları",
       "languages": "Diller",
       "registry": "Sicil Bilgileri",

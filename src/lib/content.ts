@@ -53,14 +53,29 @@ export type Registry = {
 
 export type Contact = { email: string; phone: string; kep: string };
 
+/** "Başlık — açıklama" yapısı müşteri metninde olduğu gibi korunur. */
+export type KeyFocusItem = { title: L10n; description: L10n };
+
 export type Lawyer = {
   slug: string;
   name: string;
   photo: string;
-  /** Yalnızca hukuk alanındaki unvan. Yoksa boş string. */
+  /**
+   * ⚠️ "MSc" (Hüseyin) Finansal Ekonomi yüksek lisansıdır — CLAUDE.md'nin
+   * "hukuk alanındaki akademik unvan" kaydını aşar. Müşteri metninde bu
+   * şekilde geçtiği için kullanıcı talimatıyla aynen alındı.
+   */
   academicTitle: string;
   role: L10n;
+  /**
+   * Liste kartındaki tanıtım etiketleri. Serbest metindir ve faaliyet
+   * alanı sayfalarına LİNK DEĞİLDİR — "Mediation", "Regulatory" gibi
+   * bazı başlıkların sitede karşılık gelen alan sayfası yok. Gerçek
+   * çapraz linkler detay sayfasındaki `practiceAreas` bölümünden gelir.
+   */
+  practiceLabels: L10n[];
   intro: L10n[];
+  keyFocus: KeyFocusItem[];
   education: Education[];
   /** `faaliyet-alanlari.json` içindeki alanların `id` değerleri. */
   practiceAreas: string[];
@@ -77,11 +92,17 @@ export function getLawyer(slug: string): Lawyer | undefined {
   return lawyers.find((l) => l.slug === slug);
 }
 
-/** "LL.M. · Avukat · Ortak" — akademik unvan yoksa atlanır. */
+/**
+ * "LL.M., Ortak" — akademik unvan yoksa atlanır.
+ *
+ * Ayırıcı ve içerik müşteri PDF'indeki biçimden gelir ("LL.M., Partner").
+ * Bu yüzden satırda `Avukat` / `Attorney-at-Law` ibaresi YOKTUR; mesleki
+ * unvanın düşmesi bilinçli bir müşteri kararıdır.
+ */
 export function titleLine(lawyer: Lawyer, locale: string): string {
   return [lawyer.academicTitle, pick(lawyer.role, locale)]
     .filter((part) => part.length > 0)
-    .join(" · ");
+    .join(", ");
 }
 
 /* ==========================================================================

@@ -160,6 +160,29 @@ export default async function TeamMemberPage({
           </div>
         )}
 
+        {/*
+          Key Focus — müşteri PDF'indeki "Başlık — açıklama" yapısı
+          korunur; <dl> semantik olarak tam bu ilişkiyi ifade eder.
+          Açıklama grey-600 (açık zeminde 5.92:1, body-sm için AA
+          geçerli — docs/design-system.md §1.3).
+        */}
+        {lawyer.keyFocus.length > 0 && (
+          <Section title={t("sections.keyFocus")}>
+            <dl className="mt-6 space-y-6">
+              {lawyer.keyFocus.map((item) => (
+                <div key={item.title.en} className="max-w-prose">
+                  <dt className="text-body text-grey-800">
+                    {pick(item.title, locale)}
+                  </dt>
+                  <dd className="mt-1 text-body-sm text-grey-600">
+                    {pick(item.description, locale)}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Section>
+        )}
+
         {lawyer.education.length > 0 && (
           <Section title={t("sections.education")}>
             {/* Ters kronolojik: en yeni derece üstte. */}

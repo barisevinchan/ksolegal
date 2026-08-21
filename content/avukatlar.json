@@ -1,26 +1,111 @@
 {
-  "_note": "Veri kaynağı: kaynak/Ortaklar Broşür/*.pdf. İçerik CLAUDE.md 'İzin verilen içerik' (TBB Reklam Yasağı Yönetmeliği Madde 7/d) listesiyle SINIRLIDIR. Yeni alan eklemeden önce o listeye bakılmalıdır. Boş string = broşürde bulunamayan veri; uydurulmadı, ilgili bölüm render edilmez.",
+  "_note": "Veri kaynagi: kimlik/sicil/egitim alanlari kaynak/Ortaklar Brosur/*.pdf; biyografi paragraflari (intro), Key Focus listeleri ve liste kartindaki practiceLabels ise kaynak/icerik/www.kso.av.tr tasarim.pdf 'OUR PEOPLE' bolumu. Ingilizce metin musterinin kendi metnidir ve DEGISTIRILMEDEN aktarilmistir; Turkce karsiliklar TASLAK CEVIRIDIR ve MUSTERI ONAYI BEKLEMEKTEDIR. PDF'te kaybolan fi/ff ligaturleri duzeltildi (nancial -> financial, nance -> finance). UYARI: musteri metni CLAUDE.md 'ASLA uretme' listesiyle bes noktada cakisiyor (Berkay 'established experience'; Huseyin 'leading counsel' ve Key Focus 'Leading'; Alper 'procedural expertise' ve Key Focus 'specialist'). Kullanicinin acik talimatiyla aynen uygulandi, degistirmeden once ona danisilmalidir. academicTitle 'MSc' de ayni kapsamdadir: Finansal Ekonomi yuksek lisansidir, hukuk alaninda degildir. Bos string = veri yok; uydurulmadi, ilgili bolum render edilmez.",
   "lawyers": [
     {
       "slug": "berkay-kocak",
       "name": "Berkay Koçak",
       "photo": "/ekip/berkay-kocak.jpg",
       "academicTitle": "LL.M.",
-      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
-      "intro": [
+      "role": {
+        "tr": "Ortak",
+        "en": "Partner"
+      },
+      "practiceLabels": [
         {
-          "tr": "İş hukuku, sendika hukuku ve toplu iş sözleşmesi süreçleri ile uyuşmazlık çözümü alanlarında çalışmaktadır. Bireysel ve toplu iş ilişkilerinin kurulması, işyeri yapılanması ve fesih süreçleri; sendika yetki tespiti ve buna karşı yapılan itirazlar; toplu iş sözleşmesi görüşmelerinin yürütülmesi konularında hukuki danışmanlık vermektedir.",
-          "en": "He works in the fields of employment law, trade union law and collective bargaining, together with dispute resolution. He advises on the formation of individual and collective employment relationships, workplace structuring and termination processes; trade union authority determinations and objections raised against them; and the conduct of collective bargaining negotiations."
+          "tr": "İş Hukuku",
+          "en": "Employment"
         },
         {
-          "tr": "Yabancıların Türkiye'de çalışmasına ve Türk çalışanların yurt dışında görevlendirilmesine ilişkin istihdam yapıları da çalışma konuları arasındadır. Uyuşmazlıklarda dava öncesi değerlendirme, arabuluculuk ve yargılama aşamalarında çalışmaktadır.",
-          "en": "Employment arrangements concerning foreign nationals working in Türkiye and Turkish employees assigned abroad are also among his areas of work. In disputes, he works at the pre-litigation assessment, mediation and judicial stages."
+          "tr": "Uyuşmazlık Çözümü",
+          "en": "Dispute Resolution"
+        },
+        {
+          "tr": "Arabuluculuk ve Gayrimenkul",
+          "en": "Mediation & Real Estate"
+        }
+      ],
+      "intro": [
+        {
+          "tr": "Berkay, işverenlere ve kurumsal müvekkillere iş hukuku, işgücü yönetimi ve endüstriyel ilişkiler konularında danışmanlık vermektedir. İstanbul Üniversitesi'nden hukuk lisansı ve özel hukuk alanında yüksek lisans derecesi almıştır. Çalışma alanı bireysel ve toplu iş ilişkilerini, işveren tarafı danışmanlığını, sendika ilişkilerini, toplu iş sözleşmesi süreçlerini ve sınır ötesi istihdam yapılarını kapsamaktadır. Ayrıca çalışma ve oturma izinleri, yabancı çalışanların hareketliliği ve vatandaşlığa ilişkin süreçler dâhil olmak üzere ticari göç konularında danışmanlık vermektedir. Yerleşik deneyimi, Türkiye'de çalışan yabancıların ve yurt dışında görevlendirilen Türk çalışanların hukuki konumuna ilişkin danışmanlığı kapsamaktadır.",
+          "en": "Berkay advises employers and corporate clients on employment, workforce and industrial relations matters. He holds an LL.B. and an LL.M. in Private Law from İstanbul University. His practice covers individual and collective employment matters, employer-side advisory, trade union relations, collective bargaining and cross-border workforce arrangements. He also advises on business immigration matters, including work and residence permits, foreign employee mobility and citizenship-related processes. His established experience includes advising on the legal position of foreign employees working in Türkiye and Turkish employees working abroad."
+        },
+        {
+          "tr": "Berkay, önleyici hukuki danışmanlığı etkin bir uyuşmazlık çözümü pratiğiyle birleştirmekte; müvekkillerini iş, ticaret ve gayrimenkul kaynaklı uyuşmazlıklarda temsil etmekte, zorunlu ve ihtiyari arabuluculuk hizmeti sunmaktadır. Çalışma alanı ayrıca gayrimenkul ve inşaat işlerini, fikrî mülkiyeti, icra ve iflas kaynaklı uyuşmazlıkları kapsamaktadır. Sicile kayıtlı arabulucu olarak iş, ticaret, tüketici, fikrî mülkiyet ve sigorta uyuşmazlıklarında arabuluculuk hizmeti vermektedir.",
+          "en": "Berkay combines preventive legal advice with an active dispute resolution practice, representing clients in employment, commercial and property-related disputes and providing both mandatory and voluntary mediation services. His practice also covers real estate and construction matters, intellectual property, enforcement and insolvency-related disputes. As a registered mediator, he provides mediation services across employment, commercial, consumer, intellectual property and insurance matters."
+        }
+      ],
+      "keyFocus": [
+        {
+          "title": {
+            "tr": "İş ve Sosyal Güvenlik Hukuku",
+            "en": "Employment & Social Security Law"
+          },
+          "description": {
+            "tr": "İstihdam yapıları, işgücü yönetimi, fesih süreçleri ve süreklilik arz eden işveren tarafı danışmanlığı",
+            "en": "Employment structures, workforce management, terminations and ongoing employer-side advisory"
+          }
+        },
+        {
+          "title": {
+            "tr": "Sendika Hukuku ve Toplu İş Hukuku",
+            "en": "Trade Union & Collective Labour Law"
+          },
+          "description": {
+            "tr": "Sendikal konular, toplu pazarlık ve toplu iş sözleşmeleri",
+            "en": "Trade union matters, collective bargaining and collective labour agreements"
+          }
+        },
+        {
+          "title": {
+            "tr": "Ticari Göç ve Vatandaşlık",
+            "en": "Business Immigration & Citizenship"
+          },
+          "description": {
+            "tr": "Çalışma ve oturma izinleri, yabancı işgücü hareketliliği ve vatandaşlığa ilişkin süreçler",
+            "en": "Work and residence permits, foreign workforce mobility and citizenship-related processes"
+          }
+        },
+        {
+          "title": {
+            "tr": "Uyuşmazlık Çözümü ve Arabuluculuk",
+            "en": "Dispute Resolution & Mediation"
+          },
+          "description": {
+            "tr": "Ticari ve iş davaları, zorunlu ve ihtiyari arabuluculuk ile sulh stratejisi",
+            "en": "Commercial and employment litigation, mandatory and voluntary mediation and settlement strategy"
+          }
+        },
+        {
+          "title": {
+            "tr": "Gayrimenkul ve İnşaat Hukuku",
+            "en": "Real Estate & Construction Law"
+          },
+          "description": {
+            "tr": "Geliştirme sözleşmeleri, ticari kira sözleşmeleri, taşınmaz işlemleri ve bunlara ilişkin uyuşmazlıklar",
+            "en": "Development agreements, commercial leases, property transactions and related disputes"
+          }
+        },
+        {
+          "title": {
+            "tr": "Fikrî Mülkiyet, İcra ve İflas",
+            "en": "Intellectual Property, Enforcement & Insolvency"
+          },
+          "description": {
+            "tr": "Fikrî mülkiyet danışmanlığı ve uyuşmazlıkları, icra takipleri ve iflas kaynaklı çekişmeli işler",
+            "en": "Intellectual property advisory and disputes, enforcement proceedings and insolvency-related contentious matters"
+          }
         }
       ],
       "education": [
         {
-          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
-          "degree": { "tr": "Özel Hukuk Yüksek Lisansı (LL.M.)", "en": "LL.M. in Private Law" },
+          "institution": {
+            "tr": "İstanbul Üniversitesi",
+            "en": "İstanbul University"
+          },
+          "degree": {
+            "tr": "Özel Hukuk Yüksek Lisansı (LL.M.)",
+            "en": "LL.M. in Private Law"
+          },
           "year": "2020",
           "note": {
             "tr": "Tez: Basın İş Kanunu Uyarınca İşverenin Ücret Ödeme Borcu",
@@ -28,43 +113,141 @@
           }
         },
         {
-          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
-          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "institution": {
+            "tr": "İstanbul Üniversitesi",
+            "en": "İstanbul University"
+          },
+          "degree": {
+            "tr": "Hukuk Lisansı (LL.B.)",
+            "en": "LL.B. in Law"
+          },
           "year": "2015",
           "note": null
         }
       ],
-      "practiceAreas": ["is-hukuku", "gayrimenkul-ve-insaat-hukuku"],
+      "practiceAreas": [
+        "is-hukuku",
+        "gayrimenkul-ve-insaat-hukuku"
+      ],
       "languages": [],
       "registry": {
         "tbbNo": "",
         "baroNo": "",
-        "bar": { "tr": "", "en": "" },
+        "bar": {
+          "tr": "",
+          "en": ""
+        },
         "admission": "",
-        "mediator": { "registryNo": "29720", "since": "2022" }
+        "mediator": {
+          "registryNo": "29720",
+          "since": "2022"
+        }
       },
-      "contact": { "email": "", "phone": "", "kep": "" }
+      "contact": {
+        "email": "",
+        "phone": "",
+        "kep": ""
+      }
     },
     {
       "slug": "berhudan-huseyin-sayim",
       "name": "Berhudan Hüseyin Sayım",
       "photo": "/ekip/berhudan-huseyin-sayim.jpg",
-      "academicTitle": "",
-      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
-      "intro": [
+      "academicTitle": "MSc",
+      "role": {
+        "tr": "Ortak",
+        "en": "Partner"
+      },
+      "practiceLabels": [
         {
-          "tr": "Bankacılık ve finans işlemleri, teknoloji sözleşmeleri ve kişisel verilerin korunması alanlarında çalışmaktadır. Sınır ötesi kredi işlemleri ve piyasa dokümantasyonu, türev işlemlere ilişkin ISDA çerçeve sözleşmeleri, ticaret ve alacak finansmanı ile nakit yönetimi ve teminat yapıları konularında hukuki danışmanlık vermektedir.",
-          "en": "He works in the fields of banking and finance transactions, technology contracts and the protection of personal data. He advises on cross-border lending transactions and markets documentation, ISDA framework agreements for derivatives, trade and receivables finance, and cash management and security structures."
+          "tr": "Şirketler ve Ticaret Hukuku",
+          "en": "Corporate & Commercial"
         },
         {
-          "tr": "Teknoloji ve bilgi işlem hizmet sözleşmeleri, ödeme sistemleri ve e-ticaret düzenlemeleri; kurucu ve yatırımcı ilişkileri ile pay devri ve çalışan hisse planlarına ilişkin kurumsal dokümantasyon da çalışma konuları arasındadır. Kişisel verilerin korunması mevzuatına uyum programlarının kurulması ve yürütülmesi konusunda çalışmaktadır.",
-          "en": "Technology and IT services agreements, payment systems and e-commerce arrangements, together with corporate documentation on founder and investor relations, share transfers and employee share plans, are also among his areas of work. He works on establishing and running compliance programmes under personal data protection legislation."
+          "tr": "Finans",
+          "en": "Finance"
+        },
+        {
+          "tr": "Teknoloji",
+          "en": "Technology"
+        },
+        {
+          "tr": "Yurt İçi ve Uluslararası Ticaret",
+          "en": "Local & International Trade"
+        }
+      ],
+      "intro": [
+        {
+          "tr": "Hüseyin, yerli ve yabancı şirketlere, finans kuruluşlarına, yatırımcılara ve teknoloji işletmelerine kurumsal, ticari ve işlem hukuku konularında danışmanlık vermektedir. İstanbul Üniversitesi'nden hukuk lisansı, Galatasaray Üniversitesi'nden finansal ekonomi alanında yüksek lisans derecesi almıştır. Çalışma alanı günlük ticari danışmanlığı, kurumsal yönetimi, ticari sözleşmeleri, stratejik ortaklıkları, ortak girişimleri ve karmaşık ticari yapıları kapsamaktadır. Şirketlere sözleşmesel ilişkilerin yapılandırılması ve müzakeresi, pay sahibi ve yatırımcı ilişkileri, iç yönetişim çerçeveleri ve geniş bir ticari dokümantasyon yelpazesi konusunda düzenli olarak danışmanlık vermektedir.",
+          "en": "Hüseyin advises local and international companies, financial institutions, investors and technology businesses on corporate, commercial and transactional matters. He holds an LL.B. from İstanbul University and an M.A. in Financial Economics from Galatasaray University. His practice encompasses day-to-day commercial advisory, corporate governance, commercial contracts, strategic partnerships, joint ventures and complex business arrangements. He regularly advises companies on structuring and negotiating contractual relationships, shareholder and investor matters, internal governance frameworks and a broad range of commercial documentation."
+        },
+        {
+          "tr": "Finansal hizmetler alanındaki çalışmaları kurumsal kredileri, LMA standartlarına uygun finansman dokümantasyonunu, teminatlı işlemleri, ticaret ve alacak finansmanını, nakit yönetimini ve ISDA esaslı türev işlemleri kapsamaktadır. Hüseyin ayrıca, birden çok yargı çevresini ilgilendiren karmaşık uluslararası ticaret ve sınır ötesi ticari projelerde baş danışman olarak görev almakta; işlem yapısı, sözleşme mimarisi, müzakere stratejisi ve işlemin tamamlanması konularında danışmanlık vermektedir. Daha geniş çalışma alanı finansal yeniden yapılandırmayı, teknoloji ve bilgi işlem sözleşmelerini, ödeme sistemlerini, e-ticareti, kişisel verilerin korunmasını ve gümrük, yaptırımlar ile ihracat kontrolü dâhil uluslararası ticaret konularını kapsamaktadır.",
+          "en": "His financial services practice includes corporate lending, LMA-aligned finance documentation, secured transactions, trade and receivables finance, cash management and ISDA-based derivatives. Hüseyin also acts as leading counsel on complex international trade and cross-border commercial projects involving multiple jurisdictions, advising on transaction structure, contractual architecture, negotiation strategy and execution. His wider practice covers financial restructuring, technology and IT contracting, payment systems, e-commerce, data protection and international trade matters, including customs, sanctions and export-control considerations."
+        }
+      ],
+      "keyFocus": [
+        {
+          "title": {
+            "tr": "Şirketler ve Ticaret Hukuku",
+            "en": "Corporate & Commercial Law"
+          },
+          "description": {
+            "tr": "Süreklilik arz eden kurumsal danışmanlık, ticari sözleşmeler, kurumsal yönetim, ortak girişimler ve stratejik ticari yapılar",
+            "en": "Ongoing corporate advisory, commercial contracts, corporate governance, joint ventures and strategic business arrangements"
+          }
+        },
+        {
+          "title": {
+            "tr": "Bankacılık, Finans ve Yeniden Yapılandırma",
+            "en": "Banking, Finance & Restructuring"
+          },
+          "description": {
+            "tr": "Kredi işlemleri, teminatlı finansman, türev işlemler, ticaret finansmanı, alacaklı yapıları ve finansal yeniden yapılandırmalar",
+            "en": "Lending, secured finance, derivatives, trade finance, creditor structures and financial restructurings"
+          }
+        },
+        {
+          "title": {
+            "tr": "Uluslararası Ticaret, Gümrük ve Yaptırımlar",
+            "en": "International Trade, Customs & Sanctions"
+          },
+          "description": {
+            "tr": "Sınır ötesi ticari projelerin yürütülmesi, uluslararası ticaret yapıları, gümrük, yaptırımlar ve ihracat kontrolü konuları",
+            "en": "Leading cross-border commercial projects, international trade structures, customs, sanctions and export-control matters"
+          }
+        },
+        {
+          "title": {
+            "tr": "Kişisel Verilerin Korunması, Bilişim ve Teknoloji Hukuku",
+            "en": "Data Protection, IT & Technology Law"
+          },
+          "description": {
+            "tr": "Teknoloji sözleşmeleri, ödeme sistemleri, e-ticaret, veri gizliliği ve KVKK uyumu",
+            "en": "Technology contracts, payment systems, e-commerce, data privacy and KVKK compliance"
+          }
+        },
+        {
+          "title": {
+            "tr": "Stratejik Ticari İşlemler",
+            "en": "Strategic Commercial Transactions"
+          },
+          "description": {
+            "tr": "Karmaşık sözleşme yapıları, pay sahibi ve yatırımcı düzenlemeleri ve çok taraflı ticari projeler",
+            "en": "Complex contractual structures, shareholder and investor arrangements and multi-party commercial projects"
+          }
         }
       ],
       "education": [
         {
-          "institution": { "tr": "Galatasaray Üniversitesi", "en": "Galatasaray University" },
-          "degree": { "tr": "Finansal İktisat Yüksek Lisansı", "en": "M.A. in Financial Economics" },
+          "institution": {
+            "tr": "Galatasaray Üniversitesi",
+            "en": "Galatasaray University"
+          },
+          "degree": {
+            "tr": "Finansal İktisat Yüksek Lisansı",
+            "en": "M.A. in Financial Economics"
+          },
           "year": "2021",
           "note": {
             "tr": "Tez: Anonim Şirketlerin Hesap Tablolarında Manipülasyonlar",
@@ -72,8 +255,14 @@
           }
         },
         {
-          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
-          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "institution": {
+            "tr": "İstanbul Üniversitesi",
+            "en": "İstanbul University"
+          },
+          "degree": {
+            "tr": "Hukuk Lisansı (LL.B.)",
+            "en": "LL.B. in Law"
+          },
           "year": "2017",
           "note": null
         }
@@ -86,52 +275,167 @@
       "registry": {
         "tbbNo": "",
         "baroNo": "",
-        "bar": { "tr": "", "en": "" },
+        "bar": {
+          "tr": "",
+          "en": ""
+        },
         "admission": "",
         "mediator": null
       },
-      "contact": { "email": "", "phone": "", "kep": "" }
+      "contact": {
+        "email": "",
+        "phone": "",
+        "kep": ""
+      }
     },
     {
       "slug": "alper-ornek",
       "name": "Alper Örnek",
       "photo": "/ekip/alper-ornek.jpg",
       "academicTitle": "LL.M.",
-      "role": { "tr": "Avukat · Ortak", "en": "Attorney-at-Law · Partner" },
-      "intro": [
+      "role": {
+        "tr": "Ortak",
+        "en": "Partner"
+      },
+      "practiceLabels": [
         {
-          "tr": "Kamu hukuku uyuşmazlıkları, ticari altyapı işlemleri ve çevresel sürdürülebilirlik alanlarında çalışmaktadır. Anayasa Mahkemesi'ne bireysel başvuru ve Avrupa İnsan Hakları Mahkemesi başvurularının hazırlanması ve yürütülmesi, idari yargı süreçleri ile sağlık hizmeti sunucularının tabi olduğu mevzuata uyum konularında hukuki danışmanlık vermektedir.",
-          "en": "He works in the fields of public law disputes, commercial infrastructure transactions and environmental sustainability. He advises on the preparation and conduct of individual applications to the Constitutional Court and applications to the European Court of Human Rights, on administrative litigation, and on regulatory compliance for healthcare providers."
+          "tr": "Kamu Hukuku",
+          "en": "Public Law"
         },
         {
-          "tr": "Ticari ve anahtar teslim yapım sözleşmeleri, kamu ve özel sektör ihaleleri ile imar, ifraz ve tevhit süreçleri de çalışma konuları arasındadır. Ayrıca karbon hukuku, Emisyon Ticaret Sistemi uygulamaları ve yeşil dönüşüm projelerine ilişkin uyum çalışmaları yürütmektedir.",
-          "en": "Commercial and turnkey construction contracts, public and private sector tenders, and zoning, subdivision and consolidation processes are also among his areas of work. He additionally carries out compliance work relating to carbon law, Emissions Trading System implementation and green transformation projects."
+          "tr": "Uyuşmazlık Çözümü",
+          "en": "Dispute Resolution"
+        },
+        {
+          "tr": "Regülasyon",
+          "en": "Regulatory"
+        },
+        {
+          "tr": "Sağlık ve Sürdürülebilirlik",
+          "en": "Healthcare & Sustainability"
+        }
+      ],
+      "intro": [
+        {
+          "tr": "Alper, şirketlere ve kurumlara kamu hukuku, regülasyon ve karmaşık uyuşmazlıklar konularında danışmanlık vermektedir. İstanbul Üniversitesi'nden hukuk lisansı, Galatasaray Üniversitesi'nden insan hakları hukuku alanında yüksek lisans derecesi almıştır. Çalışma alanı idari yargı süreçlerini, anayasal kanun yollarını ve Anayasa Mahkemesi ile Avrupa İnsan Hakları Mahkemesi'ne yapılan başvuruları kapsamakta; usul uzmanlığını ticari ve kurumsal riske ilişkin uygulamalı bir kavrayışla birleştirmektedir.",
+          "en": "Alper advises companies and institutions on public law, regulatory matters and complex disputes. He holds an LL.B. from İstanbul University and an LL.M. in Human Rights Law from Galatasaray University. His practice includes administrative proceedings, constitutional remedies and applications before the Constitutional Court and the European Court of Human Rights, combining procedural expertise with a practical understanding of commercial and institutional risk."
+        },
+        {
+          "tr": "Çalışma alanı ayrıca sağlık hukukunu, gayrimenkul ve inşaat işlerini, mevzuata uyumu ve sürdürülebilirliği kapsamaktadır. Alper, sağlık işletmelerine kuruluş, ruhsat ve izin süreçleri, idari onaylar, faaliyet uyumu ve yetkili kamu kurumlarıyla yürütülen ilişkiler dâhil olmak üzere düzenleyici yaşam döngüsünün tamamında danışmanlık vermektedir. Ayrıca imar ve yapılaşma konuları, inşaat projeleri, kamu ve özel ihaleler, icra takipleri ve alacak tahsili konularında danışmanlık vermektedir. Sürdürülebilirlik alanındaki çalışmaları Karbon Hukuku'nu, Emisyon Ticaret Sistemleri'ni, çevresel uyumu ve yeşil dönüşüm projelerini kapsamaktadır. Alper aynı zamanda sicile kayıtlı arabulucudur ve ticari uyuşmazlıklar ile tüketici uyuşmazlıklarında arabuluculuk hizmeti vermektedir.",
+          "en": "His practice also extends to healthcare law, real estate and construction, regulatory compliance and sustainability. Alper advises healthcare businesses across their regulatory lifecycle, including establishment, licensing and permit processes, regulatory approvals, operational compliance and dealings with competent public authorities. He also advises on zoning and development matters, construction projects, public and private tenders, enforcement and receivables recovery. His sustainability practice includes Carbon Law, Emissions Trading Systems, environmental compliance and green transformation projects. Alper is also a registered mediator and provides mediation services in commercial and consumer disputes."
+        }
+      ],
+      "keyFocus": [
+        {
+          "title": {
+            "tr": "İdare, Kamu ve Vergi Hukuku",
+            "en": "Administrative, Public & Tax Law"
+          },
+          "description": {
+            "tr": "İdari yargı süreçleri, düzenleyici kararlar, kamu hukuku uyuşmazlıkları, vergi kaynaklı çekişmeli işler ve gerektiğinde uzman vergi danışmanlığının koordinasyonu",
+            "en": "Administrative proceedings, regulatory decisions, public-law disputes, tax-related contentious matters and coordination of specialist tax advice where required"
+          }
+        },
+        {
+          "title": {
+            "tr": "Sağlık ve Regülasyon Hukuku",
+            "en": "Healthcare & Regulatory Law"
+          },
+          "description": {
+            "tr": "Sağlık sektörü danışmanlığı, ruhsatlandırma, izinler, idari onaylar ve faaliyet uyumu",
+            "en": "Healthcare-sector advisory, licensing, permits, regulatory approvals and operational compliance"
+          }
+        },
+        {
+          "title": {
+            "tr": "Rekabet, Uyum ve Soruşturmalar",
+            "en": "Competition, Compliance & Investigations"
+          },
+          "description": {
+            "tr": "Rekabet hukuku, mevzuata uyum, iç soruşturmalar ve beyaz yaka risk yönetimi",
+            "en": "Competition law, regulatory compliance, internal investigations and white-collar risk management"
+          }
+        },
+        {
+          "title": {
+            "tr": "Gayrimenkul, İnşaat ve İcra",
+            "en": "Real Estate, Construction & Enforcement"
+          },
+          "description": {
+            "tr": "İmar, yapılaşma, inşaat sözleşmeleri, ihaleler, icra takipleri ve alacak tahsili",
+            "en": "Zoning, development, construction contracts, tenders, enforcement proceedings and receivables recovery"
+          }
+        },
+        {
+          "title": {
+            "tr": "Uyuşmazlık Çözümü ve Arabuluculuk",
+            "en": "Dispute Resolution & Mediation"
+          },
+          "description": {
+            "tr": "Dava stratejisi, anayasal kanun yolları, ticari uyuşmazlıklar, arabuluculuk ve müzakereyle varılan sulh",
+            "en": "Litigation strategy, constitutional remedies, commercial disputes, mediation and negotiated settlements"
+          }
+        },
+        {
+          "title": {
+            "tr": "Sürdürülebilirlik ve Çevre Mevzuatı",
+            "en": "Sustainability & Environmental Regulation"
+          },
+          "description": {
+            "tr": "Karbon Hukuku, Emisyon Ticaret Sistemleri, çevresel uyum ve yeşil dönüşüm projeleri",
+            "en": "Carbon Law, Emissions Trading Systems, environmental compliance and green transformation projects"
+          }
         }
       ],
       "education": [
         {
-          "institution": { "tr": "Galatasaray Üniversitesi", "en": "Galatasaray University" },
-          "degree": { "tr": "İnsan Hakları Hukuku Yüksek Lisansı (LL.M.)", "en": "LL.M. in Human Rights Law" },
+          "institution": {
+            "tr": "Galatasaray Üniversitesi",
+            "en": "Galatasaray University"
+          },
+          "degree": {
+            "tr": "İnsan Hakları Hukuku Yüksek Lisansı (LL.M.)",
+            "en": "LL.M. in Human Rights Law"
+          },
           "year": "2020",
           "note": null
         },
         {
-          "institution": { "tr": "İstanbul Üniversitesi", "en": "İstanbul University" },
-          "degree": { "tr": "Hukuk Lisansı (LL.B.)", "en": "LL.B. in Law" },
+          "institution": {
+            "tr": "İstanbul Üniversitesi",
+            "en": "İstanbul University"
+          },
+          "degree": {
+            "tr": "Hukuk Lisansı (LL.B.)",
+            "en": "LL.B. in Law"
+          },
           "year": "2016",
           "note": null
         }
       ],
-      "practiceAreas": ["kamu-hukuku-ve-insan-haklari", "cevre-ve-karbon-hukuku"],
+      "practiceAreas": [
+        "kamu-hukuku-ve-insan-haklari",
+        "cevre-ve-karbon-hukuku"
+      ],
       "languages": [],
       "registry": {
         "tbbNo": "",
         "baroNo": "",
-        "bar": { "tr": "", "en": "" },
+        "bar": {
+          "tr": "",
+          "en": ""
+        },
         "admission": "",
-        "mediator": { "registryNo": "31075", "since": "2023" }
+        "mediator": {
+          "registryNo": "31075",
+          "since": "2023"
+        }
       },
-      "contact": { "email": "", "phone": "", "kep": "" }
+      "contact": {
+        "email": "",
+        "phone": "",
+        "kep": ""
+      }
     }
   ]
 }
