@@ -1,11 +1,11 @@
 {
   "Metadata": {
-    "title": "Hukuk Bürosu",
-    "titleTemplate": "%s — Hukuk Bürosu",
+    "title": "Koçak | Sayım | Örnek",
+    "titleTemplate": "%s — Koçak | Sayım | Örnek",
     "description": "Hukuk bürosunun faaliyet alanları ve iletişim bilgileri."
   },
   "Brand": {
-    "name": "Koçak · Sayım · Örnek"
+    "name": "Koçak | Sayım | Örnek"
   },
   "Nav": {
     "ariaLabel": "Ana navigasyon",
@@ -32,32 +32,27 @@
     "fax": "Faks",
     "email": "E-posta",
     "kep": "KEP",
-    "placeholder": "—",
     "privacy": "KVKK Aydınlatma Metni",
     "cookiePolicy": "Çerez Politikası",
     "copyright": "Tüm hakları saklıdır."
   },
   "Common": {
-    "placeholderValue": "—",
     "sectionTitle": "Bölüm Başlığı {index}",
     "backToList": "Listeye dön"
   },
   "Lorem": {
-    "sentence": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; şehrin ışığı değişirken gölgeler uzar.",
     "paragraph": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Öğleden sonra çınarların gölgesi ağır ağır uzar ve sokak sessizleşir.",
     "paragraphAlt": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Şehrin üstüne çöken sessizlik uzun sürmez; ışık yeniden değişir.",
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
   },
   "Home": {
-    "heroTitle": "Koçak | Sayım | Örnek Avukatlık Bürosu'na hoş geldiniz",
-    "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua; ışık değiştikçe gölgeler uzar.",
+    "heroTitle": "Hukuk büromuza hoş geldiniz.",
     "heroImageAlt": "İstanbul Boğazı ve şehir silueti, gece",
     "linksHeading": "Sayfalar"
   },
   "About": {
     "title": "Hakkımızda",
-    "metaDescription": "Büro hakkında genel bilgi.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit; sed do eiusmod tempor incididunt."
+    "metaDescription": "Büro hakkında genel bilgi."
   },
   "Team": {
     "title": "Ekip",
@@ -89,7 +84,6 @@
   "Contact": {
     "title": "İletişim",
     "metaDescription": "Büronun adres, telefon, e-posta ve KEP bilgileri.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
     "infoHeading": "İletişim bilgileri",
     "formHeading": "İletişim formu",
     "mapHeading": "Konum",

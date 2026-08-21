@@ -21,7 +21,6 @@ export default async function HomePage({
 
   const t = await getTranslations("Home");
   const tNav = await getTranslations("Nav");
-  const tLorem = await getTranslations("Lorem");
 
   const links: { href: StaticPathname; label: string }[] = [
     { href: "/hakkimizda", label: tNav("about") },
@@ -45,7 +44,16 @@ export default async function HomePage({
         Overlay `<Image>`'in ÜSTÜNDE ayrı bir katman — filter/backdrop-filter
         kullanılmaz.
       */}
-      <section className="relative isolate">
+      {/*
+        Yükseklik içeriğe bırakılmaz: başlık tek satıra düştüğünde hero
+        ince bir başlık bandına dönüşüyordu. Taban `--hero-min-height`
+        tokenlarından gelir (globals.css), component'te ham px yoktur.
+
+        `items-end`: başlık fotoğrafın ALT kenarına hizalanır. Üst kenarda
+        `hero-top-fade` maskesi durduğu için metni oraya koymak iki katmanı
+        üst üste yığardı; alt hizalama fotoğrafı da açıkta bırakır.
+      */}
+      <section className="hero-frame md:hero-frame-lg relative isolate flex items-end">
         <Image
           src="/hero/istanbul.jpg"
           alt={t("heroImageAlt")}
@@ -74,11 +82,13 @@ export default async function HomePage({
         />
 
         <Container className="relative">
-          <div className="max-w-prose py-24">
+          <div className="max-w-prose py-16 md:py-24">
             {/* Overlay üstünde yalnızca #FFFFFF ve #F7F8FA kullanılır;
-                grey-200 ve altı yasak (docs/design-system.md §2.3). */}
+                grey-200 ve altı yasak (docs/design-system.md §2.3).
+
+                Başlığın altında alt metin YOKTUR — müşteri göndermedi ve
+                yer tutucu bırakılmadı (CLAUDE.md Çalışma Kuralı 1). */}
             <h1 className="text-h2 text-white md:text-h1">{t("heroTitle")}</h1>
-            <p className="mt-6 text-body-lg text-grey-50">{t("heroLead")}</p>
           </div>
         </Container>
       </section>
@@ -93,14 +103,19 @@ export default async function HomePage({
             {links.map((link) => (
               <li key={link.href}>
                 {/* Kart hover'da büyümez, gölge almaz, 3D dönmez —
-                    tek hareket başlığın altını çizmesidir. */}
-                <Link href={link.href} className="group block border-t border-grey-500 pt-6">
+                    tek hareket başlığın altını çizmesidir.
+
+                    Başlık altında açıklama cümlesi YOKTUR: müşteri bu üç
+                    metni göndermedi. Ekip ve faaliyet alanları liste
+                    sayfalarındaki giriş paragrafları da aynı gerekçeyle
+                    kaldırılmıştı. */}
+                <Link
+                  href={link.href}
+                  className="group block border-t border-grey-500 pt-6"
+                >
                   <h3 className="text-h3 text-primary underline-offset-4 group-hover:underline">
                     {link.label}
                   </h3>
-                  <p className="mt-3 text-body text-grey-600">
-                    {tLorem("sentence")}
-                  </p>
                 </Link>
               </li>
             ))}

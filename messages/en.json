@@ -1,11 +1,11 @@
 {
   "Metadata": {
-    "title": "Law Office",
-    "titleTemplate": "%s — Law Office",
+    "title": "Koçak | Sayım | Örnek",
+    "titleTemplate": "%s — Koçak | Sayım | Örnek",
     "description": "Practice areas and contact details of the law office."
   },
   "Brand": {
-    "name": "Koçak · Sayım · Örnek"
+    "name": "Koçak | Sayım | Örnek"
   },
   "Nav": {
     "ariaLabel": "Main navigation",
@@ -32,32 +32,27 @@
     "fax": "Fax",
     "email": "E-mail",
     "kep": "KEP",
-    "placeholder": "—",
     "privacy": "Personal Data Protection Notice",
     "cookiePolicy": "Cookie Policy",
     "copyright": "All rights reserved."
   },
   "Common": {
-    "placeholderValue": "—",
     "sectionTitle": "Section Heading {index}",
     "backToList": "Back to the list"
   },
   "Lorem": {
-    "sentence": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "paragraphAlt": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
-    "heroTitle": "Welcome to Koçak | Sayım | Örnek Law Office",
-    "heroLead": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.",
+    "heroTitle": "Welcome to our law firm.",
     "heroImageAlt": "The Bosphorus and the İstanbul skyline at night",
     "linksHeading": "Pages"
   },
   "About": {
     "title": "About",
-    "metaDescription": "General information about the office.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    "metaDescription": "General information about the office."
   },
   "Team": {
     "title": "Team",
@@ -89,7 +84,6 @@
   "Contact": {
     "title": "Contact",
     "metaDescription": "Address, telephone, e-mail and KEP details of the office.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "infoHeading": "Contact details",
     "formHeading": "Contact form",
     "mapHeading": "Location",

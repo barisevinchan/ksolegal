@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import PlaceholderBox from "@/components/PlaceholderBox";
 import { Link } from "@/i18n/navigation";
+import { getOfficeContactRows, office, pick } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -36,15 +37,14 @@ export default async function ContactPage({
 
   const t = await getTranslations("Contact");
   const tFooter = await getTranslations("Footer");
-  const tCommon = await getTranslations("Common");
 
-  const infoRows = [
-    { key: "address", label: tFooter("address") },
-    { key: "phone", label: tFooter("phone") },
-    { key: "fax", label: tFooter("fax") },
-    { key: "email", label: tFooter("email") },
-    { key: "kep", label: tFooter("kep") },
-  ];
+  /*
+    Satırlar `content/buro.json`'dan gelir ve footer ile ORTAKTIR.
+    Değeri boş olan satır listeye hiç girmez — telefon, faks ve KEP
+    müşteriden gelmediği için şu an yalnızca adres ve e-posta çıkar.
+    Veri geldiğinde yalnızca JSON güncellenir, bu dosya değişmez.
+  */
+  const infoRows = getOfficeContactRows(locale);
 
   const fields = [
     { id: "name", type: "text", autoComplete: "name", optional: false },
@@ -61,7 +61,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader title={t("title")} lead={pick(office.lead, locale)} />
 
       <Container>
         <div className="grid gap-12 pb-16 md:grid-cols-2 md:items-start md:gap-16 md:pb-24">
@@ -74,10 +74,23 @@ export default async function ContactPage({
               {infoRows.map((row) => (
                 <div key={row.key} className="sm:flex sm:gap-6">
                   <dt className="text-body-sm text-grey-600 sm:w-32 sm:shrink-0">
-                    {row.label}
+                    {tFooter(row.key)}
                   </dt>
                   <dd className="text-body text-grey-800">
-                    {tCommon("placeholderValue")}
+                    {row.href ? (
+                      /* `inline-flex min-h-11` dokunma hedefini 44px'e
+                         tamamlar (docs/design-system.md §6.2) — satırın
+                         görsel yüksekliği değişmez, yalnızca tıklama
+                         alanı büyür. */
+                      <a
+                        href={row.href}
+                        className="inline-flex min-h-11 items-center underline underline-offset-4 transition-text hover:text-primary"
+                      >
+                        {row.value}
+                      </a>
+                    ) : (
+                      row.value
+                    )}
                   </dd>
                 </div>
               ))}

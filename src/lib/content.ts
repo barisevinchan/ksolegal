@@ -1,4 +1,5 @@
 import avukatlar from "../../content/avukatlar.json";
+import buro from "../../content/buro.json";
 import faaliyetAlanlari from "../../content/faaliyet-alanlari.json";
 
 /**
@@ -141,4 +142,66 @@ export function buildSlugMap(): Record<string, L10n> {
     map[area.slug.en] = area.slug;
   }
   return map;
+}
+
+/* ==========================================================================
+   Büro (hakkımızda metni + iletişim bilgileri)
+   ========================================================================== */
+
+export type Office = {
+  lead: L10n;
+  address: L10n;
+  phone: string;
+  fax: string;
+  email: string;
+  kep: string;
+};
+
+/** /hakkimizda gövde metni. Müşteri PDF'inin "WHO WE ARE?" bölümü. */
+export const aboutParagraphs = buro.about.paragraphs as readonly L10n[];
+
+export const office = buro.office as Office;
+
+export type OfficeContactRow = {
+  /** `Footer` mesaj namespace'indeki etiket anahtarı. */
+  key: "address" | "phone" | "fax" | "email" | "kep";
+  value: string;
+  /** Tıklanabilir satırlarda `mailto:` / `tel:`. Değer boşsa yoktur. */
+  href?: string;
+};
+
+/**
+ * Footer ile /iletisim'in ORTAK satır listesi — iki yerde ayrı ayrı
+ * yazılmaz.
+ *
+ * Değeri boş olan satır listeden ELENİR: ziyaretçiye bir sıra tire
+ * göstermek yerine satır hiç çıkmaz. Telefon, faks ve KEP müşteriden
+ * gelmediği için şu an yalnızca adres ve e-posta render edilir.
+ *
+ * Satırın sırası, etiketi, linki ve filtresi tamamen buradadır; bu yüzden
+ * eksik veri geldiğinde YALNIZCA content/buro.json güncellenir, hiçbir
+ * component değişmez.
+ */
+export function getOfficeContactRows(locale: string): OfficeContactRow[] {
+  const rows: OfficeContactRow[] = [
+    { key: "address", value: pick(office.address, locale) },
+    { key: "phone", value: office.phone, href: telHref(office.phone) },
+    { key: "fax", value: office.fax },
+    { key: "email", value: office.email, href: mailHref(office.email) },
+    { key: "kep", value: office.kep, href: mailHref(office.kep) },
+  ];
+
+  return rows.filter((row) => hasText(row.value));
+}
+
+/** Faks numarası aranmaz, bu yüzden `fax` için link üretilmez. */
+function telHref(value: string): string | undefined {
+  if (!hasText(value)) return undefined;
+  // `tel:` şeması boşluk ve parantez kabul etmez; yalnızca rakam ve
+  // baştaki + kalır.
+  return `tel:${value.replace(/[^\d+]/g, "")}`;
+}
+
+function mailHref(value: string): string | undefined {
+  return hasText(value) ? `mailto:${value}` : undefined;
 }

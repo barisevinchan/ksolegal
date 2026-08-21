@@ -1,0 +1,29 @@
+{
+  "_note": "Büro düzeyindeki içerik. Kaynak: kaynak/icerik/www.kso.av.tr tasarım.pdf — 'WHO WE ARE?' ve 'CONTACT' bölümleri. PDF İngilizce yazılmıştır; Türkçe metinler TASLAK ÇEVİRİDİR ve MÜŞTERİ ONAYI BEKLEMEKTEDİR. İki dil yan yana tutulur ki müşteri tek dosyadan düzeltebilsin. Boş string = müşteriden gelmeyen veri; uydurulmadı ve ilgili satır HİÇ RENDER EDİLMEZ (bkz. lib/content.ts getOfficeContactRows). Telefon, faks ve KEP geldiğinde yalnızca bu dosya güncellenir, kod değişmez.",
+  "about": {
+    "paragraphs": [
+      {
+        "tr": "Koçak | Sayım | Örnek, yerli ve yabancı müvekkillerine ticari, kurumsal ve operasyonel ihtiyaçları kapsamında tam kapsamlı hukuki destek sunan, İstanbul merkezli bir avukatlık bürosudur. Türkiye'de faaliyet gösteren işletmelere; ayrıca Türk pazarını ve sınır ötesi işlemleri ilgilendiren konularda yabancı şirketlere, yatırımcılara ve kurumlara danışmanlık veriyoruz. Verdiğimiz hukuki görüş yalnızca mevzuatın gerekleriyle değil, müvekkillerimizin faaliyet gösterdiği ve karar aldığı ticari koşullarla da şekillenir.",
+        "en": "Koçak | Sayım | Örnek is an İstanbul-based law firm providing full-service legal support to local and international clients across their commercial, corporate and operational needs. We advise businesses operating in Türkiye, as well as international companies, investors and institutions on matters involving the Turkish market and cross-border transactions. Our advice is shaped not only by legal requirements, but also by the commercial realities in which our clients operate and make decisions."
+      },
+      {
+        "tr": "Etkili bir hukuki danışmanlığın açık, hızlı yanıt veren ve öngörülü olması gerektiğine inanıyoruz. Doğrudan iletişim ve hukuki risklerin erken tespiti sayesinde müvekkillerimizin gereksiz uyuşmazlıkları önlemesine, belirsizliği azaltmasına ve iş hedeflerine odaklanmayı sürdürmesine yardımcı oluyoruz. Bu çerçevede, işletmelerin bilinçli kararlar almasını, riski etkin biçimde yönetmesini ve güvenle ilerlemesini sağlayan, uygulanabilir ve ticari gerçeklerle uyumlu hukuki çözümler sunuyoruz.",
+        "en": "We believe effective legal counsel should be clear, responsive and proactive. Through direct communication and early identification of legal risks, we help our clients prevent unnecessary disputes, reduce uncertainty and remain focused on their business objectives. In this context, we deliver practical and commercially aligned legal solutions that enable businesses to make informed decisions, manage risk effectively and move forward with confidence."
+      }
+    ]
+  },
+  "office": {
+    "lead": {
+      "tr": "Yerli ve yabancı müvekkillerimize, İstanbul'un merkezindeki büromuzdan hizmet veriyoruz.",
+      "en": "We serve local and international clients from our office in the heart of İstanbul."
+    },
+    "address": {
+      "tr": "Elit Residence, No:3/14, Şişli, İstanbul, Türkiye",
+      "en": "Elit Residence, No:3/14, Şişli, İstanbul, Türkiye"
+    },
+    "phone": "",
+    "fax": "",
+    "email": "info@kso.av.tr",
+    "kep": ""
+  }
+}

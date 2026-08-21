@@ -83,6 +83,23 @@
      ALT SINIR 0.66 — fotoğraf koyu diye düşürülmez.
      -------------------------------------------------------------------- */
   --hero-overlay-opacity: 0.7;
+
+  /* ---- Hero yüksekliği ----------------------------------------------------
+     Hero'nun boyu içeriğe bırakılmaz: başlık tek satıra düştüğünde fotoğraf
+     ince bir banda dönüşüyor ve hero olarak okunmuyordu. Taban değer
+     token'dır, component'e ham px yazılmaz.
+
+     `rem` seçildi — design-system tipografi ve genişlikte de `rem`
+     kullanıyor; kullanıcı tarayıcı yazı boyutunu büyütürse taban da büyür,
+     yani alt sınır her koşulda sağlanır.
+
+     Masaüstünde tercih edilen ölçü viewport'un %55'i: hero ekranı doldurmaz,
+     altındaki üç yönlendirme bloğunun üst kenarı görünür kalır. Kısa
+     ekranlarda %55 tabanın altına düşeceği için `max()` ile 26.25rem'e
+     sabitlenir.
+     -------------------------------------------------------------------- */
+  --hero-min-height: 23.75rem; /* 380px — mobil taban */
+  --hero-min-height-lg: max(26.25rem, 55svh); /* en az 420px */
 }
 
 /* Spacing ölçeği ayrıca tanımlanmaz: Tailwind'in varsayılanı zaten
@@ -94,6 +111,21 @@
 /* ==========================================================================
    Özel utility'ler
    ========================================================================== */
+
+/* Hero'nun taban yüksekliği. İki ayrı utility çünkü değerin biri
+   `md:` kırılımında devreye giriyor ve Tailwind variant'ları
+   `@utility` ile tanımlanan sınıflarda da çalışıyor:
+   `hero-frame md:hero-frame-lg`. */
+@utility hero-frame {
+  min-height: var(--hero-min-height);
+}
+
+@utility hero-frame-lg {
+  /* `svh` desteklemeyen eski tarayıcı ikinci satırı atar ve 420px
+     tabanında kalır — hero yine de ince banda dönüşmez. */
+  min-height: 26.25rem;
+  min-height: var(--hero-min-height-lg);
+}
 
 /* Hero fotoğrafının üzerine gelen düz renk katmanı.
    Ayrı bir katman olarak konumlandırılır — filter/backdrop-filter ve

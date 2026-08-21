@@ -127,7 +127,9 @@ metin ve çok duraklı/renkli gradient yasak olmaya devam eder.
 ```
 
 - Yükseklik hero'nun **%25**'i (`h-1/4`) — yüzde olduğu için ham px yok ve
-  hero boyu değişse de oran korunur.
+  hero boyu değişse de oran korunur. §5.1'deki taban yükseklik devreye
+  girdiğinde bant da onunla orantılı büyür; başlık alta hizalı olduğu için
+  maske ile metin hiçbir kırılımda üst üste binmez.
 - `hero-overlay`'in **üstünde**, metnin **altında** durur. Overlay'in yerine
   geçmez; α = 0.70 kuralı aynen geçerlidir.
 - Katman sırası: `<img>` → `hero-overlay` → `hero-top-fade` → içerik.
@@ -240,6 +242,55 @@ beyaz metin kontrastı AA'yı geçiyor:
 | 4.5:1 altında kalan piksel | **0** |
 
 Fotoğraf değiştirilirse bu ölçüm tekrarlanmalıdır.
+
+#### Yükseklik
+
+Hero'nun boyu **içeriğe bırakılmaz.** Müşteri metni geldiğinde başlık tek
+satıra düştü ve alt metin kaldırıldı; hero masaüstünde ~237px'e inerek
+fotoğrafı ince bir başlık bandına çevirdi. Taban değer token'a bağlandı:
+
+```
+--hero-min-height:    23.75rem;                /* 380px — mobil taban */
+--hero-min-height-lg: max(26.25rem, 55svh);    /* en az 420px */
+```
+
+Kullanım: `hero-frame md:hero-frame-lg`. Component'e ham px yazılmaz.
+
+- **`rem`,** px değil: tipografi ve genişlik ölçeğiyle aynı birim. Kullanıcı
+  tarayıcı yazı boyutunu büyütürse taban da büyür, alt sınır her koşulda
+  sağlanır.
+- **`55svh`,** `vh` değil: mobil tarayıcıda adres çubuğu açıkken hero'nun
+  taşmaması için küçük viewport birimi kullanılır.
+- **`max()`,** çünkü kısa ekranda %55 tabanın altına düşer. Ölçü hero'nun
+  ekranı doldurmamasını da sağlar — altındaki üç yönlendirme bloğunun üst
+  kenarı görünür kalır, sayfanın devam ettiği belli olur.
+- `hero-frame-lg` içinde `max()` satırından önce düz `26.25rem` fallback'i
+  durur; `svh` desteklemeyen tarayıcı 420px tabanında kalır.
+
+#### Başlık hizası: **alt**
+
+Başlık `items-end` ile fotoğrafın alt kenarına hizalanır. Üst kenarda §2.4'ün
+maskesi durduğu için metni oraya koymak iki katmanı üst üste yığardı; alt
+hizalama fotoğrafın orta bandını da açıkta bırakır.
+
+Kontrast alt sınırı değişmez: yukarıdaki ölçüm dosyanın **tamamını** kapsıyor
+(4.5:1 altında piksel yok), dolayısıyla başlık kutusu nereye konursa konsun
+en kötü durum 5.43:1'dir.
+
+#### Kadraj
+
+Boğaz Köprüsü fotoğrafta dikeyde **%42–62**, yatayda **%33 ve %64** (kule
+ayakları) bandında. `object-cover` + varsayılan `object-position: center` ile
+kırpma hesabı:
+
+| Çerçeve | Görünen bant | Köprü |
+|---|---|---|
+| 1440×495 (masaüstü) | dikey %19–81 | tam |
+| 375×380 (mobil) | yatay %22–78 | iki kule de içeride |
+| 1920×420 (en dar bant) | dikey %31–69 | tam |
+
+Üçünde de köprü kadraj içinde kalıyor; `object-position` **ayarlanmadı.**
+Fotoğraf veya taban yükseklik değişirse bu tablo yeniden hesaplanmalıdır.
 
 ### 5.2 Ekip
 Fotoğraflı **3'lü grid**. Masaüstünde 3 kolon, tablette 2, mobilde 1.
