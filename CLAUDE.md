@@ -78,6 +78,40 @@ alınırsa `content/avukatlar.json` içindeki veri korunur, yalnızca
 
 ---
 
+### 📋 Kaydedilen sapmalar
+
+Aşağıdaki içerik, yukarıdaki yasaklarla **çeliştiği hâlde** sitede canlıdır.
+Hepsi müşterinin `kaynak/icerik/www.kso.av.tr tasarım.pdf` dosyasındaki kendi
+metnidir ve kullanıcının açık talimatıyla **değiştirilmeden** uygulanmıştır.
+
+**Yukarıdaki yasaklar yürürlüktedir.** Bu bölüm kuralı gevşetmez, yalnızca
+bilinen sapmaları kayda geçirir. Yeni bir metin aynı kelimeleri içeriyorsa
+yine işaretlenip sorulmalıdır. Baro görüşü alınması önerilir; sapma geri
+alınırsa yalnızca `content/avukatlar.json` içindeki ilgili metin düzeltilir,
+kod değişmez.
+
+| # | Konum | TR | EN | Çeliştiği kural | Tarih |
+|---|---|---|---|---|---|
+| 1 | `content/avukatlar.json` → Alper Örnek, biyografi §1 | "usul **uzmanlığını** ticari ve kurumsal riske ilişkin uygulamalı bir kavrayışla birleştirmektedir" | "combining procedural **expertise** with a practical understanding of commercial and institutional risk" | "uzman/uzmanlık/expert" yasağı **ve** "Onaylanmış istisna"nın sınırı — istisna metni tanıtım paragraflarını açıkça dışarıda bırakıyor | 21.08.2026 |
+| 2 | `content/avukatlar.json` → Alper Örnek, Key Focus #1 | "gerektiğinde **uzman** vergi danışmanlığının koordinasyonu" | "coordination of **specialist** tax advice where required" | "specialist" yasağı; aynı şekilde istisna sınırı dışında | 21.08.2026 |
+| 3 | `content/avukatlar.json` → B. Hüseyin Sayım, biyografi §2 | "**baş danışman** olarak görev almakta" | "acts as **leading counsel**" | "lider / öncü" üstünlük iddiası yasağı | 21.08.2026 |
+| 4 | `content/avukatlar.json` → B. Hüseyin Sayım, Key Focus #3 | "Sınır ötesi ticari projelerin **yürütülmesi**" | "**Leading** cross-border commercial projects" | Aynı yasak. Burada sıfat değil ulaç (*yürütmek*) — risk daha düşük, tamlık için kaydedildi | 21.08.2026 |
+| 5 | `content/avukatlar.json` → Berkay Koçak, biyografi §1 | "**Yerleşik deneyimi** … kapsamaktadır" | "His **established experience** includes…" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok | 21.08.2026 |
+| 6 | `content/avukatlar.json` → B. Hüseyin Sayım, `academicTitle` | "MSc" | "MSc" | "İzin verilen içerik" **hukuk alanındaki** akademik unvana izin veriyor; bu derece Galatasaray Üniversitesi'nde **Finansal Ekonomi** alanındadır | 21.08.2026 |
+
+**7 — Yapısal sapma.** "İzin verilen içerik" listesi kapalıdır ve içinde
+**biyografi paragrafı** ile **Key Focus listesi** yoktur; her ikisi de
+`/ekip/[slug]` sayfalarında yayındadır (`intro`, `keyFocus`). Bu sınır ilk
+olarak broşür turunda `intro` ile aşılmıştı; müşteri PDF'i bunu genişletti.
+Alanlar "uzmanlık anlamına gelmemek kaydıyla … nötr bilgi" izniyle
+savunulabilir, ancak 1–5 numaralı ifadeler bu savunmanın dışında kalır.
+(21.08.2026)
+
+Türkçe metinler **taslak çeviridir ve müşteri onayı beklemektedir** — 1–5'te
+yasaklı kelime, birebir çeviri tercih edildiği için Türkçe metne de girmiştir.
+
+---
+
 ### Blog / makale bölümü
 
 **Sorulmadan ekleme.** 2024 değişikliği sonrası tartışmalı. İstenirse rota
@@ -185,6 +219,31 @@ Tam token tablosu, her tokenin kontrast oranı ve izinli/yasaklı kullanımı:
 - `next/font` ile **self-host**; subset olarak **`latin` ve `latin-ext`**
   yüklenir (Türkçe ğĞşŞıİ için `latin-ext` zorunludur)
 
+### Marka adı yazımı
+
+Site genelinde **tek biçim**: `Koçak | Sayım | Örnek` — dikey çizgi
+ayıraçla, kurumsal logodaki biçimle birebir. Orta nokta (`·`) veya başka
+bir ayıraç kullanılmaz.
+
+Tek kaynak `messages/*.json` içindeki `Brand.name`'dir; footer telif satırı
+ve logo `alt` metni oradan okur. `Metadata.title` de aynı biçimdedir;
+`titleTemplate` ayıracı **tire**dir ki dikey çizgilerle karışmasın:
+
+```
+Ekip — Koçak | Sayım | Örnek
+```
+
+Avukat unvan satırı ayrı bir kalıptır — akademik unvandan sonra virgül,
+mesleki unvanla ortak sıfatı arasında orta nokta:
+
+```
+LL.M., Avukat · Ortak        LL.M., Attorney-at-Law · Partner
+```
+
+`Avukat` / `Attorney-at-Law` ibaresi **düşürülmez**; "İzin verilen içerik"
+listesinde yer alan mesleki unvandır. Biçim `src/lib/content.ts` içindeki
+`titleLine()` fonksiyonunda tektir.
+
 ---
 
 ## 🧰 SKILL KULLANIMI
@@ -250,16 +309,20 @@ Bir skill'in önerisi CLAUDE.md'deki "Görsel olarak YASAK" listesiyle
 
 ## 📁 Kaynak Dosyalar
 
+Dizinin adı `kaynak/` — **alt çizgisiz.**
+
 ```
-_kaynak/
-├── logo/        Kurumsal logo (tercihen SVG; değilse dönüştür)
-├── brosur/      3 avukatın broşürleri — kişi bilgileri buradan çekilir
-├── fotograf/    Avukat portreleri
-├── kartvizit/   Renk kodu ve tipografi referansı
-└── renkler.*    Kurumsal renk kodları
+kaynak/
+├── Kurumsal Logo/         Kurumsal logo (SVG)
+├── Ortaklar Broşür/       3 avukatın broşürleri — kişi bilgileri buradan çekilir
+├── Resimler/              Avukat portreleri
+├── hero/                  Hero fotoğrafı
+├── Kartvizit Görselleri/  Renk kodu ve tipografi referansı
+├── Kurumsal Renkler/      Kurumsal renk kodları
+└── icerik/                Müşterinin gönderdiği içerik dosyaları
 ```
 
-`_kaynak/` build'e dahil edilmez. `.gitignore`'a **ekleme** — repoda kalsın,
+`kaynak/` build'e dahil edilmez. `.gitignore`'a **ekleme** — repoda kalsın,
 sadece `public/` altına kopyalanmasın.
 
 ### Broşürden bilgi çıkarma kuralı
@@ -309,7 +372,12 @@ her bilgi siteye konulamaz.
 
 - TypeScript strict mode; `any` kullanma
 - Server Component varsayılan; `"use client"` sadece gerçekten gerekiyorsa
-- İçerik `content/` altında MDX veya JSON — component içine hardcode etme
+- İçerik `content/` altında MDX veya JSON — component içine hardcode etme.
+  Mevcut dosyalar: `avukatlar.json` (avukat verisi), `faaliyet-alanlari.json`
+  (alan listesi ve detayları), `buro.json` (hakkımızda paragrafları + büro
+  iletişim bilgileri). Metin değerleri `{ tr, en }` biçiminde iki dilli
+  tutulur ki müşteri iki dili yan yana görüp tek dosyadan düzeltebilsin.
+  Boş string = veri yok; uydurulmaz ve ilgili satır/bölüm render **edilmez**
 - Tailwind utility class; ayrı CSS dosyası açma
 - i18n: `next-intl`, çeviriler `messages/tr.json` ve `messages/en.json`
 - Görseller `next/image` ile; tüm görsellerde anlamlı `alt`
