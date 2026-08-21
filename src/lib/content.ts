@@ -93,11 +93,11 @@ export function getLawyer(slug: string): Lawyer | undefined {
 }
 
 /**
- * "LL.M., Ortak" — akademik unvan yoksa atlanır.
+ * "LL.M., Avukat · Ortak" — akademik unvan yoksa atlanır.
  *
- * Ayırıcı ve içerik müşteri PDF'indeki biçimden gelir ("LL.M., Partner").
- * Bu yüzden satırda `Avukat` / `Attorney-at-Law` ibaresi YOKTUR; mesleki
- * unvanın düşmesi bilinçli bir müşteri kararıdır.
+ * Virgül ayırıcı müşteri PDF'indeki biçimden gelir ("LL.M., Partner").
+ * `Avukat` / `Attorney-at-Law` ibaresi ise korunur: TBB'nin izin verilen
+ * içerik listesinde açıkça yer alan mesleki unvandır.
  */
 export function titleLine(lawyer: Lawyer, locale: string): string {
   return [lawyer.academicTitle, pick(lawyer.role, locale)]
