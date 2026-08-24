@@ -80,6 +80,8 @@
   "PracticeAreas": {
     "title": "Practice Areas",
     "metaDescription": "Fields of law in which the office works.",
+    "overviewHeading": "Overview",
+    "coreServicesHeading": "Core Services",
     "lawyersHeading": "Attorneys working in this field"
   },
   "Contact": {

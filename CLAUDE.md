@@ -98,6 +98,7 @@ kod değişmez.
 | 4 | `content/avukatlar.json` → B. Hüseyin Sayım, Key Focus #3 | "Sınır ötesi ticari projelerin **yürütülmesi**" | "**Leading** cross-border commercial projects" | Aynı yasak. Burada sıfat değil ulaç (*yürütmek*) — risk daha düşük, tamlık için kaydedildi | 21.08.2026 |
 | 5 | `content/avukatlar.json` → Berkay Koçak, biyografi §1 | "**Yerleşik deneyimi** … kapsamaktadır" | "His **established experience** includes…" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok | 21.08.2026 |
 | 6 | `content/avukatlar.json` → B. Hüseyin Sayım, `academicTitle` | "MSc" | "MSc" | "İzin verilen içerik" **hukuk alanındaki** akademik unvana izin veriyor; bu derece Galatasaray Üniversitesi'nde **Finansal Ekonomi** alanındadır | 21.08.2026 |
+| 8 | `content/faaliyet-alanlari.json` → 11. alan (Gayrimenkul ve İnşaat), `overview[1]` | "işlem, mevzuat ve uyuşmazlık alanlarındaki **deneyimimizi** birleştiriyoruz" | "We combine transactional, regulatory and contentious **experience**" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok. 5 numaralı sapmayla aynı sınıf | 24.08.2026 |
 
 **7 — Yapısal sapma.** "İzin verilen içerik" listesi kapalıdır ve içinde
 **biyografi paragrafı** ile **Key Focus listesi** yoktur; her ikisi de
@@ -107,8 +108,37 @@ Alanlar "uzmanlık anlamına gelmemek kaydıyla … nötr bilgi" izniyle
 savunulabilir, ancak 1–5 numaralı ifadeler bu savunmanın dışında kalır.
 (21.08.2026)
 
-Türkçe metinler **taslak çeviridir ve müşteri onayı beklemektedir** — 1–5'te
-yasaklı kelime, birebir çeviri tercih edildiği için Türkçe metne de girmiştir.
+Türkçe metinler **taslak çeviridir ve müşteri onayı beklemektedir** — 1–5 ve
+8'de yasaklı ifade, birebir çeviri tercih edildiği için Türkçe metne de
+girmiştir.
+
+**9 — Yapısal sapma (Core Services).** Müşteri PDF'inin 13 faaliyet alanı,
+alan başına 7–10 maddelik **Core Services** listesi içerir (toplam 122
+madde) ve bunlar `/faaliyet-alanlari/[slug]` sayfalarında yayındadır.
+"İzin verilen içerik" listesi kapalıdır ve içinde hizmet kataloğu yoktur;
+alanlar "uzmanlık anlamına gelmemek kaydıyla … nötr bilgi" izniyle
+savunulabilir. Metnin dili nötr ve bilgilendiricidir — üstünlük iddiası,
+rakam, dava veya müvekkil örneği taraması **temiz** çıkmıştır. (24.08.2026)
+
+---
+
+### 📌 Müşteriye sorulacak — karşılıksız Key Focus alanları
+
+`/ekip/[slug]` sayfalarındaki Key Focus başlıklarından **üçünün** 13'lük
+faaliyet alanı listesinde karşılığı yok. Key Focus başlığı olarak yayında
+kalıyorlar, ancak bir alan sayfasına link vermiyorlar:
+
+| Key Focus | Kimde | Durum |
+|---|---|---|
+| Business Immigration & Citizenship | Berkay Koçak | 6. alan çalışma/oturma iznini kapsıyor, **vatandaşlık** hiçbir alanda geçmiyor |
+| Healthcare & Regulatory Law | Alper Örnek | "Regulatory" 7. alana düşüyor, **sağlık sektörü** (ruhsat, lisans, işletme uyumu) hiçbir alanda yok |
+| Sustainability & Environmental Regulation | Alper Örnek | Karbon Hukuku, ETS, çevresel uyum — tamamen karşılıksız |
+
+Not: bu değişiklikten önce sitede `cevre-ve-karbon-hukuku` adlı bir alan
+vardı ve müşteri PDF'i onu kapsamıyor; 13'lük listeye geçişte kalktı.
+
+Müşteri "13 alan tam liste mi, yoksa bu üçü de eklenecek mi?" sorusuna
+cevap verene kadar yeni alan **eklenmez**. (24.08.2026)
 
 ---
 

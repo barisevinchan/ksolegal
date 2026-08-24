@@ -1,49 +1,609 @@
 {
-  "_note": "Faaliyet alanları. Dil bilgilendiricidir, pazarlama dili değildir: üstünlük iddiası, deneyim süresi, dava/müvekkil örneği ve rakam KULLANILMAZ (TBB Reklam Yasağı Yönetmeliği). Alanlar 'uzmanlık anlamına gelmemek kaydıyla' verilebilir (Madde 7/d). Slug'lar nötrdür, anahtar kelime içermez (Madde 7/e). 'id' avukatlar.json'daki practiceAreas alanının anahtarıdır ve Türkçe slug ile aynıdır. Alanda çalışan avukatlar avukatlar.json'dan TÜRETİLİR, burada tekrarlanmaz.",
+  "_note": "Faaliyet alanları — kaynak: kaynak/icerik/www.kso.av.tr tasarım.pdf 'PRACTICE AREAS' bölümü. 13 alan, PDF'teki sıra korunmuştur. İNGİLİZCE METİN MÜŞTERİNİN KENDİ METNİDİR ve değiştirilmemiştir; yalnızca PDF çıkarımında bozulan 'tax' kelimesi (13. alanda 7 yerde 'ta' olarak çıkmıştı) düzeltilmiştir. Türkçe metinler TASLAK ÇEVİRİDİR ve müşteri onayı beklemektedir; terim tercihleri docs/terminoloji.md dosyasındadır. Yapı PDF ile birebir: 'overview' 2 paragraf, 'coreServices' düz madde listesi. Liste kartındaki özet ve meta description overview[0]'ın İLK CÜMLESİNDEN türetilir (src/lib/content.ts → firstSentence), ayrı bir alanda tekrarlanmaz — müşteri paragrafı düzelttiğinde kart metni kaymasın diye. Slug'lar nötrdür, anahtar kelime içermez (TBB Reklam Yasağı Yönetmeliği Madde 7/e). 'id' avukatlar.json'daki practiceAreas alanının anahtarıdır ve Türkçe slug ile aynıdır. Alanda çalışan avukatlar avukatlar.json'dan TÜRETİLİR, burada tekrarlanmaz. ⚠️ 11. alanın overview[1] cümlesi 'deneyim' vurgusu içerir — CLAUDE.md 'Kaydedilen sapmalar' tablosu satır 8.",
   "areas": [
     {
-      "id": "is-hukuku",
-      "slug": { "tr": "is-hukuku", "en": "employment-law" },
-      "title": { "tr": "İş Hukuku", "en": "Employment Law" },
-      "lead": {
-        "tr": "Bireysel ve toplu iş ilişkilerinin kurulmasından sona ermesine kadar geçen süreçte tarafların hukuki konumunu düzenleyen alandır. Büro bu alanda hem sözleşme ve yapılandırma çalışmaları hem de uyuşmazlık süreçleri yürütmektedir.",
-        "en": "This field governs the legal position of the parties throughout the life of individual and collective employment relationships, from formation to termination. The office carries out both contractual and structuring work and dispute proceedings in this field."
+      "id": "sirketler-ve-ticaret-hukuku",
+      "slug": {
+        "tr": "sirketler-ve-ticaret-hukuku",
+        "en": "corporate-and-commercial-law"
       },
-      "topics": [
+      "title": {
+        "tr": "Şirketler ve Ticaret Hukuku",
+        "en": "Corporate and Commercial Law"
+      },
+      "overview": [
         {
-          "title": { "tr": "Bireysel iş ilişkileri", "en": "Individual employment relationships" },
-          "items": [
-            { "tr": "İş sözleşmesinin kurulması ve sözleşme türlerinin seçimi", "en": "Formation of the employment contract and selection of contract type" },
-            { "tr": "İşyeri yapılanması, çalışma düzeni ve iç yönetmelikler", "en": "Workplace structuring, working arrangements and internal regulations" },
-            { "tr": "Ücret, fazla çalışma ve yıllık izin uygulamaları", "en": "Wages, overtime and annual leave practices" },
-            { "tr": "Fesih usulü ve iş güvencesi hükümlerinin uygulanması", "en": "Termination procedure and the application of job security provisions" },
-            { "tr": "Rekabet yasağı ve gizlilik taahhütleri", "en": "Non-competition undertakings and confidentiality commitments" }
-          ]
+          "tr": "Şirketlere; günlük faaliyetlerini, yönetim yapılarını ve uzun vadeli ticari ilişkilerini şekillendiren hukuki konularda danışmanlık veriyoruz. Rolümüz işlemleri belgelemenin ötesine geçer: müvekkillerimizin giderek karmaşıklaşan bir hukuki ortamda işlerini yapılandırmalarına, sözleşmesel riski yönetmelerine ve ticari açıdan sağlam kararlar almalarına yardımcı oluyoruz.",
+          "en": "We advise companies on the legal issues that shape their daily operations, governance structures and long-term commercial relationships. Our role extends beyond documenting transactions: we help clients structure their businesses, manage contractual risk and make commercially sound decisions within an increasingly complex legal environment."
         },
         {
-          "title": { "tr": "Toplu iş ilişkileri ve sendika hukuku", "en": "Collective employment relations and trade union law" },
-          "items": [
-            { "tr": "Sendika yetki tespiti ve yetkiye itiraz süreçleri", "en": "Trade union authority determination and objection proceedings" },
-            { "tr": "Toplu iş sözleşmesi görüşmelerinin yürütülmesi", "en": "Conduct of collective bargaining negotiations" },
-            { "tr": "Toplu iş sözleşmesinin uygulanması ve yorum uyuşmazlıkları", "en": "Application of collective labour agreements and interpretation disputes" },
-            { "tr": "İşçi ve işveren sendikalarıyla yürütülen ilişkiler", "en": "Relations conducted with employee and employer trade unions" }
-          ]
+          "tr": "Pay sahipleri, yönetim kurulları, üst yönetim ve şirket içi hukuk ekipleriyle hem tekrar eden kurumsal konularda hem de stratejik projelerde yakın çalışıyoruz. Verdiğimiz danışmanlık; uygulanabilir, hızlı yanıt veren ve müvekkilin işinin gerçekleriyle uyumlu olacak şekilde kurgulanır.",
+          "en": "We work closely with shareholders, boards, senior management and in-house legal teams on both recurring corporate matters and strategic projects. Our advice is designed to be practical, responsive and aligned with the realities of the client's business."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Kurumsal yönetim, yönetim kurulu yapıları, pay sahipliği hakları ve karar alma süreçleri konusunda danışmanlık",
+          "en": "Advising on corporate governance, board structures, shareholder rights and decision-making processes"
         },
         {
-          "title": { "tr": "Sınır ötesi istihdam", "en": "Cross-border employment" },
-          "items": [
-            { "tr": "Yabancıların Türkiye'de çalışma izni süreçleri", "en": "Work permit processes for foreign nationals in Türkiye" },
-            { "tr": "Türk çalışanların yurt dışında görevlendirilmesi", "en": "Assignment of Turkish employees abroad" },
-            { "tr": "Birden fazla ülkede çalışma hâlinde uygulanacak hukuk ve sosyal güvenlik", "en": "Applicable law and social security where work is performed in more than one country" }
-          ]
+          "tr": "Tedarik, dağıtım, acentelik, hizmet, satın alma ve çerçeve sözleşmeler dâhil olmak üzere ticari sözleşmelerin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating commercial agreements, including supply, distribution, agency, service, procurement and framework agreements"
         },
         {
-          "title": { "tr": "Uyuşmazlık süreçleri", "en": "Dispute proceedings" },
-          "items": [
-            { "tr": "Dava öncesi hukuki değerlendirme", "en": "Pre-litigation legal assessment" },
-            { "tr": "Zorunlu ve ihtiyari arabuluculuk", "en": "Mandatory and voluntary mediation" },
-            { "tr": "İş mahkemeleri önündeki yargılama", "en": "Proceedings before the labour courts" }
-          ]
+          "tr": "Ortak girişimlerin, stratejik iş birliklerinin, pay sahipliği düzenlemelerinin ve uzun vadeli ticari ortaklıkların yapılandırılması",
+          "en": "Structuring joint ventures, strategic alliances, shareholder arrangements and long-term commercial partnerships"
+        },
+        {
+          "tr": "Şirket kuruluşları, şube açılışları, sermaye artırım ve azaltımları, yeniden yapılandırmalar ve şirket kayıtlarının düzenli tutulması süreçlerinin desteklenmesi",
+          "en": "Supporting company incorporations, branch establishments, capital increases and reductions, reorganizations and corporate housekeeping"
+        },
+        {
+          "tr": "Yönetim kurulu üyelerinin yükümlülükleri, pay sahipleri arasındaki uyuşmazlıklar, ilişkili taraf işlemleri ve şirketi temsil yetkisine ilişkin konularda danışmanlık",
+          "en": "Advising on directors' duties, shareholder conflicts, related-party transactions and corporate authority matters"
+        },
+        {
+          "tr": "Risk dağılımını ve operasyonel verimliliği iyileştirmek üzere sözleşme yapılarının gözden geçirilmesi ve yeniden kurgulanması",
+          "en": "Reviewing and restructuring contractual frameworks to improve risk allocation and operational efficiency"
+        },
+        {
+          "tr": "Süreklilik arz eden şirket sekretaryası ve yasal uyum yükümlülüklerinde destek",
+          "en": "Supporting clients with ongoing corporate secretarial and statutory compliance requirements"
+        }
+      ]
+    },
+    {
+      "id": "uluslararasi-ticaret-gumruk-ve-yaptirimlar",
+      "slug": {
+        "tr": "uluslararasi-ticaret-gumruk-ve-yaptirimlar",
+        "en": "international-trade-customs-and-sanctions"
+      },
+      "title": {
+        "tr": "Uluslararası Ticaret, Gümrük ve Yaptırımlar",
+        "en": "International Trade, Customs and Sanctions"
+      },
+      "overview": [
+        {
+          "tr": "Sınır ötesi faaliyet gösteren şirketlere uluslararası ticaret yapıları, gümrük kuralları ve yaptırım kaynaklı riskler konusunda danışmanlık veriyoruz. Rolümüz, müvekkillerin işlemlerini verimli biçimde gerçekleştirmesine yardımcı olurken farklı ülkelerdeki düzenleyici, sözleşmesel ve icra kaynaklı maruziyeti yönetmektir.",
+          "en": "We advise companies engaged in cross-border business on international trade structures, customs rules and sanctions-related risks. Our role is to help clients execute transactions efficiently while managing regulatory, contractual and enforcement exposure across jurisdictions."
+        },
+        {
+          "tr": "İhracatçılar, ithalatçılar, üreticiler, dağıtıcılar ve uluslararası ticaret şirketleriyle hem işlem hem de mevzuat konularında çalışıyoruz.",
+          "en": "We work with exporters, importers, manufacturers, distributors and international trading businesses on both transactional and regulatory matters."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Uluslararası satış, dağıtım, acentelik ve tedarik düzenlemeleri konusunda danışmanlık",
+          "en": "Advising on international sale, distribution, agency and supply arrangements"
+        },
+        {
+          "tr": "Sınır ötesi ticari sözleşmelerin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating cross-border commercial agreements"
+        },
+        {
+          "tr": "Incoterms, teslim yapıları, mülkiyet, hasarın geçişi ve ödeme mekanizmaları konusunda danışmanlık",
+          "en": "Advising on Incoterms, delivery structures, title, risk transfer and payment mechanisms"
+        },
+        {
+          "tr": "Gümrük, ithalat ve ihracat mevzuatının uygulanması",
+          "en": "Navigating customs, import and export regulations"
+        },
+        {
+          "tr": "Yaptırımlar, kısıtlı taraflar ve ticaret kontrolleri konusunda danışmanlık",
+          "en": "Advising on sanctions, restricted parties and trade controls"
+        },
+        {
+          "tr": "Yaptırım ve karşı taraf risk değerlendirmelerinin yürütülmesi",
+          "en": "Conducting sanctions and counterparty risk assessments"
+        },
+        {
+          "tr": "İhracat kontrolleri ve kısıtlı mallar konusunda danışmanlık",
+          "en": "Advising on export controls and restricted goods"
+        },
+        {
+          "tr": "Gümrük ve ticaretle ilgili uyuşmazlıklarda müvekkillerin temsili",
+          "en": "Representing clients in customs and trade-related disputes"
+        },
+        {
+          "tr": "Sınır ötesi ödeme, belgelendirme ve icra yapılarının desteklenmesi",
+          "en": "Supporting cross-border payment, documentation and enforcement structures"
+        },
+        {
+          "tr": "Birden fazla ülkeyi ilgilendiren uluslararası ticaret işlerinin koordinasyonu",
+          "en": "Coordinating international trade matters involving multiple jurisdictions"
+        }
+      ]
+    },
+    {
+      "id": "bankacilik-finans-ve-sermaye-piyasalari",
+      "slug": {
+        "tr": "bankacilik-finans-ve-sermaye-piyasalari",
+        "en": "banking-finance-and-capital-markets"
+      },
+      "title": {
+        "tr": "Bankacılık, Finans ve Sermaye Piyasaları",
+        "en": "Banking, Finance and Capital Markets"
+      },
+      "overview": [
+        {
+          "tr": "Bankalara, finansal kuruluşlara, şirketlere, sponsorlara ve yatırımcılara finansman işlemleri, teminat yapıları ve finansal mevzuat konularında danışmanlık veriyoruz. Çalışmamızın merkezinde; kredi verenler, kredi alanlar ve diğer paydaşlar arasında kararlaştırılan risk dağılımını yansıtan, hukuken sağlam ve ticari olarak uygulanabilir yapılar kurmak yer alır.",
+          "en": "We advise banks, financial institutions, corporates, sponsors and investors on financing transactions, security structures and financial regulatory matters. Our work is centered on creating legally robust and commercially workable structures that reflect the allocation of risk agreed between lenders, borrowers and other stakeholders."
+        },
+        {
+          "tr": "Müvekkillerimize yapılandırma ve ön protokol aşamasından başlayarak müzakere, imza, teminatların kurulması ve yeniden yapılandırma süreçlerinde destek oluyoruz. Ayrıca değişen finansman koşullarının, taahhüt baskısının ve mali sıkıntı hâllerinin hukuki sonuçları konusunda danışmanlık veriyoruz.",
+          "en": "We support clients from structuring and term sheet stage through negotiation, execution, security perfection and restructuring. We also advise on the legal implications of changing financing conditions, covenant pressure and distressed situations."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "İkili, sendikasyon, satın alma, işletme sermayesi ve yapılandırılmış finansmanlar konusunda danışmanlık",
+          "en": "Advising on bilateral, syndicated, acquisition, working capital and structured financings"
+        },
+        {
+          "tr": "Kredi tahsis sözleşmelerinin, kredi sözleşmelerinin, garantilerin ve teminat belgelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating facility agreements, loan agreements, guarantees and security documentation"
+        },
+        {
+          "tr": "İpotek, pay rehni, hesap rehni, alacağın temliki ve diğer teminat paketlerinin yapılandırılması",
+          "en": "Structuring mortgages, share pledges, account pledges, receivables assignments and other security packages"
+        },
+        {
+          "tr": "Alacaklılar arası düzenlemeler, alacakların tâbi kılınması ve alacaklı önceliği konusunda danışmanlık",
+          "en": "Advising on intercreditor arrangements, subordination structures and creditor priority"
+        },
+        {
+          "tr": "Proje finansmanı, yeniden finansman, kaldıraçlı finansman ve borç yeniden yapılandırma işlemlerinin desteklenmesi",
+          "en": "Supporting project finance, refinancing, leveraged finance and debt restructuring transactions"
+        },
+        {
+          "tr": "Finansal taahhütler, temerrüt hâlleri, feragatler, tadiller ve icra hakları konusunda danışmanlık",
+          "en": "Advising on financial covenants, events of default, waivers, amendments and enforcement rights"
+        },
+        {
+          "tr": "Bankacılık, sermaye piyasaları ve finansal mevzuat yükümlülüklerinin uygulanması",
+          "en": "Navigating banking, capital markets and financial regulatory requirements"
+        },
+        {
+          "tr": "İhraççılara, yatırımcılara ve finansal kuruluşlara sermaye piyasası işlemleri ve ilgili belgeler konusunda danışmanlık",
+          "en": "Advising issuers, investors and financial institutions on capital markets transactions and related documentation"
+        }
+      ]
+    },
+    {
+      "id": "uyusmazlik-cozumu-tahkim-ve-arabuluculuk",
+      "slug": {
+        "tr": "uyusmazlik-cozumu-tahkim-ve-arabuluculuk",
+        "en": "dispute-resolution-arbitration-and-mediation"
+      },
+      "title": {
+        "tr": "Uyuşmazlık Çözümü, Tahkim ve Arabuluculuk",
+        "en": "Dispute Resolution, Arbitration and Mediation"
+      },
+      "overview": [
+        {
+          "tr": "Hukuki stratejinin, iş sürekliliğinin ve itibara ilişkin değerlendirmelerin birlikte yönetilmesi gereken karmaşık ticari uyuşmazlıklarda müvekkillerimizi temsil ediyoruz. Uyuşmazlıkları erken aşamada değerlendiriyor, müvekkilin ticari hedeflerini belirliyor ve verimli ve icra edilebilir bir sonuca odaklanan bir strateji geliştiriyoruz.",
+          "en": "We represent clients in complex commercial disputes where legal strategy, business continuity and reputational considerations must be managed together. We assess disputes at an early stage, identify the client's commercial objectives and develop a strategy focused on achieving an efficient and enforceable outcome."
+        },
+        {
+          "tr": "Çalışma alanımız dava, yerel ve uluslararası tahkim, arabuluculuk ve müzakereyle sulh süreçlerini kapsar. Uyuşmazlık çözümünü yalnızca usule ilişkin bir iş değil, daha geniş bir stratejik çalışma olarak görüyor ve bir işin dava mı, tahkim mi, arabuluculuk mu yoksa ticari müzakere yoluyla mı çözülmesi gerektiği konusunda müvekkillerimize düzenli olarak danışmanlık veriyoruz.",
+          "en": "Our practice covers litigation, domestic and international arbitration, mediation and negotiated settlement processes. We view dispute resolution as a broader strategic exercise rather than a purely procedural one, and regularly advise clients on whether a matter should be litigated, arbitrated, mediated or resolved through commercial negotiation."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Ticari, kurumsal, sözleşmesel, pay sahipliğine ve yatırıma ilişkin uyuşmazlıklarda müvekkillerin temsili",
+          "en": "Representing clients in commercial, corporate, contractual, shareholder and investment-related disputes"
+        },
+        {
+          "tr": "Yerel ve uluslararası tahkim yargılamalarında görev alınması",
+          "en": "Acting in domestic and international arbitration proceedings"
+        },
+        {
+          "tr": "Zorunlu ve ihtiyari arabuluculuk süreçlerinde müvekkillerin temsili",
+          "en": "Representing clients in mandatory and voluntary mediation processes"
+        },
+        {
+          "tr": "Arabuluculuk stratejisi, sulh parametreleri ve müzakereyle çözüm yapıları konusunda danışmanlık",
+          "en": "Advising on mediation strategy, settlement parameters and negotiated resolution structures"
+        },
+        {
+          "tr": "Dava öncesi risk değerlendirmelerinin ve uyuşmazlıktan kaçınma stratejilerinin yürütülmesi",
+          "en": "Managing pre-litigation risk assessments and dispute avoidance strategies"
+        },
+        {
+          "tr": "İhtiyati tedbir, ihtiyati haciz ve diğer geçici hukuki koruma taleplerinde müvekkillerin temsili",
+          "en": "Representing clients in interim injunction, precautionary attachment and other conservatory proceedings"
+        },
+        {
+          "tr": "İcra stratejisi ve tahsilat seçenekleri konusunda danışmanlık",
+          "en": "Advising on enforcement strategy and recovery options"
+        },
+        {
+          "tr": "Yerli ve yabancı mahkeme kararları ile hakem kararlarının tenfizi ve bunlara itiraz edilmesi",
+          "en": "Enforcing and challenging domestic and foreign court judgments and arbitral awards"
+        },
+        {
+          "tr": "Sulh müzakerelerinde destek ve sulh sözleşmelerinin hazırlanması",
+          "en": "Supporting clients in settlement negotiations and drafting settlement agreements"
+        },
+        {
+          "tr": "Birden fazla ülkeyi ilgilendiren uyuşmazlıkların yabancı hukukçular ve teknik danışmanlarla koordinasyonu",
+          "en": "Coordinating multi-jurisdictional disputes with foreign counsel and technical advisers"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-yapilandirma-konkordato-ve-iflas",
+      "slug": {
+        "tr": "yeniden-yapilandirma-konkordato-ve-iflas",
+        "en": "restructuring-bankruptcy-and-insolvency"
+      },
+      "title": {
+        "tr": "Yeniden Yapılandırma, Konkordato ve İflas",
+        "en": "Restructuring, Bankruptcy and Insolvency"
+      },
+      "overview": [
+        {
+          "tr": "Mali sıkıntı hâllerinde alacaklılara, borçlulara, finansal kuruluşlara, yatırımcılara ve pay sahiplerine danışmanlık veriyoruz. Bu işler çoğu zaman hızlı bir hukuki analiz, paydaşların dikkatle yönetilmesi ve hem icra seçeneklerinin hem de yeniden yapılandırma alternatiflerinin net biçimde kavranmasını gerektirir.",
+          "en": "We advise creditors, debtors, financial institutions, investors and shareholders in financially distressed situations. These matters often require rapid legal analysis, careful stakeholder management and a clear understanding of both enforcement options and restructuring alternatives."
+        },
+        {
+          "tr": "Amacımız değeri korumak, hukuki hakları güvence altına almak ve mali sıkıntı koşullarında ticari olarak uygulanabilir kalan çözümler bulmaktır. Müvekkillerimize hem önleyici aşamada hem de resmî yeniden yapılandırma, konkordato, iflas ve icra süreçlerinin tamamında danışmanlık veriyoruz.",
+          "en": "Our objective is to preserve value, protect legal rights and identify solutions that remain commercially viable under distressed conditions. We advise clients at both the preventive stage and throughout formal restructuring, concordat, insolvency and enforcement proceedings."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Finansal yeniden yapılandırmalar, borçların yeniden vadelendirilmesi ve müzakereyle borç düzenlemeleri konusunda danışmanlık",
+          "en": "Advising on financial restructurings, debt rescheduling and negotiated workouts"
+        },
+        {
+          "tr": "Alacaklı düzenlemelerinin, teminat paketlerinin ve tahsilat stratejilerinin yapılandırılması",
+          "en": "Structuring creditor arrangements, security packages and recovery strategies"
+        },
+        {
+          "tr": "Konkordato ve iflas süreçlerinde alacaklıların ve borçluların temsili",
+          "en": "Representing creditors and debtors in concordat and bankruptcy proceedings"
+        },
+        {
+          "tr": "Aciz riski, yönetim kurulu üyelerinin yükümlülükleri ve olası sorumluluk maruziyeti konusunda danışmanlık",
+          "en": "Advising on insolvency risk, directors' duties and potential liability exposure"
+        },
+        {
+          "tr": "İşlemlerin tasarrufun iptali, alacaklıyı kayırma ve aciz kaynaklı riskler bakımından incelenmesi",
+          "en": "Reviewing transactions for clawback, preference and insolvency-related risks"
+        },
+        {
+          "tr": "İcra, haciz ve rehnin paraya çevrilmesi süreçlerinin yürütülmesi",
+          "en": "Managing enforcement, attachment and foreclosure proceedings"
+        },
+        {
+          "tr": "Teminatlı alacaklılara icra ve teminatın paraya çevrilmesi konusunda danışmanlık",
+          "en": "Advising secured creditors on enforcement and realization of collateral"
+        },
+        {
+          "tr": "Mali sıkıntı içindeki şirketlerin devri ve sorunlu varlıkların satın alınması süreçlerinin desteklenmesi",
+          "en": "Supporting distressed M&A and acquisition of distressed assets"
+        },
+        {
+          "tr": "Alacaklılar arası koordinasyon ve çok taraflı yeniden yapılandırma müzakereleri konusunda danışmanlık",
+          "en": "Advising on creditor coordination and multi-party restructuring negotiations"
+        },
+        {
+          "tr": "Tahsili gecikmiş ve sorunlu alacaklar için hukuki stratejilerin geliştirilmesi",
+          "en": "Developing legal strategies for non-performing and problem receivables"
+        }
+      ]
+    },
+    {
+      "id": "is-hukuku",
+      "slug": {
+        "tr": "is-hukuku",
+        "en": "employment-and-labor-law"
+      },
+      "title": {
+        "tr": "İş Hukuku",
+        "en": "Employment and Labor Law"
+      },
+      "overview": [
+        {
+          "tr": "İşverenlere; işgücü yönetimini, örgütsel değişimi ve günlük faaliyetleri etkileyen iş hukuku konularının tamamında danışmanlık veriyoruz. Yaklaşımımız, müvekkillerin hukuka uygunluğu korurken işlerini etkin biçimde yönetmek için ihtiyaç duydukları esnekliği de sürdürmelerine yardımcı olmak üzere kurgulanmıştır.",
+          "en": "We advise employers on the full range of employment and labor law issues affecting workforce management, organizational change and daily operations. Our approach is designed to help clients maintain legal compliance while preserving the flexibility required to manage their businesses effectively."
+        },
+        {
+          "tr": "Önleyici hukuki danışmanlığa, açık belgelendirmeye ve erken risk yönetimine özel önem veriyoruz. Ayrıca uyuşmazlık süreçlerinde işverenleri temsil ediyor; yeniden yapılandırmalar, soruşturmalar ve hassas istihdam kararları sırasında yönetim ekiplerine destek oluyoruz.",
+          "en": "We place particular emphasis on preventive legal advice, clear documentation and early risk management. We also represent employers in contentious matters and support management teams during restructurings, investigations and sensitive employment decisions."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "İş sözleşmeleri, işyeri politikaları ve iç prosedürler konusunda danışmanlık",
+          "en": "Advising on employment contracts, workplace policies and internal procedures"
+        },
+        {
+          "tr": "İşe alım, deneme süresi, terfi, nakil ve fesih süreçlerinin yapılandırılması",
+          "en": "Structuring hiring, probation, promotion, transfer and termination processes"
+        },
+        {
+          "tr": "Üst düzey yönetici istihdamı, prim düzenlemeleri, rekabet yasağı ve gizlilik hükümleri konusunda danışmanlık",
+          "en": "Advising on executive employment, bonus arrangements, non-compete and confidentiality provisions"
+        },
+        {
+          "tr": "İşgücü yeniden yapılandırmaları, işten çıkarmalar ve toplu işçi çıkarma süreçlerinin desteklenmesi",
+          "en": "Supporting workforce restructurings, redundancies and collective termination processes"
+        },
+        {
+          "tr": "İş davalarında ve zorunlu arabuluculukta işverenlerin temsili",
+          "en": "Representing employers in employment litigation and mandatory mediation"
+        },
+        {
+          "tr": "Fazla çalışma, yıllık izin, ücret, yan haklar ve işyeri uygulamaları konusunda danışmanlık",
+          "en": "Advising on overtime, annual leave, compensation, benefits and workplace practices"
+        },
+        {
+          "tr": "İç disiplin ve suistimal soruşturmalarının desteklenmesi",
+          "en": "Supporting internal disciplinary and misconduct investigations"
+        },
+        {
+          "tr": "Sosyal güvenlik uyumu ve işveren yükümlülükleri konusunda danışmanlık",
+          "en": "Advising on social security compliance and employer obligations"
+        },
+        {
+          "tr": "Yabancı çalışanların çalışma ve oturma izni işlemlerinde destek",
+          "en": "Assisting with work and residence permit matters for foreign employees"
+        },
+        {
+          "tr": "Şirket işlemleri ve hukuki durum tespiti kapsamında istihdam uygulamalarının incelenmesi",
+          "en": "Reviewing employment practices as part of corporate transactions and legal due diligence"
+        }
+      ]
+    },
+    {
+      "id": "rekabet-duzenleme-ve-uyum",
+      "slug": {
+        "tr": "rekabet-duzenleme-ve-uyum",
+        "en": "competition-regulation-and-compliance"
+      },
+      "title": {
+        "tr": "Rekabet, Düzenleme ve Uyum",
+        "en": "Competition, Regulation and Compliance"
+      },
+      "overview": [
+        {
+          "tr": "İşletmelerin rekabet kurallarını, sektöre özgü düzenlemeleri ve daha geniş kurumsal uyum yükümlülüklerini meşru ticari faaliyetlerini aksatmadan yürütmelerine yardımcı oluyoruz. Çalışmamız; düzenleyici maruziyetin erken tespit edilmesine, uygulanabilir uyum çerçevelerinin kurgulanmasına ve düzenleyici bir inceleme gündeme geldiğinde müvekkillerin desteklenmesine odaklanır.",
+          "en": "We help businesses navigate competition rules, sector-specific regulation and broader corporate compliance obligations without disrupting legitimate commercial activity. Our work focuses on identifying regulatory exposure early, designing workable compliance frameworks and supporting clients when regulatory scrutiny arises."
+        },
+        {
+          "tr": "Birleşme ve devralma kontrolü, ticari düzenlemeler, iç politikalar ve düzenleyici soruşturmalar dâhil olmak üzere hem işlem hem de operasyon konularında danışmanlık veriyoruz.",
+          "en": "We advise on both transactional and operational matters, including merger control, commercial arrangements, internal policies and regulatory investigations."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Rekabet hukukuna uyum, rekabeti sınırlayıcı anlaşmalar ve piyasa davranışları konusunda danışmanlık",
+          "en": "Advising on competition law compliance, restrictive agreements and market conduct"
+        },
+        {
+          "tr": "Dağıtım, tedarik, acentelik ve münhasırlık düzenlemelerinin rekabet hukuku açısından incelenmesi",
+          "en": "Reviewing distribution, supply, agency and exclusivity arrangements from a competition law perspective"
+        },
+        {
+          "tr": "Hâkim durumun kötüye kullanılması ve hassas ticari uygulamalar konusunda danışmanlık",
+          "en": "Advising on abuse of dominance and sensitive commercial practices"
+        },
+        {
+          "tr": "Birleşme ve devralma izin başvurularının ve düzenleyici onay süreçlerinin hazırlanması ve yürütülmesi",
+          "en": "Preparing and managing merger control filings and regulatory approvals"
+        },
+        {
+          "tr": "Rekabet Kurumu soruşturma ve süreçlerinde müvekkillerin temsili",
+          "en": "Representing clients in Competition Authority investigations and proceedings"
+        },
+        {
+          "tr": "Rekabet ve mevzuat uyum programlarının tasarlanması ve uygulanması",
+          "en": "Designing and implementing competition and regulatory compliance programs"
+        },
+        {
+          "tr": "Uyum incelemelerinin, eğitimlerin ve risk değerlendirmelerinin yürütülmesi",
+          "en": "Conducting compliance reviews, training and risk assessments"
+        },
+        {
+          "tr": "Sektöre özgü mevzuat yükümlülükleri konusunda danışmanlık",
+          "en": "Advising on sector-specific regulatory requirements"
+        },
+        {
+          "tr": "İç uyum soruşturmalarının ve düzeltici çalışmaların desteklenmesi",
+          "en": "Supporting internal compliance investigations and remediation projects"
+        },
+        {
+          "tr": "Yönetim kurullarına ve üst yönetime düzenleyici risk ve yönetişim konusunda danışmanlık",
+          "en": "Advising boards and senior management on regulatory risk and governance"
+        }
+      ]
+    },
+    {
+      "id": "beyaz-yaka-suclari-ve-ic-sorusturmalar",
+      "slug": {
+        "tr": "beyaz-yaka-suclari-ve-ic-sorusturmalar",
+        "en": "white-collar-crime-and-internal-investigations"
+      },
+      "title": {
+        "tr": "Beyaz Yaka Suçları ve İç Soruşturmalar",
+        "en": "White-Collar Crime and Internal Investigations"
+      },
+      "overview": [
+        {
+          "tr": "Şirketlere, yönetim kurullarına ve üst düzey yöneticilere; dolandırıcılık, yolsuzluk, suistimal ve olası cezai sorumluluk içeren hassas iddialar konusunda danışmanlık veriyoruz. Bu işler gizlilik, usul disiplini ve hukuki, düzenleyici, istihdama ilişkin ve itibara dair değerlendirmelerin dikkatle koordine edilmesini gerektirir.",
+          "en": "We advise companies, boards and senior executives on sensitive allegations involving fraud, corruption, misconduct and potential criminal exposure. These matters require discretion, procedural discipline and careful coordination between legal, regulatory, employment and reputational considerations."
+        },
+        {
+          "tr": "İç soruşturmalar yürütüyor, olası sorumluluğu değerlendiriyor ve müvekkillerimize kamu makamlarına, ihbar bildirimlerine ve şirket içi uyum endişelerine yanıt verilmesinde destek oluyoruz.",
+          "en": "We conduct internal investigations, assess potential liability and support clients in responding to authorities, whistleblower reports and internal compliance concerns."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "İç soruşturmaların yürütülmesi ve koordinasyonu",
+          "en": "Conducting and coordinating internal investigations"
+        },
+        {
+          "tr": "Dolandırıcılık, rüşvet, yolsuzluk, zimmet ve şirket içi suistimal iddiaları konusunda danışmanlık",
+          "en": "Advising on fraud, bribery, corruption, embezzlement and corporate misconduct allegations"
+        },
+        {
+          "tr": "Ceza soruşturma ve kovuşturmalarında şirketlerin ve yöneticilerin temsili",
+          "en": "Representing companies and executives in criminal investigations and proceedings"
+        },
+        {
+          "tr": "İhbar bildirimleri ve şirket içi bildirim prosedürleri konusunda danışmanlık",
+          "en": "Advising on whistleblower reports and internal escalation procedures"
+        },
+        {
+          "tr": "Delillerin korunması, görüşme protokolleri ve soruşturma belgelendirmesinin yönetilmesi",
+          "en": "Managing evidence preservation, interview protocols and investigation documentation"
+        },
+        {
+          "tr": "Şirketin ve kişilerin olası sorumluluğunun değerlendirilmesi",
+          "en": "Assessing potential corporate and individual liability"
+        },
+        {
+          "tr": "Yönetim kurullarına ve yönetime soruşturma bulguları ve düzeltici adımlar konusunda danışmanlık",
+          "en": "Advising boards and management on investigation findings and remediation"
+        },
+        {
+          "tr": "Soruşturmaların istihdam, uyum ve mevzuat boyutlarının koordinasyonu",
+          "en": "Coordinating employment, compliance and regulatory aspects of investigations"
+        },
+        {
+          "tr": "Kolluk ve düzenleyici makamlarla yürütülen ilişkilerde müvekkillere destek",
+          "en": "Supporting clients in interactions with law enforcement and regulatory authorities"
+        },
+        {
+          "tr": "Önleyici kontroller ve soruşturma sonrası uyum iyileştirmeleri konusunda danışmanlık",
+          "en": "Advising on preventive controls and post-investigation compliance enhancements"
+        }
+      ]
+    },
+    {
+      "id": "kisisel-verilerin-korunmasi-ve-teknoloji-hukuku",
+      "slug": {
+        "tr": "kisisel-verilerin-korunmasi-ve-teknoloji-hukuku",
+        "en": "data-protection-it-and-technology-law"
+      },
+      "title": {
+        "tr": "Kişisel Verilerin Korunması, Bilişim ve Teknoloji Hukuku",
+        "en": "Data Protection, IT and Technology Law"
+      },
+      "overview": [
+        {
+          "tr": "İşletmelere; veriye dayalı faaliyetlerden, dijital dönüşümden ve teknoloji sözleşmelerinden doğan hukuki konularda danışmanlık veriyoruz. Çalışmamız, veri kullanımının, teknoloji tedarikinin ve dijital iş modellerinin hukuka uygun ve sözleşmeyle korunmuş kalmasını sağlarken yeniliği desteklemek üzere kurgulanmıştır.",
+          "en": "We advise businesses on legal issues arising from data-driven operations, digital transformation and technology contracting. Our work is designed to support innovation while ensuring that data use, technology procurement and digital business models remain compliant and contractually protected."
+        },
+        {
+          "tr": "Hem geleneksel işletmelerle hem de teknoloji odaklı şirketlerle; veri gizliliği, yazılım, dijital platformlar, dış kaynak kullanımı ve gelişen teknoloji konularında çalışıyoruz.",
+          "en": "We work with both traditional businesses and technology-focused companies on privacy, software, digital platforms, outsourcing and emerging technology matters."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Türk veri koruma mevzuatı, KVKK ve GDPR uyumu konusunda danışmanlık",
+          "en": "Advising on Turkish data protection legislation, KVKK and GDPR-related compliance"
+        },
+        {
+          "tr": "Veri gizliliği yönetişiminin, politikaların ve şirket içi veri koruma çerçevelerinin yapılandırılması",
+          "en": "Structuring privacy governance, policies and internal data protection frameworks"
+        },
+        {
+          "tr": "Yurt dışına veri aktarımı ve veri işleme düzenlemeleri konusunda danışmanlık",
+          "en": "Advising on international data transfers and data processing arrangements"
+        },
+        {
+          "tr": "Yazılım, SaaS, bulut, lisans ve bilişim hizmetleri sözleşmelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating software, SaaS, cloud, licensing and IT services agreements"
+        },
+        {
+          "tr": "Dış kaynak kullanımı, teknoloji tedariki ve dijital dönüşüm projeleri konusunda danışmanlık",
+          "en": "Advising on outsourcing, technology procurement and digital transformation projects"
+        },
+        {
+          "tr": "E-ticaret, dijital platformlar ve çevrim içi iş modellerinin desteklenmesi",
+          "en": "Supporting e-commerce, digital platforms and online business models"
+        },
+        {
+          "tr": "Veri ihlalleri, siber olaylar ve mevzuat kapsamındaki bildirimler konusunda danışmanlık",
+          "en": "Advising on data breaches, cyber incidents and regulatory notifications"
+        },
+        {
+          "tr": "Tedarikçi ve veri işleyen düzenlemelerinin gizlilik ve teknoloji riski açısından incelenmesi",
+          "en": "Reviewing vendor and processor arrangements from a privacy and technology risk perspective"
+        },
+        {
+          "tr": "Yapay zekâ ve gelişen teknolojilere ilişkin hukuki konularda danışmanlık",
+          "en": "Advising on artificial intelligence and emerging technology-related legal issues"
+        },
+        {
+          "tr": "Teknolojiye ilişkin hukuki durum tespiti ve işlem incelemelerinin desteklenmesi",
+          "en": "Supporting technology-related legal due diligence and transaction reviews"
+        }
+      ]
+    },
+    {
+      "id": "fikri-mulkiyet-hukuku",
+      "slug": {
+        "tr": "fikri-mulkiyet-hukuku",
+        "en": "intellectual-property-law"
+      },
+      "title": {
+        "tr": "Fikri Mülkiyet Hukuku",
+        "en": "Intellectual Property Law"
+      },
+      "overview": [
+        {
+          "tr": "Müvekkillerimize; marka değeri, yenilik ve rekabet üstünlüğü bakımından merkezî önemde olan fikri mülkiyet haklarının korunması, ticarileştirilmesi ve ihlallere karşı takibi konusunda danışmanlık veriyoruz. Yaklaşımımız, fikri mülkiyet stratejisini müvekkilin daha geniş ticari hedefleriyle ilişkilendirir.",
+          "en": "We advise clients on the protection, commercialization and enforcement of intellectual property rights that are central to brand value, innovation and competitive advantage. Our approach connects IP strategy with the client's broader commercial objectives."
+        },
+        {
+          "tr": "Fikri mülkiyet varlıklarının yaşam döngüsü boyunca; mülkiyet ve tescilden lisanslama, kullanım ve hakların takibine kadar müvekkillerimize destek oluyoruz.",
+          "en": "We support clients throughout the lifecycle of intellectual property assets, from ownership and registration to licensing, exploitation and enforcement."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Markalar, tasarımlar, telif hakları ve bunlarla bağlantılı fikri mülkiyet hakları konusunda danışmanlık",
+          "en": "Advising on trademarks, industrial designs, copyrights and related intellectual property rights"
+        },
+        {
+          "tr": "Marka ve tasarım koruma stratejilerinin ve tescil süreçlerinin yürütülmesi",
+          "en": "Managing trademark and design protection strategies and registration processes"
+        },
+        {
+          "tr": "Lisans, devir, birlikte var olma ve ticarileştirme sözleşmelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating licensing, assignment, coexistence and commercialization agreements"
+        },
+        {
+          "tr": "İstihdam, geliştirme ve teknoloji düzenlemelerinde fikri mülkiyetin kime ait olacağı konusunda danışmanlık",
+          "en": "Advising on IP ownership in employment, development and technology arrangements"
+        },
+        {
+          "tr": "Hak ihlali, hükümsüzlük ve haksız rekabet uyuşmazlıklarında müvekkillerin temsili",
+          "en": "Representing clients in infringement, invalidity and unfair competition disputes"
+        },
+        {
+          "tr": "Marka koruması ve izinsiz kullanım konusunda danışmanlık",
+          "en": "Advising on brand protection and unauthorized use"
+        },
+        {
+          "tr": "Fikri mülkiyet portföyü incelemelerinin ve hukuki durum tespitinin desteklenmesi",
+          "en": "Supporting IP portfolio reviews and legal due diligence"
+        },
+        {
+          "tr": "Franchise, ürünleştirme ve hak temelli ticari modeller konusunda danışmanlık",
+          "en": "Advising on franchising, merchandising and rights-based commercial models"
+        },
+        {
+          "tr": "Birleşme, devralma ve yatırım işlemlerinin fikri mülkiyet boyutunun yapılandırılması",
+          "en": "Structuring intellectual property elements of M&A and investment transactions"
         }
       ]
     },
@@ -57,263 +617,174 @@
         "tr": "Gayrimenkul ve İnşaat Hukuku",
         "en": "Real Estate and Construction Law"
       },
-      "lead": {
-        "tr": "Taşınmaz mülkiyetinin devri, yapılaşma süreçleri ve bunlara bağlı sözleşme ilişkilerini kapsayan alandır. Sözleşmelerin kurulması kadar, uygulamada doğan uyuşmazlıkların yürütülmesini de içerir.",
-        "en": "This field covers the transfer of immovable property, construction processes and the contractual relationships connected with them. It includes both the drawing up of contracts and the conduct of disputes arising in practice."
-      },
-      "topics": [
+      "overview": [
         {
-          "title": { "tr": "İnşaat sözleşmeleri", "en": "Construction contracts" },
-          "items": [
-            { "tr": "Kat karşılığı inşaat sözleşmeleri", "en": "Construction contracts in return for land share" },
-            { "tr": "Anahtar teslim yapım sözleşmeleri", "en": "Turnkey works contracts" },
-            { "tr": "İş sahibi ve yüklenici yükümlülüklerinin düzenlenmesi", "en": "Structuring of employer and contractor obligations" },
-            { "tr": "Teslim, ayıp ve gecikmeye bağlı sonuçlar", "en": "Consequences of delivery, defects and delay" }
-          ]
+          "tr": "Yatırımcılara, geliştiricilere, yüklenicilere, kiraya verenlere, kiracılara ve işletmecilere; gayrimenkul yatırımları ve inşaat projelerinin yaşam döngüsü boyunca danışmanlık veriyoruz. Çalışmamız hukuki belirlilik, proje riskinin etkin dağılımı ve ticari olarak uygulanabilir belgelendirme üzerine odaklanır.",
+          "en": "We advise investors, developers, contractors, landlords, tenants and operators on real estate investments and construction projects throughout their lifecycle. Our work focuses on legal certainty, effective allocation of project risk and commercially workable documentation."
         },
         {
-          "title": { "tr": "Taşınmaz devri ve tapu işlemleri", "en": "Property transfer and land registry matters" },
-          "items": [
-            { "tr": "Taşınmaz satış vaadi sözleşmeleri", "en": "Preliminary contracts for the sale of immovable property" },
-            { "tr": "Tapu iptali ve tescil davaları", "en": "Title deed cancellation and registration proceedings" },
-            { "tr": "Şerh, ipotek ve diğer sınırlı ayni haklar", "en": "Annotations, mortgages and other limited rights in rem" }
-          ]
+          "tr": "Müvekkillerimizi edinim ve geliştirmeden inşaat, işletme, kiralama ve çıkış aşamalarına kadar desteklemek üzere işlem, mevzuat ve uyuşmazlık alanlarındaki deneyimimizi birleştiriyoruz.",
+          "en": "We combine transactional, regulatory and contentious experience to support clients from acquisition and development through construction, operation, leasing and exit."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Gayrimenkul edinimi, elden çıkarılması ve yatırım yapıları konusunda danışmanlık",
+          "en": "Advising on real estate acquisitions, disposals and investment structures"
         },
         {
-          "title": { "tr": "Kira ilişkileri", "en": "Lease relationships" },
-          "items": [
-            { "tr": "Ticari kira sözleşmelerinin kurulması ve uyarlanması", "en": "Formation and adaptation of commercial lease agreements" },
-            { "tr": "Kira bedelinin tespiti", "en": "Determination of rent" },
-            { "tr": "Tahliye süreçleri", "en": "Eviction proceedings" }
-          ]
+          "tr": "Tapu, imar ve projeye ilişkin hukuki durum tespiti çalışmalarının yürütülmesi",
+          "en": "Conducting title, zoning and project-related legal due diligence"
         },
         {
-          "title": { "tr": "İmar ve arazi düzenlemesi", "en": "Zoning and land management" },
-          "items": [
-            { "tr": "İmar planlarına karşı başvurular", "en": "Applications against zoning plans" },
-            { "tr": "İfraz, tevhit ve şüyulandırma işlemleri", "en": "Subdivision, consolidation and co-ownership procedures" },
-            { "tr": "İmar durumu ve yapı ruhsatı süreçleri", "en": "Zoning status and building permit processes" }
-          ]
+          "tr": "Ticari kira sözleşmelerinin ve uzun süreli kullanım düzenlemelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating commercial leases and long-term occupancy arrangements"
+        },
+        {
+          "tr": "Geliştirme, inşaat ve proje yönetimi sözleşmeleri konusunda danışmanlık",
+          "en": "Advising on development, construction and project management agreements"
+        },
+        {
+          "tr": "Yüklenici, alt yüklenici ve satın alma düzenlemelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating contractor, subcontractor and procurement arrangements"
+        },
+        {
+          "tr": "İmar, izinler, ruhsatlar ve yapılaşma kısıtlamaları konusunda danışmanlık",
+          "en": "Advising on zoning, permits, licenses and development restrictions"
+        },
+        {
+          "tr": "Gayrimenkul ortak girişimlerinin ve geliştirme ortaklıklarının yapılandırılması",
+          "en": "Structuring real estate joint ventures and development partnerships"
+        },
+        {
+          "tr": "İnşaat, kira ve mülkiyet uyuşmazlıklarında müvekkillerin temsili",
+          "en": "Representing clients in construction, lease and property disputes"
+        },
+        {
+          "tr": "Proje gecikmeleri, ayıplar, iş değişiklikleri ve yüklenici talepleri konusunda danışmanlık",
+          "en": "Advising on project delays, defects, variations and contractor claims"
+        },
+        {
+          "tr": "Finansman ve şirket işlemlerinin gayrimenkul boyutunun desteklenmesi",
+          "en": "Supporting real estate aspects of financing and corporate transactions"
         }
       ]
     },
     {
-      "id": "kamu-hukuku-ve-insan-haklari",
+      "id": "birlesme-ve-devralmalar",
       "slug": {
-        "tr": "kamu-hukuku-ve-insan-haklari",
-        "en": "public-law-and-human-rights"
+        "tr": "birlesme-ve-devralmalar",
+        "en": "mergers-and-acquisitions"
       },
       "title": {
-        "tr": "Kamu Hukuku ve İnsan Hakları",
-        "en": "Public Law and Human Rights"
+        "tr": "Birleşme ve Devralmalar",
+        "en": "Mergers and Acquisitions"
       },
-      "lead": {
-        "tr": "İdarenin işlem ve eylemlerine karşı başvuru yolları ile temel hak ve özgürlüklerin yargısal korunmasını kapsayan alandır. Başvuru yollarının sırası, süreler ve usul kuralları bu alanda belirleyicidir.",
-        "en": "This field covers the remedies available against administrative acts and actions, together with the judicial protection of fundamental rights and freedoms. The order of remedies, time limits and procedural rules are decisive in this field."
-      },
-      "topics": [
+      "overview": [
         {
-          "title": {
-            "tr": "Anayasa Mahkemesi'ne bireysel başvuru",
-            "en": "Individual application to the Constitutional Court"
-          },
-          "items": [
-            { "tr": "Kabul edilebilirlik koşullarının değerlendirilmesi", "en": "Assessment of admissibility conditions" },
-            { "tr": "Olağan başvuru yollarının tüketilmesi", "en": "Exhaustion of ordinary remedies" },
-            { "tr": "Başvuru dilekçesinin hazırlanması ve takibi", "en": "Preparation and follow-up of the application" },
-            { "tr": "İhlal kararı sonrası yeniden yargılama süreçleri", "en": "Retrial proceedings following a violation judgment" }
-          ]
+          "tr": "Alıcılara, satıcılara, yatırımcılara, kuruculara ve yönetim ekiplerine; yerel ve sınır ötesi birleşme ve devralma işlemlerinde işlemin tüm yaşam döngüsü boyunca danışmanlık veriyoruz. Yaklaşımımız hukuki titizliği; değerleme, işlemin gerçekleşme riski, müzakere dinamikleri ve kapanış sonrası entegrasyon kavrayışıyla birleştirir.",
+          "en": "We advise buyers, sellers, investors, founders and management teams on domestic and cross-border M&A transactions across the full deal lifecycle. Our approach combines legal precision with an understanding of valuation, execution risk, negotiation dynamics and post-closing integration."
         },
         {
-          "title": {
-            "tr": "Avrupa İnsan Hakları Mahkemesi başvuruları",
-            "en": "Applications to the European Court of Human Rights"
-          },
-          "items": [
-            { "tr": "Başvuru koşulları ve sürelerin değerlendirilmesi", "en": "Assessment of application conditions and time limits" },
-            { "tr": "Başvurunun hazırlanması ve yürütülmesi", "en": "Preparation and conduct of the application" },
-            { "tr": "Dostane çözüm süreçleri", "en": "Friendly settlement procedures" }
-          ]
+          "tr": "İşlemi esaslı biçimde etkileyebilecek konuları tespit etmeye odaklanırken süreci yavaşlatan gereksiz karmaşıklıktan kaçınıyoruz. Erken aşama yapılandırmadan kapanışa ve kapanış sonrası uygulamaya kadar; değeri korumak ve karar almayı kolaylaştırmak üzere kurgulanmış, ticari odaklı destek sunuyoruz.",
+          "en": "We focus on identifying issues that can materially affect the transaction, while avoiding unnecessary complexity that slows execution. From early-stage structuring to closing and post-closing implementation, we provide commercially focused support designed to protect value and facilitate decision-making."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Pay devirleri, varlık devirleri, birleşmeler, bölünmeler ve stratejik yatırımlar konusunda danışmanlık",
+          "en": "Advising on share acquisitions, asset deals, mergers, demergers and strategic investments"
         },
         {
-          "title": { "tr": "İdari yargı", "en": "Administrative litigation" },
-          "items": [
-            { "tr": "İptal ve tam yargı davaları", "en": "Annulment actions and full remedy actions" },
-            { "tr": "Yürütmenin durdurulması talepleri", "en": "Requests for stay of execution" },
-            { "tr": "İdari başvuru yolları ve süre hesabı", "en": "Administrative remedies and calculation of time limits" }
-          ]
+          "tr": "İşlem süreçlerinin, işlem kapsamının, bedel mekanizmalarının ve yönetişim düzenlemelerinin yapılandırılması",
+          "en": "Structuring transaction processes, deal perimeter, consideration mechanisms and governance arrangements"
         },
         {
-          "title": {
-            "tr": "Kamu ve özel sektör ihaleleri",
-            "en": "Public and private sector tenders"
-          },
-          "items": [
-            { "tr": "İhale dokümanına ve ihale işlemlerine itiraz", "en": "Objections to tender documents and tender procedures" },
-            { "tr": "Kamu İhale Kurumu'na yapılan başvurular", "en": "Applications to the Public Procurement Authority" },
-            { "tr": "Sözleşmenin uygulanmasından doğan uyuşmazlıklar", "en": "Disputes arising from performance of the contract" }
-          ]
+          "tr": "Kurumsal, ticari, istihdam, mevzuat ve dava konularını kapsayan hukuki durum tespiti çalışmalarının yürütülmesi ve koordinasyonu",
+          "en": "Conducting and coordinating legal due diligence across corporate, commercial, employment, regulatory and litigation matters"
         },
         {
-          "title": { "tr": "Sağlık mevzuatına uyum", "en": "Healthcare regulatory compliance" },
-          "items": [
-            { "tr": "Sağlık hizmeti sunucularının ruhsat ve faaliyet izni süreçleri", "en": "Licensing and operating permit processes for healthcare providers" },
-            { "tr": "Hizmet sunumuna ilişkin düzenlemelere uyum", "en": "Compliance with regulations on service delivery" }
-          ]
+          "tr": "Pay alım sözleşmelerinin, varlık alım sözleşmelerinin, pay sahipleri sözleşmelerinin ve tamamlayıcı işlem belgelerinin hazırlanması ve müzakeresi",
+          "en": "Drafting and negotiating share purchase agreements, asset purchase agreements, shareholders' agreements and ancillary transaction documents"
+        },
+        {
+          "tr": "Beyan ve tekeffüller, tazminat taahhütleri, sorumluluk sınırlamaları, emanet (escrow) yapıları ve satış bedeli düzeltme mekanizmaları konusunda danışmanlık",
+          "en": "Advising on warranties, indemnities, limitations of liability, escrow structures and purchase price adjustment mechanisms"
+        },
+        {
+          "tr": "Azınlık yatırımlarının, ortak girişimlerin, yönetim katılımının ve çıkış düzenlemelerinin yapılandırılması",
+          "en": "Structuring minority investments, joint ventures, management participation and exit arrangements"
+        },
+        {
+          "tr": "İmza, kapanış, düzenleyici onaylar ve kapanış sonrası uygulama süreçlerinin yürütülmesi",
+          "en": "Managing signing, closing, regulatory approvals and post-closing implementation"
+        },
+        {
+          "tr": "Birden fazla ülkeyi, danışmanı ve paydaşı içeren sınır ötesi işlemlerin desteklenmesi",
+          "en": "Supporting cross-border transactions involving multiple jurisdictions, advisers and stakeholders"
         }
       ]
     },
     {
-      "id": "cevre-ve-karbon-hukuku",
+      "id": "vergi-ve-idare-hukuku",
       "slug": {
-        "tr": "cevre-ve-karbon-hukuku",
-        "en": "environmental-and-carbon-law"
+        "tr": "vergi-ve-idare-hukuku",
+        "en": "tax-and-administrative-law"
       },
       "title": {
-        "tr": "Çevre ve Karbon Hukuku",
-        "en": "Environmental and Carbon Law"
+        "tr": "Vergi ve İdare Hukuku",
+        "en": "Tax and Administrative Law"
       },
-      "lead": {
-        "tr": "İklim değişikliğiyle mücadeleye ilişkin ulusal ve uluslararası düzenlemelerin işletmeler üzerinde doğurduğu yükümlülükleri kapsayan alandır. Yükümlülüklerin ticari sözleşmelere ve yönetişim süreçlerine yansıtılmasını da içerir.",
-        "en": "This field covers the obligations that national and international climate regulations create for businesses. It also includes reflecting those obligations in commercial contracts and governance processes."
-      },
-      "topics": [
+      "overview": [
         {
-          "title": { "tr": "Emisyon Ticaret Sistemi", "en": "Emissions Trading System" },
-          "items": [
-            { "tr": "Tahsisat ve izleme yükümlülükleri", "en": "Allocation and monitoring obligations" },
-            { "tr": "Raporlama ve doğrulama süreçleri", "en": "Reporting and verification processes" },
-            { "tr": "Sistem kapsamına giren tesislerin uyum çalışmaları", "en": "Compliance work for installations within the scope of the system" }
-          ]
+          "tr": "İşletmelere; işlemleri, faaliyetleri ve düzenleyici maruziyeti doğrudan etkileyen vergi ve kamu hukuku konularında danışmanlık veriyoruz. Çalışmamız, önleyici hukuki yapılandırmayı uyuşmazlık doğduğunda idari makamlar ve mahkemeler önünde temsille birleştirir.",
+          "en": "We advise businesses on tax and public law matters that directly affect transactions, operations and regulatory exposure. Our work combines preventive legal structuring with representation before administrative authorities and courts when disputes arise."
         },
         {
-          "title": { "tr": "Karbon ayak izi ve raporlama", "en": "Carbon footprint and reporting" },
-          "items": [
-            { "tr": "Kurumsal karbon ayak izi hesaplama süreçlerine hukuki destek", "en": "Legal support for corporate carbon footprint calculation processes" },
-            { "tr": "ISO 14071 çerçevesiyle uyumlu çalışmalar", "en": "Work aligned with the ISO 14071 framework" }
-          ]
-        },
-        {
-          "title": { "tr": "Yeşil dönüşüm projeleri", "en": "Green transformation projects" },
-          "items": [
-            { "tr": "Sürdürülebilirlik yükümlülüklerinin ticari sözleşmelere yansıtılması", "en": "Reflecting sustainability obligations in commercial contracts" },
-            { "tr": "Yönetişim süreçlerine entegrasyon", "en": "Integration into governance processes" },
-            { "tr": "Geçiş riskine karşı yol haritalarının hukuki çerçevesi", "en": "Legal framework of roadmaps addressing transition risk" }
-          ]
-        },
-        {
-          "title": { "tr": "Çevre mevzuatına uyum", "en": "Environmental regulatory compliance" },
-          "items": [
-            { "tr": "İzin ve lisans süreçleri", "en": "Permit and licence processes" },
-            { "tr": "Denetim ve idari yaptırım süreçleri", "en": "Inspection and administrative sanction proceedings" }
-          ]
+          "tr": "Müvekkillerimize hem işlem hem de uyuşmazlık konularında, özellikle ticari kararların vergi, ruhsat, mevzuat veya idari yükümlülüklerle kesiştiği noktalarda destek oluyoruz.",
+          "en": "We support clients in both transactional and contentious matters, particularly where commercial decisions intersect with tax, licensing, regulatory or administrative requirements."
         }
-      ]
-    },
-    {
-      "id": "bankacilik-ve-finans-hukuku",
-      "slug": {
-        "tr": "bankacilik-ve-finans-hukuku",
-        "en": "banking-and-finance-law"
-      },
-      "title": {
-        "tr": "Bankacılık ve Finans Hukuku",
-        "en": "Banking and Finance Law"
-      },
-      "lead": {
-        "tr": "Kredi, türev ve finansman işlemlerinin sözleşmesel yapısını ve bunlara bağlı teminat ilişkilerini kapsayan alandır. İşlemlerin sınır ötesi niteliği hâlinde uygulanacak hukuk ve icra edilebilirlik de bu alanın konusudur.",
-        "en": "This field covers the contractual structure of lending, derivatives and financing transactions and the security relationships connected with them. Where transactions are cross-border, applicable law and enforceability also fall within this field."
-      },
-      "topics": [
+      ],
+      "coreServices": [
         {
-          "title": { "tr": "Kredi işlemleri", "en": "Lending transactions" },
-          "items": [
-            { "tr": "İkili ve sendikasyon kredi sözleşmeleri", "en": "Bilateral and syndicated loan agreements" },
-            { "tr": "LMA esaslı dokümantasyon", "en": "LMA-based documentation" },
-            { "tr": "Sınır ötesi kredi yapıları", "en": "Cross-border lending structures" },
-            { "tr": "Sözleşme şartlarının müzakeresi ve kapanış süreçleri", "en": "Negotiation of contract terms and closing processes" }
-          ]
+          "tr": "Kurumsal ve ticari işlemlerin vergisel sonuçları konusunda danışmanlık",
+          "en": "Advising on the tax implications of corporate and commercial transactions"
         },
         {
-          "title": { "tr": "Türev işlemler", "en": "Derivatives transactions" },
-          "items": [
-            { "tr": "ISDA çerçeve sözleşmeleri ve ekleri", "en": "ISDA master agreements and schedules" },
-            { "tr": "Teminatlandırma düzenlemeleri", "en": "Credit support arrangements" },
-            { "tr": "Netleştirme ve temerrüt hükümleri", "en": "Netting and event of default provisions" }
-          ]
+          "tr": "İşlem yapılarının hukuki vergi riski açısından incelenmesi",
+          "en": "Reviewing transaction structures from a legal tax-risk perspective"
         },
         {
-          "title": { "tr": "Ticaret ve alacak finansmanı", "en": "Trade and receivables finance" },
-          "items": [
-            { "tr": "Akreditif ve teminat mektubu işlemleri", "en": "Letters of credit and guarantee transactions" },
-            { "tr": "Faktoring ve alacak devri yapıları", "en": "Factoring and receivables assignment structures" },
-            { "tr": "Emtia finansmanı düzenlemeleri", "en": "Commodity finance arrangements" }
-          ]
+          "tr": "Vergi incelemeleri, tarhiyatlar ve uyuşmazlıklarda müvekkillerin temsili",
+          "en": "Representing clients in tax audits, assessments and disputes"
         },
         {
-          "title": { "tr": "Teminat ve nakit yönetimi", "en": "Security and cash management" },
-          "items": [
-            { "tr": "Rehin, ipotek ve alacak temliki dokümantasyonu", "en": "Pledge, mortgage and receivables assignment documentation" },
-            { "tr": "Nakit yönetimi ve hesap yapıları", "en": "Cash management and account structures" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "bilisim-ve-kisisel-verilerin-korunmasi",
-      "slug": {
-        "tr": "bilisim-ve-kisisel-verilerin-korunmasi",
-        "en": "technology-and-data-protection"
-      },
-      "title": {
-        "tr": "Bilişim ve Kişisel Verilerin Korunması",
-        "en": "Technology and Data Protection"
-      },
-      "lead": {
-        "tr": "Teknoloji hizmetlerinin sözleşmesel çerçevesi ile kişisel verilerin işlenmesine ilişkin yükümlülükleri kapsayan alandır. Sözleşme metinleri kadar, işletme içi süreçlerin mevzuata uygun kurgulanmasını da içerir.",
-        "en": "This field covers the contractual framework of technology services together with obligations relating to the processing of personal data. It includes not only contract drafting but also structuring internal processes in line with legislation."
-      },
-      "topics": [
-        {
-          "title": {
-            "tr": "Teknoloji ve hizmet sözleşmeleri",
-            "en": "Technology and services agreements"
-          },
-          "items": [
-            { "tr": "Yazılım lisans ve geliştirme sözleşmeleri", "en": "Software licence and development agreements" },
-            { "tr": "Bilgi işlem hizmet sözleşmeleri ve iş tanımları", "en": "IT services agreements and statements of work" },
-            { "tr": "Hizmet seviyesi taahhütleri", "en": "Service level commitments" },
-            { "tr": "İş ortaklığı ve dağıtım düzenlemeleri", "en": "Partnership and distribution arrangements" }
-          ]
+          "tr": "Vergi cezaları, uzlaşma ve dava stratejisi konusunda danışmanlık",
+          "en": "Advising on tax penalties, settlement and litigation strategy"
         },
         {
-          "title": { "tr": "Ödeme sistemleri ve e-ticaret", "en": "Payment systems and e-commerce" },
-          "items": [
-            { "tr": "Ödeme hizmeti sağlayıcılarıyla kurulan ilişkiler", "en": "Relationships established with payment service providers" },
-            { "tr": "Mesafeli satış ve platform düzenlemeleri", "en": "Distance selling and platform arrangements" },
-            { "tr": "Tüketici mevzuatına uyum", "en": "Compliance with consumer legislation" }
-          ]
+          "tr": "Vergi mahkemeleri ve idare mahkemeleri önünde müvekkillerin temsili",
+          "en": "Representing clients before tax courts and administrative courts"
         },
         {
-          "title": {
-            "tr": "Kişisel verilerin korunması",
-            "en": "Protection of personal data"
-          },
-          "items": [
-            { "tr": "Veri envanteri ve mevcut durum analizi", "en": "Data inventory and gap analysis" },
-            { "tr": "Aydınlatma ve açık rıza süreçlerinin kurulması", "en": "Establishing information notice and explicit consent processes" },
-            { "tr": "Veri işleyen sözleşmeleri", "en": "Data processor agreements" },
-            { "tr": "Yurt dışına veri aktarımı", "en": "Transfer of data abroad" },
-            { "tr": "Veri ihlali bildirimi süreçleri", "en": "Data breach notification procedures" }
-          ]
+          "tr": "İdari izinler, ruhsatlar ve düzenleyici onaylar konusunda danışmanlık",
+          "en": "Advising on administrative permits, licenses and regulatory approvals"
         },
         {
-          "title": { "tr": "Kurumsal yapılar ve yatırım", "en": "Corporate structures and investment" },
-          "items": [
-            { "tr": "Pay devri ve ortaklık sözleşmeleri", "en": "Share transfer and shareholders' agreements" },
-            { "tr": "Çalışan hisse planları ve hak ediş modelleri", "en": "Employee share plans and vesting models" },
-            { "tr": "Fikri mülkiyet ve gizlilik düzenlemeleri", "en": "Intellectual property and confidentiality arrangements" }
-          ]
+          "tr": "İdari yaptırım ve idari icra süreçlerinde müvekkillerin temsili",
+          "en": "Representing clients in administrative sanction and enforcement proceedings"
+        },
+        {
+          "tr": "Düzenlemeye tabi ticari faaliyetlerin kamu hukuku boyutu konusunda danışmanlık",
+          "en": "Advising on public law implications of regulated business activities"
+        },
+        {
+          "tr": "Kamu makamlarıyla yürütülen ilişkilerde müvekkillere destek",
+          "en": "Supporting clients in dealings with public authorities"
+        },
+        {
+          "tr": "İzinler, ruhsatlar ve düzenleyici kararlardan doğan idari uyuşmazlıklar konusunda danışmanlık",
+          "en": "Advising on administrative disputes arising from permits, licenses and regulatory decisions"
         }
       ]
     }

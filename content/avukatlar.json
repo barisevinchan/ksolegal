@@ -126,7 +126,10 @@
         }
       ],
       "practiceAreas": [
+        "uyusmazlik-cozumu-tahkim-ve-arabuluculuk",
+        "yeniden-yapilandirma-konkordato-ve-iflas",
         "is-hukuku",
+        "fikri-mulkiyet-hukuku",
         "gayrimenkul-ve-insaat-hukuku"
       ],
       "languages": [],
@@ -268,8 +271,12 @@
         }
       ],
       "practiceAreas": [
-        "bankacilik-ve-finans-hukuku",
-        "bilisim-ve-kisisel-verilerin-korunmasi"
+        "sirketler-ve-ticaret-hukuku",
+        "uluslararasi-ticaret-gumruk-ve-yaptirimlar",
+        "bankacilik-finans-ve-sermaye-piyasalari",
+        "yeniden-yapilandirma-konkordato-ve-iflas",
+        "kisisel-verilerin-korunmasi-ve-teknoloji-hukuku",
+        "birlesme-ve-devralmalar"
       ],
       "languages": [],
       "registry": {
@@ -414,8 +421,11 @@
         }
       ],
       "practiceAreas": [
-        "kamu-hukuku-ve-insan-haklari",
-        "cevre-ve-karbon-hukuku"
+        "uyusmazlik-cozumu-tahkim-ve-arabuluculuk",
+        "rekabet-duzenleme-ve-uyum",
+        "beyaz-yaka-suclari-ve-ic-sorusturmalar",
+        "gayrimenkul-ve-insaat-hukuku",
+        "vergi-ve-idare-hukuku"
       ],
       "languages": [],
       "registry": {

@@ -8,6 +8,7 @@ import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import {
+  areaSummary,
   getAreaBySlug,
   getLawyersForArea,
   practiceAreas,
@@ -36,9 +37,10 @@ export async function generateMetadata({
   if (!area) return {};
 
   // Nötr, açıklayıcı meta açıklama — anahtar kelime yığmadan (Madde 7/e).
+  // Overview'ın ilk cümlesi; 13 alanda 117–171 karakter aralığında.
   return {
     title: pick(area.title, locale),
-    description: pick(area.lead, locale),
+    description: areaSummary(area, locale),
   };
 }
 
@@ -67,26 +69,33 @@ export default async function PracticeAreaPage({
 
   return (
     <>
-      <PageHeader
-        title={pick(area.title, locale)}
-        lead={pick(area.lead, locale)}
-      />
+      {/* PageHeader'da `lead` YOK: özet cümlesi zaten Overview'ın ilk
+          cümlesidir, ikisini üst üste göstermek metni tekrar ederdi. */}
+      <PageHeader title={pick(area.title, locale)} />
 
       <Container>
         <div className="pb-16 md:pb-24">
+          {/* Bölümleme müşteri PDF'iyle birebir: Overview + Core Services. */}
           <div className="space-y-12">
-            {area.topics.map((topic) => (
-              <section key={topic.title.tr}>
-                <h2 className="text-h3 text-primary">
-                  {pick(topic.title, locale)}
-                </h2>
-                <ul className="mt-4 max-w-prose list-disc space-y-2 pl-5 text-body text-grey-800 marker:text-grey-500">
-                  {topic.items.map((item) => (
-                    <li key={item.tr}>{pick(item, locale)}</li>
-                  ))}
-                </ul>
-              </section>
-            ))}
+            <section>
+              <h2 className="text-h3 text-primary">{t("overviewHeading")}</h2>
+              <div className="mt-4 max-w-prose space-y-4 text-body text-grey-800">
+                {area.overview.map((paragraph, index) => (
+                  <p key={index}>{pick(paragraph, locale)}</p>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-h3 text-primary">
+                {t("coreServicesHeading")}
+              </h2>
+              <ul className="mt-4 max-w-prose list-disc space-y-2 pl-5 text-body text-grey-800 marker:text-grey-500">
+                {area.coreServices.map((item) => (
+                  <li key={item.en}>{pick(item, locale)}</li>
+                ))}
+              </ul>
+            </section>
           </div>
 
           {areaLawyers.length > 0 && (

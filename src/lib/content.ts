@@ -109,18 +109,47 @@ export function titleLine(lawyer: Lawyer, locale: string): string {
    Faaliyet alanları
    ========================================================================== */
 
-export type Topic = { title: L10n; items: L10n[] };
-
+/**
+ * Yapı müşteri PDF'inin "PRACTICE AREAS" bölümüyle birebirdir:
+ * her alan iki paragraflık bir `Overview` ve düz bir `Core Services`
+ * madde listesinden oluşur. Alt başlıklı gruplama YOKTUR — kaynakta da
+ * yoktur, uydurulmaz.
+ */
 export type PracticeArea = {
   id: string;
-  /** Slug dile göre değişir: /faaliyet-alanlari/is-hukuku ↔ /en/practice-areas/employment-law */
+  /** Slug dile göre değişir: /faaliyet-alanlari/is-hukuku ↔ /en/practice-areas/employment-and-labor-law */
   slug: L10n;
   title: L10n;
-  lead: L10n;
-  topics: Topic[];
+  /** PDF "Overview" — tam olarak 2 paragraf. */
+  overview: L10n[];
+  /** PDF "Core Services" — düz madde listesi. */
+  coreServices: L10n[];
 };
 
 export const practiceAreas = faaliyetAlanlari.areas as readonly PracticeArea[];
+
+/**
+ * Overview'ın ilk cümlesi. Liste kartındaki özet ve `<meta description>`
+ * bundan TÜRETİLİR; içerik dosyasında ayrı bir alanda tekrarlanmaz.
+ *
+ * Gerekçe: özet müşterinin kendi cümlesidir. Ayrı alanda tutulsaydı
+ * müşteri paragrafı düzelttiğinde kart metni sessizce eskir; türetince
+ * ikisi kayamaz.
+ *
+ * Bölme ölçütü nokta + boşluktur. 13 alanın 26 paragrafında cümle içi
+ * kısaltma noktası yoktur (kontrol edildi) ve Türkçe çevirilerde de
+ * kullanılmaz — "vb.", "md." gibi bir kısaltma girerse cümle erken
+ * kesilir. Nokta bulunamazsa metnin tamamı döner.
+ */
+export function firstSentence(text: string): string {
+  const end = text.indexOf(". ");
+  return end === -1 ? text : text.slice(0, end + 1);
+}
+
+/** Liste kartı özeti ve meta description — iki yerde de aynı cümle. */
+export function areaSummary(area: PracticeArea, locale: string): string {
+  return firstSentence(pick(area.overview[0], locale));
+}
 
 export function getAreaBySlug(
   slug: string,

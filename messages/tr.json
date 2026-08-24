@@ -80,6 +80,8 @@
   "PracticeAreas": {
     "title": "Faaliyet Alanları",
     "metaDescription": "Büronun faaliyet gösterdiği hukuk alanları.",
+    "overviewHeading": "Genel Bakış",
+    "coreServicesHeading": "Temel Hizmetler",
     "lawyersHeading": "Bu alanda çalışan avukatlar"
   },
   "Contact": {
