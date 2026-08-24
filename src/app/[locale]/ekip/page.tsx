@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
-import { lawyers, pick, titleLine } from "@/lib/content";
+import { displayName, lawyers, pick, titleLine } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -60,13 +60,22 @@ export default async function TeamPage({
                       size="card"
                     />
 
+                    {/* Ad + unvan biçimi detay sayfasıyla AYNI kalıptır;
+                        ikisi de `displayName` / `titleLine` üzerinden
+                        gelir, tek yerden değişir. */}
                     <h2 className="mt-6 text-h4 text-primary underline-offset-4 group-hover:underline">
-                      {lawyer.name}
+                      {displayName(lawyer, (values) =>
+                        t("nameWithDegree", values),
+                      )}
                     </h2>
                   </Link>
 
                   <p className="mt-2 text-body-sm text-grey-600">
-                    {titleLine(lawyer, locale)}
+                    {titleLine(lawyer, {
+                      attorney: t("titles.attorney"),
+                      mediator: t("titles.mediator"),
+                      partner: t("titles.partner"),
+                    })}
                   </p>
 
                   {lawyer.practiceLabels.length > 0 && (

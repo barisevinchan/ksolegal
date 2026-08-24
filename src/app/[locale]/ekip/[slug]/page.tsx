@@ -8,7 +8,7 @@ import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import {
-  getAreasForLawyer,
+  displayName,
   getLawyer,
   hasText,
   lawyerSlugs,
@@ -70,12 +70,18 @@ function Row({ label, children }: { label: string; children: ReactNode }) {
 /**
  * ⚠️ Bu sayfadaki alanlar CLAUDE.md "İzin verilen içerik" maddesinin
  * karşılığıdır ve GENİŞLETİLEMEZ: ad-soyad, hukuk alanındaki akademik
- * unvan, fotoğraf, TBB ve baro sicil numarası, mesleğe başlama tarihi,
- * mezun olunan üniversite, bilinen yabancı diller, iletişim bilgileri.
+ * unvan, mesleki unvan, fotoğraf, mezun olunan üniversite, bilinen
+ * yabancı diller, iletişim bilgileri.
  *
- * Broşürde bulunmayan alanlar boş bırakıldı ve o bölüm HİÇ RENDER
- * EDİLMİYOR — ziyaretçiye tire dizisi göstermek yerine bölüm çıkmıyor.
- * Veri girildiğinde bölüm kendiliğinden görünür, kod değişmez.
+ * Sicil bilgileri (TBB/baro sicil no, bağlı olduğu baro, mesleğe
+ * başlama tarihi), eğitim yılı, tez başlığı ve faaliyet alanı listesi
+ * kullanıcı talimatıyla KALDIRILDI; yeniden eklenmeyecek. Faaliyet
+ * alanı ilişkisi tek yönde durmaya devam ediyor: alan sayfasındaki
+ * "Bu alanda çalışan avukatlar" bölümü.
+ *
+ * Verisi olmayan bölüm HİÇ RENDER EDİLMİYOR — ziyaretçiye tire dizisi
+ * göstermek yerine bölüm çıkmıyor. Veri girildiğinde bölüm
+ * kendiliğinden görünür, kod değişmez.
  */
 export default async function TeamMemberPage({
   params,
@@ -93,33 +99,7 @@ export default async function TeamMemberPage({
   const t = await getTranslations("Team");
   const tCommon = await getTranslations("Common");
 
-  const areas = getAreasForLawyer(lawyer);
-  const { registry, contact } = lawyer;
-
-  const registryRows = [
-    { key: "tbbNo", label: t("fields.tbbNo"), value: registry.tbbNo },
-    { key: "baroNo", label: t("fields.baroNo"), value: registry.baroNo },
-    {
-      key: "bar",
-      label: t("fields.bar"),
-      value: hasText(registry.bar) ? pick(registry.bar, locale) : "",
-    },
-    {
-      key: "admission",
-      label: t("fields.admission"),
-      value: registry.admission,
-    },
-    {
-      key: "mediator",
-      label: t("fields.mediator"),
-      value: registry.mediator
-        ? t("mediatorValue", {
-            no: registry.mediator.registryNo,
-            year: registry.mediator.since,
-          })
-        : "",
-    },
-  ].filter((row) => hasText(row.value));
+  const { contact } = lawyer;
 
   // E-posta ve telefon tıklanabilir; KEP düz metin (mailto ile açılmaz).
   const contactRows = [
@@ -145,9 +125,18 @@ export default async function TeamMemberPage({
           <Portrait src={lawyer.photo} alt={lawyer.name} size="detail" />
 
           <div className="md:col-span-2">
-            <h1 className="text-h2 text-primary md:text-h1">{lawyer.name}</h1>
+            {/* Akademik unvan adın YANINDA (virgülle), mesleki unvanlar
+                adın ALTINDA orta noktayla ayrılmış sırada.
+                Biçim iki dilde de aynı — `Team.nameWithDegree`. */}
+            <h1 className="text-h2 text-primary md:text-h1">
+              {displayName(lawyer, (values) => t("nameWithDegree", values))}
+            </h1>
             <p className="mt-3 text-body-lg text-grey-600">
-              {titleLine(lawyer, locale)}
+              {titleLine(lawyer, {
+                attorney: t("titles.attorney"),
+                mediator: t("titles.mediator"),
+                partner: t("titles.partner"),
+              })}
             </p>
           </div>
         </header>
@@ -185,49 +174,21 @@ export default async function TeamMemberPage({
 
         {lawyer.education.length > 0 && (
           <Section title={t("sections.education")}>
-            {/* Ters kronolojik: en yeni derece üstte. */}
+            {/* Ters kronolojik: en yeni derece üstte. Yıl ve tez başlığı
+                kullanıcı talimatıyla kaldırıldı — geriye derece ve kurum
+                kalır, ikisi de tam genişlikte. */}
             <ol className="mt-6 space-y-6">
               {lawyer.education.map((entry) => (
-                <li key={`${entry.year}-${entry.degree.tr}`} className="sm:flex sm:gap-6">
-                  <span className="block text-body-sm text-grey-600 sm:w-56 sm:shrink-0">
-                    {entry.year}
-                  </span>
-                  <div className="max-w-prose">
-                    <p className="text-body text-grey-800">
-                      {pick(entry.degree, locale)}
-                    </p>
-                    <p className="text-body-sm text-grey-600">
-                      {pick(entry.institution, locale)}
-                    </p>
-                    {entry.note && (
-                      <p className="mt-1 text-body-sm text-grey-600">
-                        {pick(entry.note, locale)}
-                      </p>
-                    )}
-                  </div>
+                <li key={entry.degree.tr} className="max-w-prose">
+                  <p className="text-body text-grey-800">
+                    {pick(entry.degree, locale)}
+                  </p>
+                  <p className="text-body-sm text-grey-600">
+                    {pick(entry.institution, locale)}
+                  </p>
                 </li>
               ))}
             </ol>
-          </Section>
-        )}
-
-        {areas.length > 0 && (
-          <Section title={t("sections.practiceAreas")}>
-            <ul className="mt-6 space-y-3">
-              {areas.map((area) => (
-                <li key={area.id}>
-                  <Link
-                    href={{
-                      pathname: "/faaliyet-alanlari/[slug]",
-                      params: { slug: pick(area.slug, locale) },
-                    }}
-                    className="text-body text-grey-800 underline underline-offset-4 transition-text hover:text-primary"
-                  >
-                    {pick(area.title, locale)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </Section>
         )}
 
@@ -238,18 +199,6 @@ export default async function TeamMemberPage({
                 <li key={language.tr}>{pick(language, locale)}</li>
               ))}
             </ul>
-          </Section>
-        )}
-
-        {registryRows.length > 0 && (
-          <Section title={t("sections.registry")}>
-            <dl className="mt-6 space-y-4">
-              {registryRows.map((row) => (
-                <Row key={row.key} label={row.label}>
-                  {row.value}
-                </Row>
-              ))}
-            </dl>
           </Section>
         )}
 

@@ -58,22 +58,40 @@ satırında "Uzman Arabulucu" (EN: "Expert Mediator") ifadesinin kullanılmasın
 ve yukarıdaki "uzman" yasağının bu tek nokta için geçersiz kılınmasını yazılı
 olarak onayladı.
 
-**İstisnanın sınırı kesindir.** Kelime yalnızca `/ekip/[slug]` sayfalarındaki
-"Sicil Bilgileri" bölümünde, arabuluculuk siciline ait satırın etiketi olarak
-geçer:
+#### ⚠️ Kapsam 24.08.2026'da GENİŞLETİLDİ
+
+İstisna başlangıçta yalnızca "Sicil Bilgileri" bölümündeki arabuluculuk
+sicil satırının etiketi için verilmişti ve sayfa başlıklarını açıkça
+dışarıda bırakıyordu:
 
 ```
 Uzman Arabulucu    Sicil no: 29720 · 2022 yılından bu yana
 ```
 
-Bunun dışında **hiçbir yerde** kullanılmaz: faaliyet alanı açıklamalarında,
-tanıtım paragraflarında, sayfa başlıklarında, meta açıklamalarda, alt
-metinlerde değil. Hangi hukuk alanlarında uzman arabulucu olunduğu bilgisi de
-alınmadı — yalnızca sicil numarası ve yıl verilir.
+Kullanıcı, bu sınır kendisine hatırlatıldıktan sonra **24 Ağustos 2026**
+tarihinde sicil bölümünün tamamen kaldırılmasını ve terimin **ad
+bloğundaki unvan satırına** taşınmasını talimatlandırdı. Güncel yayın
+konumu `/ekip` kartları ile `/ekip/[slug]` başlık bloğudur:
 
-Bu istisna müvekkilin kararıdır; baro görüşü alınması önerilir. Geri
-alınırsa `content/avukatlar.json` içindeki veri korunur, yalnızca
-`messages/*.json` içindeki `Team.fields.mediator` etiketi "Arabulucu" /
+```
+Berkay Koçak, LL.M.                    Berkay Koçak, LL.M.
+Avukat · Uzman Arabulucu · Ortak       Attorney at Law · Expert Mediator · Partner
+```
+
+Sicil numarası ve yıl **artık hiçbir yerde gösterilmiyor** — yani terim,
+onu belgeleyen sicil kaydı olmadan duruyor. Bu, ilk onayın gerekçesini
+zayıflatan bir noktadır; sapma tablosu 10. satırda kayıtlıdır.
+
+**Yeni sınır.** Kelime yalnızca yukarıdaki unvan satırında geçer. Bunun
+dışında **hiçbir yerde** kullanılmaz: faaliyet alanı açıklamalarında,
+tanıtım paragraflarında, `<title>` ve meta açıklamalarda, alt metinlerde
+değil. Hangi hukuk alanlarında uzman arabulucu olunduğu bilgisi de
+alınmadı.
+
+Bu istisna müvekkilin kararıdır; **baro görüşü alınması önerilir** ve
+kapsam genişlemesiyle bu öneri daha da önemlidir. Geri alınırsa
+`content/avukatlar.json` içindeki `titles` verisi korunur, yalnızca
+`messages/*.json` içindeki `Team.titles.mediator` etiketi "Arabulucu" /
 "Mediator" olarak değiştirilir.
 
 ---
@@ -99,6 +117,7 @@ kod değişmez.
 | 5 | `content/avukatlar.json` → Berkay Koçak, biyografi §1 | "**Yerleşik deneyimi** … kapsamaktadır" | "His **established experience** includes…" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok | 21.08.2026 |
 | 6 | `content/avukatlar.json` → B. Hüseyin Sayım, `academicTitle` | "MSc" | "MSc" | "İzin verilen içerik" **hukuk alanındaki** akademik unvana izin veriyor; bu derece Galatasaray Üniversitesi'nde **Finansal Ekonomi** alanındadır | 21.08.2026 |
 | 8 | `content/faaliyet-alanlari.json` → 11. alan (Gayrimenkul ve İnşaat), `overview[1]` | "işlem, mevzuat ve uyuşmazlık alanlarındaki **deneyimimizi** birleştiriyoruz" | "We combine transactional, regulatory and contentious **experience**" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok. 5 numaralı sapmayla aynı sınıf | 24.08.2026 |
+| 10 | `/ekip` kartları + `/ekip/[slug]` başlık bloğu (`messages/*.json` → `Team.titles.mediator`) | "Avukat · **Uzman Arabulucu** · Ortak" | "Attorney at Law · **Expert Mediator** · Partner" | "Onaylanmış istisna"nın 19.08.2026'daki sınırı terimi "Sicil Bilgileri" satırıyla kısıtlıyor ve **sayfa başlıklarını açıkça dışarıda bırakıyordu**. Terim şimdi başlık bloğunda ve sicil no + yıl artık hiç gösterilmiyor — unvan onu belgeleyen kayıt olmadan duruyor. Kullanıcı uyarıldıktan sonra bu şekilde talimat verdi | 24.08.2026 |
 
 **7 — Yapısal sapma.** "İzin verilen içerik" listesi kapalıdır ve içinde
 **biyografi paragrafı** ile **Key Focus listesi** yoktur; her ikisi de
@@ -263,16 +282,33 @@ ve logo `alt` metni oradan okur. `Metadata.title` de aynı biçimdedir;
 Ekip — Koçak | Sayım | Örnek
 ```
 
-Avukat unvan satırı ayrı bir kalıptır — akademik unvandan sonra virgül,
-mesleki unvanla ortak sıfatı arasında orta nokta:
+Avukat adı iki parçalıdır. **Akademik unvan adın YANINDA**, virgülle;
+**mesleki unvanlar adın ALTINDA**, orta noktayla ayrılmış sırada:
 
 ```
-LL.M., Avukat · Ortak        LL.M., Attorney-at-Law · Partner
+Berkay Koçak, LL.M.                 Berkay Koçak, LL.M.
+Avukat · Uzman Arabulucu · Ortak    Attorney at Law · Expert Mediator · Partner
+
+Berhudan Hüseyin Sayım, MSc         Berhudan Hüseyin Sayım, MSc
+Avukat · Ortak                      Attorney at Law · Partner
 ```
 
-`Avukat` / `Attorney-at-Law` ibaresi **düşürülmez**; "İzin verilen içerik"
-listesinde yer alan mesleki unvandır. Biçim `src/lib/content.ts` içindeki
-`titleLine()` fonksiyonunda tektir.
+Kurallar:
+
+- `Avukat` / `Attorney at Law` ibaresi **düşürülmez**; "İzin verilen
+  içerik" listesinde yer alan mesleki unvandır. EN yazım **tiresizdir**
+  (24.08.2026 kullanıcı kararı; önceki biçim `Attorney-at-Law` idi).
+- Akademik unvan kısaltmaları: `LL.M.` ve `MSc`. `MsC`, `M.Sc.`, `M.A.`
+  **kullanılmaz.**
+- Ad + derece yalnızca **başlık** konumlarında birleştirilir: `/ekip`
+  kart başlığı ve `/ekip/[slug]` `h1`. `<title>` metadata, portre `alt`
+  metni ve faaliyet alanı çapraz linkleri **düz adı** kullanır.
+- Unvan sırası veridedir (`content/avukatlar.json` → `titles`), etiket
+  metinleri `messages/*.json` → `Team.titles` altındadır. Ad + derece
+  kalıbı `Team.nameWithDegree`, iki dilde de `{name}, {degree}`.
+
+Biçim `src/lib/content.ts` içindeki `titleLine()` ve `displayName()`
+fonksiyonlarında tektir.
 
 ---
 

@@ -1,15 +1,16 @@
 {
-  "_note": "Veri kaynagi: kimlik/sicil/egitim alanlari kaynak/Ortaklar Brosur/*.pdf; biyografi paragraflari (intro), Key Focus listeleri ve liste kartindaki practiceLabels ise kaynak/icerik/www.kso.av.tr tasarim.pdf 'OUR PEOPLE' bolumu. Ingilizce metin musterinin kendi metnidir ve DEGISTIRILMEDEN aktarilmistir; Turkce karsiliklar TASLAK CEVIRIDIR ve MUSTERI ONAYI BEKLEMEKTEDIR. PDF'te kaybolan fi/ff ligaturleri duzeltildi (nancial -> financial, nance -> finance). UYARI: musteri metni CLAUDE.md 'ASLA uretme' listesiyle bes noktada cakisiyor (Berkay 'established experience'; Huseyin 'leading counsel' ve Key Focus 'Leading'; Alper 'procedural expertise' ve Key Focus 'specialist'). Kullanicinin acik talimatiyla aynen uygulandi, degistirmeden once ona danisilmalidir. academicTitle 'MSc' de ayni kapsamdadir: Finansal Ekonomi yuksek lisansidir, hukuk alaninda degildir. Bos string = veri yok; uydurulmadi, ilgili bolum render edilmez.",
+  "_note": "Veri kaynagi: kimlik ve egitim alanlari kaynak/Ortaklar Brosur/*.pdf; biyografi paragraflari (intro), Key Focus listeleri ve liste kartindaki practiceLabels ise kaynak/icerik/www.kso.av.tr tasarim.pdf 'OUR PEOPLE' bolumu. Ingilizce metin musterinin kendi metnidir ve DEGISTIRILMEDEN aktarilmistir; Turkce karsiliklar TASLAK CEVIRIDIR ve MUSTERI ONAYI BEKLEMEKTEDIR. PDF'te kaybolan fi/ff ligaturleri duzeltildi (nancial -> financial, nance -> finance). 'titles' unvan satirinin SIRALI anahtar listesidir; etiket metinleri messages/*.json -> Team.titles altindadir, burada tekrarlanmaz. Sicil alanlari (TBB/baro sicil no, bagli oldugu baro, meslege baslama tarihi) ve egitim yili + tez basligi alanlari kullanici talimatiyla TAMAMEN KALDIRILDI; yeniden eklenmeyecek. UYARI: musteri metni CLAUDE.md 'ASLA uretme' listesiyle bes noktada cakisiyor (Berkay 'established experience'; Huseyin 'leading counsel' ve Key Focus 'Leading'; Alper 'procedural expertise' ve Key Focus 'specialist'). Kullanicinin acik talimatiyla aynen uygulandi, degistirmeden once ona danisilmalidir. academicTitle 'MSc' de ayni kapsamdadir: Finansal Ekonomi yuksek lisansidir, hukuk alaninda degildir. Bos string = veri yok; uydurulmadi, ilgili bolum render edilmez.",
   "lawyers": [
     {
       "slug": "berkay-kocak",
       "name": "Berkay Koçak",
       "photo": "/ekip/berkay-kocak.jpg",
       "academicTitle": "LL.M.",
-      "role": {
-        "tr": "Avukat · Ortak",
-        "en": "Attorney-at-Law · Partner"
-      },
+      "titles": [
+        "attorney",
+        "mediator",
+        "partner"
+      ],
       "practiceLabels": [
         {
           "tr": "İş Hukuku",
@@ -105,11 +106,6 @@
           "degree": {
             "tr": "Özel Hukuk Yüksek Lisansı (LL.M.)",
             "en": "LL.M. in Private Law"
-          },
-          "year": "2020",
-          "note": {
-            "tr": "Tez: Basın İş Kanunu Uyarınca İşverenin Ücret Ödeme Borcu",
-            "en": "Thesis: The Employer's Obligation to Pay Wages Pursuant to the Press Labour Law"
           }
         },
         {
@@ -120,9 +116,7 @@
           "degree": {
             "tr": "Hukuk Lisansı (LL.B.)",
             "en": "LL.B. in Law"
-          },
-          "year": "2015",
-          "note": null
+          }
         }
       ],
       "practiceAreas": [
@@ -133,19 +127,6 @@
         "gayrimenkul-ve-insaat-hukuku"
       ],
       "languages": [],
-      "registry": {
-        "tbbNo": "",
-        "baroNo": "",
-        "bar": {
-          "tr": "",
-          "en": ""
-        },
-        "admission": "",
-        "mediator": {
-          "registryNo": "29720",
-          "since": "2022"
-        }
-      },
       "contact": {
         "email": "",
         "phone": "",
@@ -157,10 +138,10 @@
       "name": "Berhudan Hüseyin Sayım",
       "photo": "/ekip/berhudan-huseyin-sayim.jpg",
       "academicTitle": "MSc",
-      "role": {
-        "tr": "Avukat · Ortak",
-        "en": "Attorney-at-Law · Partner"
-      },
+      "titles": [
+        "attorney",
+        "partner"
+      ],
       "practiceLabels": [
         {
           "tr": "Şirketler ve Ticaret Hukuku",
@@ -248,13 +229,8 @@
             "en": "Galatasaray University"
           },
           "degree": {
-            "tr": "Finansal İktisat Yüksek Lisansı",
-            "en": "M.A. in Financial Economics"
-          },
-          "year": "2021",
-          "note": {
-            "tr": "Tez: Anonim Şirketlerin Hesap Tablolarında Manipülasyonlar",
-            "en": "Thesis: Manipulations in Statement of Accounts of Incorporated Companies"
+            "tr": "Finansal Ekonomi Yüksek Lisansı (MSc)",
+            "en": "MSc in Financial Economics"
           }
         },
         {
@@ -265,9 +241,7 @@
           "degree": {
             "tr": "Hukuk Lisansı (LL.B.)",
             "en": "LL.B. in Law"
-          },
-          "year": "2017",
-          "note": null
+          }
         }
       ],
       "practiceAreas": [
@@ -279,16 +253,6 @@
         "birlesme-ve-devralmalar"
       ],
       "languages": [],
-      "registry": {
-        "tbbNo": "",
-        "baroNo": "",
-        "bar": {
-          "tr": "",
-          "en": ""
-        },
-        "admission": "",
-        "mediator": null
-      },
       "contact": {
         "email": "",
         "phone": "",
@@ -300,10 +264,11 @@
       "name": "Alper Örnek",
       "photo": "/ekip/alper-ornek.jpg",
       "academicTitle": "LL.M.",
-      "role": {
-        "tr": "Avukat · Ortak",
-        "en": "Attorney-at-Law · Partner"
-      },
+      "titles": [
+        "attorney",
+        "mediator",
+        "partner"
+      ],
       "practiceLabels": [
         {
           "tr": "Kamu Hukuku",
@@ -345,8 +310,8 @@
         },
         {
           "title": {
-            "tr": "Sağlık ve Regülasyon Hukuku",
-            "en": "Healthcare & Regulatory Law"
+            "tr": "Sağlık ve Regülasyon Uyumu",
+            "en": "Healthcare & Regulatory Compliance"
           },
           "description": {
             "tr": "Sağlık sektörü danışmanlığı, ruhsatlandırma, izinler, idari onaylar ve faaliyet uyumu",
@@ -403,9 +368,7 @@
           "degree": {
             "tr": "İnsan Hakları Hukuku Yüksek Lisansı (LL.M.)",
             "en": "LL.M. in Human Rights Law"
-          },
-          "year": "2020",
-          "note": null
+          }
         },
         {
           "institution": {
@@ -415,9 +378,7 @@
           "degree": {
             "tr": "Hukuk Lisansı (LL.B.)",
             "en": "LL.B. in Law"
-          },
-          "year": "2016",
-          "note": null
+          }
         }
       ],
       "practiceAreas": [
@@ -428,19 +389,6 @@
         "vergi-ve-idare-hukuku"
       ],
       "languages": [],
-      "registry": {
-        "tbbNo": "",
-        "baroNo": "",
-        "bar": {
-          "tr": "",
-          "en": ""
-        },
-        "admission": "",
-        "mediator": {
-          "registryNo": "31075",
-          "since": "2023"
-        }
-      },
       "contact": {
         "email": "",
         "phone": "",

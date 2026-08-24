@@ -57,25 +57,23 @@
   "Team": {
     "title": "Ekip",
     "metaDescription": "Büroda görev yapan avukatlar.",
+    "nameWithDegree": "{name}, {degree}",
+    "titles": {
+      "attorney": "Avukat",
+      "mediator": "Uzman Arabulucu",
+      "partner": "Ortak"
+    },
     "sections": {
       "education": "Eğitim",
       "keyFocus": "Başlıca Çalışma Konuları",
-      "practiceAreas": "Faaliyet Alanları",
       "languages": "Diller",
-      "registry": "Sicil Bilgileri",
       "contact": "İletişim"
     },
     "fields": {
-      "tbbNo": "TBB sicil no",
-      "baroNo": "Baro sicil no",
-      "bar": "Bağlı olduğu baro",
-      "admission": "Mesleğe başlama tarihi",
-      "mediator": "Uzman Arabulucu",
       "email": "E-posta",
       "phone": "Telefon",
       "kep": "KEP"
-    },
-    "mediatorValue": "Sicil no: {no} · {year} yılından bu yana"
+    }
   },
   "PracticeAreas": {
     "title": "Faaliyet Alanları",

@@ -38,18 +38,18 @@ export function hasText(value: string | L10n | null | undefined): boolean {
 export type Education = {
   institution: L10n;
   degree: L10n;
-  year: string;
-  note: L10n | null;
 };
 
-export type Registry = {
-  tbbNo: string;
-  baroNo: string;
-  bar: L10n;
-  admission: string;
-  /** Avukatlık sicilinden ayrı bir meslek sicili. */
-  mediator: { registryNo: string; since: string } | null;
-};
+/**
+ * Unvan satırındaki sıralı parçalar. Etiket METİNLERİ burada değil,
+ * `messages/*.json` → `Team.titles` altındadır; içerik dosyası yalnızca
+ * kimin hangi unvanı hangi sırayla taşıdığını tutar.
+ *
+ * ⚠️ `mediator` etiketi CLAUDE.md'deki "Uzman Arabulucu" istisnasına
+ * tabidir. Geri alınırsa YALNIZCA `Team.titles.mediator` değeri
+ * "Arabulucu" / "Mediator" olarak değiştirilir; buradaki veri durur.
+ */
+export type TitleKey = "attorney" | "mediator" | "partner";
 
 export type Contact = { email: string; phone: string; kep: string };
 
@@ -66,7 +66,8 @@ export type Lawyer = {
    * şekilde geçtiği için kullanıcı talimatıyla aynen alındı.
    */
   academicTitle: string;
-  role: L10n;
+  /** Unvan satırının sırası — bkz. `TitleKey`. */
+  titles: TitleKey[];
   /**
    * Liste kartındaki tanıtım etiketleri. Serbest metindir ve faaliyet
    * alanı sayfalarına LİNK DEĞİLDİR — "Mediation", "Regulatory" gibi
@@ -80,7 +81,6 @@ export type Lawyer = {
   /** `faaliyet-alanlari.json` içindeki alanların `id` değerleri. */
   practiceAreas: string[];
   languages: L10n[];
-  registry: Registry;
   contact: Contact;
 };
 
@@ -93,16 +93,41 @@ export function getLawyer(slug: string): Lawyer | undefined {
 }
 
 /**
- * "LL.M., Avukat · Ortak" — akademik unvan yoksa atlanır.
+ * Adın ALTINDAKİ unvan satırı: "Avukat · Uzman Arabulucu · Ortak".
  *
- * Virgül ayırıcı müşteri PDF'indeki biçimden gelir ("LL.M., Partner").
- * `Avukat` / `Attorney-at-Law` ibaresi ise korunur: TBB'nin izin verilen
- * içerik listesinde açıkça yer alan mesleki unvandır.
+ * Sıra `lawyer.titles` dizisinden gelir, metinler çağıran sayfadan
+ * (`Team.titles.*`) geçirilir — bu dosya `next-intl` bilmez.
+ *
+ * Ayıraç orta noktadır (CLAUDE.md "Marka adı yazımı"). `Avukat` /
+ * `Attorney at Law` ibaresi düşürülmez: TBB'nin izin verilen içerik
+ * listesinde açıkça yer alan mesleki unvandır.
+ *
+ * Akademik unvan bu satırda DEĞİL, adın yanındadır — bkz. `displayName`.
  */
-export function titleLine(lawyer: Lawyer, locale: string): string {
-  return [lawyer.academicTitle, pick(lawyer.role, locale)]
-    .filter((part) => part.length > 0)
-    .join(", ");
+export function titleLine(
+  lawyer: Lawyer,
+  labels: Record<TitleKey, string>,
+): string {
+  return lawyer.titles.map((key) => labels[key]).join(" · ");
+}
+
+/**
+ * Başlıkta görünen ad: "Berhudan Hüseyin Sayım, MSc".
+ *
+ * Biçim `Team.nameWithDegree` içindedir (iki dilde de aynı kalıp), bu
+ * yüzden şablon fonksiyon olarak geçirilir. Akademik unvanı olmayan
+ * avukatta düz ad döner — virgül askıda kalmaz.
+ *
+ * Yalnızca BAŞLIK konumlarında kullanılır (`/ekip` kart başlığı ve
+ * `/ekip/[slug]` h1). `<title>` metadata, portre `alt` metni ve faaliyet
+ * alanı çapraz linkleri düz adı kullanmaya devam eder.
+ */
+export function displayName(
+  lawyer: Lawyer,
+  template: (values: { name: string; degree: string }) => string,
+): string {
+  if (!hasText(lawyer.academicTitle)) return lawyer.name;
+  return template({ name: lawyer.name, degree: lawyer.academicTitle });
 }
 
 /* ==========================================================================
@@ -158,23 +183,19 @@ export function getAreaBySlug(
   return practiceAreas.find((area) => pick(area.slug, locale) === slug);
 }
 
-export function getAreaById(id: string): PracticeArea | undefined {
-  return practiceAreas.find((area) => area.id === id);
-}
-
 /**
  * Alan → avukat ilişkisi TÜRETİLİR; alan dosyasında avukat listesi
  * tutulmaz. Böylece ilişki tek yerde (avukatlar.json) tanımlı kalır ve
  * iki liste birbirinden kayamaz.
+ *
+ * İlişki artık TEK YÖNLÜ kullanılıyor: `/faaliyet-alanlari/[slug]`
+ * sayfasındaki "Bu alanda çalışan avukatlar" bölümü. Ters yön
+ * (`/ekip/[slug]` üzerindeki "Faaliyet Alanları" listesi) kullanıcı
+ * talimatıyla kaldırıldı — `lawyer.practiceAreas` verisi bu bölüm için
+ * durmaya devam ediyor.
  */
 export function getLawyersForArea(areaId: string): readonly Lawyer[] {
   return lawyers.filter((l) => l.practiceAreas.includes(areaId));
-}
-
-export function getAreasForLawyer(lawyer: Lawyer): PracticeArea[] {
-  return lawyer.practiceAreas
-    .map(getAreaById)
-    .filter((area): area is PracticeArea => area !== undefined);
 }
 
 /**

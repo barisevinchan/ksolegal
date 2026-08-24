@@ -57,25 +57,23 @@
   "Team": {
     "title": "Team",
     "metaDescription": "Attorneys practising at the office.",
+    "nameWithDegree": "{name}, {degree}",
+    "titles": {
+      "attorney": "Attorney at Law",
+      "mediator": "Expert Mediator",
+      "partner": "Partner"
+    },
     "sections": {
       "education": "Education",
       "keyFocus": "Key Focus",
-      "practiceAreas": "Practice Areas",
       "languages": "Languages",
-      "registry": "Registration Details",
       "contact": "Contact"
     },
     "fields": {
-      "tbbNo": "TBB registration no",
-      "baroNo": "Bar registration no",
-      "bar": "Bar association",
-      "admission": "Admitted to the bar",
-      "mediator": "Expert Mediator",
       "email": "E-mail",
       "phone": "Phone",
       "kep": "KEP"
-    },
-    "mediatorValue": "Registry no: {no} · since {year}"
+    }
   },
   "PracticeAreas": {
     "title": "Practice Areas",
