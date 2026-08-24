@@ -34,6 +34,7 @@ export const routing = defineRouting({
       tr: "/faaliyet-alanlari/[slug]",
       en: "/practice-areas/[slug]",
     },
+    "/kariyer": { tr: "/kariyer", en: "/careers" },
     "/iletisim": { tr: "/iletisim", en: "/contact" },
     "/kvkk": { tr: "/kvkk", en: "/privacy" },
     "/cerez-politikasi": { tr: "/cerez-politikasi", en: "/cookie-policy" },

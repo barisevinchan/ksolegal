@@ -15,6 +15,7 @@
     "about": "Who We Are?",
     "team": "People",
     "practiceAreas": "Practice Areas",
+    "careers": "Careers",
     "contact": "Contact"
   },
   "LocaleSwitcher": {
@@ -34,6 +35,7 @@
     "kep": "KEP",
     "privacy": "Personal Data Protection Notice",
     "cookiePolicy": "Cookie Policy",
+    "pagesHeading": "Pages",
     "copyright": "All rights reserved."
   },
   "Common": {
@@ -53,6 +55,10 @@
   "About": {
     "title": "Who We Are?",
     "metaDescription": "General information about the office."
+  },
+  "Careers": {
+    "title": "Careers",
+    "metaDescription": "Information for candidates wishing to apply to the office."
   },
   "Team": {
     "title": "People",

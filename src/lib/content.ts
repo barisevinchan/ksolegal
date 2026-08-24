@@ -1,6 +1,7 @@
 import avukatlar from "../../content/avukatlar.json";
 import buro from "../../content/buro.json";
 import faaliyetAlanlari from "../../content/faaliyet-alanlari.json";
+import kariyer from "../../content/kariyer.json";
 
 /**
  * Site içeriğinin tek kaynağı. Alan adları koda baktığı için İngilizce;
@@ -232,6 +233,14 @@ export type Office = {
 export const aboutParagraphs = buro.about.paragraphs as readonly L10n[];
 
 export const office = buro.office as Office;
+
+/**
+ * /kariyer gövde metni. Kullanıcı 24.08.2026'da sağladı.
+ *
+ * Ayrı bir kariyer e-postası YOKTUR — sayfa `office.email`'i doğrudan
+ * kullanır (kullanıcı kararı: ayrı bir kutu tanımlanmadı).
+ */
+export const careerParagraphs = kariyer.paragraphs as readonly L10n[];
 
 export type OfficeContactRow = {
   /** `Footer` mesaj namespace'indeki etiket anahtarı. */

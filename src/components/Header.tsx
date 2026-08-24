@@ -21,6 +21,7 @@ export default async function Header() {
     { href: "/biz-kimiz", label: t("about") },
     { href: "/ekibimiz", label: t("team") },
     { href: "/faaliyet-alanlari", label: t("practiceAreas") },
+    { href: "/kariyer", label: t("careers") },
     { href: "/iletisim", label: t("contact") },
   ];
 

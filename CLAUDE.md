@@ -412,12 +412,16 @@ her bilgi siteye konulamaz.
 /ekibimiz/[slug]          Avukat detay
 /faaliyet-alanlari        Alan listesi
 /faaliyet-alanlari/[slug] Alan detayı — nötr, bilgilendirici dil
+/kariyer                  Başvuru bilgisi — düz metin, form yok
 /iletisim                 Adres, telefon, faks, e-posta, KEP, harita
 /kvkk
 /cerez-politikasi
 ```
 
-"Kariyer" ve "Kurumsal Sorumluluk" sayfaları **yok** — 3 kişilik büro için gereksiz.
+"Kariyer" sayfası **24.08.2026'da kullanıcı talimatıyla eklendi**
+(bkz. `/kariyer`) — önceki kayıt bu sayfanın gereksiz olduğunu
+söylüyordu, kullanıcı kararı bunu tersine çevirdi. "Kurumsal
+Sorumluluk" sayfası **hâlâ yok** — 3 kişilik büro için gereksiz.
 
 ---
 

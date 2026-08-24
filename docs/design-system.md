@@ -383,6 +383,15 @@ Aynı gerekçeyle mobil boşluk bir basamak dardır (`gap-8`, `sm:gap-12`).
 375×812'de ölçülen sayfa yüksekliği **3309px ≈ 4.1 ekran**; yatay taşma
 yok. `gap-12` mobilde de kullanılsaydı 3501px ≈ 4.3 ekran olurdu.
 
+### 5.6 Footer
+
+3 kolon (`md:grid-cols-3`, mobilde 1): İletişim, Yasal, Sayfalar.
+"Sayfalar" 24.08.2026'da Kariyer linki için eklendi — o zamana kadar
+footer 2 kolondu. Yeni bir bileşen kurulmadı: link markup'ı "Yasal"
+listesindeki `<li><Link>` ile birebir aynı, yalnızca kopyalanıp
+`href`/etiket değiştirildi. Bir sonraki footer linki de bu kolona
+girer.
+
 ---
 
 ## 6. Erişilebilirlik

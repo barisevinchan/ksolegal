@@ -17,6 +17,7 @@ import Container from "./Container";
 export default async function Footer() {
   const t = await getTranslations("Footer");
   const tBrand = await getTranslations("Brand");
+  const tNav = await getTranslations("Nav");
 
   // Layout `setRequestLocale` çağırdığı için bu okuma SSG'yi bozmaz.
   const locale = await getLocale();
@@ -25,7 +26,7 @@ export default async function Footer() {
   return (
     <footer className="mt-24 bg-primary text-grey-200">
       <Container>
-        <div className="grid gap-12 py-16 md:grid-cols-2">
+        <div className="grid gap-12 py-16 md:grid-cols-3">
           <section>
             <h2 className="text-h4 text-on-primary">{t("contactHeading")}</h2>
             <dl className="mt-6 space-y-3 text-body-sm">
@@ -68,6 +69,22 @@ export default async function Footer() {
                   className="focus-ring-inverse flex min-h-11 items-center text-grey-200 transition-text hover:text-on-primary"
                 >
                   {t("cookiePolicy")}
+                </Link>
+              </li>
+            </ul>
+          </section>
+
+          {/* Yasal listesindeki <li><Link> markup'ıyla birebir aynı —
+              yeni bileşen icat edilmez. */}
+          <section>
+            <h2 className="text-h4 text-on-primary">{t("pagesHeading")}</h2>
+            <ul className="mt-6 space-y-2 text-body-sm">
+              <li>
+                <Link
+                  href="/kariyer"
+                  className="focus-ring-inverse flex min-h-11 items-center text-grey-200 transition-text hover:text-on-primary"
+                >
+                  {tNav("careers")}
                 </Link>
               </li>
             </ul>

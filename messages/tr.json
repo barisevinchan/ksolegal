@@ -15,6 +15,7 @@
     "about": "Biz Kimiz?",
     "team": "Ekibimiz",
     "practiceAreas": "Faaliyet Alanları",
+    "careers": "Kariyer",
     "contact": "İletişim"
   },
   "LocaleSwitcher": {
@@ -34,6 +35,7 @@
     "kep": "KEP",
     "privacy": "KVKK Aydınlatma Metni",
     "cookiePolicy": "Çerez Politikası",
+    "pagesHeading": "Sayfalar",
     "copyright": "Tüm hakları saklıdır."
   },
   "Common": {
@@ -53,6 +55,10 @@
   "About": {
     "title": "Biz Kimiz?",
     "metaDescription": "Büro hakkında genel bilgi."
+  },
+  "Careers": {
+    "title": "Kariyer",
+    "metaDescription": "Büroya başvuru yapmak isteyen adaylar için bilgi."
   },
   "Team": {
     "title": "Ekibimiz",
