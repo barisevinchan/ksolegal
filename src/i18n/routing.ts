@@ -1,27 +1,27 @@
 import { defineRouting } from "next-intl/routing";
 
 /**
- * Türkçe varsayılan dildir ve önek almaz: /biz-kimiz
- * İngilizce önekli ve slug'ları çevrilmiştir: /en/who-we-are
+ * İngilizce varsayılan dildir ve önek almaz: /who-we-are
+ * Türkçe önekli ve slug'ları çevrilmiştir: /tr/biz-kimiz
  *
  * pathnames'teki rotaların bir kısmının dosyası henüz yok; kabuk
  * aşamasında bu beklenen durumdur (typecheck geçer, runtime 404 verir).
  */
 export const routing = defineRouting({
   locales: ["tr", "en"],
-  defaultLocale: "tr",
+  defaultLocale: "en",
   localePrefix: "as-needed",
   /**
    * Otomatik dil tespiti kapalı: middleware ne `NEXT_LOCALE` cookie'sine
    * ne de `Accept-Language` başlığına bakar. Sonuç: `/` her koşulda
-   * kesin Türkçe, `/en` kesin İngilizce.
+   * kesin İngilizce, `/tr` kesin Türkçe.
    *
-   * Kazanç: öneksiz Türkçe yol hiçbir senaryoda yönlendirmez (yeni sekme,
-   * yer imi, arama motoru, CDN önbelleği dahil) ve `/` cookie'ye bağımlı
-   * olmadığı için tam önbelleklenebilir.
+   * Kazanç: öneksiz İngilizce yol hiçbir senaryoda yönlendirmez (yeni
+   * sekme, yer imi, arama motoru, CDN önbelleği dahil) ve `/` cookie'ye
+   * bağımlı olmadığı için tam önbelleklenebilir.
    *
-   * Bedel: İngilizce ziyaretçiye tarayıcı diline göre otomatik İngilizce
-   * sunulmaz; kullanıcı dil değiştiriciden EN'e geçer.
+   * Bedel: Türkçe ziyaretçiye tarayıcı diline göre otomatik Türkçe
+   * sunulmaz; kullanıcı dil değiştiriciden TR'ye geçer.
    */
   localeDetection: false,
   pathnames: {

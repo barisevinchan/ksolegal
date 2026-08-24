@@ -15,7 +15,7 @@ import type { L10n } from "@/lib/content";
  *
  * next-intl'in `Link`'i, `locale` prop'u verildiğinde öneki HER ZAMAN
  * ekler (kaynakta `forcePrefix: locale != null`). Bu, `as-needed` modda
- * Türkçe için `/tr` üretir ve middleware'in `/tr → /` yönlendirmesine
+ * İngilizce için `/en` üretir ve middleware'in `/en → /` yönlendirmesine
  * yol açar. Onun yerine `getPathname`'i doğrudan çağırıyoruz —
  * `forcePrefix` verilmediğinde `as-needed` kuralı uygulanır:
  * varsayılan dil öneksiz, diğerleri önekli.
@@ -31,7 +31,7 @@ import type { L10n } from "@/lib/content";
  * içerik dosyası client bundle'a girmez.
  *
  * Cookie yazma: `localeDetection: false` olduğu için middleware artık
- * cookie'yi yönlendirme kararında OKUMUYOR — `/` her koşulda Türkçe.
+ * cookie'yi yönlendirme kararında OKUMUYOR — `/` her koşulda İngilizce.
  * Ancak next-intl cookie'yi yazmayı sürdürüyor ve bunu yalnızca
  * doküman istekleri için yapıyor; yumuşak navigasyonlarda cookie'yi
  * client'ın güncellemesini bekliyor (bkz. middleware/syncCookie.js).
@@ -93,7 +93,7 @@ export default function LocaleSwitcher({ slugMap }: Props) {
     document.cookie = `NEXT_LOCALE=${locale}; path=/; sameSite=lax`;
   }
 
-  // prefetch açık bırakıldı: `localeDetection: false` ile `/` ve `/en`
+  // prefetch açık bırakıldı: `localeDetection: false` ile `/` ve `/tr`
   // cookie'den bağımsız olarak deterministik yanıt döner, bu yüzden
   // önden çekilen RSC yükünün yanlış dili önbelleğe alma riski yok.
 
