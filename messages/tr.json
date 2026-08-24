@@ -48,9 +48,15 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
   },
   "Home": {
-    "heroTitle": "Hukuk büromuza hoş geldiniz.",
+    "heroTitle": "<brand>KOÇAK|SAYIM|ÖRNEK</brand> Avukatlık Bürosuna Hoş Geldiniz.",
+    "heroSubtitle": "Kritik ticari kararlar için açık, stratejik ve çözüm odaklı hukuki danışmanlık.",
     "heroImageAlt": "İstanbul Boğazı ve şehir silueti, gece",
-    "linksHeading": "Sayfalar"
+    "linksHeading": "Sayfalar",
+    "cards": {
+      "about": "Ticari bakış açısı, açık iletişim ve proaktif yaklaşımla şekillenen uygulanabilir hukuki danışmanlık.",
+      "team": "Odaklı birikimi işbirliğine dayalı ve çözüm odaklı bir yaklaşımla birleştiren ortaklarımızla tanışın.",
+      "practiceAreas": "Müvekkillerimizin ticari faaliyetlerini şekillendiren temel alanlarda kapsamlı hukuki destek."
+    }
   },
   "About": {
     "title": "Biz Kimiz?",

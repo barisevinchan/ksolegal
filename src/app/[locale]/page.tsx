@@ -2,14 +2,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
 import Container from "@/components/Container";
-import { Link } from "@/i18n/navigation";
+import HomeCard from "@/components/HomeCard";
 import type { StaticPathname } from "@/i18n/navigation";
 
 /**
  * Ana sayfa: tek hero + üç yönlendirme. Sayaç, rozet, referans, CTA
  * butonu yoktur (CLAUDE.md yasak listesi + docs/design-system.md §5.1).
- *
- * Metinler yer tutucudur; gerçek içerik tasarım onayından sonra girilir.
  */
 export default async function HomePage({
   params,
@@ -22,10 +20,14 @@ export default async function HomePage({
   const t = await getTranslations("Home");
   const tNav = await getTranslations("Nav");
 
-  const links: { href: StaticPathname; label: string }[] = [
-    { href: "/biz-kimiz", label: tNav("about") },
-    { href: "/ekibimiz", label: tNav("team") },
-    { href: "/faaliyet-alanlari", label: tNav("practiceAreas") },
+  const links: { href: StaticPathname; label: string; description: string }[] = [
+    { href: "/biz-kimiz", label: tNav("about"), description: t("cards.about") },
+    { href: "/ekibimiz", label: tNav("team"), description: t("cards.team") },
+    {
+      href: "/faaliyet-alanlari",
+      label: tNav("practiceAreas"),
+      description: t("cards.practiceAreas"),
+    },
   ];
 
   return (
@@ -86,9 +88,23 @@ export default async function HomePage({
             {/* Overlay üstünde yalnızca #FFFFFF ve #F7F8FA kullanılır;
                 grey-200 ve altı yasak (docs/design-system.md §2.3).
 
-                Başlığın altında alt metin YOKTUR — müşteri göndermedi ve
-                yer tutucu bırakılmadı (CLAUDE.md Çalışma Kuralı 1). */}
-            <h1 className="text-h2 text-white md:text-h1">{t("heroTitle")}</h1>
+                `text-hero` clamp() ile sürekli ölçeklenir (globals.css)
+                — breakpoint sıçraması yok. Marka adı `<brand>` etiketiyle
+                işaretlenir ve `whitespace-nowrap` alır: cümlenin geri
+                kalanı sarabilir, marka adı asla bölünmez (320px'te bile
+                — doğrulandı). Büyük harf/boşluksuz biçim `KOÇAK|SAYIM|ÖRNEK`
+                kullanıcı kararıyla site genelindeki `Brand.name`
+                biçiminden bilerek sapar; bkz. CLAUDE.md "Marka adı yazımı". */}
+            <h1 className="text-hero text-white">
+              {t.rich("heroTitle", {
+                brand: (chunks) => (
+                  <span className="whitespace-nowrap">{chunks}</span>
+                ),
+              })}
+            </h1>
+            <p className="mt-4 text-body-lg text-surface">
+              {t("heroSubtitle")}
+            </p>
           </div>
         </Container>
       </section>
@@ -102,21 +118,11 @@ export default async function HomePage({
           <ul className="grid gap-8 md:grid-cols-3">
             {links.map((link) => (
               <li key={link.href}>
-                {/* Kart hover'da büyümez, gölge almaz, 3D dönmez —
-                    tek hareket başlığın altını çizmesidir.
-
-                    Başlık altında açıklama cümlesi YOKTUR: müşteri bu üç
-                    metni göndermedi. Ekip ve faaliyet alanları liste
-                    sayfalarındaki giriş paragrafları da aynı gerekçeyle
-                    kaldırılmıştı. */}
-                <Link
+                <HomeCard
                   href={link.href}
-                  className="group block border-t border-grey-500 pt-6"
-                >
-                  <h3 className="text-h3 text-primary underline-offset-4 group-hover:underline">
-                    {link.label}
-                  </h3>
-                </Link>
+                  label={link.label}
+                  description={link.description}
+                />
               </li>
             ))}
           </ul>

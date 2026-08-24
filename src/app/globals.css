@@ -48,6 +48,17 @@
   --text-h1--line-height: 1.15;
   --text-h1--font-weight: 600;
 
+  /* Hero başlığı — sürekli ölçekli, breakpoint sıçraması yok.
+     320px'te ~1.5rem (24px), üst sınır --text-h1 ile aynıdır (hero
+     masaüstünde bugünkü boyutunda kalır). `vw` tek başına yazılmaz:
+     WCAG 1.4.4 "Resize text" için `+ 0.5rem` terimi eklenir, böylece
+     ölçek tarayıcı yazı tipi büyütmesiyle birlikte büyür. Marka adı
+     span'i (`whitespace-nowrap`) bu ölçekte 320px'te bile taşmayacak
+     şekilde doğrulanmıştır — bkz. src/app/[locale]/page.tsx. */
+  --text-hero: clamp(1.5rem, 5.2vw + 0.5rem, 2.4375rem);
+  --text-hero--line-height: 1.15;
+  --text-hero--font-weight: 600;
+
   --text-h2: 1.9375rem; /* 31px */
   --text-h2--line-height: 1.25;
   --text-h2--font-weight: 600;

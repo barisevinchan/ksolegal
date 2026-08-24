@@ -48,9 +48,15 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
-    "heroTitle": "Welcome to our law firm.",
+    "heroTitle": "Welcome to <brand>KOÇAK|SAYIM|ÖRNEK</brand> Attorneys at Law.",
+    "heroSubtitle": "Clear legal advice for complex business decisions.",
     "heroImageAlt": "The Bosphorus and the İstanbul skyline at night",
-    "linksHeading": "Pages"
+    "linksHeading": "Pages",
+    "cards": {
+      "about": "Practical legal advice shaped by commercial understanding, clear communication and a proactive approach.",
+      "team": "Meet the partners combining focused knowledge with a collaborative and solution-oriented approach.",
+      "practiceAreas": "Comprehensive legal support across the key areas shaping our clients' businesses and operations."
+    }
   },
   "About": {
     "title": "Who We Are?",

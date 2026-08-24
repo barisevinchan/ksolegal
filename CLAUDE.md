@@ -310,6 +310,20 @@ Kurallar:
 Biçim `src/lib/content.ts` içindeki `titleLine()` ve `displayName()`
 fonksiyonlarında tektir.
 
+#### ⚠️ İstisna: Ana sayfa hero başlığı
+
+`/` hero başlığında (`messages/*.json` → `Home.heroTitle`) marka adı
+**`KOÇAK|SAYIM|ÖRNEK`** biçimindedir — büyük harf, boşluksuz, dikey
+çizgi ayıraçla. Yukarıdaki "tek biçim" kuralından **bilerek sapar**;
+kullanıcı yukarıdaki kural kendisine hatırlatıldıktan sonra bu biçimi
+onayladı (24.08.2026).
+
+Kapsam yalnızca hero `<h1>`'dir. `Brand.name` (`Koçak | Sayım | Örnek`)
+diğer tüm konumlarda — footer telif satırı, logo `alt` metni,
+`Metadata.title` — değişmeden geçerlidir. Geri alınırsa yalnızca
+`Home.heroTitle` içindeki `<brand>` etiketinin metni düzeltilir, kod
+(`src/app/[locale]/page.tsx`) değişmez.
+
 ---
 
 ## 🧰 SKILL KULLANIMI
