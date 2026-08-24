@@ -47,7 +47,7 @@ export default async function AboutPage({
       <PageHeader title={t("title")} />
 
       <Container>
-        <div className="max-w-prose space-y-6 pb-16 text-body text-grey-800 md:pb-24">
+        <div className="justify-prose max-w-prose space-y-6 pb-16 text-body text-grey-800 md:pb-24">
           {aboutParagraphs.map((paragraph, index) => (
             <p key={index}>{pick(paragraph, locale)}</p>
           ))}

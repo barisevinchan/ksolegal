@@ -186,6 +186,27 @@
   transition-duration: 200ms;
 }
 
+/* Uzun paragraf metinleri için: iki yana yasla + kelime bölme.
+   Yalnızca gerçek prose bloklarına uygulanır — başlık, nav, buton,
+   etiket, tablo, kart açıklaması gibi kısa/yapısal metinler HARİÇ.
+
+   `text-align-last: left` son satırın gerilip seyrekleşmesini önler —
+   özellikle kısa son satırlarda "nehir" oluşumunun en çok göze battığı
+   yer orasıdır.
+
+   `hyphens: auto` + `overflow-wrap: break-word`: justify tek başına dar
+   ekranlarda kelime arası boşlukları açıp "nehir" oluşturur; hyphenation
+   bunu satır sonunda kelimeyi bölerek azaltır. `<html lang>` locale'e
+   göre zaten ayarlı (src/app/[locale]/layout.tsx), tarayıcı doğru
+   heceleme sözlüğünü buradan seçer — ayrıca bir ayar gerekmez. */
+@utility justify-prose {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
+
 /* ==========================================================================
    Base
    ========================================================================== */

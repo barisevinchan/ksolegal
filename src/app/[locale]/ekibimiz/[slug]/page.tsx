@@ -142,7 +142,7 @@ export default async function TeamMemberPage({
         </header>
 
         {lawyer.intro.length > 0 && (
-          <div className="mt-12 max-w-prose space-y-4 text-body text-grey-800">
+          <div className="justify-prose mt-12 max-w-prose space-y-4 text-body text-grey-800">
             {lawyer.intro.map((paragraph, index) => (
               <p key={index}>{pick(paragraph, locale)}</p>
             ))}

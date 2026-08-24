@@ -23,7 +23,7 @@ export default async function PlaceholderText({
 
   return (
     <div
-      className={`max-w-prose space-y-4 text-body text-grey-800${
+      className={`justify-prose max-w-prose space-y-4 text-body text-grey-800${
         className ? ` ${className}` : ""
       }`}
     >

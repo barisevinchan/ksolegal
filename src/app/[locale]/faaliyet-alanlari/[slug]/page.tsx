@@ -79,7 +79,7 @@ export default async function PracticeAreaPage({
           <div className="space-y-12">
             <section>
               <h2 className="text-h3 text-primary">{t("overviewHeading")}</h2>
-              <div className="mt-4 max-w-prose space-y-4 text-body text-grey-800">
+              <div className="justify-prose mt-4 max-w-prose space-y-4 text-body text-grey-800">
                 {area.overview.map((paragraph, index) => (
                   <p key={index}>{pick(paragraph, locale)}</p>
                 ))}

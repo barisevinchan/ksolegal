@@ -66,9 +66,23 @@ export default async function Header() {
 
           <div className="flex items-center gap-4 sm:gap-6">
             <nav aria-label={t("ariaLabel")} className="hidden md:block">
-              <ul className="flex items-center gap-6">
-                {items.map((item) => (
-                  <li key={item.href}>
+              {/* Öğeler arası ince ayırıcı — yalnızca aradakiler, ilk
+                  öğenin solunda ve son öğenin sağında çizgi yok. Kalıp
+                  LocaleSwitcher'daki `/` ayracıyla aynı: `index > 0`.
+
+                  gap-6 yerine gap-3: çizgi artık boşluğu ul-gap +
+                  li-içi-gap olarak ikiye bölüyor. Eski gap-6 korunsaydı
+                  toplam mesafe 48px'e çıkar, 1024px civarında taşmaya
+                  yol açardı. gap-3+gap-3 ≈ eski 24px'e denk. */}
+              <ul className="flex items-center gap-3">
+                {items.map((item, index) => (
+                  <li key={item.href} className="flex items-center gap-3">
+                    {index > 0 && (
+                      <span
+                        aria-hidden="true"
+                        className="h-4 w-px bg-grey-400"
+                      />
+                    )}
                     <NavLink href={item.href} label={item.label} />
                   </li>
                 ))}
