@@ -49,7 +49,7 @@ export default async function TeamPage({
                 <article>
                   <Link
                     href={{
-                      pathname: "/ekip/[slug]",
+                      pathname: "/ekibimiz/[slug]",
                       params: { slug: lawyer.slug },
                     }}
                     className="group block"

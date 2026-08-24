@@ -1,8 +1,8 @@
 import { defineRouting } from "next-intl/routing";
 
 /**
- * Türkçe varsayılan dildir ve önek almaz: /hakkimizda
- * İngilizce önekli ve slug'ları çevrilmiştir: /en/about
+ * Türkçe varsayılan dildir ve önek almaz: /biz-kimiz
+ * İngilizce önekli ve slug'ları çevrilmiştir: /en/who-we-are
  *
  * pathnames'teki rotaların bir kısmının dosyası henüz yok; kabuk
  * aşamasında bu beklenen durumdur (typecheck geçer, runtime 404 verir).
@@ -26,9 +26,9 @@ export const routing = defineRouting({
   localeDetection: false,
   pathnames: {
     "/": "/",
-    "/hakkimizda": { tr: "/hakkimizda", en: "/about" },
-    "/ekip": { tr: "/ekip", en: "/team" },
-    "/ekip/[slug]": { tr: "/ekip/[slug]", en: "/team/[slug]" },
+    "/biz-kimiz": { tr: "/biz-kimiz", en: "/who-we-are" },
+    "/ekibimiz": { tr: "/ekibimiz", en: "/people" },
+    "/ekibimiz/[slug]": { tr: "/ekibimiz/[slug]", en: "/people/[slug]" },
     "/faaliyet-alanlari": { tr: "/faaliyet-alanlari", en: "/practice-areas" },
     "/faaliyet-alanlari/[slug]": {
       tr: "/faaliyet-alanlari/[slug]",

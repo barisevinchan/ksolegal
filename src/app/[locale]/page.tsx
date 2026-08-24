@@ -23,8 +23,8 @@ export default async function HomePage({
   const tNav = await getTranslations("Nav");
 
   const links: { href: StaticPathname; label: string }[] = [
-    { href: "/hakkimizda", label: tNav("about") },
-    { href: "/ekip", label: tNav("team") },
+    { href: "/biz-kimiz", label: tNav("about") },
+    { href: "/ekibimiz", label: tNav("team") },
     { href: "/faaliyet-alanlari", label: tNav("practiceAreas") },
   ];
 

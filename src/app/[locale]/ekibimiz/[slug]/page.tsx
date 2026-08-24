@@ -225,7 +225,7 @@ export default async function TeamMemberPage({
 
         <p className="mt-12">
           <Link
-            href="/ekip"
+            href="/ekibimiz"
             className="text-body-sm text-grey-600 underline underline-offset-4 transition-text hover:text-primary"
           >
             {tCommon("backToList")}

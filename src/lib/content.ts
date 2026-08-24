@@ -118,8 +118,8 @@ export function titleLine(
  * yüzden şablon fonksiyon olarak geçirilir. Akademik unvanı olmayan
  * avukatta düz ad döner — virgül askıda kalmaz.
  *
- * Yalnızca BAŞLIK konumlarında kullanılır (`/ekip` kart başlığı ve
- * `/ekip/[slug]` h1). `<title>` metadata, portre `alt` metni ve faaliyet
+ * Yalnızca BAŞLIK konumlarında kullanılır (`/ekibimiz` kart başlığı ve
+ * `/ekibimiz/[slug]` h1). `<title>` metadata, portre `alt` metni ve faaliyet
  * alanı çapraz linkleri düz adı kullanmaya devam eder.
  */
 export function displayName(
@@ -190,7 +190,7 @@ export function getAreaBySlug(
  *
  * İlişki artık TEK YÖNLÜ kullanılıyor: `/faaliyet-alanlari/[slug]`
  * sayfasındaki "Bu alanda çalışan avukatlar" bölümü. Ters yön
- * (`/ekip/[slug]` üzerindeki "Faaliyet Alanları" listesi) kullanıcı
+ * (`/ekibimiz/[slug]` üzerindeki "Faaliyet Alanları" listesi) kullanıcı
  * talimatıyla kaldırıldı — `lawyer.practiceAreas` verisi bu bölüm için
  * durmaya devam ediyor.
  */
@@ -228,7 +228,7 @@ export type Office = {
   kep: string;
 };
 
-/** /hakkimizda gövde metni. Müşteri PDF'inin "WHO WE ARE?" bölümü. */
+/** /biz-kimiz gövde metni. Müşteri PDF'inin "WHO WE ARE?" bölümü. */
 export const aboutParagraphs = buro.about.paragraphs as readonly L10n[];
 
 export const office = buro.office as Office;

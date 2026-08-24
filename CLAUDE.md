@@ -71,7 +71,7 @@ Uzman Arabulucu    Sicil no: 29720 · 2022 yılından bu yana
 Kullanıcı, bu sınır kendisine hatırlatıldıktan sonra **24 Ağustos 2026**
 tarihinde sicil bölümünün tamamen kaldırılmasını ve terimin **ad
 bloğundaki unvan satırına** taşınmasını talimatlandırdı. Güncel yayın
-konumu `/ekip` kartları ile `/ekip/[slug]` başlık bloğudur:
+konumu `/ekibimiz` kartları ile `/ekibimiz/[slug]` başlık bloğudur:
 
 ```
 Berkay Koçak, LL.M.                    Berkay Koçak, LL.M.
@@ -117,11 +117,11 @@ kod değişmez.
 | 5 | `content/avukatlar.json` → Berkay Koçak, biyografi §1 | "**Yerleşik deneyimi** … kapsamaktadır" | "His **established experience** includes…" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok | 21.08.2026 |
 | 6 | `content/avukatlar.json` → B. Hüseyin Sayım, `academicTitle` | "MSc" | "MSc" | "İzin verilen içerik" **hukuk alanındaki** akademik unvana izin veriyor; bu derece Galatasaray Üniversitesi'nde **Finansal Ekonomi** alanındadır | 21.08.2026 |
 | 8 | `content/faaliyet-alanlari.json` → 11. alan (Gayrimenkul ve İnşaat), `overview[1]` | "işlem, mevzuat ve uyuşmazlık alanlarındaki **deneyimimizi** birleştiriyoruz" | "We combine transactional, regulatory and contentious **experience**" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok. 5 numaralı sapmayla aynı sınıf | 24.08.2026 |
-| 10 | `/ekip` kartları + `/ekip/[slug]` başlık bloğu (`messages/*.json` → `Team.titles.mediator`) | "Avukat · **Uzman Arabulucu** · Ortak" | "Attorney at Law · **Expert Mediator** · Partner" | "Onaylanmış istisna"nın 19.08.2026'daki sınırı terimi "Sicil Bilgileri" satırıyla kısıtlıyor ve **sayfa başlıklarını açıkça dışarıda bırakıyordu**. Terim şimdi başlık bloğunda ve sicil no + yıl artık hiç gösterilmiyor — unvan onu belgeleyen kayıt olmadan duruyor. Kullanıcı uyarıldıktan sonra bu şekilde talimat verdi | 24.08.2026 |
+| 10 | `/ekibimiz` kartları + `/ekibimiz/[slug]` başlık bloğu (`messages/*.json` → `Team.titles.mediator`) | "Avukat · **Uzman Arabulucu** · Ortak" | "Attorney at Law · **Expert Mediator** · Partner" | "Onaylanmış istisna"nın 19.08.2026'daki sınırı terimi "Sicil Bilgileri" satırıyla kısıtlıyor ve **sayfa başlıklarını açıkça dışarıda bırakıyordu**. Terim şimdi başlık bloğunda ve sicil no + yıl artık hiç gösterilmiyor — unvan onu belgeleyen kayıt olmadan duruyor. Kullanıcı uyarıldıktan sonra bu şekilde talimat verdi | 24.08.2026 |
 
 **7 — Yapısal sapma.** "İzin verilen içerik" listesi kapalıdır ve içinde
 **biyografi paragrafı** ile **Key Focus listesi** yoktur; her ikisi de
-`/ekip/[slug]` sayfalarında yayındadır (`intro`, `keyFocus`). Bu sınır ilk
+`/ekibimiz/[slug]` sayfalarında yayındadır (`intro`, `keyFocus`). Bu sınır ilk
 olarak broşür turunda `intro` ile aşılmıştı; müşteri PDF'i bunu genişletti.
 Alanlar "uzmanlık anlamına gelmemek kaydıyla … nötr bilgi" izniyle
 savunulabilir, ancak 1–5 numaralı ifadeler bu savunmanın dışında kalır.
@@ -143,7 +143,7 @@ rakam, dava veya müvekkil örneği taraması **temiz** çıkmıştır. (24.08.2
 
 ### 📌 Müşteriye sorulacak — karşılıksız Key Focus alanları
 
-`/ekip/[slug]` sayfalarındaki Key Focus başlıklarından **üçünün** 13'lük
+`/ekibimiz/[slug]` sayfalarındaki Key Focus başlıklarından **üçünün** 13'lük
 faaliyet alanı listesinde karşılığı yok. Key Focus başlığı olarak yayında
 kalıyorlar, ancak bir alan sayfasına link vermiyorlar:
 
@@ -300,8 +300,8 @@ Kurallar:
   (24.08.2026 kullanıcı kararı; önceki biçim `Attorney-at-Law` idi).
 - Akademik unvan kısaltmaları: `LL.M.` ve `MSc`. `MsC`, `M.Sc.`, `M.A.`
   **kullanılmaz.**
-- Ad + derece yalnızca **başlık** konumlarında birleştirilir: `/ekip`
-  kart başlığı ve `/ekip/[slug]` `h1`. `<title>` metadata, portre `alt`
+- Ad + derece yalnızca **başlık** konumlarında birleştirilir: `/ekibimiz`
+  kart başlığı ve `/ekibimiz/[slug]` `h1`. `<title>` metadata, portre `alt`
   metni ve faaliyet alanı çapraz linkleri **düz adı** kullanır.
 - Unvan sırası veridedir (`content/avukatlar.json` → `titles`), etiket
   metinleri `messages/*.json` → `Team.titles` altındadır. Ad + derece
@@ -407,9 +407,9 @@ her bilgi siteye konulamaz.
 
 ```
 /                         Ana sayfa — sade, tek ekran, üç yönlendirme
-/hakkimizda               Büro tanıtımı
-/ekip                     3 avukat kartı (izin verilen alanlarla sınırlı)
-/ekip/[slug]              Avukat detay
+/biz-kimiz                Büro tanıtımı
+/ekibimiz                 3 avukat kartı (izin verilen alanlarla sınırlı)
+/ekibimiz/[slug]          Avukat detay
 /faaliyet-alanlari        Alan listesi
 /faaliyet-alanlari/[slug] Alan detayı — nötr, bilgilendirici dil
 /iletisim                 Adres, telefon, faks, e-posta, KEP, harita

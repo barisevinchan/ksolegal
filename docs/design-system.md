@@ -347,7 +347,7 @@ Türkçe varsayılan, İngilizce ikinci dil. `next-intl`,
 
 ### 5.5 Faaliyet alanları listesi
 
-**13 kart.** Kırılımlar `/ekip` ile aynı: mobilde 1, `sm` 2, `lg` 3 kolon.
+**13 kart.** Kırılımlar `/ekibimiz` ile aynı: mobilde 1, `sm` 2, `lg` 3 kolon.
 İki liste sayfası aynı ritmi paylaşır.
 
 Kart kutu değildir — `border-t` + başlık + özet. Zemin, gölge, çerçeve yok.

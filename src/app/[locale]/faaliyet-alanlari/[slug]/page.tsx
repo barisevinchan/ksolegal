@@ -109,7 +109,7 @@ export default async function PracticeAreaPage({
                   <li key={lawyer.slug}>
                     <Link
                       href={{
-                        pathname: "/ekip/[slug]",
+                        pathname: "/ekibimiz/[slug]",
                         params: { slug: lawyer.slug },
                       }}
                       className="group flex min-h-11 items-center gap-4"

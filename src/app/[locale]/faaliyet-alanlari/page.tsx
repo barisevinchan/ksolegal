@@ -44,7 +44,7 @@ export default async function PracticeAreasPage({
 
       <Container>
         {/*
-          13 kart. Kırılımlar `/ekip` ile aynı (sm:2, lg:3) — iki liste
+          13 kart. Kırılımlar `/ekibimiz` ile aynı (sm:2, lg:3) — iki liste
           sayfası aynı ritmi paylaşsın diye.
 
           `sm:auto-rows-fr`: tüm satır izleri en uzun satıra eşitlenir,
@@ -68,7 +68,7 @@ export default async function PracticeAreasPage({
                 className="group block border-t border-grey-500 pt-6"
               >
                 {/* h4: docs/design-system.md §3.2'de "kart başlığı".
-                    /ekip kartlarıyla aynı basamak. */}
+                    /ekibimiz kartlarıyla aynı basamak. */}
                 <h2 className="text-h4 text-primary underline-offset-4 group-hover:underline">
                   {pick(area.title, locale)}
                 </h2>

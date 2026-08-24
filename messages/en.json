@@ -12,8 +12,8 @@
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "about": "About",
-    "team": "Team",
+    "about": "Who We Are?",
+    "team": "People",
     "practiceAreas": "Practice Areas",
     "contact": "Contact"
   },
@@ -51,11 +51,11 @@
     "linksHeading": "Pages"
   },
   "About": {
-    "title": "About",
+    "title": "Who We Are?",
     "metaDescription": "General information about the office."
   },
   "Team": {
-    "title": "Team",
+    "title": "People",
     "metaDescription": "Attorneys practising at the office.",
     "nameWithDegree": "{name}, {degree}",
     "titles": {

@@ -12,8 +12,8 @@
     "skipToContent": "İçeriğe geç",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
-    "about": "Hakkımızda",
-    "team": "Ekip",
+    "about": "Biz Kimiz?",
+    "team": "Ekibimiz",
     "practiceAreas": "Faaliyet Alanları",
     "contact": "İletişim"
   },
@@ -51,11 +51,11 @@
     "linksHeading": "Sayfalar"
   },
   "About": {
-    "title": "Hakkımızda",
+    "title": "Biz Kimiz?",
     "metaDescription": "Büro hakkında genel bilgi."
   },
   "Team": {
-    "title": "Ekip",
+    "title": "Ekibimiz",
     "metaDescription": "Büroda görev yapan avukatlar.",
     "nameWithDegree": "{name}, {degree}",
     "titles": {

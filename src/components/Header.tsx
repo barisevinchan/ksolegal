@@ -18,8 +18,8 @@ export default async function Header() {
   const tBrand = await getTranslations("Brand");
 
   const items: NavItem[] = [
-    { href: "/hakkimizda", label: t("about") },
-    { href: "/ekip", label: t("team") },
+    { href: "/biz-kimiz", label: t("about") },
+    { href: "/ekibimiz", label: t("team") },
     { href: "/faaliyet-alanlari", label: t("practiceAreas") },
     { href: "/iletisim", label: t("contact") },
   ];
