@@ -99,7 +99,7 @@ export default async function CareersPage({
       <PageHeader title={t("title")} />
 
       <Container>
-        <div className="justify-prose mx-auto max-w-prose space-y-6 pb-16 text-body text-grey-800 md:pb-24">
+        <div className="justify-prose max-w-prose space-y-6 pb-16 text-body text-grey-800 md:pb-24">
           {careerParagraphs.map((paragraph, index) => (
             <p key={index}>
               {parseParagraph(pick(paragraph, locale), office.email)}
