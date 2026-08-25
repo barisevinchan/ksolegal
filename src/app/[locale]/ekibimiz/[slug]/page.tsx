@@ -43,6 +43,27 @@ export async function generateMetadata({
   return { title: lawyer.name, description: t("metaDescription") };
 }
 
+/**
+ * LinkedIn "in" işareti. Yeni bir ikon paketi kurulmadı — statik, tek
+ * kullanımlık marka işareti olduğu için inline SVG yeterli. Dekoratiftir
+ * (anlam taşıyan bilgi `aria-label` ile linkin kendisinde), bu yüzden
+ * `aria-hidden`.
+ */
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M6.94 8.5H3.56V20.5H6.94V8.5Z" />
+      <path d="M5.25 7c1.15 0 2.08-.93 2.08-2.08C7.33 3.77 6.4 2.84 5.25 2.84c-1.15 0-2.08.93-2.08 2.08C3.17 6.07 4.1 7 5.25 7Z" />
+      <path d="M13.06 8.5H9.83V20.5h3.23v-6.3c0-1.66.31-3.27 2.37-3.27 2.03 0 2.06 1.9 2.06 3.38v6.19H20.7v-6.86c0-3.02-.65-5.35-4.18-5.35-1.7 0-2.83.93-3.3 1.82h-.04V8.5Z" />
+    </svg>
+  );
+}
+
 /** Bölüm kabuğu — başlık ritmi ve bölümler arası boşluk tek yerde. */
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -101,14 +122,10 @@ export default async function TeamMemberPage({
 
   const { contact } = lawyer;
 
-  // E-posta ve telefon tıklanabilir; KEP düz metin (mailto ile açılmaz).
+  // E-posta artık başlık bloğunda gösteriliyor (bkz. aşağı); bu listede
+  // tekrarlanmaz — aynı bilgi iki yerde görünmesin diye. Telefon
+  // tıklanabilir; KEP düz metin (mailto ile açılmaz).
   const contactRows = [
-    {
-      key: "email",
-      label: t("fields.email"),
-      value: contact.email,
-      href: contact.email ? `mailto:${contact.email}` : null,
-    },
     {
       key: "phone",
       label: t("fields.phone"),
@@ -138,6 +155,31 @@ export default async function TeamMemberPage({
                 partner: t("titles.partner"),
               })}
             </p>
+
+            {hasText(contact.email) && (
+              <p className="mt-3 text-body text-grey-800">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="underline underline-offset-4 transition-text hover:text-primary"
+                >
+                  {contact.email}
+                </a>
+              </p>
+            )}
+
+            {hasText(contact.linkedin) && (
+              // `-ml-2.5` dokunma hedefini 44×44'e tamamlayan padding'i
+              // görsel olarak yukarıdaki metinle hizalar (§6.2).
+              <a
+                href={contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("linkedinAriaLabel")}
+                className="-ml-2.5 mt-1 inline-flex h-11 w-11 items-center justify-center text-grey-600 transition-text hover:text-primary"
+              >
+                <LinkedInIcon className="h-5 w-5" />
+              </a>
+            )}
           </div>
         </header>
 

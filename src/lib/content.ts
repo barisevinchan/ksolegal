@@ -52,7 +52,13 @@ export type Education = {
  */
 export type TitleKey = "attorney" | "mediator" | "partner";
 
-export type Contact = { email: string; phone: string; kep: string };
+export type Contact = {
+  email: string;
+  phone: string;
+  kep: string;
+  /** Tam profil URL'i — sabit metin değil, veriden gelir. */
+  linkedin: string;
+};
 
 /** "Başlık — açıklama" yapısı müşteri metninde olduğu gibi korunur. */
 export type KeyFocusItem = { title: L10n; description: L10n };

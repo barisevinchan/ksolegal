@@ -75,6 +75,7 @@
       "mediator": "Expert Mediator",
       "partner": "Partner"
     },
+    "linkedinAriaLabel": "LinkedIn profile",
     "sections": {
       "education": "Education",
       "keyFocus": "Key Focus",
