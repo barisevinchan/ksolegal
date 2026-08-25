@@ -324,6 +324,27 @@ diğer tüm konumlarda — footer telif satırı, logo `alt` metni,
 `Home.heroTitle` içindeki `<brand>` etiketinin metni düzeltilir, kod
 (`src/app/[locale]/page.tsx`) değişmez.
 
+#### ⚠️ İstisna: Kariyer sayfası gövde metninde kalın ifadeler
+
+"Tipografi kararı" bölümü gövde metninde 500/600 ağırlık **kullanılmaz**
+der. `/kariyer` sayfasında bu kuraldan **bilerek sapılır**: kullanıcının
+25.08.2026 talimatı hangi ifadelerin kalın kalacağını kelime kelime
+belirtti (TR: "özgeçmişlerini", "İngilizce yeterliliklerine ilişkin
+bilgileri", "kısa bir motivasyon mektubunu"; EN: "CV", "English
+proficiency", "motivation letter").
+
+En küçük sapma için başlıklarda zaten kullanılan `font-medium` (500)
+ağırlığı uygulanır — yeni bir ağırlık basamağı eklenmedi. Kaynak metin
+`content/kariyer.json` içinde `**...**` ile işaretlidir;
+`src/app/[locale]/kariyer/page.tsx` → `parseParagraph()` bunu `<strong
+className="font-medium">` olarak render eder. Aynı fonksiyon paragraf
+içinde geçen `office.email` (`info@kso.av.tr`) metnini otomatik mailto
+linkine çevirir — ayrı bir e-posta paragrafı yoktur.
+
+Kapsam yalnızca bu sayfadaki bu üç ifadedir. Geri alınırsa
+`content/kariyer.json` içindeki `**` işaretleri kaldırılır, kod
+değişmez.
+
 ---
 
 ## 🧰 SKILL KULLANIMI
