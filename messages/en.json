@@ -95,18 +95,7 @@
     "title": "Contact",
     "metaDescription": "Address, telephone, e-mail and KEP details of the office.",
     "infoHeading": "Contact details",
-    "formHeading": "Contact form",
     "mapHeading": "Location",
-    "mapNotice": "Map area — placeholder.",
-    "form": {
-      "name": "Full name",
-      "email": "E-mail",
-      "phone": "Phone",
-      "subject": "Subject",
-      "optional": "(optional)",
-      "submit": "Send",
-      "disabledNotice": "The form is at skeleton stage; submission is not active yet.",
-      "consentLabel": "I give my explicit consent to the processing of my personal data under the Personal Data Protection Notice."
-    }
+    "mapLinkLabel": "Open in Google Maps"
   }
 }

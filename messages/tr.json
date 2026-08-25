@@ -95,18 +95,7 @@
     "title": "İletişim",
     "metaDescription": "Büronun adres, telefon, e-posta ve KEP bilgileri.",
     "infoHeading": "İletişim bilgileri",
-    "formHeading": "İletişim formu",
     "mapHeading": "Konum",
-    "mapNotice": "Harita alanı — yer tutucu.",
-    "form": {
-      "name": "Ad Soyad",
-      "email": "E-posta",
-      "phone": "Telefon",
-      "subject": "Konu",
-      "optional": "(isteğe bağlı)",
-      "submit": "Gönder",
-      "disabledNotice": "Form iskelet aşamasındadır; gönderim henüz etkin değildir.",
-      "consentLabel": "Kişisel verilerimin KVKK Aydınlatma Metni kapsamında işlenmesine açık rıza veriyorum."
-    }
+    "mapLinkLabel": "Google Maps'te aç"
   }
 }

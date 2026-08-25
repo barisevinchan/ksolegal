@@ -454,9 +454,13 @@ her bilgi siteye konulamaz.
 /faaliyet-alanlari/[slug] Alan detayı — nötr, bilgilendirici dil
 /kariyer                  Başvuru bilgisi — düz metin, form yok
 /iletisim                 Adres, telefon, faks, e-posta, KEP, harita
-/kvkk
-/cerez-politikasi
 ```
+
+`/kvkk` ve `/cerez-politikasi` **25.08.2026'da kullanıcı talimatıyla
+kaldırıldı** (bkz. "KVKK / Mevzuat Gereklilikleri" bölümündeki not);
+footer'daki tek linkleri de bu adımda kaldırıldı. `/iletisim`'deki
+iletişim formu da aynı adımda tamamen kaldırıldı, harita ise gerçek bir
+Google Maps embed'i (API anahtarsız) oldu.
 
 "Kariyer" sayfası **24.08.2026'da kullanıcı talimatıyla eklendi**
 (bkz. `/kariyer`) — önceki kayıt bu sayfanın gereksiz olduğunu
@@ -467,14 +471,26 @@ Sorumluluk" sayfası **hâlâ yok** — 3 kişilik büro için gereksiz.
 
 ## KVKK / Mevzuat Gereklilikleri
 
-- `/kvkk` Aydınlatma Metni ve `/cerez-politikasi` sayfaları her build'de bulunur
-- İletişim formunda **ön işaretli olmayan** açık rıza checkbox'ı; onaysız submit engellenir
+> ⚠️ **25.08.2026 güncellemesi.** Bu bölümdeki maddelerin çoğu bir iletişim
+> formunun ve `/kvkk` + `/cerez-politikasi` sayfalarının VARLIĞINI varsayıyordu.
+> Kullanıcı 25.08.2026'da ikisini de açıkça kaldırılmasını talimatlandırdı
+> (iletişim formu hiçbir zaman çalışmıyordu; `/kvkk` ve `/cerez-politikasi`
+> tamamen silindi, bkz. bu dosyanın üst kısmındaki sayfa yapısı). Aşağıdaki
+> maddeler bu nedenle **artık geçerli değil** ama KVKK'nın site geneli için
+> (form olmasa da) bir aydınlatma metni/çerez bildirimi gerektirip
+> gerektirmediği hukuki bir sorudur — **baro/hukuk görüşü alınması
+> önerilir.** Geri alınırsa yalnızca ilgili sayfa dosyaları ve
+> `messages/*.json`'daki çeviriler geri eklenir, bu not silinir.
+
+- ~~`/kvkk` Aydınlatma Metni ve `/cerez-politikasi` sayfaları her build'de bulunur~~
+- ~~İletişim formunda **ön işaretli olmayan** açık rıza checkbox'ı; onaysız submit engellenir~~ — form yok
 - Çerez banner'ı kategori bazlı; "Reddet" gerçekten çalışır ve zorunlu olmayan
-  çerezleri yüklemez
+  çerezleri yüklemez (henüz kurulmadı — bu madde ileride banner eklenirse geçerli)
 - Analytics gerekirse Plausible veya self-hosted Matomo. Google Analytics ekleme
-- Form spam koruması: honeypot + rate limit. reCAPTCHA yerine Cloudflare Turnstile
-- İletişim formu minimum veri toplar: ad, e-posta/telefon, kısa konu.
-  Dosya yükleme veya olay anlatımı alanı **ekleme** — vekâlet öncesi sır kapsamı belirsizdir
+- ~~Form spam koruması: honeypot + rate limit. reCAPTCHA yerine Cloudflare Turnstile~~ — form yok
+- ~~İletişim formu minimum veri toplar: ad, e-posta/telefon, kısa konu.
+  Dosya yükleme veya olay anlatımı alanı **ekleme**~~ — form yok; `/iletisim`
+  artık yalnızca büro bilgileri ve harita içerir (bkz. sayfa yapısı listesi)
 
 ---
 

@@ -3,8 +3,17 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
-import PlaceholderBox from "@/components/PlaceholderBox";
 import { getOfficeContactRows, office, pick } from "@/lib/content";
+
+/**
+ * Google Maps embed'i API anahtarı GEREKTİRMEZ: `output=embed` parametreli
+ * genel arama URL'i, Maps Embed API'nin (JS API + anahtar kurulumu
+ * gerektiren) yerine kullanılır — unattended bir ortamda anahtar
+ * sağlanamayacağı için bilerek bu yol seçildi.
+ */
+const MAP_ADDRESS = "Elit Residence, No:3/14, Şişli, İstanbul, Türkiye";
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_ADDRESS)}&output=embed`;
+const MAP_LINK_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_ADDRESS)}`;
 
 export async function generateMetadata({
   params,
@@ -18,13 +27,9 @@ export async function generateMetadata({
 }
 
 /**
- * ⚠️ FORM ÇALIŞMAZ. Bu bir görsel iskelettir: `action` yok, handler yok,
- * gönder butonu `disabled`. Backend, spam koruması (honeypot + rate limit)
- * ve Turnstile sonraki adımda eklenir.
- *
- * Alanlar bilerek asgaridir — ad, e-posta, telefon, kısa konu. Dosya
- * yükleme ve olay anlatımı alanı YOKTUR: vekâlet öncesi sır kapsamı
- * belirsizdir (CLAUDE.md KVKK bölümü).
+ * İletişim formu kullanıcı talimatıyla tamamen kaldırıldı (form hiçbir
+ * zaman çalışmıyordu; backend, spam koruması ve Turnstile artık gündemde
+ * değil). Sayfa yalnızca iletişim bilgileri ve harita içerir.
  */
 export default async function ContactPage({
   params,
@@ -45,145 +50,76 @@ export default async function ContactPage({
   */
   const infoRows = getOfficeContactRows(locale);
 
-  const fields = [
-    { id: "name", type: "text", autoComplete: "name", optional: false },
-    { id: "email", type: "email", autoComplete: "email", optional: false },
-    { id: "phone", type: "tel", autoComplete: "tel", optional: true },
-    { id: "subject", type: "text", autoComplete: "off", optional: false },
-  ] as const;
-
-  // `placeholder` özniteliği kullanılmaz: yazmaya başlayınca kaybolur ve
-  // yeterli kontrastı olan bir placeholder tonu paletimizde yok
-  // (grey-500 gövde metni değildir, docs/design-system.md §1.4).
-  const inputClass =
-    "mt-2 block min-h-11 w-full border border-grey-500 bg-white px-3 py-2 text-body text-grey-800";
-
   return (
     <>
       <PageHeader title={t("title")} lead={pick(office.lead, locale)} />
 
       <Container>
-        <div className="grid gap-12 pb-16 md:grid-cols-2 md:items-start md:gap-16 md:pb-24">
-          <section aria-labelledby="contact-info">
-            <h2 id="contact-info" className="text-h3 text-primary md:text-h2">
-              {t("infoHeading")}
-            </h2>
+        {/* Form kaldırılınca tek bölüm kaldı — iki kolonlu grid yerine
+            tek, ortalanmış kolon (docs/design-system.md prose genişliği). */}
+        <section aria-labelledby="contact-info" className="mx-auto max-w-prose pb-16 md:pb-24">
+          <h2 id="contact-info" className="text-h3 text-primary md:text-h2">
+            {t("infoHeading")}
+          </h2>
 
-            <dl className="mt-8 space-y-4">
-              {infoRows.map((row) => (
-                <div key={row.key} className="sm:flex sm:gap-6">
-                  <dt className="text-body-sm text-grey-600 sm:w-32 sm:shrink-0">
-                    {tFooter(row.key)}
-                  </dt>
-                  <dd className="text-body text-grey-800">
-                    {row.href ? (
-                      /* `inline-flex min-h-11` dokunma hedefini 44px'e
-                         tamamlar (docs/design-system.md §6.2) — satırın
-                         görsel yüksekliği değişmez, yalnızca tıklama
-                         alanı büyür. */
-                      <a
-                        href={row.href}
-                        className="inline-flex min-h-11 items-center underline underline-offset-4 transition-text hover:text-primary"
-                      >
-                        {row.value}
-                      </a>
-                    ) : (
-                      row.value
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-
-          <section aria-labelledby="contact-form">
-            <h2 id="contact-form" className="text-h3 text-primary md:text-h2">
-              {t("formHeading")}
-            </h2>
-
-            {/*
-              `action` verilmez ve gönder butonu `disabled`'dır. Bu ikisi
-              birlikte formu gerçekten ölü hâle getirir: HTML implicit
-              submission, varsayılan submit butonuna tıklama olayı ateşler;
-              buton disabled olduğu için hiçbir şey olmaz. Yani bir alana
-              yazıp Enter'a basmak da formu göndermez — aksi hâlde GET ile
-              girilen ad/e-posta URL sorgusuna düşerdi. Tarayıcıda test
-              edilerek doğrulandı.
-            */}
-            <form noValidate className="mt-8">
-              <div className="space-y-6">
-                {fields.map((field) => (
-                  <div key={field.id}>
-                    <label
-                      htmlFor={field.id}
-                      className="text-body-sm text-grey-800"
+          <dl className="mt-8 space-y-4">
+            {infoRows.map((row) => (
+              <div key={row.key} className="sm:flex sm:gap-6">
+                <dt className="text-body-sm text-grey-600 sm:w-32 sm:shrink-0">
+                  {tFooter(row.key)}
+                </dt>
+                <dd className="text-body text-grey-800">
+                  {row.href ? (
+                    /* `inline-flex min-h-11` dokunma hedefini 44px'e
+                       tamamlar (docs/design-system.md §6.2) — satırın
+                       görsel yüksekliği değişmez, yalnızca tıklama
+                       alanı büyür. */
+                    <a
+                      href={row.href}
+                      className="inline-flex min-h-11 items-center underline underline-offset-4 transition-text hover:text-primary"
                     >
-                      {t(`form.${field.id}`)}
-                      {field.optional ? (
-                        <span className="text-grey-600">
-                          {" "}
-                          {t("form.optional")}
-                        </span>
-                      ) : null}
-                    </label>
-                    <input
-                      id={field.id}
-                      name={field.id}
-                      type={field.type}
-                      autoComplete={field.autoComplete}
-                      required={!field.optional}
-                      className={inputClass}
-                    />
-                  </div>
-                ))}
+                      {row.value}
+                    </a>
+                  ) : (
+                    row.value
+                  )}
+                </dd>
               </div>
-
-              {/*
-                KVKK açık rıza kutusu: ÖN İŞARETLİ DEĞİL ve `required`.
-                24px kutu WCAG 2.5.8'i karşılar; satırın tamamı min-h-11
-                olduğu için etikete tıklama alanı 44px yüksekliğindedir.
-                Link etiketin İÇİNE konmaz — tıklandığında kutuyu
-                işaretlerdi; ayrı satırda verilir.
-              */}
-              <div className="mt-8 flex min-h-11 items-start gap-3">
-                <input
-                  id="consent"
-                  name="consent"
-                  type="checkbox"
-                  required
-                  className="mt-1 h-6 w-6 shrink-0 accent-primary"
-                />
-                <label
-                  htmlFor="consent"
-                  className="max-w-prose text-body-sm text-grey-800"
-                >
-                  {t("form.consentLabel")}
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                disabled
-                aria-describedby="form-notice"
-                className="mt-8 inline-flex min-h-11 items-center justify-center bg-primary px-6 text-body text-on-primary disabled:bg-grey-500"
-              >
-                {t("form.submit")}
-              </button>
-
-              <p id="form-notice" className="mt-3 text-body-sm text-grey-600">
-                {t("form.disabledNotice")}
-              </p>
-            </form>
-          </section>
-        </div>
+            ))}
+          </dl>
+        </section>
 
         <section aria-labelledby="contact-map" className="pb-16 md:pb-24">
           <h2 id="contact-map" className="text-h3 text-primary md:text-h2">
             {t("mapHeading")}
           </h2>
-          {/* Harita gömme sonraki adımda; şimdilik yer tutucu kutu. */}
-          <PlaceholderBox aspect="wide" className="mt-8" />
-          <p className="mt-3 text-body-sm text-grey-600">{t("mapNotice")}</p>
+
+          {/* API anahtarı gerektirmeyen genel arama embed'i — bkz. dosya
+              başındaki MAP_EMBED_SRC yorumu. */}
+          <div className="mt-8 aspect-[16/9] w-full">
+            <iframe
+              src={MAP_EMBED_SRC}
+              title={t("mapHeading")}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full border-0"
+            />
+          </div>
+
+          <p className="mt-3 text-body text-grey-800">
+            {pick(office.address, locale)}
+          </p>
+
+          <p className="mt-1 text-body-sm">
+            <a
+              href={MAP_LINK_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-600 underline underline-offset-4 transition-text hover:text-primary"
+            >
+              {t("mapLinkLabel")}
+            </a>
+          </p>
         </section>
       </Container>
     </>
