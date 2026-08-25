@@ -13,7 +13,7 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "about": "Who We Are?",
-    "team": "People",
+    "team": "Our People",
     "practiceAreas": "Practice Areas",
     "careers": "Careers",
     "contact": "Contact"
@@ -48,13 +48,13 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
-    "heroTitle": "Welcome to <brand>KOÇAK|SAYIM|ÖRNEK</brand> Attorneys at Law.",
+    "heroTitle": "Welcome to Our Law Firm",
     "heroSubtitle": "Clear legal advice for complex business decisions.",
     "heroImageAlt": "The Bosphorus and the İstanbul skyline at night",
     "linksHeading": "Pages",
     "cards": {
       "about": "Practical legal advice shaped by commercial understanding, clear communication and a proactive approach.",
-      "team": "Meet the partners combining focused knowledge with a collaborative and solution-oriented approach.",
+      "team": "Meet our people combining focused knowledge with a collaborative and solution-oriented approach.",
       "practiceAreas": "Comprehensive legal support across the key areas shaping our clients' businesses and operations."
     }
   },
@@ -67,7 +67,7 @@
     "metaDescription": "Information for candidates wishing to apply to the office."
   },
   "Team": {
-    "title": "People",
+    "title": "Our People",
     "metaDescription": "Attorneys practising at the office.",
     "nameWithDegree": "{name}, {degree}",
     "titles": {
