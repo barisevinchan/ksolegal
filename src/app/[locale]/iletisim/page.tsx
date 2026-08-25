@@ -7,13 +7,28 @@ import { getOfficeContactRows, office, pick } from "@/lib/content";
 
 /**
  * Google Maps embed'i API anahtarı GEREKTİRMEZ: `output=embed` parametreli
- * genel arama URL'i, Maps Embed API'nin (JS API + anahtar kurulumu
- * gerektiren) yerine kullanılır — unattended bir ortamda anahtar
- * sağlanamayacağı için bilerek bu yol seçildi.
+ * genel URL, Maps Embed API'nin (JS API + anahtar kurulumu gerektiren)
+ * yerine kullanılır — unattended bir ortamda anahtar sağlanamayacağı için
+ * bilerek bu yol seçildi.
+ *
+ * ⚠️ İlk sürüm `q=` parametresine SERBEST METİN ADRES (`Elit Residence,
+ * No:3/14, Şişli, İstanbul, Türkiye`) veriyordu; bu, Google'ın embed'i
+ * render ederken adresi kendi geocoder'ıyla YENİDEN ARAMASINA bağımlıydı.
+ * "Elit Residence" Türkiye'de yaygın/jenerik bir bina adıdır ve "No:3/14"
+ * gibi standart olmayan Türkçe kapı numarası notasyonu metin tabanlı
+ * geocoder'ları şaşırtabilir — bağımsız bir kontrolde (OpenStreetMap
+ * Nominatim) aynı tam metin HİÇ SONUÇ döndürmedi; "Türkiye" ve "No:3/14"
+ * olmadan sorgulanınca doğru binaya (~2m fark) düştü. Google'ın kendi
+ * geocoder'ı muhtemelen bir sonuç ÜRETTİ ama yanlış/belirsiz bir
+ * eşleşmeye düşmüş olması bu yüzden olasıdır. Kullanıcının verdiği kesin
+ * koordinat ve place ID'yle bu belirsizlik ortadan kaldırıldı: embed
+ * artık serbest metin değil, SABİT ENLEM/BOYLAM ile pinleniyor.
  */
-const MAP_ADDRESS = "Elit Residence, No:3/14, Şişli, İstanbul, Türkiye";
-const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_ADDRESS)}&output=embed`;
-const MAP_LINK_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_ADDRESS)}`;
+const MAP_COORDINATES = "41.0618319,28.9918755";
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=${MAP_COORDINATES}&output=embed`;
+/** Kullanıcının verdiği tam Google Maps place URL'i (place ID dahil). */
+const MAP_LINK_HREF =
+  "https://www.google.com/maps/place/19+May%C4%B1s,+Elit+Residence,+34360+%C5%9Ei%C5%9Fli%2F%C4%B0stanbul/@41.0618151,28.9914332,19.56z/data=!4m6!3m5!1s0x14cab703bbc94f57:0x8ae44f3d5f1628ab!8m2!3d41.0618319!4d28.9918755!16s%2Fg%2F11bc8c6wb8";
 
 export async function generateMetadata({
   params,
