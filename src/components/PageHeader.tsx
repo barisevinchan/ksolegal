@@ -16,7 +16,7 @@ type Props = {
 export default function PageHeader({ title, lead }: Props) {
   return (
     <Container>
-      <div className="max-w-prose py-16 md:py-24">
+      <div className="mx-auto max-w-prose py-16 md:py-24">
         <h1 className="text-h2 text-primary md:text-h1">{title}</h1>
         {lead ? (
           <p className="mt-6 text-body-lg text-grey-600">{lead}</p>

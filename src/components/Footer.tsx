@@ -31,7 +31,7 @@ export default async function Footer() {
             <h2 className="text-h4 text-on-primary">{t("contactHeading")}</h2>
             <dl className="mt-6 space-y-3 text-body-sm">
               {contactRows.map((row) => (
-                <div key={row.key} className="flex gap-3">
+                <div key={row.key} className="flex items-center gap-3">
                   <dt className="min-w-24 text-grey-300">{t(row.key)}</dt>
                   <dd className="text-grey-200">
                     {row.href ? (

@@ -79,7 +79,7 @@ export default async function PracticeAreaPage({
           <div className="space-y-12">
             <section>
               <h2 className="text-h3 text-primary">{t("overviewHeading")}</h2>
-              <div className="justify-prose mt-4 max-w-prose space-y-4 text-body text-grey-800">
+              <div className="justify-prose mx-auto mt-4 max-w-prose space-y-4 text-body text-grey-800">
                 {area.overview.map((paragraph, index) => (
                   <p key={index}>{pick(paragraph, locale)}</p>
                 ))}
@@ -90,7 +90,7 @@ export default async function PracticeAreaPage({
               <h2 className="text-h3 text-primary">
                 {t("coreServicesHeading")}
               </h2>
-              <ul className="mt-4 max-w-prose list-disc space-y-2 pl-5 text-body text-grey-800 marker:text-grey-500">
+              <ul className="mx-auto mt-4 max-w-prose list-disc space-y-2 pl-5 text-body text-grey-800 marker:text-grey-500">
                 {area.coreServices.map((item) => (
                   <li key={item.en}>{pick(item, locale)}</li>
                 ))}
