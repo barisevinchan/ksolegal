@@ -143,21 +143,26 @@ rakam, dava veya müvekkil örneği taraması **temiz** çıkmıştır. (24.08.2
 
 ### 📌 Müşteriye sorulacak — karşılıksız Key Focus alanları
 
-`/ekibimiz/[slug]` sayfalarındaki Key Focus başlıklarından **üçünün** 13'lük
+`/ekibimiz/[slug]` sayfalarındaki Key Focus başlıklarından **ikisinin** 14'lük
 faaliyet alanı listesinde karşılığı yok. Key Focus başlığı olarak yayında
 kalıyorlar, ancak bir alan sayfasına link vermiyorlar:
 
 | Key Focus | Kimde | Durum |
 |---|---|---|
-| Business Immigration & Citizenship | Berkay Koçak | 6. alan çalışma/oturma iznini kapsıyor, **vatandaşlık** hiçbir alanda geçmiyor |
 | Healthcare & Regulatory Law | Alper Örnek | "Regulatory" 7. alana düşüyor, **sağlık sektörü** (ruhsat, lisans, işletme uyumu) hiçbir alanda yok |
 | Sustainability & Environmental Regulation | Alper Örnek | Karbon Hukuku, ETS, çevresel uyum — tamamen karşılıksız |
+
+~~Business Immigration & Citizenship (Berkay Koçak)~~ — 25.08.2026'da eklenen
+14. alan **Göçmenlik Hukuku / Immigration Law** (`content/faaliyet-alanlari.json`
+→ `gocmenlik-hukuku`) bunu karşılıyor; Berkay'ın `practiceAreas` listesine
+eklendi. Bu, kullanıcının doğrudan talimatıyla eklendi — 13/14 sorusuna
+verilen bir cevap değil, yalnızca bu tek Key Focus için nokta çözüm.
 
 Not: bu değişiklikten önce sitede `cevre-ve-karbon-hukuku` adlı bir alan
 vardı ve müşteri PDF'i onu kapsamıyor; 13'lük listeye geçişte kalktı.
 
-Müşteri "13 alan tam liste mi, yoksa bu üçü de eklenecek mi?" sorusuna
-cevap verene kadar yeni alan **eklenmez**. (24.08.2026)
+Müşteri kalan iki alan için "eklensin mi?" sorusuna cevap verene kadar yeni
+alan **eklenmez**. (24.08.2026; 25.08.2026 güncellemesi)
 
 ---
 

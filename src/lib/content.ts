@@ -168,10 +168,11 @@ export const practiceAreas = faaliyetAlanlari.areas as readonly PracticeArea[];
  * müşteri paragrafı düzelttiğinde kart metni sessizce eskir; türetince
  * ikisi kayamaz.
  *
- * Bölme ölçütü nokta + boşluktur. 13 alanın 26 paragrafında cümle içi
- * kısaltma noktası yoktur (kontrol edildi) ve Türkçe çevirilerde de
- * kullanılmaz — "vb.", "md." gibi bir kısaltma girerse cümle erken
- * kesilir. Nokta bulunamazsa metnin tamamı döner.
+ * Bölme ölçütü nokta + boşluktur. 14 alanın 27 paragrafında (13 alan × 2 +
+ * Göçmenlik Hukuku'nun tek paragrafı) cümle içi kısaltma noktası yoktur
+ * (kontrol edildi) ve Türkçe çevirilerde de kullanılmaz — "vb.", "md." gibi
+ * bir kısaltma girerse cümle erken kesilir. Nokta bulunamazsa metnin tamamı
+ * döner.
  */
 export function firstSentence(text: string): string {
   const end = text.indexOf(". ");

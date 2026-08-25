@@ -1,5 +1,5 @@
 {
-  "_note": "Faaliyet alanları — kaynak: kaynak/icerik/www.kso.av.tr tasarım.pdf 'PRACTICE AREAS' bölümü. 13 alan, PDF'teki sıra korunmuştur. İNGİLİZCE METİN MÜŞTERİNİN KENDİ METNİDİR ve değiştirilmemiştir; yalnızca PDF çıkarımında bozulan 'tax' kelimesi (13. alanda 7 yerde 'ta' olarak çıkmıştı) düzeltilmiştir. Türkçe metinler TASLAK ÇEVİRİDİR ve müşteri onayı beklemektedir; terim tercihleri docs/terminoloji.md dosyasındadır. Yapı PDF ile birebir: 'overview' 2 paragraf, 'coreServices' düz madde listesi. Liste kartındaki özet ve meta description overview[0]'ın İLK CÜMLESİNDEN türetilir (src/lib/content.ts → firstSentence), ayrı bir alanda tekrarlanmaz — müşteri paragrafı düzelttiğinde kart metni kaymasın diye. Slug'lar nötrdür, anahtar kelime içermez (TBB Reklam Yasağı Yönetmeliği Madde 7/e). 'id' avukatlar.json'daki practiceAreas alanının anahtarıdır ve Türkçe slug ile aynıdır. Alanda çalışan avukatlar avukatlar.json'dan TÜRETİLİR, burada tekrarlanmaz. ⚠️ 11. alanın overview[1] cümlesi 'deneyim' vurgusu içerir — CLAUDE.md 'Kaydedilen sapmalar' tablosu satır 8.",
+  "_note": "Faaliyet alanları — kaynak: kaynak/icerik/www.kso.av.tr tasarım.pdf 'PRACTICE AREAS' bölümü. İlk 13 alan PDF'teki sırayla; 14. alan (Göçmenlik Hukuku / Immigration Law, id gocmenlik-hukuku) PDF'te YOKTUR, kullanıcının 25.08.2026 talimatıyla İş Hukuku'ndan hemen sonraya eklendi — metni PDF'ten değil doğrudan kullanıcıdan gelir, tek paragraflık 'overview'ı bu yüzden 13'lük kalıptan (2 paragraf) sapar. İNGİLİZCE METİN (ilk 13 alanda) MÜŞTERİNİN KENDİ METNİDİR ve değiştirilmemiştir; yalnızca PDF çıkarımında bozulan 'tax' kelimesi (13. alanda 7 yerde 'ta' olarak çıkmıştı) düzeltilmiştir. Türkçe metinler TASLAK ÇEVİRİDİR ve müşteri onayı beklemektedir; terim tercihleri docs/terminoloji.md dosyasındadır. Yapı PDF ile birebir: 'overview' 2 paragraf (14. alan hariç), 'coreServices' düz madde listesi. Liste kartındaki özet ve meta description overview[0]'ın İLK CÜMLESİNDEN türetilir (src/lib/content.ts → firstSentence), ayrı bir alanda tekrarlanmaz — müşteri paragrafı düzelttiğinde kart metni kaymasın diye. Slug'lar nötrdür, anahtar kelime içermez (TBB Reklam Yasağı Yönetmeliği Madde 7/e). 'id' avukatlar.json'daki practiceAreas alanının anahtarıdır ve Türkçe slug ile aynıdır. Alanda çalışan avukatlar avukatlar.json'dan TÜRETİLİR, burada tekrarlanmaz. ⚠️ 11. alanın overview[1] cümlesi 'deneyim' vurgusu içerir — CLAUDE.md 'Kaydedilen sapmalar' tablosu satır 8.",
   "areas": [
     {
       "id": "sirketler-ve-ticaret-hukuku",
@@ -356,6 +356,57 @@
         {
           "tr": "Şirket işlemleri ve hukuki durum tespiti kapsamında istihdam uygulamalarının incelenmesi",
           "en": "Reviewing employment practices as part of corporate transactions and legal due diligence"
+        }
+      ]
+    },
+    {
+      "id": "gocmenlik-hukuku",
+      "slug": {
+        "tr": "gocmenlik-hukuku",
+        "en": "immigration-law"
+      },
+      "title": {
+        "tr": "Göçmenlik Hukuku",
+        "en": "Immigration Law"
+      },
+      "overview": [
+        {
+          "tr": "Şirketlere, yöneticilere, yatırımcılara ve bireylere Türkiye'de göçmenlik, uluslararası çalışan hareketliliği ve vatandaşlık süreçlerinde hukuki danışmanlık sunuyoruz. Çalışma ve ikamet izinleri, kurumsal göçmenlik süreçleri ve yatırım yoluyla Türk vatandaşlığı dahil olmak üzere vatandaşlık başvurularını; etkin süreç yönetimi ve mevzuata uyum odağıyla yürütüyoruz.",
+          "en": "We advise companies, executives, investors and individuals on Turkish immigration, mobility and citizenship matters. Our practice covers work and residence permits, corporate immigration and citizenship procedures, including Turkish citizenship by investment, with a focus on efficient execution and regulatory compliance."
+        }
+      ],
+      "coreServices": [
+        {
+          "tr": "Çalışma izni ve ikamet izni başvuruları, uzatmalar ve ilgili mevzuat yükümlülükleri hakkında danışmanlık sunulması",
+          "en": "Advising on work permit and residence permit applications, renewals and related regulatory requirements"
+        },
+        {
+          "tr": "Yabancı yöneticiler, çalışanlar ve bakmakla yükümlü oldukları kişiler için kurumsal göçmenlik süreçlerinin yönetilmesi",
+          "en": "Managing corporate immigration processes for foreign executives, employees and their dependants"
+        },
+        {
+          "tr": "Yatırım yoluyla vatandaşlık ve diğer uygun başvuru yolları dahil olmak üzere Türk vatandaşlığı başvurularında danışmanlık sunulması",
+          "en": "Advising on Turkish citizenship applications, including citizenship by investment and other eligible routes"
+        },
+        {
+          "tr": "Nitelikli gayrimenkul edinimleri ve mevzuat kapsamında kabul edilen diğer yatırım alternatifleri dahil olmak üzere yatırım yoluyla vatandaşlık süreçlerinin yapılandırılması",
+          "en": "Structuring citizenship-by-investment processes, including qualifying real estate acquisitions and other investment alternatives permitted under Turkish law"
+        },
+        {
+          "tr": "Yatırım yoluyla vatandaşlık başvurularının hukuki, idari ve belgesel aşamalarının koordine edilmesi",
+          "en": "Coordinating the legal, administrative and documentary stages of investment-based citizenship applications"
+        },
+        {
+          "tr": "Göçmenlik mevzuatına uyum, çalışan hareketliliği ve uluslararası görevlendirme yapılarının yönetilmesi",
+          "en": "Navigating immigration compliance, employee mobility and international assignment structures"
+        },
+        {
+          "tr": "Göçmenlik ve vatandaşlık konularında ilgili idari makamlar nezdinde müvekkillerin temsil edilmesi",
+          "en": "Representing clients before relevant administrative authorities in immigration and citizenship-related matters"
+        },
+        {
+          "tr": "Şirketlere ve yatırımcılara yer değiştirme, uluslararası iş gücü hareketliliği ve göçmenlik uyumu konularında destek sağlanması",
+          "en": "Supporting companies and investors with relocation, workforce mobility and immigration-related compliance"
         }
       ]
     },

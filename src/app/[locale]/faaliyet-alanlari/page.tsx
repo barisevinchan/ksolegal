@@ -44,13 +44,13 @@ export default async function PracticeAreasPage({
 
       <Container>
         {/*
-          13 kart. Kırılımlar `/ekibimiz` ile aynı (sm:2, lg:3) — iki liste
+          14 kart. Kırılımlar `/ekibimiz` ile aynı (sm:2, lg:3) — iki liste
           sayfası aynı ritmi paylaşsın diye.
 
           `sm:auto-rows-fr`: tüm satır izleri en uzun satıra eşitlenir,
-          böylece 13 kartın hepsi aynı yükseklikte durur ve özet uzunluğu
-          farkı satır bandını bozmaz. Son satırda tek kart kalır (13 = 4×3+1);
-          grid'de tek öğe kendi kolon izinde durduğu için yatayda YAYILMAZ,
+          böylece 14 kartın hepsi aynı yükseklikte durur ve özet uzunluğu
+          farkı satır bandını bozmaz. Son satırda iki kart kalır (14 = 4×3+2);
+          grid'de bu iki öğe kendi kolon izinde durduğu için yatayda YAYILMAZ,
           `flex-grow` kullanılmaz.
 
           Mobilde uygulanmaz: tek kolonda yan yana kart olmadığı için

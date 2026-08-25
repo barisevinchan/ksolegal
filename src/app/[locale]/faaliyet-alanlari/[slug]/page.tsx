@@ -37,7 +37,7 @@ export async function generateMetadata({
   if (!area) return {};
 
   // Nötr, açıklayıcı meta açıklama — anahtar kelime yığmadan (Madde 7/e).
-  // Overview'ın ilk cümlesi; 13 alanda 117–171 karakter aralığında.
+  // Overview'ın ilk cümlesi; 14 alanda 116–171 karakter aralığında.
   return {
     title: pick(area.title, locale),
     description: areaSummary(area, locale),

@@ -347,7 +347,7 @@ Türkçe varsayılan, İngilizce ikinci dil. `next-intl`,
 
 ### 5.5 Faaliyet alanları listesi
 
-**13 kart.** Kırılımlar `/ekibimiz` ile aynı: mobilde 1, `sm` 2, `lg` 3 kolon.
+**14 kart.** Kırılımlar `/ekibimiz` ile aynı: mobilde 1, `sm` 2, `lg` 3 kolon.
 İki liste sayfası aynı ritmi paylaşır.
 
 Kart kutu değildir — `border-t` + başlık + özet. Zemin, gölge, çerçeve yok.
@@ -360,20 +360,20 @@ düzelttiğinde kart metni kayamaz.
 
 #### Eşit yükseklik: `sm:auto-rows-fr`
 
-13 kart 3 kolona 4 tam satır + son satırda tek kart olarak oturur.
+14 kart 3 kolona 4 tam satır + son satırda iki kart olarak oturur.
 Özet uzunluğu alanlar arasında 3–4 satır arasında değiştiği için satır
 bantları farklı yükseklikte kalıyordu. `grid-auto-rows: minmax(0, 1fr)`
 tüm satır izlerini en uzun satıra eşitler.
 
 Ölçüm (1280px viewport; container 1152px, liste alanı 1104px,
-3 × 336px kolon, 48px boşluk):
+3 × 336px kolon, 48px boşluk; 25.08.2026'da 14. kart eklenince tekrarlandı):
 
 | Dil | Kart yüksekliği | Taşan kart |
 |---|---:|---:|
-| TR | 13 kartın hepsi **168px** | 0 |
-| EN | 13 kartın hepsi **192px** | 0 |
+| TR | 14 kartın hepsi **168px** | 0 |
+| EN | 14 kartın hepsi **192px** | 0 |
 
-Son satırdaki tek kart da 336px genişliğindedir — grid'de tek öğe kendi
+Son satırdaki iki kart da 336px genişliğindedir — grid'de bu iki öğe kendi
 kolon izinde durur, **yatayda yayılmaz.** `flex-grow` kullanılmaz.
 
 **Mobilde uygulanmaz.** Tek kolonda yan yana kart olmadığı için
