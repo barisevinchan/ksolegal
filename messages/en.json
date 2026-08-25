@@ -27,15 +27,11 @@
   },
   "Footer": {
     "contactHeading": "Contact",
-    "legalHeading": "Legal",
     "address": "Address",
     "phone": "Phone",
     "fax": "Fax",
     "email": "E-mail",
     "kep": "KEP",
-    "privacy": "Personal Data Protection Notice",
-    "cookiePolicy": "Cookie Policy",
-    "pagesHeading": "Pages",
     "copyright": "All rights reserved."
   },
   "Common": {
@@ -110,20 +106,7 @@
       "optional": "(optional)",
       "submit": "Send",
       "disabledNotice": "The form is at skeleton stage; submission is not active yet.",
-      "consentLabel": "I give my explicit consent to the processing of my personal data under the Personal Data Protection Notice.",
-      "consentLink": "Read the Personal Data Protection Notice"
+      "consentLabel": "I give my explicit consent to the processing of my personal data under the Personal Data Protection Notice."
     }
-  },
-  "Privacy": {
-    "title": "Personal Data Protection Notice",
-    "metaDescription": "Notice on the processing of personal data.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "pendingNotice": "The final text is being prepared."
-  },
-  "CookiePolicy": {
-    "title": "Cookie Policy",
-    "metaDescription": "Information on the cookies used on this site.",
-    "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "pendingNotice": "The final text is being prepared."
   }
 }

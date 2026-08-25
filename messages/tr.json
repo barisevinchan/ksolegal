@@ -27,15 +27,11 @@
   },
   "Footer": {
     "contactHeading": "İletişim",
-    "legalHeading": "Yasal",
     "address": "Adres",
     "phone": "Telefon",
     "fax": "Faks",
     "email": "E-posta",
     "kep": "KEP",
-    "privacy": "KVKK Aydınlatma Metni",
-    "cookiePolicy": "Çerez Politikası",
-    "pagesHeading": "Sayfalar",
     "copyright": "Tüm hakları saklıdır."
   },
   "Common": {
@@ -110,20 +106,7 @@
       "optional": "(isteğe bağlı)",
       "submit": "Gönder",
       "disabledNotice": "Form iskelet aşamasındadır; gönderim henüz etkin değildir.",
-      "consentLabel": "Kişisel verilerimin KVKK Aydınlatma Metni kapsamında işlenmesine açık rıza veriyorum.",
-      "consentLink": "KVKK Aydınlatma Metni'ni okuyun"
+      "consentLabel": "Kişisel verilerimin KVKK Aydınlatma Metni kapsamında işlenmesine açık rıza veriyorum."
     }
-  },
-  "Privacy": {
-    "title": "KVKK Aydınlatma Metni",
-    "metaDescription": "Kişisel verilerin işlenmesine ilişkin aydınlatma metni.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
-    "pendingNotice": "Metnin nihai hâli hazırlanmaktadır."
-  },
-  "CookiePolicy": {
-    "title": "Çerez Politikası",
-    "metaDescription": "Sitede kullanılan çerezlere ilişkin bilgilendirme.",
-    "lead": "Lorem ipsum dolör sit amet, çonsectetur adipişcing elit.",
-    "pendingNotice": "Metnin nihai hâli hazırlanmaktadır."
   }
 }

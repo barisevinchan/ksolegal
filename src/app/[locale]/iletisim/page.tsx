@@ -4,7 +4,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import PlaceholderBox from "@/components/PlaceholderBox";
-import { Link } from "@/i18n/navigation";
 import { getOfficeContactRows, office, pick } from "@/lib/content";
 
 export async function generateMetadata({
@@ -161,15 +160,6 @@ export default async function ContactPage({
                   {t("form.consentLabel")}
                 </label>
               </div>
-
-              <p className="mt-3 text-body-sm">
-                <Link
-                  href="/kvkk"
-                  className="text-grey-600 underline underline-offset-4 transition-text hover:text-primary"
-                >
-                  {t("form.consentLink")}
-                </Link>
-              </p>
 
               <button
                 type="submit"

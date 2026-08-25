@@ -27,8 +27,8 @@ export const routing = defineRouting({
   pathnames: {
     "/": "/",
     "/biz-kimiz": { tr: "/biz-kimiz", en: "/who-we-are" },
-    "/ekibimiz": { tr: "/ekibimiz", en: "/people" },
-    "/ekibimiz/[slug]": { tr: "/ekibimiz/[slug]", en: "/people/[slug]" },
+    "/ekibimiz": { tr: "/ekibimiz", en: "/our-people" },
+    "/ekibimiz/[slug]": { tr: "/ekibimiz/[slug]", en: "/our-people/[slug]" },
     "/faaliyet-alanlari": { tr: "/faaliyet-alanlari", en: "/practice-areas" },
     "/faaliyet-alanlari/[slug]": {
       tr: "/faaliyet-alanlari/[slug]",
@@ -36,8 +36,6 @@ export const routing = defineRouting({
     },
     "/kariyer": { tr: "/kariyer", en: "/careers" },
     "/iletisim": { tr: "/iletisim", en: "/contact" },
-    "/kvkk": { tr: "/kvkk", en: "/privacy" },
-    "/cerez-politikasi": { tr: "/cerez-politikasi", en: "/cookie-policy" },
   },
 });
 
