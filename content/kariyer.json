@@ -1,13 +1,13 @@
 {
-  "_note": "Kaynak: kullanıcının 25.08.2026 talimatı ile sağladığı metin (önceki 24.08.2026 sürümünün yerine geçer). İngilizce metin DEĞİŞTİRİLMEDEN alınmıştır; Türkçe karşılık kullanıcının kendi çevirisidir. `**...**` işaretli bölümler kaynak metinde kalın olan ifadelerdir; sayfa bunları <strong> olarak render eder (src/app/[locale]/kariyer/page.tsx -> parseParagraph). Başvuru e-postası ayrı bir alanda tutulmaz — paragraf metni içindeki `info@kso.av.tr` geçtiği yerde content/buro.json -> office.email değeriyle eşleşip otomatik mailto linkine çevrilir (aynı fonksiyon); ayrı bir kariyer kutusu tanımlanmadı.",
+  "_note": "Kaynak: kullanıcının 25.08.2026 talimatı ile sağladığı metin (önceki 24.08.2026 sürümünün yerine geçer). İngilizce metin DEĞİŞTİRİLMEDEN alınmıştır; Türkçe karşılık kullanıcının kendi çevirisidir. Kaynak metindeki kalın ifadeler `**...**` işaretiyle tutulup src/app/[locale]/kariyer/page.tsx -> parseParagraph tarafından <strong> olarak render ediliyordu; kullanıcının 03.09.2026 talimatıyla TÜM kalın vurgular kaldırıldı (`**` işaretleri metinden silindi) — bkz. CLAUDE.md 'Kariyer sayfası gövde metninde kalın ifadeler' istisnası, artık geçerli değil. `parseParagraph` kodu değişmedi, yalnızca eşleşecek `**` kalmadı. Başvuru e-postası ayrı bir alanda tutulmaz — paragraf metni içindeki `info@kso.av.tr` geçtiği yerde content/buro.json -> office.email değeriyle eşleşip otomatik mailto linkine çevrilir (aynı fonksiyon); ayrı bir kariyer kutusu tanımlanmadı.",
   "paragraphs": [
     {
       "tr": "Nitelikli hukuki çalışmaya, açık iletişime ve ticari bakış açısına değer veren yetenekli ve motivasyonu yüksek adaylarla tanışmaktan memnuniyet duyarız.",
       "en": "We are always interested in hearing from talented and motivated candidates who value high-quality legal work, clear communication and a commercially minded approach."
     },
     {
-      "tr": "Koçak | Sayım | Örnek'e başvurmak isteyen adayların **özgeçmişlerini**, **İngilizce yeterliliklerine ilişkin bilgileri** ve geçmişlerini, ilgi alanlarını ve ekibimize katılma motivasyonlarını açıklayan **kısa bir motivasyon mektubunu** iletmelerini rica ederiz.",
-      "en": "Candidates wishing to apply to Koçak | Sayım | Örnek are invited to submit their **CV**, information regarding their **English proficiency**, and a brief **motivation letter** outlining their background, areas of interest and reasons for wishing to join our team."
+      "tr": "Koçak | Sayım | Örnek'e başvurmak isteyen adayların özgeçmişlerini, İngilizce yeterliliklerine ilişkin bilgileri, ilgi alanlarını ve ekibimize katılma motivasyonlarını açıklayan kısa bir motivasyon mektubunu iletmelerini rica ederiz.",
+      "en": "Candidates wishing to apply to Koçak | Sayım | Örnek are invited to submit their CV, information regarding their English proficiency, and a brief motivation letter outlining their background, areas of interest and reasons for wishing to join our team."
     },
     {
       "tr": "Başvurularınızı info@kso.av.tr adresine gönderebilirsiniz. Başvurular, ofisimizin güncel ihtiyaçları ile adayların nitelikleri, deneyimleri ve mesleki ilgi alanları doğrultusunda değerlendirilir.",
