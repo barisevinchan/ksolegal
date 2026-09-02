@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 import { getOfficeContactRows } from "@/lib/content";
 
+import ContactDetailsList from "./ContactDetailsList";
 import Container from "./Container";
 
 /**
@@ -29,27 +30,7 @@ export default async function Footer() {
         <div className="py-16">
           <section className="max-w-prose">
             <h2 className="text-h4 text-on-primary">{t("contactHeading")}</h2>
-            <dl className="mt-6 space-y-3 text-body-sm">
-              {contactRows.map((row) => (
-                <div key={row.key} className="flex items-center gap-3">
-                  <dt className="min-w-24 text-grey-300">{t(row.key)}</dt>
-                  <dd className="text-grey-200">
-                    {row.href ? (
-                      /* `min-h-11` dokunma hedefi içindir
-                         (docs/design-system.md §6.2). */
-                      <a
-                        href={row.href}
-                        className="inline-flex min-h-11 items-center underline underline-offset-4 transition-text hover:text-on-primary"
-                      >
-                        {row.value}
-                      </a>
-                    ) : (
-                      row.value
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <ContactDetailsList rows={contactRows} getLabel={t} variant="onPrimary" />
           </section>
         </div>
 

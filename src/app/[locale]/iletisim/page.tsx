@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import ContactDetailsList from "@/components/ContactDetailsList";
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import { getOfficeContactRows, office, pick } from "@/lib/content";
@@ -78,31 +79,7 @@ export default async function ContactPage({
             {t("infoHeading")}
           </h2>
 
-          <dl className="mt-8 space-y-4">
-            {infoRows.map((row) => (
-              <div key={row.key} className="sm:flex sm:gap-6">
-                <dt className="text-body-sm text-grey-600 sm:w-32 sm:shrink-0">
-                  {tFooter(row.key)}
-                </dt>
-                <dd className="text-body text-grey-800">
-                  {row.href ? (
-                    /* `inline-flex min-h-11` dokunma hedefini 44px'e
-                       tamamlar (docs/design-system.md §6.2) — satırın
-                       görsel yüksekliği değişmez, yalnızca tıklama
-                       alanı büyür. */
-                    <a
-                      href={row.href}
-                      className="inline-flex min-h-11 items-center underline underline-offset-4 transition-text hover:text-primary"
-                    >
-                      {row.value}
-                    </a>
-                  ) : (
-                    row.value
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <ContactDetailsList rows={infoRows} getLabel={tFooter} variant="onLight" />
         </section>
 
         <section aria-labelledby="contact-map" className="pb-16 md:pb-24">
