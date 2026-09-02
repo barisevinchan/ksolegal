@@ -272,21 +272,27 @@ export type OfficeContactRow = {
 export function getOfficeContactRows(locale: string): OfficeContactRow[] {
   const rows: OfficeContactRow[] = [
     { key: "address", value: pick(office.address, locale) },
+    { key: "email", value: office.email, href: mailHref(office.email) },
     { key: "phone", value: office.phone, href: telHref(office.phone) },
     { key: "fax", value: office.fax },
-    { key: "email", value: office.email, href: mailHref(office.email) },
     { key: "kep", value: office.kep, href: mailHref(office.kep) },
   ];
 
   return rows.filter((row) => hasText(row.value));
 }
 
-/** Faks numarası aranmaz, bu yüzden `fax` için link üretilmez. */
+/**
+ * Faks numarası aranmaz, bu yüzden `fax` için link üretilmez.
+ *
+ * Görünen değer okunabilir yerel biçimdedir ("+90 (0212) 877 72 06") ve bu
+ * biçim parantez içinde yurt içi çevirme sıfırını taşır ("0212"). `tel:`
+ * şeması boşluk/parantez kabul etmez ve E.164'te bu sıfır yoktur, bu yüzden
+ * yalnızca `(0` → `(` ile trunk sıfırı düşürülür, ardından rakam ve baştaki
+ * + dışındaki her şey silinir.
+ */
 function telHref(value: string): string | undefined {
   if (!hasText(value)) return undefined;
-  // `tel:` şeması boşluk ve parantez kabul etmez; yalnızca rakam ve
-  // baştaki + kalır.
-  return `tel:${value.replace(/[^\d+]/g, "")}`;
+  return `tel:${value.replace(/\(0/, "(").replace(/[^\d+]/g, "")}`;
 }
 
 function mailHref(value: string): string | undefined {
