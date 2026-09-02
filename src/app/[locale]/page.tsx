@@ -125,6 +125,10 @@ export default async function HomePage({
                 />
               </li>
             ))}
+            {/* Mobilde alt alta dizilen kartların en altını kapatan çizgi —
+                kartların kendi `border-t`'siyle aynı stil. Masaüstünde 3
+                kolonlu grid'de fazladan hücre açmaması için `md:hidden`. */}
+            <li aria-hidden="true" className="border-t border-grey-500 md:hidden" />
           </ul>
         </section>
       </Container>
