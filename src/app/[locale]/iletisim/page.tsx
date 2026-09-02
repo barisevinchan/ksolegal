@@ -70,9 +70,10 @@ export default async function ContactPage({
       <PageHeader title={t("title")} lead={pick(office.lead, locale)} />
 
       <Container>
-        {/* Form kaldırılınca tek bölüm kaldı — iki kolonlu grid yerine
-            tek, ortalanmış kolon (docs/design-system.md prose genişliği). */}
-        <section aria-labelledby="contact-info" className="mx-auto max-w-prose pb-16 md:pb-24">
+        {/* Form kaldırılınca tek bölüm kaldı. Sol hizalı max-w-prose —
+            /biz-kimiz ve /kariyer ile aynı düzen, PageHeader ile hizalı
+            (mx-auto ile ortalamak diğer sayfalardan sapma yaratıyordu). */}
+        <section aria-labelledby="contact-info" className="max-w-prose pb-16 md:pb-24">
           <h2 id="contact-info" className="text-h3 text-primary md:text-h2">
             {t("infoHeading")}
           </h2>
