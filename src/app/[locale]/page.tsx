@@ -110,7 +110,7 @@ export default async function HomePage({
       </section>
 
       <Container>
-        <section aria-labelledby="home-links" className="py-16 md:py-24">
+        <section aria-labelledby="home-links" className="pt-12 md:pt-16">
           <h2 id="home-links" className="sr-only">
             {t("linksHeading")}
           </h2>

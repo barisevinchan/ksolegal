@@ -13,6 +13,12 @@ import Container from "./Container";
  * ORTAKTIR — aynı liste iki yerde ayrı ayrı yazılmaz. Değeri boş olan
  * satır hiç render edilmez; müşteriden telefon, faks ve KEP gelmediği için
  * şu an yalnızca adres ve e-posta görünür.
+ *
+ * Üst margin (`mt-12 md:mt-16`) ana sayfadaki hero-altı bölümün üst
+ * padding'iyle (`pt-12 md:pt-16`, bkz. `src/app/[locale]/page.tsx`) BİREBİR
+ * aynı değerdir — ana sayfada hero-kartlar arası boşlukla kartlar-footer
+ * arası boşluk kullanıcı talimatıyla kasıtlı olarak eşitlendi. Footer ortak
+ * olduğu için bu değer diğer sayfaları da etkiler.
  */
 export default async function Footer() {
   const t = await getTranslations("Footer");
@@ -23,7 +29,7 @@ export default async function Footer() {
   const contactRows = getOfficeContactRows(locale);
 
   return (
-    <footer className="mt-24 bg-primary text-grey-200">
+    <footer className="mt-12 bg-primary text-grey-200 md:mt-16">
       <Container>
         {/* Legal (KVKK/çerez) ve Pages (Careers) bölümleri kullanıcı
             talimatıyla kaldırıldı; tek kalan bölüm için grid'e gerek yok. */}
