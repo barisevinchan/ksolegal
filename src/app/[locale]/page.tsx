@@ -88,22 +88,13 @@ export default async function HomePage({
             {/* Overlay üstünde yalnızca #FFFFFF ve #F7F8FA kullanılır;
                 grey-200 ve altı yasak (docs/design-system.md §2.3).
 
-                `text-hero` clamp() ile sürekli ölçeklenir (globals.css)
-                — breakpoint sıçraması yok. Marka adı `<brand>` etiketiyle
-                işaretlenir ve `whitespace-nowrap` alır: cümlenin geri
-                kalanı sarabilir, marka adı asla bölünmez (320px'te bile
-                — doğrulandı). Büyük harf/boşluksuz biçim `KOÇAK|SAYIM|ÖRNEK`
-                kullanıcı kararıyla site genelindeki `Brand.name`
-                biçiminden bilerek sapar; bkz. CLAUDE.md "Marka adı yazımı". */}
-            <h1 className="text-hero text-white">
-              {t.rich("heroTitle", {
-                brand: (chunks) => (
-                  <span className="whitespace-nowrap">{chunks}</span>
-                ),
-              })}
+                "Welcome" başlığı kullanıcı talimatıyla kaldırıldı; ilk
+                cümle (`heroSubtitle.lead`) başlık konumuna yükseltildi. */}
+            <h1 className="text-h3 text-white md:text-h2">
+              {t("heroSubtitle.lead")}
             </h1>
-            <p className="mt-4 text-body-lg text-surface">
-              {t("heroSubtitle")}
+            <p className="mt-2 text-body text-surface">
+              {t("heroSubtitle.body")}
             </p>
           </div>
         </Container>

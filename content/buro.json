@@ -3,12 +3,24 @@
   "about": {
     "paragraphs": [
       {
-        "tr": "Koçak | Sayım | Örnek, yerli ve yabancı müvekkillerine ticari, kurumsal ve operasyonel ihtiyaçları kapsamında tam kapsamlı hukuki destek sunan, İstanbul merkezli bir avukatlık bürosudur. Türkiye'de faaliyet gösteren işletmelere; ayrıca Türk pazarını ve sınır ötesi işlemleri ilgilendiren konularda yabancı şirketlere, yatırımcılara ve kurumlara danışmanlık veriyoruz. Verdiğimiz hukuki görüş yalnızca mevzuatın gerekleriyle değil, müvekkillerimizin faaliyet gösterdiği ve karar aldığı ticari koşullarla da şekillenir.",
-        "en": "Koçak | Sayım | Örnek is an İstanbul-based law firm providing full-service legal support to local and international clients across their commercial, corporate and operational needs. We advise businesses operating in Türkiye, as well as international companies, investors and institutions on matters involving the Turkish market and cross-border transactions. Our advice is shaped not only by legal requirements, but also by the commercial realities in which our clients operate and make decisions."
+        "tr": "Koçak | Sayım | Örnek, yerli ve yabancı şirketlere şirketler ve ticaret hukuku, iş hukuku, düzenleyici konular ve uyuşmazlıklar başta olmak üzere iş hayatının farklı alanlarında hukuki danışmanlık sunan İstanbul merkezli bir hukuk bürosudur.",
+        "en": "Koçak | Sayım | Örnek is an Istanbul-based law firm advising local and international businesses on corporate, commercial, employment, regulatory and contentious matters."
       },
       {
-        "tr": "Etkili bir hukuki danışmanlığın açık, hızlı yanıt veren ve öngörülü olması gerektiğine inanıyoruz. Doğrudan iletişim ve hukuki risklerin erken tespiti sayesinde müvekkillerimizin gereksiz uyuşmazlıkları önlemesine, belirsizliği azaltmasına ve iş hedeflerine odaklanmayı sürdürmesine yardımcı oluyoruz. Bu çerçevede, işletmelerin bilinçli kararlar almasını, riski etkin biçimde yönetmesini ve güvenle ilerlemesini sağlayan, uygulanabilir ve ticari gerçeklerle uyumlu hukuki çözümler sunuyoruz.",
-        "en": "We believe effective legal counsel should be clear, responsive and proactive. Through direct communication and early identification of legal risks, we help our clients prevent unnecessary disputes, reduce uncertainty and remain focused on their business objectives. In this context, we deliver practical and commercially aligned legal solutions that enable businesses to make informed decisions, manage risk effectively and move forward with confidence."
+        "tr": "Etkili hukuki danışmanlığın yalnızca mevzuatın ne söylediğini tespit etmekten ibaret olmadığına inanıyoruz. Bizim için iyi bir hukuki değerlendirme; müvekkilin faaliyetlerini, alınacak kararın ticari amacını ve mevcut seçeneklerin doğurabileceği pratik sonuçları da anlamayı gerektirir.",
+        "en": "We believe effective legal advice requires more than identifying what the law says. It requires an understanding of the business, the commercial objective behind the decision and the practical consequences of each available option."
+      },
+      {
+        "tr": "Çalışma modelimiz doğrudan ortak katılımına dayanır. Müvekkillerimiz, işlerinin sorumluluğunu üstlenen avukatlarla doğrudan iletişim kurar. Süreç boyunca açık iletişimi, hızlı geri dönüşü ve işin sürekliliğini esas alırız. Önceliğimiz, gerçekten önem taşıyan hukuki ve ticari noktaları belirlemek, riskleri yönetmek ve uygulamaya elverişli çözümler üretmektir.",
+        "en": "Our work is partner-led. Clients work directly with the lawyers responsible for their matters, with clear communication, responsiveness and continuity throughout the engagement. We focus on identifying what matters, managing legal and commercial risk and delivering advice that can be applied in practice."
+      },
+      {
+        "tr": "Günlük hukuki ihtiyaçların yanı sıra karmaşık işlemler, uyuşmazlıklar ve sınır ötesi konularda da danışmanlık sunuyoruz. Birden fazla yargı alanını ilgilendiren işlerde, gerektiğinde bağımsız yabancı hukuk büroları ve diğer profesyonel danışmanlarla koordineli şekilde çalışıyoruz.",
+        "en": "We advise clients on both day-to-day legal matters and complex transactions, disputes and cross-border matters. Where a matter involves multiple jurisdictions, we coordinate with independent foreign counsel and other professional advisers as required."
+      },
+      {
+        "tr": "Amacımız nettir: Müvekkillerimizin kararlarını güvenle alabilmelerini sağlayan açık, uygulanabilir ve ticari bakış açısıyla şekillendirilmiş hukuki danışmanlık sunmak.",
+        "en": "Our objective is straightforward: to provide clear, commercially informed legal advice that enables our clients to make decisions with confidence."
       }
     ]
   },
@@ -24,6 +36,7 @@
     "phone": "+90 (212) 877 72 06",
     "fax": "",
     "email": "info@kso.av.tr",
-    "kep": ""
+    "kep": "",
+    "linkedin": "https://www.linkedin.com/company/kocaksayimornek/"
   }
 }

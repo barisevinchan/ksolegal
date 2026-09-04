@@ -315,19 +315,23 @@ Kurallar:
 Biçim `src/lib/content.ts` içindeki `titleLine()` ve `displayName()`
 fonksiyonlarında tektir.
 
-#### ⚠️ İstisna: Ana sayfa hero başlığı
+#### ⚠️ İstisna: Ana sayfa hero başlığı — KALDIRILDI (05.09.2026)
 
-`/` hero başlığında (`messages/*.json` → `Home.heroTitle`) marka adı
-**`KOÇAK|SAYIM|ÖRNEK`** biçimindedir — büyük harf, boşluksuz, dikey
-çizgi ayıraçla. Yukarıdaki "tek biçim" kuralından **bilerek sapar**;
-kullanıcı yukarıdaki kural kendisine hatırlatıldıktan sonra bu biçimi
-onayladı (24.08.2026).
+`Home.heroTitle` ("Welcome to Our Law Firm" / "Hukuk Büromuza Hoş
+Geldiniz") kullanıcı talimatıyla tamamen kaldırıldı; anahtar
+`messages/*.json`'dan silindi. Hero `<h1>` artık `heroSubtitle.lead`
+metnini taşıyor (bkz. "Görsel Değişiklikler Günlüğü" veya
+`src/app/[locale]/page.tsx`), ikinci cümle (`heroSubtitle.body`)
+altında normal boyutta duruyor.
 
-Kapsam yalnızca hero `<h1>`'dir. `Brand.name` (`Koçak | Sayım | Örnek`)
-diğer tüm konumlarda — footer telif satırı, logo `alt` metni,
-`Metadata.title` — değişmeden geçerlidir. Geri alınırsa yalnızca
-`Home.heroTitle` içindeki `<brand>` etiketinin metni düzeltilir, kod
-(`src/app/[locale]/page.tsx`) değişmez.
+Bu bölüm daha önce hero başlığında marka adının `KOÇAK|SAYIM|ÖRNEK`
+biçiminde (büyük harf, boşluksuz) göründüğünü ve "tek biçim" kuralından
+kasıtlı saptığını kaydediyordu (24.08.2026). O metin artık sitede yok;
+`Brand.name` (`Koçak | Sayım | Örnek`) diğer tüm konumlarda —footer
+telif satırı, logo `alt` metni, `Metadata.title`— değişmeden geçerli
+olmaya devam ediyor. Geri alınırsa yalnızca `Home.heroSubtitle.lead`
+metni "Welcome to Our Law Firm" / "Hukuk Büromuza Hoş Geldiniz" olarak
+değiştirilip ayrı bir `h1` satırına taşınır; kodun geri kalanı durur.
 
 #### ⚠️ İstisna: Kariyer sayfası gövde metninde kalın ifadeler
 

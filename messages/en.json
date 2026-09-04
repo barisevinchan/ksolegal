@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "Koçak | Sayım | Örnek",
+    "title": "Koçak | Sayım | Örnek — Law Firm",
     "titleTemplate": "%s — Koçak | Sayım | Örnek",
-    "description": "Practice areas and contact details of the law office."
+    "description": "Koçak | Sayım | Örnek is an Istanbul-based law firm advising businesses on corporate, commercial, employment, finance, regulatory and dispute matters."
   },
   "Brand": {
     "name": "Koçak | Sayım | Örnek"
@@ -12,7 +12,7 @@
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "about": "Who We Are?",
+    "about": "Who We Are",
     "team": "Our People",
     "practiceAreas": "Practice Areas",
     "careers": "Careers",
@@ -29,6 +29,7 @@
     "contactHeading": "Contact",
     "address": "Address",
     "phone": "Phone",
+    "linkedin": "LinkedIn",
     "fax": "Fax",
     "email": "E-mail",
     "kep": "KEP",
@@ -44,8 +45,10 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
-    "heroTitle": "Welcome to Our Law Firm",
-    "heroSubtitle": "Clear legal advice for complex business decisions.",
+    "heroSubtitle": {
+      "lead": "Clear legal advice for complex business decisions.",
+      "body": "Partner-led legal counsel to businesses on corporate, commercial, employment and dispute matters in Türkiye and across borders."
+    },
     "heroImageAlt": "The Bosphorus and the İstanbul skyline at night",
     "linksHeading": "Pages",
     "cards": {
@@ -55,7 +58,7 @@
     }
   },
   "About": {
-    "title": "Who We Are?",
+    "title": "Who We Are",
     "metaDescription": "General information about the office."
   },
   "Careers": {

@@ -11,8 +11,8 @@ import Container from "./Container";
  *
  * İletişim satırları `content/buro.json`'dan gelir ve /iletisim sayfasıyla
  * ORTAKTIR — aynı liste iki yerde ayrı ayrı yazılmaz. Değeri boş olan
- * satır hiç render edilmez; müşteriden telefon, faks ve KEP gelmediği için
- * şu an yalnızca adres ve e-posta görünür.
+ * satır hiç render edilmez; müşteriden faks ve KEP gelmediği için şu an
+ * yalnızca adres, e-posta, telefon ve LinkedIn görünür.
  *
  * Üst margin (`mt-12 md:mt-16`) ana sayfadaki hero-altı bölümün üst
  * padding'iyle (`pt-12 md:pt-16`, bkz. `src/app/[locale]/page.tsx`) BİREBİR

@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "Koçak | Sayım | Örnek",
+    "title": "Koçak | Sayım | Örnek — Hukuk Bürosu",
     "titleTemplate": "%s — Koçak | Sayım | Örnek",
-    "description": "Hukuk bürosunun faaliyet alanları ve iletişim bilgileri."
+    "description": "Koçak | Sayım | Örnek, şirketler ve ticaret hukuku, iş hukuku, finans, regülasyon ve uyuşmazlıklar alanlarında şirketlere danışmanlık sunan İstanbul merkezli bir hukuk bürosudur."
   },
   "Brand": {
     "name": "Koçak | Sayım | Örnek"
@@ -12,7 +12,7 @@
     "skipToContent": "İçeriğe geç",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
-    "about": "Biz Kimiz?",
+    "about": "Biz Kimiz",
     "team": "Ekibimiz",
     "practiceAreas": "Faaliyet Alanları",
     "careers": "Kariyer",
@@ -29,6 +29,7 @@
     "contactHeading": "İletişim",
     "address": "Adres",
     "phone": "Telefon",
+    "linkedin": "LinkedIn",
     "fax": "Faks",
     "email": "E-posta",
     "kep": "KEP",
@@ -44,8 +45,10 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
   },
   "Home": {
-    "heroTitle": "Hukuk Büromuza Hoş Geldiniz",
-    "heroSubtitle": "Kritik ticari kararlar için açık, stratejik ve çözüm odaklı hukuki danışmanlık.",
+    "heroSubtitle": {
+      "lead": "Karmaşık ticari kararlar için açık ve uygulanabilir hukuki danışmanlık.",
+      "body": "Türkiye'de ve sınır ötesinde şirketler ve ticaret hukuku, iş hukuku ve uyuşmazlıklar alanlarında, doğrudan ortak katılımıyla hukuki danışmanlık sunuyoruz."
+    },
     "heroImageAlt": "İstanbul Boğazı ve şehir silueti, gece",
     "linksHeading": "Sayfalar",
     "cards": {
@@ -55,7 +58,7 @@
     }
   },
   "About": {
-    "title": "Biz Kimiz?",
+    "title": "Biz Kimiz",
     "metaDescription": "Büro hakkında genel bilgi."
   },
   "Careers": {

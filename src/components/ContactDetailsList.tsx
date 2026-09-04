@@ -1,3 +1,4 @@
+import LinkedInIcon from "@/components/LinkedInIcon";
 import type { OfficeContactRow } from "@/lib/content";
 
 /**
@@ -55,12 +56,26 @@ export default function ContactDetailsList({ rows, getLabel, variant }: Props) {
             {row.href ? (
               /* `min-h-11` dokunma hedefini 44px'e tamamlar
                  (docs/design-system.md §6.2); satırın `items-center`
-                 hizalaması sayesinde etiketle aynı çizgide kalır. */
+                 hizalaması sayesinde etiketle aynı çizgide kalır.
+
+                 İkonlu satırda (LinkedIn) görünür metin yoktur — alt
+                 çizgi kaldırılır, erişilebilir ad `aria-label` ile
+                 linkin kendisine taşınır (ikon `aria-hidden`,
+                 `/ekibimiz/[slug]` ile aynı bileşen). */
               <a
                 href={row.href}
-                className={`inline-flex min-h-11 items-center underline underline-offset-4 transition-text ${styles.linkHover}`}
+                target={row.external ? "_blank" : undefined}
+                rel={row.external ? "noopener noreferrer" : undefined}
+                aria-label={row.icon ? getLabel(row.key) : undefined}
+                className={`inline-flex min-h-11 items-center transition-text ${
+                  row.icon ? "" : "underline underline-offset-4"
+                } ${styles.linkHover}`}
               >
-                {row.value}
+                {row.icon === "linkedin" ? (
+                  <LinkedInIcon className="h-5 w-5" />
+                ) : (
+                  row.value
+                )}
               </a>
             ) : (
               row.value

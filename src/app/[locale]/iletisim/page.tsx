@@ -60,9 +60,9 @@ export default async function ContactPage({
 
   /*
     Satırlar `content/buro.json`'dan gelir ve footer ile ORTAKTIR.
-    Değeri boş olan satır listeye hiç girmez — telefon, faks ve KEP
-    müşteriden gelmediği için şu an yalnızca adres ve e-posta çıkar.
-    Veri geldiğinde yalnızca JSON güncellenir, bu dosya değişmez.
+    Değeri boş olan satır listeye hiç girmez — faks ve KEP müşteriden
+    gelmediği için şu an yalnızca adres, e-posta, telefon ve LinkedIn
+    çıkar. Veri geldiğinde yalnızca JSON güncellenir, bu dosya değişmez.
   */
   const infoRows = getOfficeContactRows(locale);
 
@@ -89,7 +89,7 @@ export default async function ContactPage({
 
           {/* API anahtarı gerektirmeyen genel arama embed'i — bkz. dosya
               başındaki MAP_EMBED_SRC yorumu. */}
-          <div className="mt-8 aspect-[16/9] w-full">
+          <div className="mt-8 aspect-[16/9] w-full md:aspect-auto md:h-[280px] md:max-w-2xl">
             <iframe
               src={MAP_EMBED_SRC}
               title={t("mapHeading")}

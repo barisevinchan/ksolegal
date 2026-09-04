@@ -234,6 +234,7 @@ export type Office = {
   fax: string;
   email: string;
   kep: string;
+  linkedin: string;
 };
 
 /** /biz-kimiz gövde metni. Müşteri PDF'inin "WHO WE ARE?" bölümü. */
@@ -251,10 +252,14 @@ export const careerParagraphs = kariyer.paragraphs as readonly L10n[];
 
 export type OfficeContactRow = {
   /** `Footer` mesaj namespace'indeki etiket anahtarı. */
-  key: "address" | "phone" | "fax" | "email" | "kep";
+  key: "address" | "phone" | "fax" | "email" | "kep" | "linkedin";
   value: string;
   /** Tıklanabilir satırlarda `mailto:` / `tel:`. Değer boşsa yoktur. */
   href?: string;
+  /** Harici bağlantı: yeni sekmede açılır (`target="_blank"`). */
+  external?: boolean;
+  /** Değer düz metin yerine ikon olarak render edilir (/ekibimiz/[slug] ile aynı ikon). */
+  icon?: "linkedin";
 };
 
 /**
@@ -262,8 +267,8 @@ export type OfficeContactRow = {
  * yazılmaz.
  *
  * Değeri boş olan satır listeden ELENİR: ziyaretçiye bir sıra tire
- * göstermek yerine satır hiç çıkmaz. Telefon, faks ve KEP müşteriden
- * gelmediği için şu an yalnızca adres ve e-posta render edilir.
+ * göstermek yerine satır hiç çıkmaz. Faks ve KEP müşteriden gelmediği
+ * için şu an yalnızca adres, e-posta, telefon ve LinkedIn render edilir.
  *
  * Satırın sırası, etiketi, linki ve filtresi tamamen buradadır; bu yüzden
  * eksik veri geldiğinde YALNIZCA content/buro.json güncellenir, hiçbir
@@ -274,6 +279,13 @@ export function getOfficeContactRows(locale: string): OfficeContactRow[] {
     { key: "address", value: pick(office.address, locale) },
     { key: "email", value: office.email, href: mailHref(office.email) },
     { key: "phone", value: office.phone, href: telHref(office.phone) },
+    {
+      key: "linkedin",
+      value: hasText(office.linkedin) ? "LinkedIn" : "",
+      href: office.linkedin,
+      external: true,
+      icon: "linkedin",
+    },
     { key: "fax", value: office.fax },
     { key: "kep", value: office.kep, href: mailHref(office.kep) },
   ];
