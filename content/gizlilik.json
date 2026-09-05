@@ -1,0 +1,231 @@
+{
+  "_note": "Kaynak: kaynak/icerik/Gizlilik.docx. Metin birebir alınmıştır, kısaltılmamış veya değiştirilmemiştir. TR ve EN metinler docx'te bağımsız yazıldığı için bazı bölümlerde yapı (liste var/yok) dilden dile FARKLIDIR — bu kasıtlı olarak korunmuştur, her dilin kendi `blocks` dizisi vardır. İki dil aynı dosyada, yan yana tutulur.",
+  "updated": {
+    "tr": "Son Güncelleme: Eylül 2026",
+    "en": "Last Updated: September 2026"
+  },
+  "intro": {
+    "tr": [
+      { "type": "p", "text": "Koçak | Sayım | Örnek (“KSO” veya “Büro”) olarak, özel hayatın gizliliğine ve kişisel verilerin korunmasına önem veriyoruz. Bu metin, www.kso.av.tr adresindeki internet sitemizi (“İnternet Sitesi”) ziyaret eden veya İnternet Sitesi üzerinden bizimle iletişime geçen kişilerin kişisel verilerinin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) ve ilgili mevzuat kapsamında nasıl işlendiğine ilişkin bilgi vermek amacıyla hazırlanmıştır." }
+    ],
+    "en": [
+      { "type": "p", "text": "Koçak | Sayım | Örnek (“KSO” or the “Firm”) respects the privacy of individuals and the protection of personal data. This Privacy Notice explains how personal data relating to visitors of www.kso.av.tr (the “Website”) and individuals contacting us through or in connection with the Website may be processed in accordance with the Turkish Personal Data Protection Law No. 6698 (“DP Law”) and applicable legislation." }
+    ]
+  },
+  "sections": [
+    {
+      "heading": { "tr": "1. Veri Sorumlusu", "en": "1. Data Controller" },
+      "tr": [
+        { "type": "p", "text": "İnternet Sitesi kapsamında işlenen kişisel veriler bakımından veri sorumlusu:" },
+        {
+          "type": "lines",
+          "items": [
+            "Koçak | Sayım | Örnek",
+            "Adres: Elit Residence, No: 3/14, Şişli, İstanbul",
+            "E-posta: info@kso.av.tr",
+            "İnternet Sitesi: www.kso.av.tr"
+          ]
+        }
+      ],
+      "en": [
+        { "type": "p", "text": "For personal data processed in connection with the Website, the data controller is:" },
+        {
+          "type": "lines",
+          "items": [
+            "Koçak | Sayım | Örnek",
+            "Address: Elit Residence, No: 3/14, Şişli, İstanbul",
+            "E-mail: info@kso.av.tr",
+            "Website: www.kso.av.tr"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": { "tr": "2. İşlenebilecek Kişisel Veriler", "en": "2. Personal Data We May Process" },
+      "tr": [
+        { "type": "p", "text": "İnternet Sitesini kullanımınıza ve bizimle iletişim şeklinize bağlı olarak aşağıdaki kişisel veriler işlenebilir:" },
+        {
+          "type": "list",
+          "items": [
+            "ad ve soyad;",
+            "e-posta adresi, telefon numarası ve diğer iletişim bilgileri;",
+            "çalışılan kurum, unvan ve mesleki bilgiler;",
+            "bizimle paylaşılan mesaj, talep ve sair iletişim içerikleri;",
+            "iş veya staj başvuruları kapsamında iletilen özgeçmiş ve başvuru belgelerinde yer alan bilgiler;",
+            "IP adresi, bağlantı zamanı, tarayıcı ve cihaz bilgileri gibi internet sitesi kullanımına ve bilgi güvenliğine ilişkin teknik veriler; ve",
+            "kullanılan çerezlerin niteliğine bağlı olarak çerezler ve benzeri teknolojiler aracılığıyla elde edilen bilgiler."
+          ]
+        },
+        { "type": "p", "text": "İnternet Sitesi üzerinden özel nitelikli kişisel verilerin veya hukuki talebiniz bakımından gerekli olmayan hassas bilgilerin tarafımıza iletilmemesini rica ederiz." }
+      ],
+      "en": [
+        { "type": "p", "text": "Depending on how you use the Website or contact us, we may process:" },
+        {
+          "type": "list",
+          "items": [
+            "your name and surname;",
+            "e-mail address, telephone number and other contact details;",
+            "organisation, title and professional information;",
+            "correspondence, enquiries and other information you choose to provide;",
+            "CVs and application materials submitted in connection with career or internship applications;",
+            "technical information such as IP address, access times, browser and device information; and",
+            "information obtained through cookies and similar technologies, depending on the cookies used."
+          ]
+        },
+        { "type": "p", "text": "Please refrain from submitting sensitive personal data or information that is not necessary for the purpose of your enquiry through the Website." }
+      ]
+    },
+    {
+      "heading": { "tr": "3. Kişisel Verilerin İşlenme Amaçları", "en": "3. Purposes of Processing" },
+      "tr": [
+        { "type": "p", "text": "Kişisel verileriniz, ilgili olduğu ölçüde aşağıdaki amaçlarla işlenebilir:" },
+        {
+          "type": "list",
+          "items": [
+            "tarafımıza iletilen soru, talep ve mesajların değerlendirilmesi ve yanıtlanması;",
+            "mevcut veya potansiyel müvekkillerle iletişimin yürütülmesi;",
+            "talep edilmesi halinde hukuki hizmetlere ilişkin ön değerlendirmelerin yapılması;",
+            "iş ve staj başvurularının alınması ve değerlendirilmesi;",
+            "İnternet Sitesinin güvenliğinin, sürekliliğinin ve teknik işleyişinin sağlanması;",
+            "bilgi güvenliği süreçlerinin yürütülmesi ve yetkisiz erişimlerin önlenmesi;",
+            "hukuki yükümlülüklerimizin yerine getirilmesi ve gerektiğinde hukuki haklarımızın kullanılması veya korunması."
+          ]
+        },
+        { "type": "p", "text": "Kişisel veriler, işlendikleri amaçla bağlantılı, sınırlı ve ölçülü şekilde işlenir." }
+      ],
+      "en": [
+        { "type": "p", "text": "Personal data may be processed, where relevant, for the purposes of:" },
+        {
+          "type": "list",
+          "items": [
+            "reviewing and responding to enquiries and communications;",
+            "communicating with existing and prospective clients;",
+            "carrying out preliminary assessments in relation to requested legal services;",
+            "receiving and evaluating employment and internship applications;",
+            "maintaining the security, availability and technical operation of the Website;",
+            "conducting information-security processes and preventing unauthorised access; and",
+            "complying with legal obligations and establishing, exercising or protecting legal rights."
+          ]
+        },
+        { "type": "p", "text": "Personal data are processed only to the extent relevant, limited and proportionate to these purposes." }
+      ]
+    },
+    {
+      "heading": { "tr": "4. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi", "en": "4. Collection and Legal Basis" },
+      "tr": [
+        { "type": "p", "text": "Kişisel verileriniz; İnternet Sitesini ziyaret etmeniz, elektronik posta veya diğer iletişim kanalları üzerinden bizimle iletişime geçmeniz, iş veya staj başvurusu yapmanız ya da İnternet Sitesinde kullanılan teknik sistemler ve çerezler aracılığıyla elektronik ortamda elde edilebilir." },
+        { "type": "p", "text": "Kişisel verileriniz, ilgili işleme faaliyetine göre KVKK’nın 5. maddesinde öngörülen;" },
+        {
+          "type": "list",
+          "items": [
+            "bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması,",
+            "veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması,",
+            "bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması ve",
+            "ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusunun meşru menfaatleri için veri işlemenin zorunlu olması"
+          ]
+        },
+        { "type": "p", "text": "hukuki sebeplerine dayanılarak işlenebilir." },
+        { "type": "p", "text": "Bir kişisel veri işleme faaliyetinin açık rızanıza dayanmasının gerekli olduğu hallerde açık rıza ayrıca talep edilir." }
+      ],
+      "en": [
+        { "type": "p", "text": "Personal data may be collected electronically when you visit the Website, communicate with us by e-mail or other communication channels, submit an employment or internship application, or interact with technical systems and cookies used on the Website." },
+        { "type": "p", "text": "Depending on the relevant processing activity, personal data may be processed on the legal grounds provided under Article 5 of the DP Law, including where processing is necessary for the establishment or performance of a contract, compliance with a legal obligation, establishment, exercise or protection of a right, or the legitimate interests of the data controller provided that the fundamental rights and freedoms of the data subject are not prejudiced." },
+        { "type": "p", "text": "Where processing is required to be based on explicit consent, such consent will be requested separately." }
+      ]
+    },
+    {
+      "heading": { "tr": "5. Kişisel Verilerin Aktarılması", "en": "5. Transfers of Personal Data" },
+      "tr": [
+        { "type": "p", "text": "Kişisel verileriniz, yukarıda belirtilen amaçlarla sınırlı olmak üzere ve KVKK’nın 8. ve 9. maddelerinde öngörülen şartlara uygun şekilde;" },
+        {
+          "type": "list",
+          "items": [
+            "internet sitesi, sunucu, barındırma, e-posta, veri depolama ve bilgi teknolojileri hizmet sağlayıcılarına;",
+            "faaliyetlerimizin yürütülmesi için hizmet aldığımız diğer tedarikçi ve profesyonel danışmanlara;",
+            "hukuki bir yükümlülüğün yerine getirilmesi veya hukuki hakların korunması amacıyla yetkili kamu kurum ve kuruluşları ile adli ve idari mercilere"
+          ]
+        },
+        { "type": "p", "text": "aktarılabilir." },
+        { "type": "p", "text": "Yurt dışında bulunan hizmet sağlayıcıların kullanılması nedeniyle kişisel verilerin yurt dışına aktarılmasının söz konusu olduğu hallerde, ilgili aktarım işlemleri KVKK’nın 9. maddesinde öngörülen şartlara uygun olarak gerçekleştirilir." }
+      ],
+      "en": [
+        { "type": "p", "text": "To the extent necessary for the purposes described above and subject to Articles 8 and 9 of the DP Law, personal data may be transferred to:" },
+        {
+          "type": "list",
+          "items": [
+            "providers of website hosting, servers, e-mail, data storage and information technology services;",
+            "other suppliers and professional advisers supporting our operations; and",
+            "competent public authorities, courts and administrative bodies where required by law or necessary for the protection of legal rights."
+          ]
+        },
+        { "type": "p", "text": "Where the use of service providers located outside Türkiye results in an international transfer of personal data, such transfer will be carried out in accordance with Article 9 of the DP Law." }
+      ]
+    },
+    {
+      "heading": { "tr": "6. Saklama Süresi", "en": "6. Retention" },
+      "tr": [
+        { "type": "p", "text": "Kişisel verileriniz, işlenme amaçlarının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen zamanaşımı, saklama ve ispat süreleri dikkate alınarak muhafaza edilir. İşlenmesini gerektiren sebeplerin ortadan kalkması halinde kişisel veriler mevzuata uygun olarak silinir, yok edilir veya anonim hale getirilir." }
+      ],
+      "en": [
+        { "type": "p", "text": "Personal data are retained for as long as reasonably necessary for the purposes for which they were collected, taking into account applicable statutory retention, limitation and evidentiary periods. When the purposes and legal grounds for processing cease to exist, personal data will be deleted, destroyed or anonymised in accordance with applicable law." }
+      ]
+    },
+    {
+      "heading": { "tr": "7. Çerezler", "en": "7. Cookies" },
+      "tr": [
+        { "type": "p", "text": "İnternet Sitesinin güvenli ve etkin biçimde çalışmasını sağlamak, kullanıcı deneyimini geliştirmek ve kullanım bilgilerini değerlendirmek amacıyla çerezler ve benzeri teknolojiler kullanılabilir." },
+        { "type": "p", "text": "Zorunlu olmayan çerezlerin kullanılması halinde, ilgili kişilere gerekli bilgilendirme yapılır ve mevzuatın gerektirdiği durumlarda tercihlerini belirleme imkânı sağlanır." }
+      ],
+      "en": [
+        { "type": "p", "text": "Cookies and similar technologies may be used to ensure the secure and efficient operation of the Website, improve user experience and analyse Website usage." },
+        { "type": "p", "text": "Where non-essential cookies are used, appropriate information will be provided and, where required by applicable law, visitors will be given the opportunity to manage their preferences." }
+      ]
+    },
+    {
+      "heading": { "tr": "8. Kişisel Verilerin Güvenliği", "en": "8. Data Security" },
+      "tr": [
+        { "type": "p", "text": "KSO, kişisel verilerin hukuka aykırı olarak işlenmesini ve erişilmesini önlemek ve kişisel verilerin güvenli şekilde muhafazasını sağlamak amacıyla, işlenen verinin niteliğine uygun teknik ve idari tedbirleri almaktadır." },
+        { "type": "p", "text": "Avukatlık faaliyetleri kapsamında elde edilen bilgi ve belgeler ayrıca avukatlık mesleğine ilişkin sır saklama ve gizlilik yükümlülükleri çerçevesinde korunur." }
+      ],
+      "en": [
+        { "type": "p", "text": "KSO implements appropriate technical and organisational measures designed to prevent unlawful processing of and access to personal data and to ensure their secure storage." },
+        { "type": "p", "text": "Information and documents obtained in the course of legal services are additionally protected by the professional confidentiality and secrecy obligations applicable to lawyers." }
+      ]
+    },
+    {
+      "heading": { "tr": "9. İlgili Kişinin Hakları", "en": "9. Your Rights" },
+      "tr": [
+        { "type": "p", "text": "KVKK’nın 11. maddesi uyarınca kişisel verilerinize ilişkin olarak;" },
+        {
+          "type": "list",
+          "items": [
+            "kişisel verilerinizin işlenip işlenmediğini öğrenme;",
+            "işlenmişse buna ilişkin bilgi talep etme;",
+            "işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme;",
+            "yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme;",
+            "eksik veya yanlış işlenmiş olması halinde düzeltilmesini isteme;",
+            "KVKK’da öngörülen şartların oluşması halinde silinmesini veya yok edilmesini isteme;",
+            "yapılan düzeltme, silme veya yok etme işlemlerinin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme;",
+            "münhasıran otomatik sistemler vasıtasıyla analiz edilmesi sonucunda aleyhinize bir sonucun ortaya çıkmasına itiraz etme; ve",
+            "kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde zararın giderilmesini talep etme"
+          ]
+        },
+        { "type": "p", "text": "haklarına sahipsiniz." },
+        { "type": "p", "text": "Bu kapsamdaki taleplerinizi, yürürlükteki mevzuatta öngörülen usullere uygun olarak info@kso.av.tr adresi veya yukarıda belirtilen posta adresi üzerinden KSO’ya iletebilirsiniz." }
+      ],
+      "en": [
+        { "type": "p", "text": "Under Article 11 of the DP Law, you may exercise the rights granted to data subjects in relation to your personal data, including requesting information regarding processing, correction or deletion where applicable and objecting to certain processing activities in accordance with applicable law." },
+        { "type": "p", "text": "Requests may be submitted to KSO in accordance with applicable legal procedures through info@kso.av.tr or the postal address stated above." }
+      ]
+    },
+    {
+      "heading": { "tr": "10. Değişiklikler", "en": "10. Amendments" },
+      "tr": [
+        { "type": "p", "text": "KSO, hukuki veya teknik gelişmeler ya da İnternet Sitesinin işleyişinde meydana gelebilecek değişiklikler doğrultusunda bu metni gerektiğinde güncelleyebilir. Güncel metin İnternet Sitesinde yayımlandığı tarihten itibaren geçerli olur." }
+      ],
+      "en": [
+        { "type": "p", "text": "KSO may update this Privacy Notice from time to time to reflect legal or technical developments or changes to the operation of the Website. The current version will become effective upon publication on the Website." }
+      ]
+    }
+  ]
+}

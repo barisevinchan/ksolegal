@@ -458,6 +458,8 @@ her bilgi siteye konulamaz.
 /faaliyet-alanlari/[slug] Alan detayı — nötr, bilgilendirici dil
 /kariyer                  Başvuru bilgisi — düz metin, form yok
 /iletisim                 Adres, telefon, faks, e-posta, KEP, harita
+/gizlilik-politikasi      Gizlilik ve kişisel verilerin korunması metni
+/yasal-uyari              Yasal uyarı metni
 ```
 
 `/kvkk` ve `/cerez-politikasi` **25.08.2026'da kullanıcı talimatıyla
@@ -470,6 +472,39 @@ Google Maps embed'i (API anahtarsız) oldu.
 (bkz. `/kariyer`) — önceki kayıt bu sayfanın gereksiz olduğunu
 söylüyordu, kullanıcı kararı bunu tersine çevirdi. "Kurumsal
 Sorumluluk" sayfası **hâlâ yok** — 3 kişilik büro için gereksiz.
+
+**`/gizlilik-politikasi` ve `/yasal-uyari` 05.09.2026'da kullanıcı
+talimatıyla eklendi.** Bunlar yukarıda kaldırılan `/kvkk` /
+`/cerez-politikasi` sayfalarının geri getirilmesi DEĞİLDİR — o ikisi
+hâlâ yok. Bu iki yeni sayfanın metni müşterinin
+`kaynak/icerik/Gizlilik.docx` ve `kaynak/icerik/Yasal Uyarı.docx`
+dosyalarından **birebir** alınmıştır (kısaltılmadı, değiştirilmedi;
+içerik `content/gizlilik.json` ve `content/yasal-uyari.json`'da durur,
+her ikisinin `_note` alanı kaynağı belirtir). Footer'a bu iki sayfaya
+link veren ikinci bir sütun ("Legal" / "Yasal" başlığıyla, mevcut
+"Contact" sütununun sağında) eklendi; link metinleri sayfa
+başlıklarıyla birebir aynıdır (`messages/*.json` → `PrivacyPolicy.title`
+/ `LegalNotice.title`). Geri alınırsa `src/app/[locale]/gizlilik-politikasi/`,
+`src/app/[locale]/yasal-uyari/`, ilgili `content/*.json` dosyaları ve
+`routing.ts`'teki iki `pathnames` girdisi kaldırılır; Footer'daki ikinci
+sütun ve `messages/*.json` → `PrivacyPolicy`/`LegalNotice` anahtarları
+silinir.
+
+**⚠️ Başlık büyük/küçük harf düzeltmesi (05.09.2026, aynı gün).** Sayfa
+başlıkları ilk sürümde docx'teki gibi TAMAMI BÜYÜK HARFLE eklenmişti
+("YASAL UYARI", "GİZLİLİK VE KİŞİSEL VERİLERİN KORUNMASI" / EN "LEGAL
+NOTICE", "PRIVACY NOTICE") — kaynak Word dosyasında bu başlıkların
+gerçek karakterleri (bir `w:caps` biçim bayrağı değil) büyük harfle
+yazılıydı. Kullanıcı bunun sitenin geri kalanındaki normal başlık
+büyük/küçük harf kuralıyla ("Who We Are", "Contact" vb.) çeliştiğini
+fark edip **normal yazıma çevrilmesini** istedi. Güncel değerler
+"Yasal Uyarı" / "Gizlilik ve Kişisel Verilerin Korunması" (EN "Legal
+Notice" / "Privacy Notice") — `messages/*.json` →
+`PrivacyPolicy.title` / `LegalNotice.title`. Footer linkleri aynı
+anahtarı okuduğu için otomatik olarak senkron kaldı, ayrı bir
+düzeltme gerekmedi. Metin gövdesi (`content/gizlilik.json`,
+`content/yasal-uyari.json`) bu değişiklikten etkilenmedi — yalnızca
+başlık.
 
 ---
 

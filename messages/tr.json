@@ -27,6 +27,7 @@
   },
   "Footer": {
     "contactHeading": "İletişim",
+    "legalHeading": "Yasal",
     "address": "Adres",
     "phone": "Telefon",
     "linkedin": "LinkedIn",
@@ -100,5 +101,13 @@
     "infoHeading": "İletişim bilgileri",
     "mapHeading": "Konum",
     "mapLinkLabel": "Google Maps'te aç"
+  },
+  "PrivacyPolicy": {
+    "title": "Gizlilik ve Kişisel Verilerin Korunması",
+    "metaDescription": "İnternet sitesi ziyaretçilerinin kişisel verilerinin nasıl işlendiğine ilişkin bilgilendirme."
+  },
+  "LegalNotice": {
+    "title": "Yasal Uyarı",
+    "metaDescription": "İnternet sitesinin kullanım koşullarına ilişkin yasal uyarı."
   }
 }

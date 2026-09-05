@@ -1,7 +1,9 @@
 import avukatlar from "../../content/avukatlar.json";
 import buro from "../../content/buro.json";
 import faaliyetAlanlari from "../../content/faaliyet-alanlari.json";
+import gizlilik from "../../content/gizlilik.json";
 import kariyer from "../../content/kariyer.json";
+import yasalUyari from "../../content/yasal-uyari.json";
 
 /**
  * Site içeriğinin tek kaynağı. Alan adları koda baktığı için İngilizce;
@@ -309,4 +311,61 @@ function telHref(value: string): string | undefined {
 
 function mailHref(value: string): string | undefined {
   return hasText(value) ? `mailto:${value}` : undefined;
+}
+
+/* ==========================================================================
+   Yasal Uyarı / Gizlilik (statik hukuki metinler)
+   ========================================================================== */
+
+/**
+ * /yasal-uyari gövde metni. Müşterinin kaynak/icerik/Yasal Uyarı.docx
+ * dosyasından birebir alınmıştır — kısaltılmamış, değiştirilmemiştir.
+ * `contactLines` (ad, web sitesi, e-posta) her iki dilde de aynı olduğu
+ * için tek dizi olarak tutulur, tekrarlanmaz.
+ */
+export type LegalNoticeDocument = {
+  paragraphs: readonly L10n[];
+  contactLines: readonly string[];
+};
+
+export const legalNotice = yasalUyari as LegalNoticeDocument;
+
+/**
+ * Gizlilik metnindeki bir içerik bloğu: düz paragraf, madde işaretli
+ * liste (`list`) veya madde işaretsiz alt alta satırlar (`lines`, veri
+ * sorumlusu adres bloğu gibi).
+ */
+export type PrivacyBlock =
+  | { type: "p"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "lines"; items: string[] };
+
+/**
+ * TR ve EN blok dizileri BAĞIMSIZDIR — kaynak docx'te iki dil ayrı
+ * yazıldığı için aynı bölümde biri liste kullanırken diğeri tek
+ * paragrafa sığdırabiliyor (bkz. content/gizlilik.json `_note`, örn.
+ * madde 4 ve 9). Yapay bir simetri kurulmadı, her dil kendi yapısıyla
+ * render edilir.
+ */
+export type PrivacySection = {
+  heading: L10n;
+  tr: readonly PrivacyBlock[];
+  en: readonly PrivacyBlock[];
+};
+
+export type PrivacyDocument = {
+  updated: L10n;
+  intro: { tr: readonly PrivacyBlock[]; en: readonly PrivacyBlock[] };
+  sections: readonly PrivacySection[];
+};
+
+/** /gizlilik-politikasi gövde metni. Kaynak: kaynak/icerik/Gizlilik.docx. */
+export const privacyNotice = gizlilik as PrivacyDocument;
+
+/** Dile göre doğru (bağımsız) blok dizisini seçer. */
+export function pickBlocks(
+  blocks: { tr: readonly PrivacyBlock[]; en: readonly PrivacyBlock[] },
+  locale: string,
+): readonly PrivacyBlock[] {
+  return locale === "en" ? blocks.en : blocks.tr;
 }

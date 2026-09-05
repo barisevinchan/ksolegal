@@ -27,6 +27,7 @@
   },
   "Footer": {
     "contactHeading": "Contact",
+    "legalHeading": "Legal",
     "address": "Address",
     "phone": "Phone",
     "linkedin": "LinkedIn",
@@ -100,5 +101,13 @@
     "infoHeading": "Contact details",
     "mapHeading": "Location",
     "mapLinkLabel": "Open in Google Maps"
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Notice",
+    "metaDescription": "Information on how personal data of website visitors is processed."
+  },
+  "LegalNotice": {
+    "title": "Legal Notice",
+    "metaDescription": "Legal notice regarding the use of this website."
   }
 }
