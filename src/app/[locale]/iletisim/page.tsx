@@ -4,7 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactDetailsList from "@/components/ContactDetailsList";
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
+import type { Locale } from "@/i18n/routing";
 import { getOfficeContactRows, office, pick } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 /**
  * Google Maps embed'i API anahtarı GEREKTİRMEZ: `output=embed` parametreli
@@ -39,7 +41,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Contact" });
 
-  return { title: t("title"), description: t("metaDescription") };
+  return buildPageMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("metaDescription"),
+    hrefForLocale: () => "/iletisim",
+  });
 }
 
 /**

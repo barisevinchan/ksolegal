@@ -174,6 +174,49 @@ oluştur ama içerik üretme ve ana navigasyonda öne çıkarma. Yayına almadan
 
 ---
 
+## SEO Düzeltmesi (08.09.2026)
+
+Google, Türkçe sayfaları İngilizce metadata ile indekslemiş ve arama
+sonuçlarında "Bu sayfanın çevirisini yap" gösteriyordu. Teşhis canlı
+`www.kso.av.tr` üzerinde curl ile doğrulandı: `defaultLocale:"en"` +
+`localePrefix:"as-needed"` nedeniyle `www.kso.av.tr/faaliyet-alanlari`
+ve `/kariyer` gibi önek'siz Türkçe-slug URL'ler gerçekten canlı ve
+`/practice-areas`/`/careers`'a next-intl middleware'i tarafından
+**307 Temporary Redirect** ile yönleniyordu — 307 kalıcı olmadığı için
+Google eski Türkçe-slug URL'yi indekste tutup arkasındaki İngilizce
+içeriği gösteriyordu. Ayrıca hiçbir sayfada `<link rel="canonical">`
+yoktu (hreflang zaten next-intl'in otomatik `Link` HTTP header'ıyla her
+sayfada mevcuttu — bu eksik değildi).
+
+Yapılan değişiklikler:
+- `src/middleware.ts`: next-intl'in ürettiği 307'ler 308'e yükseltilir
+  (`localeDetection:false` olduğu için bu middleware'deki her redirect
+  yapısaldır, gerçekten kalıcıdır — next-intl'in kendisi bunu
+  yapılandırılabilir kılmıyor, bu yüzden middleware sarmalandı).
+- `src/lib/site.ts`: `siteUrl` → `https://www.kso.av.tr` (apex
+  `kso.av.tr`'nin buraya 308 ile yönlendiğini canlıda curl ile
+  doğruladıktan sonra — ters yönlendirme yok).
+- `src/lib/seo.ts` (yeni): `buildAlternates()` (canonical + tr/en/
+  x-default hreflang, `<head>` içine — HTTP header'a ek, çelişmez) ve
+  `buildPageTitle()`/`buildPageMetadata()` (bkz. "Marka adı yazımı" →
+  "'|' kaldırıldı" notu). `sitemap.ts` da aynı modülü kullanır,
+  `alternates.languages`'a `x-default` eklendi.
+- `src/components/OrganizationJsonLd.tsx` (yeni): Organization +
+  LocalBusiness JSON-LD, root layout'ta sitewide render edilir.
+  Yalnızca nesnel alanlar — ad, adres, telefon, e-posta, url, logo
+  (`public/logo.svg`; raster logo yok, icat edilmedi), `sameAs`
+  (`content/buro.json` → `office.linkedin`). Puan, yorum, "en iyi/
+  lider/uzman" ifadesi veya pazarlama açıklaması **yok** (madde 7
+  kısıtı, bu dosyanın en üstündeki yasak listesiyle aynı).
+
+Geri alınırsa: `src/middleware.ts`'teki 308 sarmalaması kaldırılır,
+`src/lib/site.ts` `kso.av.tr`'ye döner, `src/lib/seo.ts` ve
+`OrganizationJsonLd.tsx` silinir, sayfaların `generateMetadata`'sı
+`buildPageMetadata` çağrısından önceki düz `{title, description}`
+biçimine döner.
+
+---
+
 ## 🎨 TASARIM YÖNÜ
 
 ### Motto: "Simple is the best"
@@ -314,6 +357,25 @@ Kurallar:
 
 Biçim `src/lib/content.ts` içindeki `titleLine()` ve `displayName()`
 fonksiyonlarında tektir.
+
+#### ⚠️ İstisna: `<title>` / `og:title` — "|" kaldırıldı (08.09.2026)
+
+Yukarıdaki "tek biçim" kuralı `Brand.name`'in (`"Koçak | Sayım | Örnek"`,
+dikey çizgili) logo `alt` metni ve footer telif satırında **değişmeden
+kaldığını** söyler — bu hâlâ geçerli. Ancak `<title>` ve `og:title`
+metinleri (yalnızca bunlar) 08.09.2026'da SEO düzeltmesi kapsamında
+**pipe'sız hâle getirildi**: Google, "|" ayıracını görüp başlığı kendi
+başına yeniden yazıyordu (arama sonuçlarında "bu sayfanın çevirisini
+yap" uyarısıyla birlikte gözlemlendi). `messages/*.json` →
+`Metadata.title` artık `"Koçak Sayım Örnek Hukuk Bürosu"` /
+`"Koçak Sayım Örnek Law Firm"` (önceki: `"Koçak | Sayım | Örnek —
+Hukuk Bürosu"`); `Metadata.titleTemplate` kaldırıldı, yerine
+`Metadata.titleSuffix` (`"Koçak Sayım Örnek"`, pipe'sız) geldi. Her
+sayfa artık `src/lib/seo.ts` → `buildPageMetadata()`/`buildPageTitle()`
+ile kendi mutlak başlığını üretir: sayfa adı 40 karakteri aşarsa sonek
+hiç eklenmez (`40 + " - Koçak Sayım Örnek" = 60`, üst sınır garantili).
+Geri alınırsa yalnızca `messages/*.json` → `Metadata.title`/
+`titleSuffix` ve `src/lib/seo.ts` değişir; `Brand.name` etkilenmez.
 
 #### ⚠️ İstisna: Ana sayfa hero başlığı — KALDIRILDI (05.09.2026)
 

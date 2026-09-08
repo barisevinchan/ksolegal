@@ -6,7 +6,9 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { routing } from "@/i18n/routing";
+import OrganizationJsonLd from "@/components/OrganizationJsonLd";
+import { routing, type Locale } from "@/i18n/routing";
+import { siteUrl } from "@/lib/site";
 
 import "../globals.css";
 
@@ -36,13 +38,20 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    // `template` alt sayfaların kendi <title>'ını marka adıyla tamamlar;
-    // `default` yalnızca kendi title'ı olmayan sayfalarda kullanılır.
-    title: {
-      default: t("title"),
-      template: t("titleTemplate"),
-    },
+    // Sitemap/robots'un da kullandığı tek canonical domain — alt sayfaların
+    // `alternates.canonical`/`openGraph.url`'i bağıl path verirse buna göre
+    // çözülür (bkz. `src/lib/seo.ts`).
+    metadataBase: new URL(siteUrl),
+    // Düz string: yalnızca kendi title'ı olmayan bir sayfa için fallback
+    // olarak kullanılır. Her sayfa artık `title: {absolute}` ile kendi
+    // mutlak başlığını döndürüyor (bkz. `buildPageMetadata`), bu yüzden
+    // `template` mekanizması kullanılmıyor.
+    title: t("title"),
     description: t("description"),
+    // `openGraph` burada tanımlanmaz: Next.js bu alanı layout → sayfa
+    // arasında derin birleştirmiyor, her sayfa kendi `openGraph`'ını
+    // (`buildPageMetadata`/Home) zaten tam olarak veriyor — burada
+    // tanımlamak yalnızca hiç görünmeyecek ölü kod olurdu.
   };
 }
 
@@ -66,6 +75,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={ebGaramond.variable}>
       <body className="flex min-h-screen flex-col">
+        <OrganizationJsonLd locale={locale as Locale} />
         <NextIntlClientProvider>
           <a
             href="#main"

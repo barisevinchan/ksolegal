@@ -7,7 +7,7 @@ import Container from "@/components/Container";
 import LinkedInIcon from "@/components/LinkedInIcon";
 import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import {
   displayName,
   getLawyer,
@@ -16,6 +16,7 @@ import {
   pick,
   titleLine,
 } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 type Params = { locale: string; slug: string };
 
@@ -41,7 +42,14 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: "Team" });
 
-  return { title: lawyer.name, description: t("metaDescription") };
+  return buildPageMetadata({
+    locale: locale as Locale,
+    title: lawyer.name,
+    description: t("metaDescription"),
+    // Avukat slug'ı iki dilde de aynıdır (isimden türer); yalnızca
+    // rota öneki değişir (ekibimiz/our-people), sitemap.ts'teki kalıpla aynı.
+    hrefForLocale: () => ({ pathname: "/ekibimiz/[slug]", params: { slug } }),
+  });
 }
 
 /** Bölüm kabuğu — başlık ritmi ve bölümler arası boşluk tek yerde. */

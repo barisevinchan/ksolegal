@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Koçak | Sayım | Örnek — Law Firm",
-    "titleTemplate": "%s — Koçak | Sayım | Örnek",
+    "title": "Koçak Sayım Örnek Law Firm",
+    "titleSuffix": "Koçak Sayım Örnek",
     "description": "Koçak | Sayım | Örnek is an Istanbul-based law firm advising businesses on corporate, commercial, employment, finance, regulatory and dispute matters."
   },
   "Brand": {
@@ -46,6 +46,7 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   "Home": {
+    "metaDescription": "Koçak | Sayım | Örnek is an Istanbul-based law firm advising businesses on corporate, commercial, employment, finance, regulatory and dispute matters.",
     "heroSubtitle": {
       "lead": "Clear legal advice for complex business decisions.",
       "body": "Partner-led legal counsel to businesses on corporate, commercial, employment and dispute matters in Türkiye and across borders."

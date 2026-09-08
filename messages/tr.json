@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Koçak | Sayım | Örnek — Hukuk Bürosu",
-    "titleTemplate": "%s — Koçak | Sayım | Örnek",
+    "title": "Koçak Sayım Örnek Hukuk Bürosu",
+    "titleSuffix": "Koçak Sayım Örnek",
     "description": "Koçak | Sayım | Örnek, şirketler ve ticaret hukuku, iş hukuku, finans, regülasyon ve uyuşmazlıklar alanlarında şirketlere danışmanlık sunan İstanbul merkezli bir hukuk bürosudur."
   },
   "Brand": {
@@ -46,6 +46,7 @@
     "paragraphThird": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ilık bir rüzgâr, İstanbul'un dar sokaklarında usulca dolaşır."
   },
   "Home": {
+    "metaDescription": "Koçak | Sayım | Örnek, şirketler ve ticaret hukuku, iş hukuku, finans, regülasyon ve uyuşmazlıklar alanlarında şirketlere danışmanlık sunan İstanbul merkezli bir hukuk bürosudur.",
     "heroSubtitle": {
       "lead": "Karmaşık ticari kararlar için açık ve uygulanabilir hukuki danışmanlık.",
       "body": "Türkiye'de ve sınır ötesinde şirketler ve ticaret hukuku, iş hukuku ve uyuşmazlıklar alanlarında, doğrudan ortak katılımıyla hukuki danışmanlık sunuyoruz."

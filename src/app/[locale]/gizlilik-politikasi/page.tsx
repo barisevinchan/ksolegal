@@ -4,7 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import LegalBlocks from "@/components/LegalBlocks";
 import PageHeader from "@/components/PageHeader";
+import type { Locale } from "@/i18n/routing";
 import { pick, pickBlocks, privacyNotice } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,7 +16,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "PrivacyPolicy" });
 
-  return { title: t("title"), description: t("metaDescription") };
+  return buildPageMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("metaDescription"),
+    hrefForLocale: () => "/gizlilik-politikasi",
+  });
 }
 
 /**

@@ -3,7 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
+import type { Locale } from "@/i18n/routing";
 import { aboutParagraphs, pick } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -15,7 +17,12 @@ export async function generateMetadata({
 
   // Nötr, açıklayıcı başlık ve açıklama — anahtar kelime yığmadan
   // (TBB Reklam Yasağı Yönetmeliği Madde 7/e).
-  return { title: t("title"), description: t("metaDescription") };
+  return buildPageMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("metaDescription"),
+    hrefForLocale: () => "/biz-kimiz",
+  });
 }
 
 /**

@@ -6,7 +6,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import {
   areaSummary,
   getAreaBySlug,
@@ -14,6 +14,7 @@ import {
   practiceAreas,
   pick,
 } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 type Params = { locale: string; slug: string };
 
@@ -38,10 +39,16 @@ export async function generateMetadata({
 
   // Nötr, açıklayıcı meta açıklama — anahtar kelime yığmadan (Madde 7/e).
   // Overview'ın ilk cümlesi; 14 alanda 116–171 karakter aralığında.
-  return {
+  return buildPageMetadata({
+    locale: locale as Locale,
     title: pick(area.title, locale),
     description: areaSummary(area, locale),
-  };
+    // Slug dile göre değişir — sitemap.ts'teki kalıpla aynı.
+    hrefForLocale: (loc) => ({
+      pathname: "/faaliyet-alanlari/[slug]",
+      params: { slug: pick(area.slug, loc) },
+    }),
+  });
 }
 
 export default async function PracticeAreaPage({

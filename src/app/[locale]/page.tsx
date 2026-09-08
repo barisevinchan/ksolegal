@@ -1,9 +1,44 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
 import Container from "@/components/Container";
 import HomeCard from "@/components/HomeCard";
 import type { StaticPathname } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
+import { alternatesFromUrls, localizedUrls, openGraphLocaleTag } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  // Ana sayfanın "sayfa adı" yoktur — kendisi marka adıdır (`Metadata.title`,
+  // "Koçak Sayım Örnek Hukuk Bürosu"/"...Law Firm"), bu yüzden `buildPageTitle`
+  // sonek mantığı uygulanmadan doğrudan kullanılır. Açıklama yeni pazarlama
+  // metni icat etmemek için `Metadata.description` ile birebir aynıdır.
+  const [tMetadata, tHome] = await Promise.all([
+    getTranslations({ locale, namespace: "Metadata" }),
+    getTranslations({ locale, namespace: "Home" }),
+  ]);
+  const urls = localizedUrls(() => "/");
+  const canonicalUrl = urls[locale as Locale];
+
+  return {
+    title: { absolute: tMetadata("title") },
+    description: tHome("metaDescription"),
+    alternates: alternatesFromUrls(urls, locale as Locale),
+    openGraph: {
+      title: tMetadata("title"),
+      description: tHome("metaDescription"),
+      url: canonicalUrl,
+      siteName: tMetadata("title"),
+      locale: openGraphLocaleTag(locale as Locale),
+      type: "website",
+    },
+  };
+}
 
 /**
  * Ana sayfa: tek hero + üç yönlendirme. Sayaç, rozet, referans, CTA

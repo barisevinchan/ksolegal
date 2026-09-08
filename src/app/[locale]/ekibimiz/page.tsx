@@ -5,7 +5,9 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import Portrait from "@/components/Portrait";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { displayName, lawyers, pick, titleLine } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -15,7 +17,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Team" });
 
-  return { title: t("title"), description: t("metaDescription") };
+  return buildPageMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("metaDescription"),
+    hrefForLocale: () => "/ekibimiz",
+  });
 }
 
 /**
