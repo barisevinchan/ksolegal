@@ -19,6 +19,7 @@ export default async function OrganizationJsonLd({ locale }: { locale: Locale })
     "@type": ["Organization", "LocalBusiness"],
     "@id": `${siteUrl}/#organization`,
     name: t("title"),
+    alternateName: ["Koçak Sayım Örnek", "KSO"],
     url: siteUrl,
     logo: `${siteUrl}/logo.svg`,
     sameAs: office.linkedin ? [office.linkedin] : undefined,

@@ -21,6 +21,9 @@ export async function generateMetadata({
     title: t("title"),
     description: t("metaDescription"),
     hrefForLocale: () => "/gizlilik-politikasi",
+    // Sitemap'te ve arama sonuçlarında istenmiyor; robots.ts'te Disallow
+    // yok ki Googlebot sayfayı tarayıp noindex'i görebilsin.
+    robots: { index: false, follow: true },
   });
 }
 

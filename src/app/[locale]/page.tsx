@@ -14,10 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  // Ana sayfanın "sayfa adı" yoktur — kendisi marka adıdır (`Metadata.title`,
-  // "Koçak Sayım Örnek Hukuk Bürosu"/"...Law Firm"), bu yüzden `buildPageTitle`
-  // sonek mantığı uygulanmadan doğrudan kullanılır. Açıklama yeni pazarlama
-  // metni icat etmemek için `Metadata.description` ile birebir aynıdır.
+  // Ana sayfanın "sayfa adı" yoktur — başlığı `Metadata.homeTitle`'dır ve
+  // `buildPageTitle` sonek mantığı uygulanmadan doğrudan kullanılır. Pipe
+  // içermez (bkz. CLAUDE.md, 01.10.2026 notu); `og:site_name` `Metadata.title`'dan
+  // gelir. Açıklama yeni pazarlama metni icat etmemek için
+  // `Metadata.description` ile birebir aynıdır.
   const [tMetadata, tHome] = await Promise.all([
     getTranslations({ locale, namespace: "Metadata" }),
     getTranslations({ locale, namespace: "Home" }),
@@ -26,11 +27,11 @@ export async function generateMetadata({
   const canonicalUrl = urls[locale as Locale];
 
   return {
-    title: { absolute: tMetadata("title") },
+    title: { absolute: tMetadata("homeTitle") },
     description: tHome("metaDescription"),
     alternates: alternatesFromUrls(urls, locale as Locale),
     openGraph: {
-      title: tMetadata("title"),
+      title: tMetadata("homeTitle"),
       description: tHome("metaDescription"),
       url: canonicalUrl,
       siteName: tMetadata("title"),

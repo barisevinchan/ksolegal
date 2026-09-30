@@ -397,6 +397,29 @@ hiç eklenmez (`40 + " - Koçak Sayım Örnek" = 60`, üst sınır garantili).
 Geri alınırsa yalnızca `messages/*.json` → `Metadata.title`/
 `titleSuffix` ve `src/lib/seo.ts` değişir; `Brand.name` etkilenmez.
 
+**01.10.2026 — EN marka adı alanları pipe kullanmıyor (önceki sapma
+notu GEÇERSİZ).** Aynı gün önce İngilizce ana sayfa başlığı için
+`"Koçak | Sayım | Örnek Attorneys at Law"` (pipe'lı) bilinçli bir sapma
+olarak eklenmişti; **bu sapma artık geçerli değil, kaldırıldı.**
+Güncel durum: EN `Metadata.title` ve `Metadata.homeTitle`
+(`messages/en.json`) ikisi de `"Koçak Sayım Örnek Attorneys at Law"`;
+bunlardan beslenen `<title>`, `og:title`, `og:site_name` ve JSON-LD
+`name` pipe içermez. JSON-LD `alternateName` = `["Koçak Sayım Örnek",
+"KSO"]` (pipe'sız, locale'e bağlı değil). Sebep: Google'ın "|"
+karakterini ayırıcı sanıp başlığı yeniden yazması. Türkçe
+(`Metadata.title`/`homeTitle` = `"Koçak Sayım Örnek Hukuk Bürosu"`) ve alt
+sayfa title formatı (`titleSuffix`) değişmedi. `Brand.name`
+(`Koçak | Sayım | Örnek`, logo/footer — görsel marka yazımı) ve
+`description`/`metaDescription`/`content/` metinleri pipe'lı kalır; bunlar
+title etiketi değildir.
+
+**01.10.2026 — noindex.** `/gizlilik-politikasi` ve `/yasal-uyari` (tr +
+en) `robots: { index: false, follow: true }` taşır (`buildPageMetadata`
+→ `robots` parametresi). İkisi `sitemap.ts`'te yoktur (noindex sayfayı
+sitemap'te tutmak çelişkili sinyaldir) ve `robots.ts`'te Disallow
+edilmez — Googlebot noindex'i görebilmek için sayfayı tarayabilmelidir.
+Canonical/hreflang ve footer linkleri kalır.
+
 #### ⚠️ İstisna: Ana sayfa hero başlığı — KALDIRILDI (05.09.2026)
 
 `Home.heroTitle` ("Welcome to Our Law Firm" / "Hukuk Büromuza Hoş

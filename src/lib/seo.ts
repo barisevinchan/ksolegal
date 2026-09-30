@@ -77,11 +77,13 @@ export async function buildPageMetadata({
   title,
   description,
   hrefForLocale,
+  robots,
 }: {
   locale: Locale;
   title: string;
   description: string;
   hrefForLocale: (locale: Locale) => Href;
+  robots?: Metadata["robots"];
 }): Promise<Metadata> {
   const tMetadata = await getTranslations({ locale, namespace: "Metadata" });
   const finalTitle = buildPageTitle(title, tMetadata("titleSuffix"));
@@ -91,6 +93,7 @@ export async function buildPageMetadata({
   return {
     title: { absolute: finalTitle },
     description,
+    ...(robots && { robots }),
     alternates: alternatesFromUrls(urls, locale),
     openGraph: {
       title: finalTitle,
