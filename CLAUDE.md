@@ -118,6 +118,10 @@ kod değişmez.
 | 6 | `content/avukatlar.json` → B. Hüseyin Sayım, `academicTitle` | "MSc" | "MSc" | "İzin verilen içerik" **hukuk alanındaki** akademik unvana izin veriyor; bu derece Galatasaray Üniversitesi'nde **Finansal Ekonomi** alanındadır | 21.08.2026 |
 | 8 | `content/faaliyet-alanlari.json` → 11. alan (Gayrimenkul ve İnşaat), `overview[1]` | "işlem, mevzuat ve uyuşmazlık alanlarındaki **deneyimimizi** birleştiriyoruz" | "We combine transactional, regulatory and contentious **experience**" | Deneyim vurgusu; "İzin verilen içerik" kapalı listesinde karşılığı yok. 5 numaralı sapmayla aynı sınıf | 24.08.2026 |
 | 10 | `/ekibimiz` kartları + `/ekibimiz/[slug]` başlık bloğu (`messages/*.json` → `Team.titles.mediator`) | "Avukat · **Uzman Arabulucu** · Ortak" | "Attorney at Law · **Expert Mediator** · Partner" | "Onaylanmış istisna"nın 19.08.2026'daki sınırı terimi "Sicil Bilgileri" satırıyla kısıtlıyor ve **sayfa başlıklarını açıkça dışarıda bırakıyordu**. Terim şimdi başlık bloğunda ve sicil no + yıl artık hiç gösterilmiyor — unvan onu belgeleyen kayıt olmadan duruyor. Kullanıcı uyarıldıktan sonra bu şekilde talimat verdi | 24.08.2026 |
+| 11 | `content/avukatlar.json` → Egemen Işık, biyografi §3 | "öne çıkan **uzmanlık** konuları hâline gelmiştir" | "two of his core areas of scholarly **expertise**" | "uzman/uzmanlık/expertise" yasağı; "Onaylanmış istisna" yalnızca "Uzman Arabulucu" unvan satırı içindir | 01.10.2026 |
+| 12 | `content/avukatlar.json` → Egemen Işık, biyografi §5 | "**uzman** arabuluculuk eğitimleri" | "**specialist** mediation training" | "uzman/specialist" yasağı; istisna kapsamı dışında. Kişi "Uzman Arabulucu" unvanını **taşımıyor** | 01.10.2026 |
+| 13 | `content/avukatlar.json` → Egemen Işık §1, Ertuğrul Doğan Erzengin §1 | "Marmara Üniversitesi … **Dr. Öğr. Üyesi** / **Araştırma Görevlisi** olarak görev yapmaktadır" | "Assistant Professor / Research Assistant … at Marmara University" | "Geçmiş veya mevcut kamu görevi" yasağı — devlet üniversitesi kadrosu. Akademik unvan (Dr./Ph.D.) izinli; görev yeri ve kadro ayrı mesele | 01.10.2026 |
+| 14 | `content/avukatlar.json` → Ertuğrul Doğan Erzengin, biyografi §2 | "çok uluslu bir bankanın genel müdürlük hukuk departmanında hukuki **deneyim kazanmıştır**" | "gained legal experience in the head-office legal department of a multinational bank" | Geçmiş istihdam / kurumsal referans ve deneyim vurgusu; kapalı listede karşılığı yok. 5 ve 8 numaralı sapmalarla aynı sınıf | 01.10.2026 |
 
 **7 — Yapısal sapma.** "İzin verilen içerik" listesi kapalıdır ve içinde
 **biyografi paragrafı** ile **Key Focus listesi** yoktur; her ikisi de
@@ -138,6 +142,22 @@ madde) ve bunlar `/faaliyet-alanlari/[slug]` sayfalarında yayındadır.
 alanlar "uzmanlık anlamına gelmemek kaydıyla … nötr bilgi" izniyle
 savunulabilir. Metnin dili nötr ve bilgilendiricidir — üstünlük iddiası,
 rakam, dava veya müvekkil örneği taraması **temiz** çıkmıştır. (24.08.2026)
+
+**15 — Yapısal sapma (Of Counsel kayıtları).** Egemen Işık ve Ertuğrul
+Doğan Erzengin `/ekibimiz` listesinin altında ayrı, ortalı bir satırda ve
+`/ekibimiz/[slug]` sayfalarıyla yayındadır (`counsel: true`). Metinler
+müşterinin `*_TR_EN_KSO_Terminology.docx` dosyalarından **birebir** alındı.
+"İzin verilen içerik" kapalı listesinde şunların karşılığı yoktur:
+**Of Counsel / Danışman Akademisyen** unvanı (ve bu kişilerde "Avukat /
+Attorney at Law" ibaresi **yok** — baroya kayıtlı avukat olup olmadıkları
+teyit edilmedi), **eğitim yılları, tez ve kitap başlıkları, yayınevi,
+yurt dışı araştırma, yayın aşamasındaki eser, arabuluculuk ve spor hukuku
+eğitim sertifikaları**, "rigorous doctrinal analysis" / "kapsamlı akademik
+değerlendirme" gibi nitelemeler. Mevcut üç kişide eğitim yılı ve tez
+başlığı kullanıcı talimatıyla **kaldırılmıştı**; bu iki kayıtta yayındadır
+(tutarsızlık). 11–14 numaralı satırlar bu kayıtların yasaklı ifadeleridir.
+Geri alınırsa yalnızca `content/avukatlar.json` içindeki ilgili metin
+düzeltilir veya kayıtlar silinir. Baro görüşü alınması önerilir. (01.10.2026)
 
 ---
 
@@ -514,7 +534,7 @@ her bilgi siteye konulamaz.
 ```
 /                         Ana sayfa — sade, tek ekran, üç yönlendirme
 /biz-kimiz                Büro tanıtımı
-/ekibimiz                 3 avukat kartı (izin verilen alanlarla sınırlı)
+/ekibimiz                 3 avukat kartı + altında ortalı 2 Of Counsel kartı (izin verilen alanlarla sınırlı; bkz. sapma 11–15)
 /ekibimiz/[slug]          Avukat detay
 /faaliyet-alanlari        Alan listesi
 /faaliyet-alanlari/[slug] Alan detayı — nötr, bilgilendirici dil

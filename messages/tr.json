@@ -74,7 +74,9 @@
     "titles": {
       "attorney": "Avukat",
       "mediator": "Uzman Arabulucu",
-      "partner": "Ortak"
+      "partner": "Ortak",
+      "counsel": "Of Counsel",
+      "academicAdvisor": "Danışman Akademisyen"
     },
     "linkedinAriaLabel": "LinkedIn profili",
     "sections": {

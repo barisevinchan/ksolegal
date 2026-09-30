@@ -1,5 +1,5 @@
 {
-  "_note": "Veri kaynagi: kimlik ve egitim alanlari kaynak/Ortaklar Brosur/*.pdf; biyografi paragraflari (intro), Key Focus listeleri ve liste kartindaki practiceLabels ise kaynak/icerik/www.kso.av.tr tasarim.pdf 'OUR PEOPLE' bolumu. Ingilizce metin musterinin kendi metnidir ve DEGISTIRILMEDEN aktarilmistir; Turkce karsiliklar TASLAK CEVIRIDIR ve MUSTERI ONAYI BEKLEMEKTEDIR. PDF'te kaybolan fi/ff ligaturleri duzeltildi (nancial -> financial, nance -> finance). 'titles' unvan satirinin SIRALI anahtar listesidir; etiket metinleri messages/*.json -> Team.titles altindadir, burada tekrarlanmaz. Sicil alanlari (TBB/baro sicil no, bagli oldugu baro, meslege baslama tarihi) ve egitim yili + tez basligi alanlari kullanici talimatiyla TAMAMEN KALDIRILDI; yeniden eklenmeyecek. UYARI: musteri metni CLAUDE.md 'ASLA uretme' listesiyle bes noktada cakisiyor (Berkay 'established experience'; Huseyin 'leading counsel' ve Key Focus 'Leading'; Alper 'procedural expertise' ve Key Focus 'specialist'). Kullanicinin acik talimatiyla aynen uygulandi, degistirmeden once ona danisilmalidir. academicTitle 'MSc' de ayni kapsamdadir: Finansal Ekonomi yuksek lisansidir, hukuk alaninda degildir. Bos string = veri yok; uydurulmadi, ilgili bolum render edilmez.",
+  "_note": "Veri kaynagi: kimlik ve egitim alanlari kaynak/Ortaklar Brosur/*.pdf; biyografi paragraflari (intro), Key Focus listeleri ve liste kartindaki practiceLabels ise kaynak/icerik/www.kso.av.tr tasarim.pdf 'OUR PEOPLE' bolumu. Ingilizce metin musterinin kendi metnidir ve DEGISTIRILMEDEN aktarilmistir; Turkce karsiliklar TASLAK CEVIRIDIR ve MUSTERI ONAYI BEKLEMEKTEDIR. PDF'te kaybolan fi/ff ligaturleri duzeltildi (nancial -> financial, nance -> finance). 'titles' unvan satirinin SIRALI anahtar listesidir; etiket metinleri messages/*.json -> Team.titles altindadir, burada tekrarlanmaz. Sicil alanlari (TBB/baro sicil no, bagli oldugu baro, meslege baslama tarihi) ve egitim yili + tez basligi alanlari kullanici talimatiyla TAMAMEN KALDIRILDI; yeniden eklenmeyecek. UYARI: musteri metni CLAUDE.md 'ASLA uretme' listesiyle bes noktada cakisiyor (Berkay 'established experience'; Huseyin 'leading counsel' ve Key Focus 'Leading'; Alper 'procedural expertise' ve Key Focus 'specialist'). Kullanicinin acik talimatiyla aynen uygulandi, degistirmeden once ona danisilmalidir. academicTitle 'MSc' de ayni kapsamdadir: Finansal Ekonomi yuksek lisansidir, hukuk alaninda degildir. Bos string = veri yok; uydurulmadi, ilgili bolum render edilmez. 01.10.2026: Egemen Isik ve Ertugrul Dogan Erzengin (Of Counsel, 'counsel': true) eklendi; metinler kaynak/Ortaklar Brosur/*_TR_EN_KSO_Terminology.docx dosyalarindan birebir (TR+EN, musteri metni) aktarildi. Bu iki kayitta TBB kapsaminda isaretlenen ifadeler (uzmanlik/expertise, uzman/specialist arabuluculuk egitimi, kamu gorevi, gecmis istihdam, yayin/tez/egitim yili) degistirilmeden yayindadir; baro gorusu onerilir. 'honorific' onek unvandir (displayName'de adin onune eklenir).",
   "lawyers": [
     {
       "slug": "berkay-kocak",
@@ -404,6 +404,220 @@
         "phone": "",
         "kep": "",
         "linkedin": "https://www.linkedin.com/in/alperornek"
+      }
+    },
+    {
+      "slug": "egemen-isik",
+      "name": "Egemen Işık",
+      "photo": "/ekip/egemen-isik.jpg",
+      "academicTitle": "",
+      "honorific": {
+        "tr": "Dr. Öğr. Üyesi",
+        "en": "Asst. Prof. Dr."
+      },
+      "counsel": true,
+      "titles": [
+        "counsel",
+        "academicAdvisor"
+      ],
+      "practiceLabels": [],
+      "intro": [
+        {
+          "tr": "Egemen Işık, Koçak | Sayım | Örnek bünyesinde Of Counsel (Danışman Akademisyen) olarak özel hukuk alanındaki karmaşık hukuki konularda akademik perspektif ve doktriner değerlendirme sunarak ekibimize ve müvekkillerimize destek sağlamaktadır. Hâlen Marmara Üniversitesi Hukuk Fakültesi Medeni Hukuk Anabilim Dalında Dr. Öğr. Üyesi olarak görev yapmaktadır.",
+          "en": "Egemen Işık serves as Of Counsel (Academic Advisor) to Koçak | Sayım | Örnek, providing academic perspective and rigorous doctrinal analysis on complex private law issues. He is currently an Assistant Professor in the Department of Civil Law at Marmara University Faculty of Law."
+        },
+        {
+          "tr": "Marmara Üniversitesi Hukuk Fakültesinden 2013 yılında mezun olan Işık, aynı üniversitenin Sosyal Bilimler Enstitüsü Özel Hukuk Anabilim Dalında yüksek lisans eğitimini 2016 yılında, doktora eğitimini ise 2024 yılında tamamlamıştır. 2015 yılından itibaren Marmara Üniversitesi bünyesinde sürdürdüğü akademik kariyerinde medeni hukuk ve özel hukukun farklı alanlarında araştırma, yayın ve eğitim faaliyetlerinde bulunmuştur.",
+          "en": "He received his LL.B. from Marmara University Faculty of Law in 2013, followed by a master’s degree in Private Law from Marmara University Institute of Social Sciences in 2016 and a Ph.D. in Private Law from the same institution in 2024. His academic career at Marmara University dates back to 2015 and encompasses research, teaching and scholarly work across a broad range of private law disciplines."
+        },
+        {
+          "tr": "Akademik çalışmaları başta medeni hukuk ve borçlar hukuku olmak üzere sözleşmesel ilişkiler, temsil hukuku, fikri mülkiyet hukuku, tüketici hukuku ve eşya hukuku üzerinde yoğunlaşmaktadır. Yüksek lisans çalışmasında marka hukukunda sessiz kalma yoluyla hak kaybını, doktora araştırmasında ise yetkisiz temsilcinin sorumluluğunu incelemiş; bu iki alan Işık’ın akademik çalışmalarında öne çıkan uzmanlık konuları hâline gelmiştir.",
+          "en": "His principal areas of academic focus include Civil Law, the Law of Obligations, contractual relationships, the Law of Representation, Intellectual Property Law, Consumer Law and Property Law. His graduate research focused in particular on loss of rights through acquiescence in trademark law and the liability of unauthorized representatives, which remain two of his core areas of scholarly expertise."
+        },
+        {
+          "tr": "Işık’ın On İki Levha Yayıncılık tarafından yayımlanan ‘’Marka Hukukunda Sessiz Kalma Yoluyla Hak Kaybı ve Yetkisiz Temsilcinin Sorumluluğu’’ başlıklı iki kitabının yanı sıra özel hukukun çeşitli alanlarında akademik makale, kitap bölümü ve bildirileri bulunmaktadır. Akademik yaklaşımı, hukuki kurumların doktriner temellerini uygulamadaki sonuçlarıyla birlikte ele almakta; özellikle karmaşık yorum meseleleri, sözleşmesel ilişkiler, sorumluluk ve özel hukuk uyuşmazlıklarında kapsamlı bir akademik değerlendirme sunmaktadır.",
+          "en": "Egemen is the author of two books published by On İki Levha Publishing: ‘’Loss of Rights Through Acquiescence in Trademark Law and Liability of the Unauthorized Representative’’. His wider academic work includes articles, book chapters and conference papers addressing various aspects of private law. His scholarship combines doctrinal analysis with close attention to the practical effects of legal rules, providing an academic framework for complex questions of interpretation, contractual relationships, liability and private law disputes."
+        },
+        {
+          "tr": "Tüketici, iş ve ticaret hukuku alanlarında uzman arabuluculuk eğitimleri ile hukuk uyuşmazlıklarında arabuluculuk eğitimi alan; ayrıca spor hukuku ve yönetimi eğitimi bulunan Işık, Koçak | Sayım | Örnek bünyesinde hukuki görüşlerin doktrin, akademik literatür ve güncel özel hukuk yaklaşımları ışığında değerlendirilmesine katkı sağlamaktadır.",
+          "en": "He has completed specialist mediation training in consumer, employment and commercial law, as well as general mediation training for legal disputes, together with training in Sports Law and Management. At Koçak | Sayım | Örnek, Egemen contributes to the analysis of complex legal issues by drawing on legal doctrine, academic scholarship and current developments in private law."
+        }
+      ],
+      "keyFocus": [
+        {
+          "title": {
+            "tr": "Medeni Hukuk",
+            "en": "Civil Law"
+          },
+          "description": {
+            "tr": "Kişilik hakları ile özel hukukun temel ilke ve kurumlarına ilişkin akademik ve doktriner değerlendirmeler",
+            "en": "Doctrinal analysis of personality rights and the fundamental principles and institutions of private law"
+          }
+        },
+        {
+          "title": {
+            "tr": "Borçlar ve Sözleşmeler Hukuku",
+            "en": "Law of Obligations & Contract Law"
+          },
+          "description": {
+            "tr": "Sözleşmesel ilişkilerin kurulması, yorumlanması, ifası ve sona ermesi; sözleşmesel risk, sözleşmeye aykırılık ve sorumluluk konuları",
+            "en": "Formation, interpretation, performance and termination of contractual relationships, contractual risk, breach and liability"
+          }
+        },
+        {
+          "title": {
+            "tr": "Fikri Mülkiyet Hukuku",
+            "en": "Intellectual Property Law"
+          },
+          "description": {
+            "tr": "Marka haklarının korunması, marka koruması, sessiz kalma yoluyla hak kaybı ve marka kaynaklı özel hukuk uyuşmazlıkları",
+            "en": "Trademark protection, loss of rights through acquiescence and private law disputes arising from trademark matters"
+          }
+        },
+        {
+          "title": {
+            "tr": "Temsil Hukuku",
+            "en": "Law of Representation"
+          },
+          "description": {
+            "tr": "Temsil yetkisinin kapsamı ve sonuçları, yetkisiz temsil ve yetkisiz temsilcinin sorumluluğuna ilişkin konular",
+            "en": "Scope and effects of authority, unauthorized representation and the liability of unauthorized representatives"
+          }
+        },
+        {
+          "title": {
+            "tr": "Tüketici Hukuku",
+            "en": "Consumer Law"
+          },
+          "description": {
+            "tr": "Tüketici işlemleri, ayıplı mal ve hizmetler, tüketici sözleşmeleri ve tüketici uyuşmazlıkları",
+            "en": "Consumer transactions, defective goods and services, consumer contracts and consumer disputes"
+          }
+        },
+        {
+          "title": {
+            "tr": "Eşya Hukuku",
+            "en": "Property Law"
+          },
+          "description": {
+            "tr": "Mülkiyet, zilyetlik, sınırlı ayni haklar ve eşya hukukundan doğan hukuki konular",
+            "en": "Ownership, possession, limited rights in rem and other legal issues arising under property law"
+          }
+        }
+      ],
+      "education": [],
+      "practiceAreas": [],
+      "languages": [],
+      "contact": {
+        "email": "",
+        "phone": "",
+        "kep": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "slug": "ertugrul-dogan-erzengin",
+      "name": "Ertuğrul Doğan Erzengin",
+      "photo": "/ekip/ertugrul-dogan-erzengin.jpg",
+      "academicTitle": "Ph.D.",
+      "counsel": true,
+      "titles": [
+        "counsel",
+        "academicAdvisor"
+      ],
+      "practiceLabels": [],
+      "intro": [
+        {
+          "tr": "Ertuğrul Doğan Erzengin, Koçak | Sayım | Örnek bünyesinde Of Counsel (Danışman Akademisyen) olarak özel hukuk alanındaki karmaşık hukuki meselelerde akademik perspektif ve doktriner değerlendirme sunarak ekibimize ve müvekkillerimize destek sağlamaktadır. Hâlen Marmara Üniversitesi Hukuk Fakültesi Medeni Hukuk Anabilim Dalında Araştırma Görevlisi olarak görev yapmaktadır.",
+          "en": "Ertuğrul Doğan Erzengin serves as Of Counsel (Academic Advisor) to Koçak | Sayım | Örnek, providing academic perspective and rigorous doctrinal analysis on complex private law matters. He is currently a Research Assistant in the Department of Civil Law at Marmara University Faculty of Law."
+        },
+        {
+          "tr": "İstanbul Üniversitesi Hukuk Fakültesinden 2016 yılında mezun olan Erzengin, mezuniyetinin ardından çok uluslu bir bankanın genel müdürlük hukuk departmanında hukuki deneyim kazanmıştır. Lisansüstü eğitimine 2017 yılında İstanbul Üniversitesi Özel Hukuk Yüksek Lisans Programında başlamış, 2018 yılından itibaren Marmara Üniversitesi Özel Hukuk Yüksek Lisans Programında devam etmiş ve 2020 yılında “Kiralananın Sözleşmenin Sona Ermesinden Önce İadesi” başlıklı teziyle yüksek lisansını tamamlamıştır. Aynı yıl Marmara Üniversitesi Özel Hukuk Doktora Programına başlayan Erzengin, 2021–2022 yılları arasında Münster Üniversitesi Hukuk Fakültesinde araştırmalarını yürütmüş ve 2026 yılında “Askıda Hükümsüzlük” başlıklı teziyle doktora derecesini almıştır.",
+          "en": "He received his LL.B. from Istanbul University Faculty of Law in 2016 and subsequently gained legal experience in the head-office legal department of a multinational bank. He began his postgraduate studies in Private Law at Istanbul University in 2017 and continued at Marmara University from 2018, completing his master’s degree in 2020 with a thesis on the early return of leased premises before termination of the lease. He commenced his Ph.D. in Private Law at Marmara University in the same year, conducted doctoral research at the Faculty of Law of the University of Münster in 2021–2022, and received his Ph.D. in 2026 with a dissertation on suspended invalidity."
+        },
+        {
+          "tr": "Akademik çalışmaları medeni hukuk, borçlar hukuku, sözleşmesel ilişkiler, sorumluluk hukuku, eşya hukuku, miras hukuku, teknoloji hukuku ve yapay zekâ ile hukuk sosyolojisi üzerinde yoğunlaşmaktadır. Yüksek lisans araştırmasında kira sözleşmelerinde kiralananın sözleşme sona ermeden önce iadesini, doktora çalışmasında ise askıda hükümsüzlük kurumunu incelemiştir. Karşılaştırmalı hukuk, standart sözleşme hükümlerinin çatışması, CISG kapsamında tazminatın sınırlandırılması ve özel hukukun sosyo-ekonomik işlevi de akademik çalışmalarında öne çıkan konular arasındadır.",
+          "en": "His academic work focuses on Civil Law, the Law of Obligations, contractual relationships, Liability Law, Property Law, Inheritance Law, Technology Law and Artificial Intelligence, and the Sociology of Law. His graduate research has examined the early return of leased premises and the doctrine of suspended invalidity. Comparative law, conflicting standard contract terms, limitations of damages under the CISG and the socio-economic functions of private law also feature prominently in his scholarship."
+        },
+        {
+          "tr": "Erzengin’in On İki Levha Yayıncılık tarafından yayımlanan Kiralananın Sözleşmenin Sona Ermesinden Önce İadesi (TBK m. 325) başlıklı kitabının yanı sıra Askıda Hükümsüzlük başlıklı çalışması yayın aşamasındadır. Akademik yayınları; sözleşme boşluklarının doldurulması, standart sözleşme hükümleri, sorumluluk hukuku, Avrupa Birliği Yapay Zekâ Tüzüğü, tüketici sözleşmelerinde kişisel veriler, mülkiyet hakkı ve sürdürülebilirlik ile özel hukukun sosyo-ekonomik boyutları gibi güncel ve çok katmanlı konuları kapsamaktadır.",
+          "en": "Erzengin is the author of Early Return of Leased Premises Before Termination of the Contract (TCO Art. 325), published by On İki Levha Publishing, while his book Suspended Invalidity is forthcoming. His broader academic work addresses contract gaps, standard contract terms, liability, the European Union Artificial Intelligence Act, personal data as counter-performance in consumer contracts, sustainability in property law and the socio-economic dimensions of private law."
+        },
+        {
+          "tr": "İngilizce ve Almancayı profesyonel düzeyde kullanan Erzengin, Koçak | Sayım | Örnek bünyesinde özellikle sözleşmesel ilişkiler, sorumluluk, teknoloji ve diğer özel hukuk meselelerinin doktrin, karşılaştırmalı hukuk ve akademik literatür ışığında değerlendirilmesine katkı sağlamaktadır.",
+          "en": "Professionally proficient in English and German, Erzengin contributes to Koçak | Sayım | Örnek by supporting the analysis of contractual relationships, liability, technology-related issues and other private law matters through legal doctrine, comparative law and academic scholarship."
+        }
+      ],
+      "keyFocus": [
+        {
+          "title": {
+            "tr": "Medeni Hukuk",
+            "en": "Civil Law"
+          },
+          "description": {
+            "tr": "Özel hukukun temel ilke ve kurumları ile kişiler hukukuna ilişkin akademik ve doktriner değerlendirmeler",
+            "en": "Doctrinal analysis of the fundamental principles and institutions of private law and matters relating to the law of persons"
+          }
+        },
+        {
+          "title": {
+            "tr": "Borçlar ve Sözleşmeler Hukuku",
+            "en": "Law of Obligations & Contract Law"
+          },
+          "description": {
+            "tr": "Sözleşmesel ilişkilerin kurulması, yorumlanması, ifası ve sona ermesi; sözleşme boşlukları, standart sözleşme hükümleri ve sözleşmesel risk",
+            "en": "Formation, interpretation, performance and termination of contractual relationships, contract gaps, standard terms and contractual risk"
+          }
+        },
+        {
+          "title": {
+            "tr": "Sorumluluk Hukuku",
+            "en": "Liability Law"
+          },
+          "description": {
+            "tr": "Sözleşmesel ve sözleşme dışı sorumluluk, zarar, tazminat ve sorumluluğun sınırlandırılmasına ilişkin hukuki meseleler",
+            "en": "Contractual and non-contractual liability, damages, compensation and legal issues concerning limitations of liability"
+          }
+        },
+        {
+          "title": {
+            "tr": "Eşya ve Miras Hukuku",
+            "en": "Property & Inheritance Law"
+          },
+          "description": {
+            "tr": "Mülkiyet, zilyetlik, ayni haklar, miras ilişkileri ve bu alanlardan doğan özel hukuk meseleleri",
+            "en": "Ownership, possession, rights in rem, inheritance relationships and related private law matters"
+          }
+        },
+        {
+          "title": {
+            "tr": "Teknoloji Hukuku ve Yapay Zekâ",
+            "en": "Technology Law & Artificial Intelligence"
+          },
+          "description": {
+            "tr": "Yapay zekâ düzenlemeleri, dijital dönüşümün özel hukuka etkileri ve teknoloji kaynaklı güncel hukuki meseleler",
+            "en": "AI regulation, the private law implications of digital transformation and emerging technology-related legal issues"
+          }
+        },
+        {
+          "title": {
+            "tr": "Karşılaştırmalı Özel Hukuk ve Hukuk Sosyolojisi",
+            "en": "Comparative Private Law & Sociology of Law"
+          },
+          "description": {
+            "tr": "Özel hukuk kurumlarının karşılaştırmalı, toplumsal ve sosyo-ekonomik etkileri bakımından değerlendirilmesi",
+            "en": "Comparative, social and socio-economic analysis of private law institutions and their practical effects"
+          }
+        }
+      ],
+      "education": [],
+      "practiceAreas": [],
+      "languages": [],
+      "contact": {
+        "email": "",
+        "phone": "",
+        "kep": "",
+        "linkedin": ""
       }
     }
   ]

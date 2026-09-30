@@ -52,7 +52,12 @@ export type Education = {
  * tabidir. Geri alınırsa YALNIZCA `Team.titles.mediator` değeri
  * "Arabulucu" / "Mediator" olarak değiştirilir; buradaki veri durur.
  */
-export type TitleKey = "attorney" | "mediator" | "partner";
+export type TitleKey =
+  | "attorney"
+  | "mediator"
+  | "partner"
+  | "counsel"
+  | "academicAdvisor";
 
 export type Contact = {
   email: string;
@@ -75,6 +80,17 @@ export type Lawyer = {
    * şekilde geçtiği için kullanıcı talimatıyla aynen alındı.
    */
   academicTitle: string;
+  /**
+   * Adın ÖNÜNE gelen akademik unvan ("Dr. Öğr. Üyesi Egemen Işık").
+   * Yalnızca müşteri metninde önek olarak geçen kişide dolu; `academicTitle`
+   * gibi sonek ("Ad, unvan") kalıbına girmez.
+   */
+  honorific?: L10n;
+  /**
+   * Of Counsel kayıtları: `/ekibimiz` listesinde üç kişilik ana gridin
+   * ALTINDA, ortalı ayrı bir satırda gösterilir.
+   */
+  counsel?: boolean;
   /** Unvan satırının sırası — bkz. `TitleKey`. */
   titles: TitleKey[];
   /**
@@ -134,9 +150,13 @@ export function titleLine(
 export function displayName(
   lawyer: Lawyer,
   template: (values: { name: string; degree: string }) => string,
+  locale?: string,
 ): string {
-  if (!hasText(lawyer.academicTitle)) return lawyer.name;
-  return template({ name: lawyer.name, degree: lawyer.academicTitle });
+  const base = hasText(lawyer.academicTitle)
+    ? template({ name: lawyer.name, degree: lawyer.academicTitle })
+    : lawyer.name;
+  if (!lawyer.honorific || !locale) return base;
+  return `${pick(lawyer.honorific, locale)} ${base}`;
 }
 
 /* ==========================================================================

@@ -74,7 +74,9 @@
     "titles": {
       "attorney": "Attorney at Law",
       "mediator": "Expert Mediator",
-      "partner": "Partner"
+      "partner": "Partner",
+      "counsel": "Of Counsel",
+      "academicAdvisor": "Academic Advisor"
     },
     "linkedinAriaLabel": "LinkedIn profile",
     "sections": {

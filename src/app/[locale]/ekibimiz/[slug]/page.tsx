@@ -134,13 +134,19 @@ export default async function TeamMemberPage({
                 adın ALTINDA orta noktayla ayrılmış sırada.
                 Biçim iki dilde de aynı — `Team.nameWithDegree`. */}
             <h1 className="text-h2 text-primary md:text-h1">
-              {displayName(lawyer, (values) => t("nameWithDegree", values))}
+              {displayName(
+                lawyer,
+                (values) => t("nameWithDegree", values),
+                locale,
+              )}
             </h1>
             <p className="mt-3 text-body-lg text-grey-600">
               {titleLine(lawyer, {
                 attorney: t("titles.attorney"),
                 mediator: t("titles.mediator"),
                 partner: t("titles.partner"),
+                counsel: t("titles.counsel"),
+                academicAdvisor: t("titles.academicAdvisor"),
               })}
             </p>
 
